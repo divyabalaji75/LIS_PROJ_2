@@ -1,0 +1,111 @@
+Bill_id,topic_name,classification
+HB1,Labor and Employment,Official LIS subject
+HB1,Wages,Official LIS subject
+HB2,Public Service Companies,Official LIS subject
+HB2,"Study Commissions, Committees, and Reports",Official LIS subject
+HB2,Uncodified Legislation,Official LIS subject
+HB3,Administration of Government,Official LIS subject
+HB3,Housing,Official LIS subject
+HB3,"Study Commissions, Committees, and Reports",Official LIS subject
+HB3,Uncodified Legislation,Official LIS subject
+HB4,Housing,Official LIS subject
+HB4,Affordable Housing,Official LIS subject
+HB5,Labor and Employment,Official LIS subject
+HB5,Local Government and Officials,Official LIS subject
+HB5,State Employees,Official LIS subject
+HB6,Health,Official LIS subject
+HB6,Contraceptives,Official LIS subject
+HJ1,Constitutional Amendments,Official LIS subject
+HJ1,Human Rights,Official LIS subject
+HJ2,Constitutional Amendments,Official LIS subject
+HJ2,Elections,Official LIS subject
+HJ2,Voters and Voting,Official LIS subject
+HJ3,Constitutional Amendments,Official LIS subject
+HJ3,Marriage,Official LIS subject
+HJ4,Constitutional Amendments,Official LIS subject
+HJ4,General Assembly,Official LIS subject
+HJ4,Congressional Districts,Official LIS subject
+HJ4,Reapportionment,Official LIS subject
+SB1,Labor and Employment,Official LIS subject
+SB1,Wages,Official LIS subject
+SB2,Insurance,Official LIS subject
+SB2,"Study Commissions, Committees, and Reports",Official LIS subject
+SB2,Unemployment Compensation,Official LIS subject
+SB3,"Study Commissions, Committees, and Reports",Official LIS subject
+SB3,Child Care,Official LIS subject
+SB3,Uncodified Legislation,Official LIS subject
+SB4,Education,Official LIS subject
+SB4,Students,Official LIS subject
+SB5,Administration of Government,Official LIS subject
+SB5,Housing,Official LIS subject
+SB5,"Study Commissions, Committees, and Reports",Official LIS subject
+SB5,Uncodified Legislation,Official LIS subject
+SB6,Constitutional Amendments,Official LIS subject
+SB6,Elections,Official LIS subject
+SB6,Voters and Voting,Official LIS subject
+SB7,Income Tax,Official LIS subject
+SB7,Taxation,Official LIS subject
+SB8,Armed Forces,Official LIS subject
+SB8,Taxation,Official LIS subject
+SB8,Real Property,Official LIS subject
+SB9,Health,Official LIS subject
+SB9,Sales and Use Tax,Official LIS subject
+SB9,Taxation,Official LIS subject
+SB9,Retail Sales and Use Tax,Official LIS subject
+SB10,Labor and Employment,Official LIS subject
+SB10,Children,Official LIS subject
+SB11,Conservation,Official LIS subject
+SB11,"Food and Beverage Products, and Containers",Official LIS subject
+SB12,Appropriations,Official LIS subject
+SB12,Motor Vehicles,Official LIS subject
+SB12,Evidence,Official LIS subject
+SB12,Marijuana,Official LIS subject
+SB12,Alcoholic Beverage and Cannabis Control,Official LIS subject
+SB13,Motor Vehicles,Official LIS subject
+SB13,License Plates and Registration,Official LIS subject
+SB14,Arts and Humanities,Official LIS subject
+SB14,Alcoholic Beverage and Cannabis Control,Official LIS subject
+SB15,Motor Vehicles,Official LIS subject
+SB15,Motorcycles,Official LIS subject
+SB16,Education,Official LIS subject
+SB16,Uncodified Legislation,Official LIS subject
+SB17,Motor Vehicles,Official LIS subject
+SB18,Courts Not of Record,Official LIS subject
+SB18,Children,Official LIS subject
+SB19,Education,Official LIS subject
+SB20,Education,Official LIS subject
+SB20,Child Care,Official LIS subject
+SB21,Juvenile Justice,Official LIS subject
+SB21,"Health and Human Resources, Secretary of",Official LIS subject
+SB21,"Public Safety and Homeland Security, Secretary of",Official LIS subject
+SB21,Uncodified Legislation,Official LIS subject
+SB22,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SB22,Continuing Education,Official LIS subject
+SB22,Professional and Occupational Regulation,Official LIS subject
+SB23,Criminal Procedure,Official LIS subject
+SB24,Criminal Procedure,Official LIS subject
+SB24,Electronic Processes,Official LIS subject
+SB24,Evidence,Official LIS subject
+SB25,Workforce,Official LIS subject
+SB25,Uncodified Legislation,Official LIS subject
+SB25,Wind Energy,Official LIS subject
+SB26,"Counties, Cities, and Towns",Official LIS subject
+SB26,Land Development and Use,Official LIS subject
+SB26,Solar Energy,Official LIS subject
+SB27,Trade and Commerce,Official LIS subject
+SB27,Firearms,Official LIS subject
+SB28,Labor and Employment,Official LIS subject
+SB31,Public Service Companies,Official LIS subject
+SB31,Railroads,Official LIS subject
+SB32,Labor and Employment,Official LIS subject
+SJ1,Constitutional Amendments,Official LIS subject
+SJ1,Human Rights,Official LIS subject
+SJ2,Constitutional Amendments,Official LIS subject
+SJ2,Elections,Official LIS subject
+SJ2,Voters and Voting,Official LIS subject
+SJ3,Constitutional Amendments,Official LIS subject
+SJ3,Marriage,Official LIS subject
+SJ4,Deaths,Official LIS subject
+SJ4,"Webb, Gloria Olderog",Official LIS subject
+SJ5,Commendations and Commemorations,Official LIS subject
+SJ5,"Henriksen, Pamelia",Official LIS subject

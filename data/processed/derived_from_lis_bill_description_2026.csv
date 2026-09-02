@@ -1,0 +1,1808 @@
+Bill_id,topic_name,classification
+HB7,Courts and Civil Law,Derived from LIS bill description
+HB7,Public Safety,Derived from LIS bill description
+HB10,Taxes and Revenue,Derived from LIS bill description
+HB11,Transportation,Derived from LIS bill description
+HB12,Taxes and Revenue,Derived from LIS bill description
+HB14,Housing,Derived from LIS bill description
+HB14,Local Government,Derived from LIS bill description
+HB15,Housing,Derived from LIS bill description
+HB18,Labor and Employment,Derived from LIS bill description
+HB18,Family and Children,Derived from LIS bill description
+HB18,Social Services,Derived from LIS bill description
+HB19,Firearms,Derived from LIS bill description
+HB20,Labor and Employment,Derived from LIS bill description
+HB20,Agriculture and Food,Derived from LIS bill description
+HB21,Courts and Civil Law,Derived from LIS bill description
+HB21,Firearms,Derived from LIS bill description
+HB23,Elections and Voting,Derived from LIS bill description
+HB24,Firearms,Derived from LIS bill description
+HB25,Transportation,Derived from LIS bill description
+HB26,Criminal Justice,Derived from LIS bill description
+HB27,Labor and Employment,Derived from LIS bill description
+HB28,Elections and Voting,Derived from LIS bill description
+HB29,Budget and Appropriations,Derived from LIS bill description
+HB30,Budget and Appropriations,Derived from LIS bill description
+HB31,Education,Derived from LIS bill description
+HB33,Taxes and Revenue,Derived from LIS bill description
+HB34,Criminal Justice,Derived from LIS bill description
+HB38,Education,Derived from LIS bill description
+HB38,Behavioral Health,Derived from LIS bill description
+HB40,Firearms,Derived from LIS bill description
+HB41,Elections and Voting,Derived from LIS bill description
+HB43,Criminal Justice,Derived from LIS bill description
+HB44,Elections and Voting,Derived from LIS bill description
+HB47,Taxes and Revenue,Derived from LIS bill description
+HB51,Elections and Voting,Derived from LIS bill description
+HB53,Education,Derived from LIS bill description
+HB54,State Government,Derived from LIS bill description
+HB56,Education,Derived from LIS bill description
+HB57,Transportation,Derived from LIS bill description
+HB57,Local Government,Derived from LIS bill description
+HB61,Business and Commerce,Derived from LIS bill description
+HB64,Insurance,Derived from LIS bill description
+HB67,Labor and Employment,Derived from LIS bill description
+HB69,Business and Commerce,Derived from LIS bill description
+HB71,Elections and Voting,Derived from LIS bill description
+HB72,Taxes and Revenue,Derived from LIS bill description
+HB73,Marriage and Domestic Relations,Derived from LIS bill description
+HB74,Energy and Utilities,Derived from LIS bill description
+HB75,Health and Healthcare,Derived from LIS bill description
+HB76,Family and Children,Derived from LIS bill description
+HB77,Transportation,Derived from LIS bill description
+HB77,Public Safety,Derived from LIS bill description
+HB78,Elections and Voting,Derived from LIS bill description
+HB79,Housing,Derived from LIS bill description
+HB80,Criminal Justice,Derived from LIS bill description
+HB81,State Government,Derived from LIS bill description
+HB82,Elections and Voting,Derived from LIS bill description
+HB84,Energy and Utilities,Derived from LIS bill description
+HB87,Health and Healthcare,Derived from LIS bill description
+HB88,Transportation,Derived from LIS bill description
+HB89,Elections and Voting,Derived from LIS bill description
+HB90,Insurance,Derived from LIS bill description
+HB91,Criminal Justice,Derived from LIS bill description
+HB91,Family and Children,Derived from LIS bill description
+HB92,Education,Derived from LIS bill description
+HB93,Firearms,Derived from LIS bill description
+HB94,Transportation,Derived from LIS bill description
+HB95,Housing,Derived from LIS bill description
+HB96,Education,Derived from LIS bill description
+HB99,Criminal Justice,Derived from LIS bill description
+HB101,Firearms,Derived from LIS bill description
+HB104,Agriculture and Food,Derived from LIS bill description
+HB105,Agriculture and Food,Derived from LIS bill description
+HB106,Firearms,Derived from LIS bill description
+HB109,Business and Commerce,Derived from LIS bill description
+HB110,Transportation,Derived from LIS bill description
+HB110,Firearms,Derived from LIS bill description
+HB111,Elections and Voting,Derived from LIS bill description
+HB112,Environment and Conservation,Derived from LIS bill description
+HB113,Elections and Voting,Derived from LIS bill description
+HB114,Energy and Utilities,Derived from LIS bill description
+HB115,Energy and Utilities,Derived from LIS bill description
+HB116,Education,Derived from LIS bill description
+HB116,Labor and Employment,Derived from LIS bill description
+HB120,Energy and Utilities,Derived from LIS bill description
+HB123,Transportation,Derived from LIS bill description
+HB123,Criminal Justice,Derived from LIS bill description
+HB123,Firearms,Derived from LIS bill description
+HB123,Family and Children,Derived from LIS bill description
+HB125,Education,Derived from LIS bill description
+HB126,Criminal Justice,Derived from LIS bill description
+HB128,Transportation,Derived from LIS bill description
+HB130,Labor and Employment,Derived from LIS bill description
+HB134,Environment and Conservation,Derived from LIS bill description
+HB136,Health and Healthcare,Derived from LIS bill description
+HB137,Taxes and Revenue,Derived from LIS bill description
+HB139,Education,Derived from LIS bill description
+HB139,Labor and Employment,Derived from LIS bill description
+HB141,Transportation,Derived from LIS bill description
+HB145,Taxes and Revenue,Derived from LIS bill description
+HB146,Health and Healthcare,Derived from LIS bill description
+HB148,Family and Children,Derived from LIS bill description
+HB149,Criminal Justice,Derived from LIS bill description
+HB151,Agriculture and Food,Derived from LIS bill description
+HB153,Energy and Utilities,Derived from LIS bill description
+HB155,Energy and Utilities,Derived from LIS bill description
+HB157,Criminal Justice,Derived from LIS bill description
+HB160,Labor and Employment,Derived from LIS bill description
+HB161,Technology and Data,Derived from LIS bill description
+HB164,Labor and Employment,Derived from LIS bill description
+HB168,Elections and Voting,Derived from LIS bill description
+HB171,Education,Derived from LIS bill description
+HB171,Technology and Data,Derived from LIS bill description
+HB172,Criminal Justice,Derived from LIS bill description
+HB173,Criminal Justice,Derived from LIS bill description
+HB174,Housing,Derived from LIS bill description
+HB177,Local Government,Derived from LIS bill description
+HB178,Education,Derived from LIS bill description
+HB181,Local Government,Derived from LIS bill description
+HB182,Education,Derived from LIS bill description
+HB187,Elections and Voting,Derived from LIS bill description
+HB188,Taxes and Revenue,Derived from LIS bill description
+HB189,Education,Derived from LIS bill description
+HB191,Family and Children,Derived from LIS bill description
+HB192,Transportation,Derived from LIS bill description
+HB193,Criminal Justice,Derived from LIS bill description
+HB195,Education,Derived from LIS bill description
+HB196,Housing,Derived from LIS bill description
+HB197,Local Government,Derived from LIS bill description
+HB198,Local Government,Derived from LIS bill description
+HB200,Transportation,Derived from LIS bill description
+HB201,Education,Derived from LIS bill description
+HB201,Firearms,Derived from LIS bill description
+HB207,Firearms,Derived from LIS bill description
+HB207,Taxes and Revenue,Derived from LIS bill description
+HB210,Education,Derived from LIS bill description
+HB212,Criminal Justice,Derived from LIS bill description
+HB212,Elections and Voting,Derived from LIS bill description
+HB213,Elections and Voting,Derived from LIS bill description
+HB214,Local Government,Derived from LIS bill description
+HB215,Elections and Voting,Derived from LIS bill description
+HB216,Insurance,Derived from LIS bill description
+HB217,Firearms,Derived from LIS bill description
+HB220,Insurance,Derived from LIS bill description
+HB227,Insurance,Derived from LIS bill description
+HB229,Health and Healthcare,Derived from LIS bill description
+HB229,Behavioral Health,Derived from LIS bill description
+HB229,Firearms,Derived from LIS bill description
+HB230,Health and Healthcare,Derived from LIS bill description
+HB230,Transportation,Derived from LIS bill description
+HB230,Public Safety,Derived from LIS bill description
+HB232,Health and Healthcare,Derived from LIS bill description
+HB233,Health and Healthcare,Derived from LIS bill description
+HB233,Transportation,Derived from LIS bill description
+HB233,Public Safety,Derived from LIS bill description
+HB234,Elections and Voting,Derived from LIS bill description
+HB235,Elections and Voting,Derived from LIS bill description
+HB238,Labor and Employment,Derived from LIS bill description
+HB240,Behavioral Health,Derived from LIS bill description
+HB242,Energy and Utilities,Derived from LIS bill description
+HB242,Budget and Appropriations,Derived from LIS bill description
+HB243,Labor and Employment,Derived from LIS bill description
+HB244,Criminal Justice,Derived from LIS bill description
+HB245,Behavioral Health,Derived from LIS bill description
+HB245,Criminal Justice,Derived from LIS bill description
+HB247,Criminal Justice,Derived from LIS bill description
+HB248,Behavioral Health,Derived from LIS bill description
+HB250,Criminal Justice,Derived from LIS bill description
+HB250,Family and Children,Derived from LIS bill description
+HB251,Criminal Justice,Derived from LIS bill description
+HB253,Education,Derived from LIS bill description
+HB254,Family and Children,Derived from LIS bill description
+HB256,Environment and Conservation,Derived from LIS bill description
+HB258,Education,Derived from LIS bill description
+HB259,Family and Children,Derived from LIS bill description
+HB260,Labor and Employment,Derived from LIS bill description
+HB262,Local Government,Derived from LIS bill description
+HB265,Education,Derived from LIS bill description
+HB265,Higher Education,Derived from LIS bill description
+HB266,Family and Children,Derived from LIS bill description
+HB273,Public Safety,Derived from LIS bill description
+HB274,Family and Children,Derived from LIS bill description
+HB275,Labor and Employment,Derived from LIS bill description
+HB275,Family and Children,Derived from LIS bill description
+HB279,Education,Derived from LIS bill description
+HB280,Health and Healthcare,Derived from LIS bill description
+HB280,Insurance,Derived from LIS bill description
+HB280,Family and Children,Derived from LIS bill description
+HB281,Housing,Derived from LIS bill description
+HB282,Taxes and Revenue,Derived from LIS bill description
+HB283,Family and Children,Derived from LIS bill description
+HB284,Energy and Utilities,Derived from LIS bill description
+HB285,Energy and Utilities,Derived from LIS bill description
+HB287,Education,Derived from LIS bill description
+HB288,Education,Derived from LIS bill description
+HB289,Energy and Utilities,Derived from LIS bill description
+HB290,Education,Derived from LIS bill description
+HB291,Environment and Conservation,Derived from LIS bill description
+HB292,Agriculture and Food,Derived from LIS bill description
+HB293,Courts and Civil Law,Derived from LIS bill description
+HB293,Business and Commerce,Derived from LIS bill description
+HB294,Criminal Justice,Derived from LIS bill description
+HB295,Criminal Justice,Derived from LIS bill description
+HB296,Criminal Justice,Derived from LIS bill description
+HB298,Education,Derived from LIS bill description
+HB303,Marriage and Domestic Relations,Derived from LIS bill description
+HB309,Health and Healthcare,Derived from LIS bill description
+HB310,Labor and Employment,Derived from LIS bill description
+HB310,Technology and Data,Derived from LIS bill description
+HB312,Transportation,Derived from LIS bill description
+HB314,Energy and Utilities,Derived from LIS bill description
+HB315,Agriculture and Food,Derived from LIS bill description
+HB316,Business and Commerce,Derived from LIS bill description
+HB318,Criminal Justice,Derived from LIS bill description
+HB319,Elections and Voting,Derived from LIS bill description
+HB320,Transportation,Derived from LIS bill description
+HB321,Behavioral Health,Derived from LIS bill description
+HB321,Labor and Employment,Derived from LIS bill description
+HB321,Agriculture and Food,Derived from LIS bill description
+HB322,Agriculture and Food,Derived from LIS bill description
+HB323,Energy and Utilities,Derived from LIS bill description
+HB325,Behavioral Health,Derived from LIS bill description
+HB328,Insurance,Derived from LIS bill description
+HB329,Housing,Derived from LIS bill description
+HB330,Transportation,Derived from LIS bill description
+HB332,Education,Derived from LIS bill description
+HB334,Taxes and Revenue,Derived from LIS bill description
+HB335,Health and Healthcare,Derived from LIS bill description
+HB337,Health and Healthcare,Derived from LIS bill description
+HB338,Labor and Employment,Derived from LIS bill description
+HB338,Local Government,Derived from LIS bill description
+HB339,Labor and Employment,Derived from LIS bill description
+HB340,Labor and Employment,Derived from LIS bill description
+HB345,Taxes and Revenue,Derived from LIS bill description
+HB345,Business and Commerce,Derived from LIS bill description
+HB346,Energy and Utilities,Derived from LIS bill description
+HB349,Public Safety,Derived from LIS bill description
+HB352,Housing,Derived from LIS bill description
+HB355,Education,Derived from LIS bill description
+HB355,Behavioral Health,Derived from LIS bill description
+HB357,Criminal Justice,Derived from LIS bill description
+HB359,Education,Derived from LIS bill description
+HB360,Business and Commerce,Derived from LIS bill description
+HB361,Criminal Justice,Derived from LIS bill description
+HB362,Education,Derived from LIS bill description
+HB365,Transportation,Derived from LIS bill description
+HB369,Energy and Utilities,Derived from LIS bill description
+HB370,Business and Commerce,Derived from LIS bill description
+HB371,Social Services,Derived from LIS bill description
+HB372,Taxes and Revenue,Derived from LIS bill description
+HB374,Housing,Derived from LIS bill description
+HB375,Local Government,Derived from LIS bill description
+HB376,Health and Healthcare,Derived from LIS bill description
+HB377,Energy and Utilities,Derived from LIS bill description
+HB377,Environment and Conservation,Derived from LIS bill description
+HB378,Taxes and Revenue,Derived from LIS bill description
+HB379,Housing,Derived from LIS bill description
+HB382,Education,Derived from LIS bill description
+HB391,Health and Healthcare,Derived from LIS bill description
+HB392,Education,Derived from LIS bill description
+HB393,Public Safety,Derived from LIS bill description
+HB395,Energy and Utilities,Derived from LIS bill description
+HB397,Energy and Utilities,Derived from LIS bill description
+HB400,Taxes and Revenue,Derived from LIS bill description
+HB402,Technology and Data,Derived from LIS bill description
+HB403,Taxes and Revenue,Derived from LIS bill description
+HB403,Family and Children,Derived from LIS bill description
+HB405,Taxes and Revenue,Derived from LIS bill description
+HB405,Insurance,Derived from LIS bill description
+HB406,Labor and Employment,Derived from LIS bill description
+HB406,Public Safety,Derived from LIS bill description
+HB407,Education,Derived from LIS bill description
+HB407,Environment and Conservation,Derived from LIS bill description
+HB409,Transportation,Derived from LIS bill description
+HB410,Education,Derived from LIS bill description
+HB411,Transportation,Derived from LIS bill description
+HB412,Education,Derived from LIS bill description
+HB413,Education,Derived from LIS bill description
+HB413,Health and Healthcare,Derived from LIS bill description
+HB417,Education,Derived from LIS bill description
+HB417,Family and Children,Derived from LIS bill description
+HB420,Energy and Utilities,Derived from LIS bill description
+HB423,Education,Derived from LIS bill description
+HB423,Higher Education,Derived from LIS bill description
+HB424,Insurance,Derived from LIS bill description
+HB425,Health and Healthcare,Derived from LIS bill description
+HB426,Labor and Employment,Derived from LIS bill description
+HB427,Education,Derived from LIS bill description
+HB428,Education,Derived from LIS bill description
+HB429,Energy and Utilities,Derived from LIS bill description
+HB430,Education,Derived from LIS bill description
+HB430,Higher Education,Derived from LIS bill description
+HB434,Energy and Utilities,Derived from LIS bill description
+HB436,Education,Derived from LIS bill description
+HB438,Courts and Civil Law,Derived from LIS bill description
+HB439,Business and Commerce,Derived from LIS bill description
+HB440,Transportation,Derived from LIS bill description
+HB440,Courts and Civil Law,Derived from LIS bill description
+HB440,Family and Children,Derived from LIS bill description
+HB442,Criminal Justice,Derived from LIS bill description
+HB444,Courts and Civil Law,Derived from LIS bill description
+HB444,Business and Commerce,Derived from LIS bill description
+HB446,Transportation,Derived from LIS bill description
+HB447,Local Government,Derived from LIS bill description
+HB451,Education,Derived from LIS bill description
+HB453,Behavioral Health,Derived from LIS bill description
+HB454,Behavioral Health,Derived from LIS bill description
+HB455,Behavioral Health,Derived from LIS bill description
+HB456,State Government,Derived from LIS bill description
+HB457,Energy and Utilities,Derived from LIS bill description
+HB458,Taxes and Revenue,Derived from LIS bill description
+HB459,Criminal Justice,Derived from LIS bill description
+HB460,Labor and Employment,Derived from LIS bill description
+HB460,Business and Commerce,Derived from LIS bill description
+HB461,Education,Derived from LIS bill description
+HB468,Education,Derived from LIS bill description
+HB470,Health and Healthcare,Derived from LIS bill description
+HB470,Labor and Employment,Derived from LIS bill description
+HB471,Education,Derived from LIS bill description
+HB473,Education,Derived from LIS bill description
+HB474,Taxes and Revenue,Derived from LIS bill description
+HB477,Housing,Derived from LIS bill description
+HB478,Labor and Employment,Derived from LIS bill description
+HB480,Elections and Voting,Derived from LIS bill description
+HB481,Health and Healthcare,Derived from LIS bill description
+HB482,State Government,Derived from LIS bill description
+HB484,Insurance,Derived from LIS bill description
+HB485,Family and Children,Derived from LIS bill description
+HB486,Health and Healthcare,Derived from LIS bill description
+HB488,Labor and Employment,Derived from LIS bill description
+HB489,Courts and Civil Law,Derived from LIS bill description
+HB490,Insurance,Derived from LIS bill description
+HB492,Energy and Utilities,Derived from LIS bill description
+HB493,Elections and Voting,Derived from LIS bill description
+HB493,Technology and Data,Derived from LIS bill description
+HB494,Labor and Employment,Derived from LIS bill description
+HB494,State Government,Derived from LIS bill description
+HB495,Education,Derived from LIS bill description
+HB495,Behavioral Health,Derived from LIS bill description
+HB497,Education,Derived from LIS bill description
+HB498,Public Safety,Derived from LIS bill description
+HB499,Transportation,Derived from LIS bill description
+HB500,Environment and Conservation,Derived from LIS bill description
+HB502,Education,Derived from LIS bill description
+HB502,Higher Education,Derived from LIS bill description
+HB503,Energy and Utilities,Derived from LIS bill description
+HB504,Taxes and Revenue,Derived from LIS bill description
+HB504,Business and Commerce,Derived from LIS bill description
+HB508,Energy and Utilities,Derived from LIS bill description
+HB509,Agriculture and Food,Derived from LIS bill description
+HB512,Environment and Conservation,Derived from LIS bill description
+HB512,Agriculture and Food,Derived from LIS bill description
+HB516,Behavioral Health,Derived from LIS bill description
+HB516,Insurance,Derived from LIS bill description
+HB519,Housing,Derived from LIS bill description
+HB521,Environment and Conservation,Derived from LIS bill description
+HB523,Health and Healthcare,Derived from LIS bill description
+HB525,Health and Healthcare,Derived from LIS bill description
+HB527,Housing,Derived from LIS bill description
+HB530,Criminal Justice,Derived from LIS bill description
+HB532,Education,Derived from LIS bill description
+HB532,Family and Children,Derived from LIS bill description
+HB534,Education,Derived from LIS bill description
+HB535,Local Government,Derived from LIS bill description
+HB536,Local Government,Derived from LIS bill description
+HB538,Family and Children,Derived from LIS bill description
+HB539,Transportation,Derived from LIS bill description
+HB539,Taxes and Revenue,Derived from LIS bill description
+HB540,Firearms,Derived from LIS bill description
+HB541,Education,Derived from LIS bill description
+HB541,Labor and Employment,Derived from LIS bill description
+HB541,Criminal Justice,Derived from LIS bill description
+HB543,Environment and Conservation,Derived from LIS bill description
+HB546,Education,Derived from LIS bill description
+HB547,Labor and Employment,Derived from LIS bill description
+HB547,Transportation,Derived from LIS bill description
+HB548,Health and Healthcare,Derived from LIS bill description
+HB549,Environment and Conservation,Derived from LIS bill description
+HB549,Local Government,Derived from LIS bill description
+HB550,Taxes and Revenue,Derived from LIS bill description
+HB551,Labor and Employment,Derived from LIS bill description
+HB552,Elections and Voting,Derived from LIS bill description
+HB552,Local Government,Derived from LIS bill description
+HB554,Labor and Employment,Derived from LIS bill description
+HB554,State Government,Derived from LIS bill description
+HB556,Marriage and Domestic Relations,Derived from LIS bill description
+HB557,Taxes and Revenue,Derived from LIS bill description
+HB561,Transportation,Derived from LIS bill description
+HB562,Energy and Utilities,Derived from LIS bill description
+HB563,Energy and Utilities,Derived from LIS bill description
+HB563,Taxes and Revenue,Derived from LIS bill description
+HB565,Energy and Utilities,Derived from LIS bill description
+HB566,Taxes and Revenue,Derived from LIS bill description
+HB568,Education,Derived from LIS bill description
+HB569,Labor and Employment,Derived from LIS bill description
+HB570,Transportation,Derived from LIS bill description
+HB571,Transportation,Derived from LIS bill description
+HB572,Labor and Employment,Derived from LIS bill description
+HB573,Health and Healthcare,Derived from LIS bill description
+HB577,Criminal Justice,Derived from LIS bill description
+HB578,Family and Children,Derived from LIS bill description
+HB579,Education,Derived from LIS bill description
+HB581,Courts and Civil Law,Derived from LIS bill description
+HB583,Transportation,Derived from LIS bill description
+HB584,Education,Derived from LIS bill description
+HB586,Transportation,Derived from LIS bill description
+HB587,Transportation,Derived from LIS bill description
+HB587,Local Government,Derived from LIS bill description
+HB588,Taxes and Revenue,Derived from LIS bill description
+HB590,Energy and Utilities,Derived from LIS bill description
+HB592,Education,Derived from LIS bill description
+HB594,Housing,Derived from LIS bill description
+HB596,Environment and Conservation,Derived from LIS bill description
+HB597,Environment and Conservation,Derived from LIS bill description
+HB605,Health and Healthcare,Derived from LIS bill description
+HB605,Labor and Employment,Derived from LIS bill description
+HB606,Health and Healthcare,Derived from LIS bill description
+HB607,Environment and Conservation,Derived from LIS bill description
+HB609,Taxes and Revenue,Derived from LIS bill description
+HB612,Marriage and Domestic Relations,Derived from LIS bill description
+HB613,Education,Derived from LIS bill description
+HB615,Energy and Utilities,Derived from LIS bill description
+HB616,Housing,Derived from LIS bill description
+HB617,Energy and Utilities,Derived from LIS bill description
+HB618,Insurance,Derived from LIS bill description
+HB622,Health and Healthcare,Derived from LIS bill description
+HB623,Firearms,Derived from LIS bill description
+HB624,Education,Derived from LIS bill description
+HB625,Insurance,Derived from LIS bill description
+HB626,Education,Derived from LIS bill description
+HB626,Firearms,Derived from LIS bill description
+HB626,Higher Education,Derived from LIS bill description
+HB627,Health and Healthcare,Derived from LIS bill description
+HB628,Energy and Utilities,Derived from LIS bill description
+HB629,Criminal Justice,Derived from LIS bill description
+HB630,Elections and Voting,Derived from LIS bill description
+HB631,Health and Healthcare,Derived from LIS bill description
+HB632,Criminal Justice,Derived from LIS bill description
+HB632,Family and Children,Derived from LIS bill description
+HB633,Energy and Utilities,Derived from LIS bill description
+HB634,Energy and Utilities,Derived from LIS bill description
+HB635,Technology and Data,Derived from LIS bill description
+HB636,Labor and Employment,Derived from LIS bill description
+HB639,Elections and Voting,Derived from LIS bill description
+HB640,Elections and Voting,Derived from LIS bill description
+HB641,Environment and Conservation,Derived from LIS bill description
+HB643,Education,Derived from LIS bill description
+HB644,Family and Children,Derived from LIS bill description
+HB645,Business and Commerce,Derived from LIS bill description
+HB646,Agriculture and Food,Derived from LIS bill description
+HB649,Local Government,Derived from LIS bill description
+HB651,Family and Children,Derived from LIS bill description
+HB651,Social Services,Derived from LIS bill description
+HB652,Behavioral Health,Derived from LIS bill description
+HB652,Family and Children,Derived from LIS bill description
+HB653,Education,Derived from LIS bill description
+HB656,Behavioral Health,Derived from LIS bill description
+HB658,Energy and Utilities,Derived from LIS bill description
+HB661,Transportation,Derived from LIS bill description
+HB662,Criminal Justice,Derived from LIS bill description
+HB663,Education,Derived from LIS bill description
+HB663,Health and Healthcare,Derived from LIS bill description
+HB664,Family and Children,Derived from LIS bill description
+HB668,Behavioral Health,Derived from LIS bill description
+HB668,Technology and Data,Derived from LIS bill description
+HB669,Courts and Civil Law,Derived from LIS bill description
+HB670,Labor and Employment,Derived from LIS bill description
+HB672,Energy and Utilities,Derived from LIS bill description
+HB672,Environment and Conservation,Derived from LIS bill description
+HB674,Agriculture and Food,Derived from LIS bill description
+HB674,Social Services,Derived from LIS bill description
+HB675,Labor and Employment,Derived from LIS bill description
+HB676,Insurance,Derived from LIS bill description
+HB677,Housing,Derived from LIS bill description
+HB677,Insurance,Derived from LIS bill description
+HB678,Housing,Derived from LIS bill description
+HB681,Public Safety,Derived from LIS bill description
+HB682,Local Government,Derived from LIS bill description
+HB683,Energy and Utilities,Derived from LIS bill description
+HB684,Transportation,Derived from LIS bill description
+HB686,Education,Derived from LIS bill description
+HB687,Criminal Justice,Derived from LIS bill description
+HB688,Family and Children,Derived from LIS bill description
+HB691,Firearms,Derived from LIS bill description
+HB691,Local Government,Derived from LIS bill description
+HB692,Firearms,Derived from LIS bill description
+HB693,Labor and Employment,Derived from LIS bill description
+HB694,Firearms,Derived from LIS bill description
+HB696,Firearms,Derived from LIS bill description
+HB697,Taxes and Revenue,Derived from LIS bill description
+HB697,Marriage and Domestic Relations,Derived from LIS bill description
+HB698,Labor and Employment,Derived from LIS bill description
+HB699,Agriculture and Food,Derived from LIS bill description
+HB700,Firearms,Derived from LIS bill description
+HB702,Firearms,Derived from LIS bill description
+HB704,Education,Derived from LIS bill description
+HB705,Education,Derived from LIS bill description
+HB707,State Government,Derived from LIS bill description
+HB711,Energy and Utilities,Derived from LIS bill description
+HB713,Technology and Data,Derived from LIS bill description
+HB715,Labor and Employment,Derived from LIS bill description
+HB716,Taxes and Revenue,Derived from LIS bill description
+HB716,Marriage and Domestic Relations,Derived from LIS bill description
+HB717,Health and Healthcare,Derived from LIS bill description
+HB720,Family and Children,Derived from LIS bill description
+HB721,Education,Derived from LIS bill description
+HB721,Family and Children,Derived from LIS bill description
+HB722,Labor and Employment,Derived from LIS bill description
+HB724,Education,Derived from LIS bill description
+HB727,Social Services,Derived from LIS bill description
+HB728,State Government,Derived from LIS bill description
+HB736,Insurance,Derived from LIS bill description
+HB737,Transportation,Derived from LIS bill description
+HB738,Business and Commerce,Derived from LIS bill description
+HB739,Criminal Justice,Derived from LIS bill description
+HB740,Health and Healthcare,Derived from LIS bill description
+HB744,Family and Children,Derived from LIS bill description
+HB746,Health and Healthcare,Derived from LIS bill description
+HB747,Agriculture and Food,Derived from LIS bill description
+HB748,Education,Derived from LIS bill description
+HB749,Agriculture and Food,Derived from LIS bill description
+HB753,Education,Derived from LIS bill description
+HB757,Courts and Civil Law,Derived from LIS bill description
+HB758,Technology and Data,Derived from LIS bill description
+HB758,Family and Children,Derived from LIS bill description
+HB759,Environment and Conservation,Derived from LIS bill description
+HB760,Energy and Utilities,Derived from LIS bill description
+HB760,Taxes and Revenue,Derived from LIS bill description
+HB761,Agriculture and Food,Derived from LIS bill description
+HB762,Transportation,Derived from LIS bill description
+HB763,Insurance,Derived from LIS bill description
+HB764,Energy and Utilities,Derived from LIS bill description
+HB767,Environment and Conservation,Derived from LIS bill description
+HB768,Family and Children,Derived from LIS bill description
+HB770,Energy and Utilities,Derived from LIS bill description
+HB773,Elections and Voting,Derived from LIS bill description
+HB774,Elections and Voting,Derived from LIS bill description
+HB775,Family and Children,Derived from LIS bill description
+HB777,Business and Commerce,Derived from LIS bill description
+HB779,Energy and Utilities,Derived from LIS bill description
+HB781,Elections and Voting,Derived from LIS bill description
+HB782,Health and Healthcare,Derived from LIS bill description
+HB783,Local Government,Derived from LIS bill description
+HB784,Business and Commerce,Derived from LIS bill description
+HB785,Education,Derived from LIS bill description
+HB786,Education,Derived from LIS bill description
+HB787,Local Government,Derived from LIS bill description
+HB789,Business and Commerce,Derived from LIS bill description
+HB794,Behavioral Health,Derived from LIS bill description
+HB795,Behavioral Health,Derived from LIS bill description
+HB795,Insurance,Derived from LIS bill description
+HB797,Technology and Data,Derived from LIS bill description
+HB798,Technology and Data,Derived from LIS bill description
+HB804,Housing,Derived from LIS bill description
+HB804,Local Government,Derived from LIS bill description
+HB805,Taxes and Revenue,Derived from LIS bill description
+HB806,Housing,Derived from LIS bill description
+HB807,Energy and Utilities,Derived from LIS bill description
+HB809,Energy and Utilities,Derived from LIS bill description
+HB812,Transportation,Derived from LIS bill description
+HB813,Insurance,Derived from LIS bill description
+HB815,Health and Healthcare,Derived from LIS bill description
+HB815,Labor and Employment,Derived from LIS bill description
+HB816,Business and Commerce,Derived from LIS bill description
+HB819,Transportation,Derived from LIS bill description
+HB820,Housing,Derived from LIS bill description
+HB824,Energy and Utilities,Derived from LIS bill description
+HB826,Insurance,Derived from LIS bill description
+HB828,Energy and Utilities,Derived from LIS bill description
+HB829,Health and Healthcare,Derived from LIS bill description
+HB830,Health and Healthcare,Derived from LIS bill description
+HB831,Health and Healthcare,Derived from LIS bill description
+HB834,Housing,Derived from LIS bill description
+HB835,Elections and Voting,Derived from LIS bill description
+HB836,Education,Derived from LIS bill description
+HB837,Housing,Derived from LIS bill description
+HB838,Health and Healthcare,Derived from LIS bill description
+HB839,Family and Children,Derived from LIS bill description
+HB842,Business and Commerce,Derived from LIS bill description
+HB844,Energy and Utilities,Derived from LIS bill description
+HB845,Courts and Civil Law,Derived from LIS bill description
+HB846,Environment and Conservation,Derived from LIS bill description
+HB848,Housing,Derived from LIS bill description
+HB849,Education,Derived from LIS bill description
+HB849,Labor and Employment,Derived from LIS bill description
+HB850,Business and Commerce,Derived from LIS bill description
+HB851,Health and Healthcare,Derived from LIS bill description
+HB853,Criminal Justice,Derived from LIS bill description
+HB854,Taxes and Revenue,Derived from LIS bill description
+HB855,Health and Healthcare,Derived from LIS bill description
+HB859,Agriculture and Food,Derived from LIS bill description
+HB861,Criminal Justice,Derived from LIS bill description
+HB863,Criminal Justice,Derived from LIS bill description
+HB865,Labor and Employment,Derived from LIS bill description
+HB866,Agriculture and Food,Derived from LIS bill description
+HB866,Social Services,Derived from LIS bill description
+HB867,Housing,Derived from LIS bill description
+HB868,Elections and Voting,Derived from LIS bill description
+HB869,Business and Commerce,Derived from LIS bill description
+HB869,Agriculture and Food,Derived from LIS bill description
+HB871,Firearms,Derived from LIS bill description
+HB871,Family and Children,Derived from LIS bill description
+HB873,Education,Derived from LIS bill description
+HB877,Education,Derived from LIS bill description
+HB878,Labor and Employment,Derived from LIS bill description
+HB879,Social Services,Derived from LIS bill description
+HB882,Labor and Employment,Derived from LIS bill description
+HB882,Local Government,Derived from LIS bill description
+HB884,Energy and Utilities,Derived from LIS bill description
+HB886,Health and Healthcare,Derived from LIS bill description
+HB889,Transportation,Derived from LIS bill description
+HB891,Energy and Utilities,Derived from LIS bill description
+HB891,Business and Commerce,Derived from LIS bill description
+HB892,Energy and Utilities,Derived from LIS bill description
+HB893,Energy and Utilities,Derived from LIS bill description
+HB895,Energy and Utilities,Derived from LIS bill description
+HB897,Taxes and Revenue,Derived from LIS bill description
+HB898,Energy and Utilities,Derived from LIS bill description
+HB899,Energy and Utilities,Derived from LIS bill description
+HB900,Taxes and Revenue,Derived from LIS bill description
+HB900,Technology and Data,Derived from LIS bill description
+HB901,Firearms,Derived from LIS bill description
+HB903,Energy and Utilities,Derived from LIS bill description
+HB905,Marriage and Domestic Relations,Derived from LIS bill description
+HB906,Energy and Utilities,Derived from LIS bill description
+HB907,Firearms,Derived from LIS bill description
+HB909,Elections and Voting,Derived from LIS bill description
+HB910,Housing,Derived from LIS bill description
+HB912,Education,Derived from LIS bill description
+HB914,Environment and Conservation,Derived from LIS bill description
+HB915,Taxes and Revenue,Derived from LIS bill description
+HB916,Firearms,Derived from LIS bill description
+HB918,Energy and Utilities,Derived from LIS bill description
+HB919,Firearms,Derived from LIS bill description
+HB919,Taxes and Revenue,Derived from LIS bill description
+HB920,Energy and Utilities,Derived from LIS bill description
+HB921,Energy and Utilities,Derived from LIS bill description
+HB923,Labor and Employment,Derived from LIS bill description
+HB926,Firearms,Derived from LIS bill description
+HB927,Technology and Data,Derived from LIS bill description
+HB928,Energy and Utilities,Derived from LIS bill description
+HB930,Labor and Employment,Derived from LIS bill description
+HB935,Energy and Utilities,Derived from LIS bill description
+HB941,Education,Derived from LIS bill description
+HB944,Labor and Employment,Derived from LIS bill description
+HB945,Energy and Utilities,Derived from LIS bill description
+HB946,Taxes and Revenue,Derived from LIS bill description
+HB948,Labor and Employment,Derived from LIS bill description
+HB953,Housing,Derived from LIS bill description
+HB954,Taxes and Revenue,Derived from LIS bill description
+HB955,Education,Derived from LIS bill description
+HB955,Higher Education,Derived from LIS bill description
+HB956,Taxes and Revenue,Derived from LIS bill description
+HB958,Taxes and Revenue,Derived from LIS bill description
+HB959,Labor and Employment,Derived from LIS bill description
+HB959,Taxes and Revenue,Derived from LIS bill description
+HB960,Taxes and Revenue,Derived from LIS bill description
+HB961,Taxes and Revenue,Derived from LIS bill description
+HB961,Business and Commerce,Derived from LIS bill description
+HB962,Labor and Employment,Derived from LIS bill description
+HB963,Elections and Voting,Derived from LIS bill description
+HB964,Elections and Voting,Derived from LIS bill description
+HB966,Elections and Voting,Derived from LIS bill description
+HB967,Elections and Voting,Derived from LIS bill description
+HB968,Elections and Voting,Derived from LIS bill description
+HB971,Education,Derived from LIS bill description
+HB972,Elections and Voting,Derived from LIS bill description
+HB976,Transportation,Derived from LIS bill description
+HB977,Taxes and Revenue,Derived from LIS bill description
+HB978,Taxes and Revenue,Derived from LIS bill description
+HB978,Technology and Data,Derived from LIS bill description
+HB979,Taxes and Revenue,Derived from LIS bill description
+HB981,Criminal Justice,Derived from LIS bill description
+HB982,Elections and Voting,Derived from LIS bill description
+HB983,Family and Children,Derived from LIS bill description
+HB984,Business and Commerce,Derived from LIS bill description
+HB985,Local Government,Derived from LIS bill description
+HB987,Education,Derived from LIS bill description
+HB989,Family and Children,Derived from LIS bill description
+HB990,Education,Derived from LIS bill description
+HB990,Higher Education,Derived from LIS bill description
+HB991,Health and Healthcare,Derived from LIS bill description
+HB991,Public Safety,Derived from LIS bill description
+HB991,Taxes and Revenue,Derived from LIS bill description
+HB995,Environment and Conservation,Derived from LIS bill description
+HB996,Education,Derived from LIS bill description
+HB1000,Transportation,Derived from LIS bill description
+HB1003,Transportation,Derived from LIS bill description
+HB1004,Taxes and Revenue,Derived from LIS bill description
+HB1005,Housing,Derived from LIS bill description
+HB1008,Transportation,Derived from LIS bill description
+HB1008,Taxes and Revenue,Derived from LIS bill description
+HB1010,Family and Children,Derived from LIS bill description
+HB1014,Elections and Voting,Derived from LIS bill description
+HB1015,Criminal Justice,Derived from LIS bill description
+HB1015,Firearms,Derived from LIS bill description
+HB1017,Education,Derived from LIS bill description
+HB1017,Health and Healthcare,Derived from LIS bill description
+HB1019,Health and Healthcare,Derived from LIS bill description
+HB1021,Housing,Derived from LIS bill description
+HB1022,Business and Commerce,Derived from LIS bill description
+HB1023,Education,Derived from LIS bill description
+HB1025,Health and Healthcare,Derived from LIS bill description
+HB1027,Criminal Justice,Derived from LIS bill description
+HB1027,Family and Children,Derived from LIS bill description
+HB1029,Criminal Justice,Derived from LIS bill description
+HB1030,Criminal Justice,Derived from LIS bill description
+HB1031,Energy and Utilities,Derived from LIS bill description
+HB1031,Environment and Conservation,Derived from LIS bill description
+HB1032,Transportation,Derived from LIS bill description
+HB1035,Education,Derived from LIS bill description
+HB1035,Labor and Employment,Derived from LIS bill description
+HB1038,Education,Derived from LIS bill description
+HB1038,Environment and Conservation,Derived from LIS bill description
+HB1041,Education,Derived from LIS bill description
+HB1044,Business and Commerce,Derived from LIS bill description
+HB1046,Business and Commerce,Derived from LIS bill description
+HB1051,Taxes and Revenue,Derived from LIS bill description
+HB1052,Health and Healthcare,Derived from LIS bill description
+HB1056,Elections and Voting,Derived from LIS bill description
+HB1058,Local Government,Derived from LIS bill description
+HB1059,Education,Derived from LIS bill description
+HB1060,Criminal Justice,Derived from LIS bill description
+HB1061,Labor and Employment,Derived from LIS bill description
+HB1062,Energy and Utilities,Derived from LIS bill description
+HB1062,Environment and Conservation,Derived from LIS bill description
+HB1063,Behavioral Health,Derived from LIS bill description
+HB1065,Energy and Utilities,Derived from LIS bill description
+HB1066,Business and Commerce,Derived from LIS bill description
+HB1070,Criminal Justice,Derived from LIS bill description
+HB1074,Taxes and Revenue,Derived from LIS bill description
+HB1077,Energy and Utilities,Derived from LIS bill description
+HB1078,Housing,Derived from LIS bill description
+HB1079,Energy and Utilities,Derived from LIS bill description
+HB1079,Business and Commerce,Derived from LIS bill description
+HB1080,Taxes and Revenue,Derived from LIS bill description
+HB1081,Energy and Utilities,Derived from LIS bill description
+HB1082,Criminal Justice,Derived from LIS bill description
+HB1083,Local Government,Derived from LIS bill description
+HB1084,Criminal Justice,Derived from LIS bill description
+HB1085,Labor and Employment,Derived from LIS bill description
+HB1086,Business and Commerce,Derived from LIS bill description
+HB1087,Energy and Utilities,Derived from LIS bill description
+HB1089,Energy and Utilities,Derived from LIS bill description
+HB1090,Energy and Utilities,Derived from LIS bill description
+HB1091,Energy and Utilities,Derived from LIS bill description
+HB1091,Agriculture and Food,Derived from LIS bill description
+HB1092,Labor and Employment,Derived from LIS bill description
+HB1093,Housing,Derived from LIS bill description
+HB1094,Firearms,Derived from LIS bill description
+HB1095,Education,Derived from LIS bill description
+HB1099,Education,Derived from LIS bill description
+HB1100,Labor and Employment,Derived from LIS bill description
+HB1100,Taxes and Revenue,Derived from LIS bill description
+HB1101,Taxes and Revenue,Derived from LIS bill description
+HB1102,Energy and Utilities,Derived from LIS bill description
+HB1104,Health and Healthcare,Derived from LIS bill description
+HB1105,Criminal Justice,Derived from LIS bill description
+HB1106,Energy and Utilities,Derived from LIS bill description
+HB1109,Health and Healthcare,Derived from LIS bill description
+HB1112,Energy and Utilities,Derived from LIS bill description
+HB1113,Behavioral Health,Derived from LIS bill description
+HB1114,Public Safety,Derived from LIS bill description
+HB1115,Health and Healthcare,Derived from LIS bill description
+HB1115,Transportation,Derived from LIS bill description
+HB1116,Health and Healthcare,Derived from LIS bill description
+HB1118,Business and Commerce,Derived from LIS bill description
+HB1123,Health and Healthcare,Derived from LIS bill description
+HB1123,Taxes and Revenue,Derived from LIS bill description
+HB1124,Labor and Employment,Derived from LIS bill description
+HB1125,Transportation,Derived from LIS bill description
+HB1129,Transportation,Derived from LIS bill description
+HB1129,Taxes and Revenue,Derived from LIS bill description
+HB1130,Labor and Employment,Derived from LIS bill description
+HB1131,Elections and Voting,Derived from LIS bill description
+HB1132,Energy and Utilities,Derived from LIS bill description
+HB1132,Taxes and Revenue,Derived from LIS bill description
+HB1133,Energy and Utilities,Derived from LIS bill description
+HB1135,Housing,Derived from LIS bill description
+HB1135,Taxes and Revenue,Derived from LIS bill description
+HB1138,Labor and Employment,Derived from LIS bill description
+HB1141,Energy and Utilities,Derived from LIS bill description
+HB1142,Courts and Civil Law,Derived from LIS bill description
+HB1142,Taxes and Revenue,Derived from LIS bill description
+HB1144,Housing,Derived from LIS bill description
+HB1145,Transportation,Derived from LIS bill description
+HB1147,Education,Derived from LIS bill description
+HB1147,Health and Healthcare,Derived from LIS bill description
+HB1151,Energy and Utilities,Derived from LIS bill description
+HB1155,Taxes and Revenue,Derived from LIS bill description
+HB1156,Taxes and Revenue,Derived from LIS bill description
+HB1158,Education,Derived from LIS bill description
+HB1159,Labor and Employment,Derived from LIS bill description
+HB1162,Education,Derived from LIS bill description
+HB1162,Criminal Justice,Derived from LIS bill description
+HB1164,Labor and Employment,Derived from LIS bill description
+HB1165,Education,Derived from LIS bill description
+HB1167,Education,Derived from LIS bill description
+HB1169,Agriculture and Food,Derived from LIS bill description
+HB1170,Technology and Data,Derived from LIS bill description
+HB1171,Education,Derived from LIS bill description
+HB1172,Health and Healthcare,Derived from LIS bill description
+HB1174,Family and Children,Derived from LIS bill description
+HB1175,Energy and Utilities,Derived from LIS bill description
+HB1179,Transportation,Derived from LIS bill description
+HB1180,Taxes and Revenue,Derived from LIS bill description
+HB1182,Insurance,Derived from LIS bill description
+HB1183,Higher Education,Derived from LIS bill description
+HB1184,Energy and Utilities,Derived from LIS bill description
+HB1185,Elections and Voting,Derived from LIS bill description
+HB1186,Education,Derived from LIS bill description
+HB1186,Technology and Data,Derived from LIS bill description
+HB1187,Local Government,Derived from LIS bill description
+HB1193,Education,Derived from LIS bill description
+HB1194,Family and Children,Derived from LIS bill description
+HB1195,Education,Derived from LIS bill description
+HB1195,Labor and Employment,Derived from LIS bill description
+HB1195,Family and Children,Derived from LIS bill description
+HB1199,Taxes and Revenue,Derived from LIS bill description
+HB1200,Transportation,Derived from LIS bill description
+HB1202,Transportation,Derived from LIS bill description
+HB1204,Education,Derived from LIS bill description
+HB1204,Budget and Appropriations,Derived from LIS bill description
+HB1204,Local Government,Derived from LIS bill description
+HB1205,Transportation,Derived from LIS bill description
+HB1205,Taxes and Revenue,Derived from LIS bill description
+HB1206,Education,Derived from LIS bill description
+HB1206,Labor and Employment,Derived from LIS bill description
+HB1206,State Government,Derived from LIS bill description
+HB1207,Courts and Civil Law,Derived from LIS bill description
+HB1208,Education,Derived from LIS bill description
+HB1208,Family and Children,Derived from LIS bill description
+HB1209,Health and Healthcare,Derived from LIS bill description
+HB1210,Taxes and Revenue,Derived from LIS bill description
+HB1211,Taxes and Revenue,Derived from LIS bill description
+HB1213,Elections and Voting,Derived from LIS bill description
+HB1214,Insurance,Derived from LIS bill description
+HB1216,Labor and Employment,Derived from LIS bill description
+HB1218,Labor and Employment,Derived from LIS bill description
+HB1218,Family and Children,Derived from LIS bill description
+HB1219,Public Safety,Derived from LIS bill description
+HB1222,Family and Children,Derived from LIS bill description
+HB1222,Social Services,Derived from LIS bill description
+HB1224,Transportation,Derived from LIS bill description
+HB1225,Transportation,Derived from LIS bill description
+HB1226,Education,Derived from LIS bill description
+HB1226,Transportation,Derived from LIS bill description
+HB1226,Higher Education,Derived from LIS bill description
+HB1228,Transportation,Derived from LIS bill description
+HB1228,Insurance,Derived from LIS bill description
+HB1229,Education,Derived from LIS bill description
+HB1230,Taxes and Revenue,Derived from LIS bill description
+HB1233,Criminal Justice,Derived from LIS bill description
+HB1233,Family and Children,Derived from LIS bill description
+HB1234,Energy and Utilities,Derived from LIS bill description
+HB1238,Local Government,Derived from LIS bill description
+HB1239,Business and Commerce,Derived from LIS bill description
+HB1240,Health and Healthcare,Derived from LIS bill description
+HB1242,Education,Derived from LIS bill description
+HB1242,Higher Education,Derived from LIS bill description
+HB1244,Elections and Voting,Derived from LIS bill description
+HB1245,Health and Healthcare,Derived from LIS bill description
+HB1246,Criminal Justice,Derived from LIS bill description
+HB1252,Housing,Derived from LIS bill description
+HB1255,Energy and Utilities,Derived from LIS bill description
+HB1256,Energy and Utilities,Derived from LIS bill description
+HB1258,Taxes and Revenue,Derived from LIS bill description
+HB1259,Housing,Derived from LIS bill description
+HB1263,Labor and Employment,Derived from LIS bill description
+HB1266,Environment and Conservation,Derived from LIS bill description
+HB1267,Labor and Employment,Derived from LIS bill description
+HB1270,Transportation,Derived from LIS bill description
+HB1271,Health and Healthcare,Derived from LIS bill description
+HB1271,Insurance,Derived from LIS bill description
+HB1273,Transportation,Derived from LIS bill description
+HB1274,Local Government,Derived from LIS bill description
+HB1275,Energy and Utilities,Derived from LIS bill description
+HB1276,Health and Healthcare,Derived from LIS bill description
+HB1279,Housing,Derived from LIS bill description
+HB1280,Education,Derived from LIS bill description
+HB1280,Labor and Employment,Derived from LIS bill description
+HB1280,Criminal Justice,Derived from LIS bill description
+HB1281,Transportation,Derived from LIS bill description
+HB1281,Taxes and Revenue,Derived from LIS bill description
+HB1281,Insurance,Derived from LIS bill description
+HB1282,Behavioral Health,Derived from LIS bill description
+HB1283,Education,Derived from LIS bill description
+HB1284,Health and Healthcare,Derived from LIS bill description
+HB1285,Health and Healthcare,Derived from LIS bill description
+HB1285,Public Safety,Derived from LIS bill description
+HB1286,Labor and Employment,Derived from LIS bill description
+HB1286,Social Services,Derived from LIS bill description
+HB1289,Education,Derived from LIS bill description
+HB1290,Transportation,Derived from LIS bill description
+HB1290,Business and Commerce,Derived from LIS bill description
+HB1294,Technology and Data,Derived from LIS bill description
+HB1295,Courts and Civil Law,Derived from LIS bill description
+HB1295,Technology and Data,Derived from LIS bill description
+HB1296,Labor and Employment,Derived from LIS bill description
+HB1296,Insurance,Derived from LIS bill description
+HB1297,Social Services,Derived from LIS bill description
+HB1300,Firearms,Derived from LIS bill description
+HB1301,Education,Derived from LIS bill description
+HB1303,Firearms,Derived from LIS bill description
+HB1304,Health and Healthcare,Derived from LIS bill description
+HB1307,Criminal Justice,Derived from LIS bill description
+HB1308,Business and Commerce,Derived from LIS bill description
+HB1310,Education,Derived from LIS bill description
+HB1311,Labor and Employment,Derived from LIS bill description
+HB1311,State Government,Derived from LIS bill description
+HB1312,Education,Derived from LIS bill description
+HB1313,Labor and Employment,Derived from LIS bill description
+HB1313,Public Safety,Derived from LIS bill description
+HB1314,Courts and Civil Law,Derived from LIS bill description
+HB1316,Agriculture and Food,Derived from LIS bill description
+HB1318,Health and Healthcare,Derived from LIS bill description
+HB1321,Public Safety,Derived from LIS bill description
+HB1323,Education,Derived from LIS bill description
+HB1324,Courts and Civil Law,Derived from LIS bill description
+HB1324,Agriculture and Food,Derived from LIS bill description
+HB1325,Housing,Derived from LIS bill description
+HB1326,Criminal Justice,Derived from LIS bill description
+HB1329,Criminal Justice,Derived from LIS bill description
+HB1331,Education,Derived from LIS bill description
+HB1333,Public Safety,Derived from LIS bill description
+HB1338,Insurance,Derived from LIS bill description
+HB1342,Elections and Voting,Derived from LIS bill description
+HB1345,Education,Derived from LIS bill description
+HB1345,Environment and Conservation,Derived from LIS bill description
+HB1346,Labor and Employment,Derived from LIS bill description
+HB1346,Family and Children,Derived from LIS bill description
+HB1347,Health and Healthcare,Derived from LIS bill description
+HB1348,Elections and Voting,Derived from LIS bill description
+HB1349,Local Government,Derived from LIS bill description
+HB1351,Labor and Employment,Derived from LIS bill description
+HB1351,Taxes and Revenue,Derived from LIS bill description
+HB1352,Education,Derived from LIS bill description
+HB1352,Transportation,Derived from LIS bill description
+HB1354,Education,Derived from LIS bill description
+HB1355,Labor and Employment,Derived from LIS bill description
+HB1357,Health and Healthcare,Derived from LIS bill description
+HB1358,Taxes and Revenue,Derived from LIS bill description
+HB1359,Firearms,Derived from LIS bill description
+HB1360,Energy and Utilities,Derived from LIS bill description
+HB1361,Housing,Derived from LIS bill description
+HB1361,Courts and Civil Law,Derived from LIS bill description
+HB1362,Taxes and Revenue,Derived from LIS bill description
+HB1364,Labor and Employment,Derived from LIS bill description
+HB1367,Education,Derived from LIS bill description
+HB1368,Courts and Civil Law,Derived from LIS bill description
+HB1369,State Government,Derived from LIS bill description
+HB1372,Labor and Employment,Derived from LIS bill description
+HB1372,Energy and Utilities,Derived from LIS bill description
+HB1373,Education,Derived from LIS bill description
+HB1377,Education,Derived from LIS bill description
+HB1377,Higher Education,Derived from LIS bill description
+HB1378,State Government,Derived from LIS bill description
+HB1378,Higher Education,Derived from LIS bill description
+HB1379,Energy and Utilities,Derived from LIS bill description
+HB1380,Health and Healthcare,Derived from LIS bill description
+HB1382,Marriage and Domestic Relations,Derived from LIS bill description
+HB1383,Higher Education,Derived from LIS bill description
+HB1386,Transportation,Derived from LIS bill description
+HB1389,Insurance,Derived from LIS bill description
+HB1390,Insurance,Derived from LIS bill description
+HB1392,Criminal Justice,Derived from LIS bill description
+HB1393,Energy and Utilities,Derived from LIS bill description
+HB1395,Family and Children,Derived from LIS bill description
+HB1400,Behavioral Health,Derived from LIS bill description
+HB1400,Insurance,Derived from LIS bill description
+HB1404,Local Government,Derived from LIS bill description
+HB1405,Social Services,Derived from LIS bill description
+HB1406,Marriage and Domestic Relations,Derived from LIS bill description
+HB1408,Housing,Derived from LIS bill description
+HB1409,Housing,Derived from LIS bill description
+HB1410,Education,Derived from LIS bill description
+HB1412,Taxes and Revenue,Derived from LIS bill description
+HB1413,Criminal Justice,Derived from LIS bill description
+HB1414,Health and Healthcare,Derived from LIS bill description
+HB1414,Family and Children,Derived from LIS bill description
+HB1415,Housing,Derived from LIS bill description
+HB1416,Health and Healthcare,Derived from LIS bill description
+HB1417,Transportation,Derived from LIS bill description
+HB1417,Courts and Civil Law,Derived from LIS bill description
+HB1418,Education,Derived from LIS bill description
+HB1419,Elections and Voting,Derived from LIS bill description
+HB1420,Labor and Employment,Derived from LIS bill description
+HB1420,Energy and Utilities,Derived from LIS bill description
+HB1421,State Government,Derived from LIS bill description
+HB1422,Energy and Utilities,Derived from LIS bill description
+HB1422,Taxes and Revenue,Derived from LIS bill description
+HB1426,Courts and Civil Law,Derived from LIS bill description
+HB1427,Firearms,Derived from LIS bill description
+HB1430,Local Government,Derived from LIS bill description
+HB1434,Health and Healthcare,Derived from LIS bill description
+HB1435,Agriculture and Food,Derived from LIS bill description
+HB1437,Education,Derived from LIS bill description
+HB1438,State Government,Derived from LIS bill description
+HB1439,Energy and Utilities,Derived from LIS bill description
+HB1442,Elections and Voting,Derived from LIS bill description
+HB1444,Energy and Utilities,Derived from LIS bill description
+HB1445,Energy and Utilities,Derived from LIS bill description
+HB1446,Health and Healthcare,Derived from LIS bill description
+HB1447,Elections and Voting,Derived from LIS bill description
+HB1447,Business and Commerce,Derived from LIS bill description
+HB1450,Insurance,Derived from LIS bill description
+HB1451,Labor and Employment,Derived from LIS bill description
+HB1452,Health and Healthcare,Derived from LIS bill description
+HB1454,Education,Derived from LIS bill description
+HB1454,Taxes and Revenue,Derived from LIS bill description
+HB1457,Transportation,Derived from LIS bill description
+HB1457,Business and Commerce,Derived from LIS bill description
+HB1458,Health and Healthcare,Derived from LIS bill description
+HB1460,Education,Derived from LIS bill description
+HB1461,Taxes and Revenue,Derived from LIS bill description
+HB1462,Health and Healthcare,Derived from LIS bill description
+HB1462,Insurance,Derived from LIS bill description
+HB1464,Criminal Justice,Derived from LIS bill description
+HB1467,Energy and Utilities,Derived from LIS bill description
+HB1468,Insurance,Derived from LIS bill description
+HB1469,Transportation,Derived from LIS bill description
+HB1470,Education,Derived from LIS bill description
+HB1471,Labor and Employment,Derived from LIS bill description
+HB1471,Criminal Justice,Derived from LIS bill description
+HB1473,Education,Derived from LIS bill description
+HB1474,Taxes and Revenue,Derived from LIS bill description
+HB1479,Courts and Civil Law,Derived from LIS bill description
+HB1480,Transportation,Derived from LIS bill description
+HB1481,Labor and Employment,Derived from LIS bill description
+HB1482,Public Safety,Derived from LIS bill description
+HB1483,Elections and Voting,Derived from LIS bill description
+HB1483,Local Government,Derived from LIS bill description
+HB1485,Courts and Civil Law,Derived from LIS bill description
+HB1486,Education,Derived from LIS bill description
+HB1488,Public Safety,Derived from LIS bill description
+HB1489,Health and Healthcare,Derived from LIS bill description
+HB1490,Family and Children,Derived from LIS bill description
+HB1491,Energy and Utilities,Derived from LIS bill description
+HB1492,Public Safety,Derived from LIS bill description
+HB1494,Transportation,Derived from LIS bill description
+HB1495,Health and Healthcare,Derived from LIS bill description
+HB1496,Elections and Voting,Derived from LIS bill description
+HB1500,Criminal Justice,Derived from LIS bill description
+HB1501,Health and Healthcare,Derived from LIS bill description
+HB1502,Business and Commerce,Derived from LIS bill description
+HB1503,Education,Derived from LIS bill description
+HB1504,Health and Healthcare,Derived from LIS bill description
+HB1508,Criminal Justice,Derived from LIS bill description
+HB1512,Energy and Utilities,Derived from LIS bill description
+HB1514,Labor and Employment,Derived from LIS bill description
+HB1514,Technology and Data,Derived from LIS bill description
+HB1520,Labor and Employment,Derived from LIS bill description
+HB1520,Marriage and Domestic Relations,Derived from LIS bill description
+HB1522,Health and Healthcare,Derived from LIS bill description
+HB1524,Firearms,Derived from LIS bill description
+HB1525,Transportation,Derived from LIS bill description
+HB1525,Firearms,Derived from LIS bill description
+HB1526,Insurance,Derived from LIS bill description
+HB1528,Elections and Voting,Derived from LIS bill description
+HB1529,Health and Healthcare,Derived from LIS bill description
+HJ7,Education,Derived from LIS bill description
+HJ7,Labor and Employment,Derived from LIS bill description
+HJ9,Education,Derived from LIS bill description
+HJ14,Transportation,Derived from LIS bill description
+HJ15,Taxes and Revenue,Derived from LIS bill description
+HJ21,Criminal Justice,Derived from LIS bill description
+HJ26,Transportation,Derived from LIS bill description
+HJ27,Education,Derived from LIS bill description
+HJ27,Higher Education,Derived from LIS bill description
+HJ28,Transportation,Derived from LIS bill description
+HJ32,Technology and Data,Derived from LIS bill description
+HJ34,Taxes and Revenue,Derived from LIS bill description
+HJ35,Health and Healthcare,Derived from LIS bill description
+HJ36,Technology and Data,Derived from LIS bill description
+HJ40,Education,Derived from LIS bill description
+HJ44,Energy and Utilities,Derived from LIS bill description
+HJ45,Elections and Voting,Derived from LIS bill description
+HJ49,Education,Derived from LIS bill description
+HJ50,Elections and Voting,Derived from LIS bill description
+HJ51,Business and Commerce,Derived from LIS bill description
+HJ56,Criminal Justice,Derived from LIS bill description
+HJ56,Local Government,Derived from LIS bill description
+HJ79,Agriculture and Food,Derived from LIS bill description
+HJ95,Education,Derived from LIS bill description
+HJ102,Education,Derived from LIS bill description
+HJ104,Education,Derived from LIS bill description
+HJ156,Transportation,Derived from LIS bill description
+HJ159,Higher Education,Derived from LIS bill description
+HJ161,Education,Derived from LIS bill description
+HJ191,Agriculture and Food,Derived from LIS bill description
+HJ193,Business and Commerce,Derived from LIS bill description
+HJ206,Health and Healthcare,Derived from LIS bill description
+HJ239,Education,Derived from LIS bill description
+HJ243,Education,Derived from LIS bill description
+HJ244,Education,Derived from LIS bill description
+HJ247,Environment and Conservation,Derived from LIS bill description
+HJ249,Education,Derived from LIS bill description
+HJ263,Education,Derived from LIS bill description
+HJ264,Environment and Conservation,Derived from LIS bill description
+HJ274,Health and Healthcare,Derived from LIS bill description
+HJ284,Education,Derived from LIS bill description
+HJ288,Public Safety,Derived from LIS bill description
+HJ291,Business and Commerce,Derived from LIS bill description
+HJ310,Health and Healthcare,Derived from LIS bill description
+HJ310,Public Safety,Derived from LIS bill description
+HJ314,Marriage and Domestic Relations,Derived from LIS bill description
+HJ315,Marriage and Domestic Relations,Derived from LIS bill description
+HR9,Labor and Employment,Derived from LIS bill description
+HR14,Education,Derived from LIS bill description
+HR18,Agriculture and Food,Derived from LIS bill description
+HR23,Health and Healthcare,Derived from LIS bill description
+HR26,Marriage and Domestic Relations,Derived from LIS bill description
+HR28,Labor and Employment,Derived from LIS bill description
+HR29,Education,Derived from LIS bill description
+HR46,Education,Derived from LIS bill description
+HR49,Agriculture and Food,Derived from LIS bill description
+HR52,Environment and Conservation,Derived from LIS bill description
+HR58,Education,Derived from LIS bill description
+HR62,Education,Derived from LIS bill description
+HR74,Education,Derived from LIS bill description
+HR80,Education,Derived from LIS bill description
+HR82,Education,Derived from LIS bill description
+HR91,Health and Healthcare,Derived from LIS bill description
+HR118,Education,Derived from LIS bill description
+HR126,Health and Healthcare,Derived from LIS bill description
+HR155,Education,Derived from LIS bill description
+HR163,Education,Derived from LIS bill description
+HR169,Education,Derived from LIS bill description
+HR173,Education,Derived from LIS bill description
+HR180,Family and Children,Derived from LIS bill description
+HR185,Business and Commerce,Derived from LIS bill description
+HR186,Business and Commerce,Derived from LIS bill description
+HR188,Business and Commerce,Derived from LIS bill description
+HR192,Business and Commerce,Derived from LIS bill description
+HR193,Business and Commerce,Derived from LIS bill description
+HR194,Elections and Voting,Derived from LIS bill description
+HR200,Education,Derived from LIS bill description
+HR212,Education,Derived from LIS bill description
+HR264,Education,Derived from LIS bill description
+HR267,Education,Derived from LIS bill description
+HR272,Education,Derived from LIS bill description
+HR280,Education,Derived from LIS bill description
+HR289,Education,Derived from LIS bill description
+HR291,Education,Derived from LIS bill description
+HR292,Education,Derived from LIS bill description
+HR294,Education,Derived from LIS bill description
+HR306,Education,Derived from LIS bill description
+HR315,Education,Derived from LIS bill description
+HR333,Environment and Conservation,Derived from LIS bill description
+HR351,Education,Derived from LIS bill description
+HR352,Education,Derived from LIS bill description
+HR354,Education,Derived from LIS bill description
+HR367,Education,Derived from LIS bill description
+HR374,Education,Derived from LIS bill description
+HR375,Education,Derived from LIS bill description
+HR391,Marriage and Domestic Relations,Derived from LIS bill description
+HR404,Education,Derived from LIS bill description
+HR405,Education,Derived from LIS bill description
+HR419,Education,Derived from LIS bill description
+HR426,Education,Derived from LIS bill description
+HR427,Education,Derived from LIS bill description
+HR428,Education,Derived from LIS bill description
+HR431,Education,Derived from LIS bill description
+HR444,Health and Healthcare,Derived from LIS bill description
+HR450,Education,Derived from LIS bill description
+HR453,Education,Derived from LIS bill description
+HR459,Education,Derived from LIS bill description
+HR465,Education,Derived from LIS bill description
+HR485,Marriage and Domestic Relations,Derived from LIS bill description
+HR2007,Education,Derived from LIS bill description
+SB29,Budget and Appropriations,Derived from LIS bill description
+SB30,Budget and Appropriations,Derived from LIS bill description
+SB33,Education,Derived from LIS bill description
+SB34,Elections and Voting,Derived from LIS bill description
+SB35,Behavioral Health,Derived from LIS bill description
+SB35,Marriage and Domestic Relations,Derived from LIS bill description
+SB36,Family and Children,Derived from LIS bill description
+SB38,Firearms,Derived from LIS bill description
+SB39,Education,Derived from LIS bill description
+SB40,Energy and Utilities,Derived from LIS bill description
+SB41,Transportation,Derived from LIS bill description
+SB42,Education,Derived from LIS bill description
+SB43,Energy and Utilities,Derived from LIS bill description
+SB44,Local Government,Derived from LIS bill description
+SB46,Elections and Voting,Derived from LIS bill description
+SB47,Public Safety,Derived from LIS bill description
+SB48,Housing,Derived from LIS bill description
+SB50,Local Government,Derived from LIS bill description
+SB51,Elections and Voting,Derived from LIS bill description
+SB52,Elections and Voting,Derived from LIS bill description
+SB53,Public Safety,Derived from LIS bill description
+SB55,Criminal Justice,Derived from LIS bill description
+SB55,Family and Children,Derived from LIS bill description
+SB57,Elections and Voting,Derived from LIS bill description
+SB58,Elections and Voting,Derived from LIS bill description
+SB59,Transportation,Derived from LIS bill description
+SB60,Criminal Justice,Derived from LIS bill description
+SB62,Criminal Justice,Derived from LIS bill description
+SB65,Labor and Employment,Derived from LIS bill description
+SB65,Elections and Voting,Derived from LIS bill description
+SB65,State Government,Derived from LIS bill description
+SB66,Taxes and Revenue,Derived from LIS bill description
+SB67,Local Government,Derived from LIS bill description
+SB69,Energy and Utilities,Derived from LIS bill description
+SB70,Courts and Civil Law,Derived from LIS bill description
+SB71,Health and Healthcare,Derived from LIS bill description
+SB72,Energy and Utilities,Derived from LIS bill description
+SB73,Education,Derived from LIS bill description
+SB73,Health and Healthcare,Derived from LIS bill description
+SB74,Housing,Derived from LIS bill description
+SB75,Transportation,Derived from LIS bill description
+SB76,Elections and Voting,Derived from LIS bill description
+SB78,Criminal Justice,Derived from LIS bill description
+SB78,Firearms,Derived from LIS bill description
+SB79,Firearms,Derived from LIS bill description
+SB81,Transportation,Derived from LIS bill description
+SB81,Public Safety,Derived from LIS bill description
+SB86,Firearms,Derived from LIS bill description
+SB87,Local Government,Derived from LIS bill description
+SB90,Education,Derived from LIS bill description
+SB92,Education,Derived from LIS bill description
+SB93,Housing,Derived from LIS bill description
+SB93,Taxes and Revenue,Derived from LIS bill description
+SB94,Energy and Utilities,Derived from LIS bill description
+SB96,Taxes and Revenue,Derived from LIS bill description
+SB97,Education,Derived from LIS bill description
+SB97,Social Services,Derived from LIS bill description
+SB99,Health and Healthcare,Derived from LIS bill description
+SB100,Labor and Employment,Derived from LIS bill description
+SB100,Courts and Civil Law,Derived from LIS bill description
+SB101,Health and Healthcare,Derived from LIS bill description
+SB101,Transportation,Derived from LIS bill description
+SB102,Education,Derived from LIS bill description
+SB104,Energy and Utilities,Derived from LIS bill description
+SB108,Education,Derived from LIS bill description
+SB109,Education,Derived from LIS bill description
+SB109,Firearms,Derived from LIS bill description
+SB114,Health and Healthcare,Derived from LIS bill description
+SB114,Labor and Employment,Derived from LIS bill description
+SB115,Firearms,Derived from LIS bill description
+SB117,Education,Derived from LIS bill description
+SB118,Technology and Data,Derived from LIS bill description
+SB119,Labor and Employment,Derived from LIS bill description
+SB119,Family and Children,Derived from LIS bill description
+SB119,Social Services,Derived from LIS bill description
+SB120,Labor and Employment,Derived from LIS bill description
+SB120,Courts and Civil Law,Derived from LIS bill description
+SB121,Labor and Employment,Derived from LIS bill description
+SB121,Agriculture and Food,Derived from LIS bill description
+SB122,Education,Derived from LIS bill description
+SB123,Education,Derived from LIS bill description
+SB125,Family and Children,Derived from LIS bill description
+SB126,Elections and Voting,Derived from LIS bill description
+SB128,Health and Healthcare,Derived from LIS bill description
+SB129,Taxes and Revenue,Derived from LIS bill description
+SB130,Energy and Utilities,Derived from LIS bill description
+SB131,State Government,Derived from LIS bill description
+SB133,Behavioral Health,Derived from LIS bill description
+SB133,Family and Children,Derived from LIS bill description
+SB134,Education,Derived from LIS bill description
+SB134,Family and Children,Derived from LIS bill description
+SB135,Transportation,Derived from LIS bill description
+SB136,Criminal Justice,Derived from LIS bill description
+SB137,Health and Healthcare,Derived from LIS bill description
+SB139,Taxes and Revenue,Derived from LIS bill description
+SB140,Behavioral Health,Derived from LIS bill description
+SB141,Elections and Voting,Derived from LIS bill description
+SB143,Taxes and Revenue,Derived from LIS bill description
+SB145,Transportation,Derived from LIS bill description
+SB146,Transportation,Derived from LIS bill description
+SB146,Criminal Justice,Derived from LIS bill description
+SB146,Firearms,Derived from LIS bill description
+SB146,Family and Children,Derived from LIS bill description
+SB148,Taxes and Revenue,Derived from LIS bill description
+SB151,Education,Derived from LIS bill description
+SB152,Agriculture and Food,Derived from LIS bill description
+SB156,Health and Healthcare,Derived from LIS bill description
+SB156,Transportation,Derived from LIS bill description
+SB156,Public Safety,Derived from LIS bill description
+SB160,Firearms,Derived from LIS bill description
+SB161,Insurance,Derived from LIS bill description
+SB162,Elections and Voting,Derived from LIS bill description
+SB164,Insurance,Derived from LIS bill description
+SB166,Insurance,Derived from LIS bill description
+SB170,Labor and Employment,Derived from LIS bill description
+SB171,Education,Derived from LIS bill description
+SB171,Family and Children,Derived from LIS bill description
+SB172,Insurance,Derived from LIS bill description
+SB173,Health and Healthcare,Derived from LIS bill description
+SB173,Behavioral Health,Derived from LIS bill description
+SB173,Firearms,Derived from LIS bill description
+SB174,Education,Derived from LIS bill description
+SB175,Energy and Utilities,Derived from LIS bill description
+SB176,Elections and Voting,Derived from LIS bill description
+SB177,Business and Commerce,Derived from LIS bill description
+SB179,Elections and Voting,Derived from LIS bill description
+SB179,Local Government,Derived from LIS bill description
+SB181,Taxes and Revenue,Derived from LIS bill description
+SB184,Business and Commerce,Derived from LIS bill description
+SB186,Agriculture and Food,Derived from LIS bill description
+SB187,Taxes and Revenue,Derived from LIS bill description
+SB189,Business and Commerce,Derived from LIS bill description
+SB190,Education,Derived from LIS bill description
+SB191,Transportation,Derived from LIS bill description
+SB192,Local Government,Derived from LIS bill description
+SB196,Education,Derived from LIS bill description
+SB199,Labor and Employment,Derived from LIS bill description
+SB201,Family and Children,Derived from LIS bill description
+SB202,Elections and Voting,Derived from LIS bill description
+SB203,Education,Derived from LIS bill description
+SB206,Marriage and Domestic Relations,Derived from LIS bill description
+SB207,Health and Healthcare,Derived from LIS bill description
+SB209,Criminal Justice,Derived from LIS bill description
+SB211,Taxes and Revenue,Derived from LIS bill description
+SB213,Labor and Employment,Derived from LIS bill description
+SB214,Education,Derived from LIS bill description
+SB215,Labor and Employment,Derived from LIS bill description
+SB218,Criminal Justice,Derived from LIS bill description
+SB220,Education,Derived from LIS bill description
+SB221,Local Government,Derived from LIS bill description
+SB222,Criminal Justice,Derived from LIS bill description
+SB223,Energy and Utilities,Derived from LIS bill description
+SB225,Energy and Utilities,Derived from LIS bill description
+SB228,Courts and Civil Law,Derived from LIS bill description
+SB228,Insurance,Derived from LIS bill description
+SB228,Local Government,Derived from LIS bill description
+SB231,State Government,Derived from LIS bill description
+SB231,Higher Education,Derived from LIS bill description
+SB232,Family and Children,Derived from LIS bill description
+SB234,Education,Derived from LIS bill description
+SB236,Taxes and Revenue,Derived from LIS bill description
+SB237,Courts and Civil Law,Derived from LIS bill description
+SB240,Business and Commerce,Derived from LIS bill description
+SB242,Education,Derived from LIS bill description
+SB242,Higher Education,Derived from LIS bill description
+SB243,Social Services,Derived from LIS bill description
+SB245,Education,Derived from LIS bill description
+SB246,Business and Commerce,Derived from LIS bill description
+SB247,Health and Healthcare,Derived from LIS bill description
+SB249,Energy and Utilities,Derived from LIS bill description
+SB250,Energy and Utilities,Derived from LIS bill description
+SB251,Energy and Utilities,Derived from LIS bill description
+SB252,Energy and Utilities,Derived from LIS bill description
+SB253,Energy and Utilities,Derived from LIS bill description
+SB254,Energy and Utilities,Derived from LIS bill description
+SB255,Energy and Utilities,Derived from LIS bill description
+SB256,Energy and Utilities,Derived from LIS bill description
+SB256,Environment and Conservation,Derived from LIS bill description
+SB257,Behavioral Health,Derived from LIS bill description
+SB257,Insurance,Derived from LIS bill description
+SB259,Behavioral Health,Derived from LIS bill description
+SB262,Courts and Civil Law,Derived from LIS bill description
+SB263,Business and Commerce,Derived from LIS bill description
+SB264,Education,Derived from LIS bill description
+SB267,Energy and Utilities,Derived from LIS bill description
+SB268,Taxes and Revenue,Derived from LIS bill description
+SB269,Behavioral Health,Derived from LIS bill description
+SB269,Technology and Data,Derived from LIS bill description
+SB272,Education,Derived from LIS bill description
+SB272,Firearms,Derived from LIS bill description
+SB272,Higher Education,Derived from LIS bill description
+SB273,Housing,Derived from LIS bill description
+SB275,Health and Healthcare,Derived from LIS bill description
+SB276,Criminal Justice,Derived from LIS bill description
+SB277,Elections and Voting,Derived from LIS bill description
+SB284,Education,Derived from LIS bill description
+SB286,State Government,Derived from LIS bill description
+SB287,Transportation,Derived from LIS bill description
+SB288,Labor and Employment,Derived from LIS bill description
+SB290,Housing,Derived from LIS bill description
+SB290,Local Government,Derived from LIS bill description
+SB291,State Government,Derived from LIS bill description
+SB294,Housing,Derived from LIS bill description
+SB294,Energy and Utilities,Derived from LIS bill description
+SB295,Education,Derived from LIS bill description
+SB298,Elections and Voting,Derived from LIS bill description
+SB299,Education,Derived from LIS bill description
+SB299,Higher Education,Derived from LIS bill description
+SB305,Criminal Justice,Derived from LIS bill description
+SB305,Family and Children,Derived from LIS bill description
+SB306,Transportation,Derived from LIS bill description
+SB306,Local Government,Derived from LIS bill description
+SB307,Criminal Justice,Derived from LIS bill description
+SB308,Behavioral Health,Derived from LIS bill description
+SB309,Education,Derived from LIS bill description
+SB311,Marriage and Domestic Relations,Derived from LIS bill description
+SB312,Firearms,Derived from LIS bill description
+SB313,Housing,Derived from LIS bill description
+SB317,Behavioral Health,Derived from LIS bill description
+SB318,Business and Commerce,Derived from LIS bill description
+SB318,Local Government,Derived from LIS bill description
+SB319,Labor and Employment,Derived from LIS bill description
+SB321,Transportation,Derived from LIS bill description
+SB323,Firearms,Derived from LIS bill description
+SB324,Business and Commerce,Derived from LIS bill description
+SB325,Housing,Derived from LIS bill description
+SB326,Business and Commerce,Derived from LIS bill description
+SB327,Energy and Utilities,Derived from LIS bill description
+SB327,Environment and Conservation,Derived from LIS bill description
+SB328,Labor and Employment,Derived from LIS bill description
+SB329,Criminal Justice,Derived from LIS bill description
+SB329,Family and Children,Derived from LIS bill description
+SB330,Criminal Justice,Derived from LIS bill description
+SB332,Health and Healthcare,Derived from LIS bill description
+SB339,Energy and Utilities,Derived from LIS bill description
+SB340,Energy and Utilities,Derived from LIS bill description
+SB342,Environment and Conservation,Derived from LIS bill description
+SB344,Environment and Conservation,Derived from LIS bill description
+SB347,Energy and Utilities,Derived from LIS bill description
+SB348,Firearms,Derived from LIS bill description
+SB348,Family and Children,Derived from LIS bill description
+SB349,Housing,Derived from LIS bill description
+SB350,Elections and Voting,Derived from LIS bill description
+SB352,Public Safety,Derived from LIS bill description
+SB354,Local Government,Derived from LIS bill description
+SB357,Health and Healthcare,Derived from LIS bill description
+SB359,Health and Healthcare,Derived from LIS bill description
+SB361,Insurance,Derived from LIS bill description
+SB362,Insurance,Derived from LIS bill description
+SB365,Technology and Data,Derived from LIS bill description
+SB366,Business and Commerce,Derived from LIS bill description
+SB367,Housing,Derived from LIS bill description
+SB368,Elections and Voting,Derived from LIS bill description
+SB370,Labor and Employment,Derived from LIS bill description
+SB371,Energy and Utilities,Derived from LIS bill description
+SB372,Labor and Employment,Derived from LIS bill description
+SB373,Housing,Derived from LIS bill description
+SB376,Transportation,Derived from LIS bill description
+SB378,Labor and Employment,Derived from LIS bill description
+SB379,Health and Healthcare,Derived from LIS bill description
+SB380,Taxes and Revenue,Derived from LIS bill description
+SB382,Energy and Utilities,Derived from LIS bill description
+SB384,Technology and Data,Derived from LIS bill description
+SB388,Housing,Derived from LIS bill description
+SB389,Health and Healthcare,Derived from LIS bill description
+SB389,Transportation,Derived from LIS bill description
+SB389,Public Safety,Derived from LIS bill description
+SB392,Housing,Derived from LIS bill description
+SB393,Environment and Conservation,Derived from LIS bill description
+SB394,Education,Derived from LIS bill description
+SB394,Technology and Data,Derived from LIS bill description
+SB395,Transportation,Derived from LIS bill description
+SB395,Public Safety,Derived from LIS bill description
+SB396,Transportation,Derived from LIS bill description
+SB400,Taxes and Revenue,Derived from LIS bill description
+SB402,Housing,Derived from LIS bill description
+SB402,Insurance,Derived from LIS bill description
+SB405,Health and Healthcare,Derived from LIS bill description
+SB405,Labor and Employment,Derived from LIS bill description
+SB407,Transportation,Derived from LIS bill description
+SB410,Health and Healthcare,Derived from LIS bill description
+SB413,Health and Healthcare,Derived from LIS bill description
+SB413,Insurance,Derived from LIS bill description
+SB415,Energy and Utilities,Derived from LIS bill description
+SB416,Criminal Justice,Derived from LIS bill description
+SB418,Health and Healthcare,Derived from LIS bill description
+SB421,Health and Healthcare,Derived from LIS bill description
+SB421,Behavioral Health,Derived from LIS bill description
+SB422,Environment and Conservation,Derived from LIS bill description
+SB423,Energy and Utilities,Derived from LIS bill description
+SB425,Environment and Conservation,Derived from LIS bill description
+SB427,Education,Derived from LIS bill description
+SB429,Health and Healthcare,Derived from LIS bill description
+SB430,Labor and Employment,Derived from LIS bill description
+SB430,Local Government,Derived from LIS bill description
+SB436,Transportation,Derived from LIS bill description
+SB438,Elections and Voting,Derived from LIS bill description
+SB443,Energy and Utilities,Derived from LIS bill description
+SB443,Business and Commerce,Derived from LIS bill description
+SB444,Criminal Justice,Derived from LIS bill description
+SB445,Education,Derived from LIS bill description
+SB445,Transportation,Derived from LIS bill description
+SB445,Higher Education,Derived from LIS bill description
+SB448,Energy and Utilities,Derived from LIS bill description
+SB449,Elections and Voting,Derived from LIS bill description
+SB450,Education,Derived from LIS bill description
+SB451,Courts and Civil Law,Derived from LIS bill description
+SB456,Education,Derived from LIS bill description
+SB457,Energy and Utilities,Derived from LIS bill description
+SB458,Energy and Utilities,Derived from LIS bill description
+SB460,Labor and Employment,Derived from LIS bill description
+SB460,Insurance,Derived from LIS bill description
+SB461,Business and Commerce,Derived from LIS bill description
+SB463,Family and Children,Derived from LIS bill description
+SB464,Agriculture and Food,Derived from LIS bill description
+SB465,Taxes and Revenue,Derived from LIS bill description
+SB466,Energy and Utilities,Derived from LIS bill description
+SB468,Local Government,Derived from LIS bill description
+SB470,Energy and Utilities,Derived from LIS bill description
+SB476,Health and Healthcare,Derived from LIS bill description
+SB476,Insurance,Derived from LIS bill description
+SB479,Business and Commerce,Derived from LIS bill description
+SB480,Criminal Justice,Derived from LIS bill description
+SB481,Public Safety,Derived from LIS bill description
+SB483,Health and Healthcare,Derived from LIS bill description
+SB485,Family and Children,Derived from LIS bill description
+SB487,Energy and Utilities,Derived from LIS bill description
+SB488,Housing,Derived from LIS bill description
+SB488,Local Government,Derived from LIS bill description
+SB490,Housing,Derived from LIS bill description
+SB491,Education,Derived from LIS bill description
+SB492,Education,Derived from LIS bill description
+SB493,Business and Commerce,Derived from LIS bill description
+SB495,Firearms,Derived from LIS bill description
+SB496,Transportation,Derived from LIS bill description
+SB496,Firearms,Derived from LIS bill description
+SB497,Transportation,Derived from LIS bill description
+SB500,Health and Healthcare,Derived from LIS bill description
+SB500,Insurance,Derived from LIS bill description
+SB501,Family and Children,Derived from LIS bill description
+SB502,Elections and Voting,Derived from LIS bill description
+SB505,Energy and Utilities,Derived from LIS bill description
+SB508,Energy and Utilities,Derived from LIS bill description
+SB509,Energy and Utilities,Derived from LIS bill description
+SB510,Energy and Utilities,Derived from LIS bill description
+SB511,Education,Derived from LIS bill description
+SB512,Energy and Utilities,Derived from LIS bill description
+SB513,Behavioral Health,Derived from LIS bill description
+SB515,Energy and Utilities,Derived from LIS bill description
+SB516,Energy and Utilities,Derived from LIS bill description
+SB518,Labor and Employment,Derived from LIS bill description
+SB519,Environment and Conservation,Derived from LIS bill description
+SB520,Labor and Employment,Derived from LIS bill description
+SB522,Environment and Conservation,Derived from LIS bill description
+SB524,Behavioral Health,Derived from LIS bill description
+SB525,Public Safety,Derived from LIS bill description
+SB526,Elections and Voting,Derived from LIS bill description
+SB528,Criminal Justice,Derived from LIS bill description
+SB529,Education,Derived from LIS bill description
+SB529,Labor and Employment,Derived from LIS bill description
+SB530,Labor and Employment,Derived from LIS bill description
+SB533,Elections and Voting,Derived from LIS bill description
+SB534,Transportation,Derived from LIS bill description
+SB535,Health and Healthcare,Derived from LIS bill description
+SB535,Courts and Civil Law,Derived from LIS bill description
+SB535,Insurance,Derived from LIS bill description
+SB536,Health and Healthcare,Derived from LIS bill description
+SB537,Labor and Employment,Derived from LIS bill description
+SB537,Courts and Civil Law,Derived from LIS bill description
+SB538,Criminal Justice,Derived from LIS bill description
+SB544,Elections and Voting,Derived from LIS bill description
+SB550,Transportation,Derived from LIS bill description
+SB551,Energy and Utilities,Derived from LIS bill description
+SB554,Energy and Utilities,Derived from LIS bill description
+SB555,Health and Healthcare,Derived from LIS bill description
+SB556,Family and Children,Derived from LIS bill description
+SB560,Education,Derived from LIS bill description
+SB561,Education,Derived from LIS bill description
+SB562,Energy and Utilities,Derived from LIS bill description
+SB562,Environment and Conservation,Derived from LIS bill description
+SB563,Family and Children,Derived from LIS bill description
+SB564,Social Services,Derived from LIS bill description
+SB566,Labor and Employment,Derived from LIS bill description
+SB568,Education,Derived from LIS bill description
+SB569,Labor and Employment,Derived from LIS bill description
+SB572,Taxes and Revenue,Derived from LIS bill description
+SB575,Business and Commerce,Derived from LIS bill description
+SB576,Education,Derived from LIS bill description
+SB577,Housing,Derived from LIS bill description
+SB580,Health and Healthcare,Derived from LIS bill description
+SB581,Elections and Voting,Derived from LIS bill description
+SB582,Elections and Voting,Derived from LIS bill description
+SB584,Elections and Voting,Derived from LIS bill description
+SB586,Health and Healthcare,Derived from LIS bill description
+SB586,Technology and Data,Derived from LIS bill description
+SB587,Transportation,Derived from LIS bill description
+SB588,Energy and Utilities,Derived from LIS bill description
+SB589,Environment and Conservation,Derived from LIS bill description
+SB589,Local Government,Derived from LIS bill description
+SB591,Taxes and Revenue,Derived from LIS bill description
+SB592,Education,Derived from LIS bill description
+SB593,Health and Healthcare,Derived from LIS bill description
+SB593,Transportation,Derived from LIS bill description
+SB593,Public Safety,Derived from LIS bill description
+SB593,Insurance,Derived from LIS bill description
+SB594,Transportation,Derived from LIS bill description
+SB594,Insurance,Derived from LIS bill description
+SB597,Labor and Employment,Derived from LIS bill description
+SB597,Taxes and Revenue,Derived from LIS bill description
+SB598,Energy and Utilities,Derived from LIS bill description
+SB599,Behavioral Health,Derived from LIS bill description
+SB601,Education,Derived from LIS bill description
+SB603,Education,Derived from LIS bill description
+SB607,Taxes and Revenue,Derived from LIS bill description
+SB610,Taxes and Revenue,Derived from LIS bill description
+SB611,Labor and Employment,Derived from LIS bill description
+SB612,Taxes and Revenue,Derived from LIS bill description
+SB618,Education,Derived from LIS bill description
+SB619,Energy and Utilities,Derived from LIS bill description
+SB621,Energy and Utilities,Derived from LIS bill description
+SB623,Agriculture and Food,Derived from LIS bill description
+SB625,Education,Derived from LIS bill description
+SB625,Health and Healthcare,Derived from LIS bill description
+SB626,Insurance,Derived from LIS bill description
+SB627,Energy and Utilities,Derived from LIS bill description
+SB628,Housing,Derived from LIS bill description
+SB630,Insurance,Derived from LIS bill description
+SB632,Elections and Voting,Derived from LIS bill description
+SB633,Health and Healthcare,Derived from LIS bill description
+SB633,Public Safety,Derived from LIS bill description
+SB634,Criminal Justice,Derived from LIS bill description
+SB638,Transportation,Derived from LIS bill description
+SB639,Education,Derived from LIS bill description
+SB639,Transportation,Derived from LIS bill description
+SB640,Family and Children,Derived from LIS bill description
+SB642,Insurance,Derived from LIS bill description
+SB643,Transportation,Derived from LIS bill description
+SB643,Firearms,Derived from LIS bill description
+SB644,Labor and Employment,Derived from LIS bill description
+SB645,Energy and Utilities,Derived from LIS bill description
+SB645,Environment and Conservation,Derived from LIS bill description
+SB647,Public Safety,Derived from LIS bill description
+SB649,Taxes and Revenue,Derived from LIS bill description
+SB650,Energy and Utilities,Derived from LIS bill description
+SB655,Family and Children,Derived from LIS bill description
+SB657,Criminal Justice,Derived from LIS bill description
+SB658,Elections and Voting,Derived from LIS bill description
+SB659,Energy and Utilities,Derived from LIS bill description
+SB661,Taxes and Revenue,Derived from LIS bill description
+SB661,Business and Commerce,Derived from LIS bill description
+SB662,Taxes and Revenue,Derived from LIS bill description
+SB663,Transportation,Derived from LIS bill description
+SB664,Taxes and Revenue,Derived from LIS bill description
+SB667,Labor and Employment,Derived from LIS bill description
+SB668,Health and Healthcare,Derived from LIS bill description
+SB669,Health and Healthcare,Derived from LIS bill description
+SB670,Business and Commerce,Derived from LIS bill description
+SB673,Technology and Data,Derived from LIS bill description
+SB674,Taxes and Revenue,Derived from LIS bill description
+SB675,Health and Healthcare,Derived from LIS bill description
+SB675,Public Safety,Derived from LIS bill description
+SB675,Local Government,Derived from LIS bill description
+SB676,Taxes and Revenue,Derived from LIS bill description
+SB678,Education,Derived from LIS bill description
+SB678,Family and Children,Derived from LIS bill description
+SB681,Elections and Voting,Derived from LIS bill description
+SB684,Environment and Conservation,Derived from LIS bill description
+SB686,Transportation,Derived from LIS bill description
+SB688,Elections and Voting,Derived from LIS bill description
+SB689,Labor and Employment,Derived from LIS bill description
+SB690,Behavioral Health,Derived from LIS bill description
+SB692,Education,Derived from LIS bill description
+SB693,Transportation,Derived from LIS bill description
+SB693,Insurance,Derived from LIS bill description
+SB694,Taxes and Revenue,Derived from LIS bill description
+SB695,Education,Derived from LIS bill description
+SB695,Labor and Employment,Derived from LIS bill description
+SB696,Taxes and Revenue,Derived from LIS bill description
+SB697,Taxes and Revenue,Derived from LIS bill description
+SB700,Energy and Utilities,Derived from LIS bill description
+SB702,Taxes and Revenue,Derived from LIS bill description
+SB703,Education,Derived from LIS bill description
+SB705,Budget and Appropriations,Derived from LIS bill description
+SB706,Behavioral Health,Derived from LIS bill description
+SB708,Health and Healthcare,Derived from LIS bill description
+SB710,Taxes and Revenue,Derived from LIS bill description
+SB711,Local Government,Derived from LIS bill description
+SB716,Transportation,Derived from LIS bill description
+SB717,Transportation,Derived from LIS bill description
+SB719,Environment and Conservation,Derived from LIS bill description
+SB719,Agriculture and Food,Derived from LIS bill description
+SB723,Firearms,Derived from LIS bill description
+SB724,Education,Derived from LIS bill description
+SB727,Firearms,Derived from LIS bill description
+SB730,Taxes and Revenue,Derived from LIS bill description
+SB730,Technology and Data,Derived from LIS bill description
+SB731,Labor and Employment,Derived from LIS bill description
+SB731,Transportation,Derived from LIS bill description
+SB732,Education,Derived from LIS bill description
+SB732,Taxes and Revenue,Derived from LIS bill description
+SB733,Education,Derived from LIS bill description
+SB733,Budget and Appropriations,Derived from LIS bill description
+SB733,Local Government,Derived from LIS bill description
+SB737,Labor and Employment,Derived from LIS bill description
+SB738,Health and Healthcare,Derived from LIS bill description
+SB741,Insurance,Derived from LIS bill description
+SB742,Agriculture and Food,Derived from LIS bill description
+SB744,Local Government,Derived from LIS bill description
+SB745,Insurance,Derived from LIS bill description
+SB747,Taxes and Revenue,Derived from LIS bill description
+SB749,Firearms,Derived from LIS bill description
+SB750,Labor and Employment,Derived from LIS bill description
+SB751,Energy and Utilities,Derived from LIS bill description
+SB752,Energy and Utilities,Derived from LIS bill description
+SB753,Courts and Civil Law,Derived from LIS bill description
+SB754,Agriculture and Food,Derived from LIS bill description
+SB755,Local Government,Derived from LIS bill description
+SB756,Local Government,Derived from LIS bill description
+SB758,Labor and Employment,Derived from LIS bill description
+SB758,Energy and Utilities,Derived from LIS bill description
+SB762,Criminal Justice,Derived from LIS bill description
+SB763,Firearms,Derived from LIS bill description
+SB763,Taxes and Revenue,Derived from LIS bill description
+SB764,Criminal Justice,Derived from LIS bill description
+SB766,Taxes and Revenue,Derived from LIS bill description
+SB767,Transportation,Derived from LIS bill description
+SB770,Criminal Justice,Derived from LIS bill description
+SB771,Labor and Employment,Derived from LIS bill description
+SB772,Energy and Utilities,Derived from LIS bill description
+SB773,State Government,Derived from LIS bill description
+SB773,Higher Education,Derived from LIS bill description
+SB774,Taxes and Revenue,Derived from LIS bill description
+SB776,Courts and Civil Law,Derived from LIS bill description
+SB777,Energy and Utilities,Derived from LIS bill description
+SB778,Family and Children,Derived from LIS bill description
+SB782,Courts and Civil Law,Derived from LIS bill description
+SB782,Business and Commerce,Derived from LIS bill description
+SB785,Education,Derived from LIS bill description
+SB786,Taxes and Revenue,Derived from LIS bill description
+SB790,Insurance,Derived from LIS bill description
+SB793,Courts and Civil Law,Derived from LIS bill description
+SB794,Health and Healthcare,Derived from LIS bill description
+SB794,Criminal Justice,Derived from LIS bill description
+SB796,Technology and Data,Derived from LIS bill description
+SB796,Family and Children,Derived from LIS bill description
+SB797,Firearms,Derived from LIS bill description
+SB799,Taxes and Revenue,Derived from LIS bill description
+SB802,Energy and Utilities,Derived from LIS bill description
+SB805,Local Government,Derived from LIS bill description
+SB808,Health and Healthcare,Derived from LIS bill description
+SB809,Business and Commerce,Derived from LIS bill description
+SB810,Courts and Civil Law,Derived from LIS bill description
+SB810,Taxes and Revenue,Derived from LIS bill description
+SB811,Health and Healthcare,Derived from LIS bill description
+SB812,Criminal Justice,Derived from LIS bill description
+SB814,Environment and Conservation,Derived from LIS bill description
+SB816,Labor and Employment,Derived from LIS bill description
+SB816,State Government,Derived from LIS bill description
+SB817,Family and Children,Derived from LIS bill description
+SB818,Energy and Utilities,Derived from LIS bill description
+SB821,Criminal Justice,Derived from LIS bill description
+SB822,Health and Healthcare,Derived from LIS bill description
+SB823,Energy and Utilities,Derived from LIS bill description
+SB824,Education,Derived from LIS bill description
+SB824,Labor and Employment,Derived from LIS bill description
+SB828,Taxes and Revenue,Derived from LIS bill description
+SB829,Taxes and Revenue,Derived from LIS bill description
+SB831,Elections and Voting,Derived from LIS bill description
+SB832,Transportation,Derived from LIS bill description
+SB833,Transportation,Derived from LIS bill description
+SB834,Energy and Utilities,Derived from LIS bill description
+SJ9,Education,Derived from LIS bill description
+SJ15,Education,Derived from LIS bill description
+SJ21,Health and Healthcare,Derived from LIS bill description
+SJ26,Criminal Justice,Derived from LIS bill description
+SJ27,Elections and Voting,Derived from LIS bill description
+SJ28,Environment and Conservation,Derived from LIS bill description
+SJ33,Education,Derived from LIS bill description
+SJ34,Education,Derived from LIS bill description
+SJ38,Taxes and Revenue,Derived from LIS bill description
+SJ39,Education,Derived from LIS bill description
+SJ51,Education,Derived from LIS bill description
+SJ57,Education,Derived from LIS bill description
+SJ75,Education,Derived from LIS bill description
+SJ76,Education,Derived from LIS bill description
+SJ77,Education,Derived from LIS bill description
+SJ81,Health and Healthcare,Derived from LIS bill description
+SJ91,Education,Derived from LIS bill description
+SJ92,Education,Derived from LIS bill description
+SJ103,Education,Derived from LIS bill description
+SJ104,Education,Derived from LIS bill description
+SJ154,Education,Derived from LIS bill description
+SJ182,Education,Derived from LIS bill description
+SJ190,Agriculture and Food,Derived from LIS bill description
+SJ208,Education,Derived from LIS bill description
+SJ223,Education,Derived from LIS bill description
+SJ234,Higher Education,Derived from LIS bill description
+SJ247,Education,Derived from LIS bill description
+SJ257,Environment and Conservation,Derived from LIS bill description
+SJ258,Education,Derived from LIS bill description
+SJ259,Education,Derived from LIS bill description
+SJ260,Education,Derived from LIS bill description
+SJ261,Education,Derived from LIS bill description
+SJ262,Education,Derived from LIS bill description
+SJ263,Education,Derived from LIS bill description
+SJ264,Education,Derived from LIS bill description
+SJ265,Education,Derived from LIS bill description
+SJ266,Education,Derived from LIS bill description
+SJ267,Education,Derived from LIS bill description
+SJ268,Agriculture and Food,Derived from LIS bill description
+SJ269,Education,Derived from LIS bill description
+SJ285,Education,Derived from LIS bill description
+SJ286,Education,Derived from LIS bill description
+SJ287,Education,Derived from LIS bill description
+SJ288,Education,Derived from LIS bill description
+SJ289,Education,Derived from LIS bill description
+SJ290,Education,Derived from LIS bill description
+SJ295,Education,Derived from LIS bill description
+SR6,Taxes and Revenue,Derived from LIS bill description
+SR8,Education,Derived from LIS bill description
+SR15,Marriage and Domestic Relations,Derived from LIS bill description
+SR17,Labor and Employment,Derived from LIS bill description
+SR30,Education,Derived from LIS bill description
+SR48,Education,Derived from LIS bill description
+SR62,Education,Derived from LIS bill description
+SR69,Agriculture and Food,Derived from LIS bill description
+SR101,Education,Derived from LIS bill description
+SR102,Agriculture and Food,Derived from LIS bill description
+SR120,Education,Derived from LIS bill description
+SR128,Education,Derived from LIS bill description
+SR140,Education,Derived from LIS bill description
+SR150,Education,Derived from LIS bill description
+SR152,Education,Derived from LIS bill description
+SR153,Education,Derived from LIS bill description
+SR163,Education,Derived from LIS bill description
+SR165,Education,Derived from LIS bill description
+SR168,Marriage and Domestic Relations,Derived from LIS bill description

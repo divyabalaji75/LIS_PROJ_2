@@ -1,0 +1,30 @@
+year,topic_name,classification,mixed_delegates,no_delegates,yes_delegates,classified_delegates,yes_delegate_pct,no_delegate_pct,mixed_delegate_pct
+2026,Agriculture and Food,Derived from LIS bill description,5.0,0.0,93.0,98.0,94.89795918367348,0.0,5.1020408163265305
+2026,Behavioral Health,Derived from LIS bill description,6.0,0.0,94.0,100.0,94.0,0.0,6.0
+2026,Budget and Appropriations,Derived from LIS bill description,1.0,34.0,64.0,99.0,64.64646464646465,34.34343434343434,1.0101010101010102
+2026,Business and Commerce,Derived from LIS bill description,25.0,0.0,75.0,100.0,75.0,0.0,25.0
+2026,Constitutional Amendments,Official LIS subject,0.0,7.0,15.0,22.0,68.18181818181817,31.818181818181817,0.0
+2026,Courts and Civil Law,Derived from LIS bill description,30.0,5.0,65.0,100.0,65.0,5.0,30.0
+2026,Criminal Justice,Derived from LIS bill description,31.0,4.0,65.0,100.0,65.0,4.0,31.0
+2026,Education,Derived from LIS bill description,31.0,0.0,69.0,100.0,69.0,0.0,31.0
+2026,Elections and Voting,Derived from LIS bill description,2.0,34.0,65.0,101.0,64.35643564356435,33.663366336633665,1.9801980198019802
+2026,Energy and Utilities,Derived from LIS bill description,28.0,8.0,65.0,101.0,64.35643564356435,7.920792079207921,27.722772277227726
+2026,Environment and Conservation,Derived from LIS bill description,9.0,26.0,65.0,100.0,65.0,26.0,9.0
+2026,Family and Children,Derived from LIS bill description,7.0,0.0,93.0,100.0,93.0,0.0,7.000000000000001
+2026,Firearms,Derived from LIS bill description,1.0,35.0,64.0,100.0,64.0,35.0,1.0
+2026,Health and Healthcare,Derived from LIS bill description,6.0,0.0,94.0,100.0,94.0,0.0,6.0
+2026,Higher Education,Derived from LIS bill description,20.0,0.0,79.0,99.0,79.7979797979798,0.0,20.2020202020202
+2026,Housing,Derived from LIS bill description,7.0,29.0,65.0,101.0,64.35643564356435,28.71287128712871,6.9306930693069315
+2026,Insurance,Derived from LIS bill description,13.0,0.0,87.0,100.0,87.0,0.0,13.0
+2026,Labor and Employment,Derived from LIS bill description,17.0,19.0,65.0,101.0,64.35643564356435,18.81188118811881,16.831683168316832
+2026,Labor and Employment,Official LIS subject,0.0,14.0,28.0,42.0,66.66666666666666,33.33333333333333,0.0
+2026,Local Government,Derived from LIS bill description,25.0,6.0,69.0,100.0,69.0,6.0,25.0
+2026,Marriage and Domestic Relations,Derived from LIS bill description,20.0,0.0,78.0,98.0,79.59183673469387,0.0,20.408163265306122
+2026,Public Safety,Derived from LIS bill description,27.0,0.0,73.0,100.0,73.0,0.0,27.0
+2026,Social Services,Derived from LIS bill description,5.0,0.0,59.0,64.0,92.1875,0.0,7.8125
+2026,State Government,Derived from LIS bill description,27.0,0.0,71.0,98.0,72.44897959183673,0.0,27.55102040816326
+2026,"Study Commissions, Committees, and Reports",Official LIS subject,4.0,26.0,59.0,89.0,66.29213483146067,29.213483146067414,4.49438202247191
+2026,Taxes and Revenue,Derived from LIS bill description,23.0,3.0,74.0,100.0,74.0,3.0,23.0
+2026,Technology and Data,Derived from LIS bill description,14.0,0.0,85.0,99.0,85.85858585858585,0.0,14.14141414141414
+2026,Transportation,Derived from LIS bill description,27.0,3.0,71.0,101.0,70.29702970297029,2.9702970297029703,26.732673267326735
+2026,Uncodified Legislation,Official LIS subject,2.0,3.0,16.0,21.0,76.19047619047619,14.285714285714285,9.523809523809524

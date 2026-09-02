@@ -1,0 +1,1104 @@
+Bill_id,topic_name,classification
+HB9,"Agriculture, Animal Care and Food",Official LIS subject
+HB19,"Study Commissions, Committees, and Reports",Official LIS subject
+HB19,Menhaden Fish,Official LIS subject
+HB19,Uncodified Legislation,Official LIS subject
+HB19,Fisheries and Habitat of the Tidal Waters,Official LIS subject
+HB20,"Counties, Cities, and Towns",Official LIS subject
+HB20,Motor Vehicles,Official LIS subject
+HB20,Local Government and Officials,Official LIS subject
+HB20,Ordinances,Official LIS subject
+HB20,Photo-Monitoring,Official LIS subject
+HB20,Speed Limits,Official LIS subject
+HB33,Health,Official LIS subject
+HB33,"Study Commissions, Committees, and Reports",Official LIS subject
+HB33,Water and Sewer Systems,Official LIS subject
+HB33,Uncodified Legislation,Official LIS subject
+HB38,Emergency Services and Vehicles,Official LIS subject
+HB38,"Pensions, Benefits, and Retirement",Official LIS subject
+HB38,Local Government and Officials,Official LIS subject
+HB38,Retirement Systems,Official LIS subject
+HB41,Education,Official LIS subject
+HB41,Standards of Learning,Official LIS subject
+HB68,Workers' Compensation,Official LIS subject
+HB80,Health,Official LIS subject
+HB80,"Study Commissions, Committees, and Reports",Official LIS subject
+HB80,Suicide,Official LIS subject
+HB80,Veterans,Official LIS subject
+HB88,Income Tax,Official LIS subject
+HB88,Taxation,Official LIS subject
+HB109,Public Service Companies,Official LIS subject
+HB109,"Study Commissions, Committees, and Reports",Official LIS subject
+HB109,Electric Companies,Official LIS subject
+HB116,Computer Services and Uses,Official LIS subject
+HB116,Sales and Use Tax,Official LIS subject
+HB116,Taxation,Official LIS subject
+HB116,Retail Sales and Use Tax,Official LIS subject
+HB130,"Counties, Cities, and Towns",Official LIS subject
+HB130,Constitutional Officers,Official LIS subject
+HB141,Administration of Government,Official LIS subject
+HB141,"Study Commissions, Committees, and Reports",Official LIS subject
+HB141,Veterans,Official LIS subject
+HB142,Motor Vehicles,Official LIS subject
+HB142,Crosswalks,Official LIS subject
+HB158,Crimes and Offenses Generally,Official LIS subject
+HB158,Children,Official LIS subject
+HB158,Firearms,Official LIS subject
+HB162,"Pensions, Benefits, and Retirement",Official LIS subject
+HB162,Retirement Systems,Official LIS subject
+HB178,Administration of Government,Official LIS subject
+HB178,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HB178,"Study Commissions, Committees, and Reports",Official LIS subject
+HB181,Education,Official LIS subject
+HB181,Public Schools,Official LIS subject
+HB206,"Agriculture, Animal Care and Food",Official LIS subject
+HB206,"Pets, Pet Dealers, and Supplies",Official LIS subject
+HB211,Higher Education,Official LIS subject
+HB211,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB228,Consumer Protection,Official LIS subject
+HB228,Trade and Commerce,Official LIS subject
+HB228,Recycled Products,Official LIS subject
+HB230,Insurance,Official LIS subject
+HB230,Health Insurance,Official LIS subject
+HB231,"Pensions, Benefits, and Retirement",Official LIS subject
+HB231,Retirement Systems,Official LIS subject
+HB240,Income Tax,Official LIS subject
+HB240,"Study Commissions, Committees, and Reports",Official LIS subject
+HB240,Taxation,Official LIS subject
+HB247,Property and Conveyances,Official LIS subject
+HB247,Landlord and Tenant,Official LIS subject
+HB247,Virginia Residential Landlord and Tenant Act,Official LIS subject
+HB248,Professional and Occupational Regulation,Official LIS subject
+HB261,Income Tax,Official LIS subject
+HB261,Taxation,Official LIS subject
+HB270,Appropriations,Official LIS subject
+HB270,Crimes and Offenses Generally,Official LIS subject
+HB270,"Police, State",Official LIS subject
+HB270,"Study Commissions, Committees, and Reports",Official LIS subject
+HB270,Firearms,Official LIS subject
+HB273,Domestic Relations,Official LIS subject
+HB273,Divorce,Official LIS subject
+HB274,Workers' Compensation,Official LIS subject
+HB274,Firefighters and Fire Marshals,Official LIS subject
+HB276,Elections,Official LIS subject
+HB276,Campaign Practices,Official LIS subject
+HB286,Health,Official LIS subject
+HB286,"Study Commissions, Committees, and Reports",Official LIS subject
+HB286,Uncodified Legislation,Official LIS subject
+HB300,Emergency Services and Vehicles,Official LIS subject
+HB300,"Pensions, Benefits, and Retirement",Official LIS subject
+HB300,Local Government and Officials,Official LIS subject
+HB300,Retirement Systems,Official LIS subject
+HB319,"Counties, Cities, and Towns",Official LIS subject
+HB319,Crimes and Offenses Generally,Official LIS subject
+HB319,Firearms,Official LIS subject
+HB323,Professions and Occupations,Official LIS subject
+HB323,Compacts,Official LIS subject
+HB328,Education,Official LIS subject
+HB328,Compacts,Official LIS subject
+HB328,Teachers,Official LIS subject
+HB331,Charters,Official LIS subject
+HB331,"Richmond, City of",Official LIS subject
+HB338,"Counties, Cities, and Towns",Official LIS subject
+HB338,Data Centers,Official LIS subject
+HB343,Financial Institutions and Services,Official LIS subject
+HB347,Education,Official LIS subject
+HB347,School Boards,Official LIS subject
+HB348,Labor and Employment,Official LIS subject
+HB348,Local Government and Officials,Official LIS subject
+HB348,State Employees,Official LIS subject
+HB357,"Study Commissions, Committees, and Reports",Official LIS subject
+HB357,"Waters of the State, Ports, and Harbors",Official LIS subject
+HB357,Wetlands,Official LIS subject
+HB357,Uncodified Legislation,Official LIS subject
+HB359,Education,Official LIS subject
+HB359,Public Schools,Official LIS subject
+HB360,Education,Official LIS subject
+HB363,Appropriations,Official LIS subject
+HB363,Civil Remedies and Procedure,Official LIS subject
+HB363,Elections,Official LIS subject
+HB363,Affidavits,Official LIS subject
+HB363,Candidates in Elections,Official LIS subject
+HB366,Tuition,Official LIS subject
+HB366,Virginia National Guard,Official LIS subject
+HB366,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB369,Civil Remedies and Procedure,Official LIS subject
+HB369,"Study Commissions, Committees, and Reports",Official LIS subject
+HB369,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB372,Education,Official LIS subject
+HB373,Financial Institutions and Services,Official LIS subject
+HB373,Senior Citizens,Official LIS subject
+HB373,State Corporation Commission,Official LIS subject
+HB375,Elections,Official LIS subject
+HB375,Compacts,Official LIS subject
+HB375,President or Vice President,Official LIS subject
+HB386,Education,Official LIS subject
+HB386,Public Schools,Official LIS subject
+HB386,Students,Official LIS subject
+HB406,Uncodified Legislation,Official LIS subject
+HB406,Clean Water Act,Official LIS subject
+HB408,Education,Official LIS subject
+HB408,Child Care,Official LIS subject
+HB420,Conservation,Official LIS subject
+HB420,Governor,Official LIS subject
+HB440,Elections,Official LIS subject
+HB440,Candidates in Elections,Official LIS subject
+HB440,Electronic Processes,Official LIS subject
+HB447,Motor Vehicles,Official LIS subject
+HB447,Taxation,Official LIS subject
+HB485,Education,Official LIS subject
+HB485,Criminal History Information,Official LIS subject
+HB485,School Boards,Official LIS subject
+HB486,Higher Education,Official LIS subject
+HB486,Scholarships,Official LIS subject
+HB486,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB489,Insurance,Official LIS subject
+HB492,Emergency Services and Vehicles,Official LIS subject
+HB492,Uncodified Legislation,Official LIS subject
+HB499,Medicaid and Medicare Programs,Official LIS subject
+HB499,Uncodified Legislation,Official LIS subject
+HB500,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HB500,Education,Official LIS subject
+HB500,Standards of Learning,Official LIS subject
+HB502,Crimes and Offenses Generally,Official LIS subject
+HB502,Health,Official LIS subject
+HB502,Motor Vehicles,Official LIS subject
+HB510,Insurance,Official LIS subject
+HB510,Taxation,Official LIS subject
+HB510,License Tax,Official LIS subject
+HB512,"Study Commissions, Committees, and Reports",Official LIS subject
+HB512,Uncodified Legislation,Official LIS subject
+HB512,Conservatorship,Official LIS subject
+HB524,"Waters of the State, Ports, and Harbors",Official LIS subject
+HB524,Natural Gas,Official LIS subject
+HB527,Religious and Charitable Matters; Cemeteries,Official LIS subject
+HB528,Property and Conveyances,Official LIS subject
+HB528,Property Owners,Official LIS subject
+HB531,Workers' Compensation,Official LIS subject
+HB535,Education,Official LIS subject
+HB535,"Study Commissions, Committees, and Reports",Official LIS subject
+HB535,Uncodified Legislation,Official LIS subject
+HB540,Sales and Use Tax,Official LIS subject
+HB540,Taxation,Official LIS subject
+HB550,Health,Official LIS subject
+HB550,Welfare (Social Services),Official LIS subject
+HB550,Adoption,Official LIS subject
+HB550,Birth and Death Records,Official LIS subject
+HB552,Corporations,Official LIS subject
+HB552,Income Tax,Official LIS subject
+HB552,Personal Property and Personal Property Tax,Official LIS subject
+HB552,Taxation,Official LIS subject
+HB556,Courts of Record,Official LIS subject
+HB556,Judicial Inquiry and Review Commission,Official LIS subject
+HB556,"Study Commissions, Committees, and Reports",Official LIS subject
+HB563,Education,Official LIS subject
+HB563,Uncodified Legislation,Official LIS subject
+HB564,Education,Official LIS subject
+HB564,Public Schools,Official LIS subject
+HB565,Elections,Official LIS subject
+HB565,Voter Registration,Official LIS subject
+HB573,Education,Official LIS subject
+HB573,Students,Official LIS subject
+HB582,Education,Official LIS subject
+HB582,High Schools,Official LIS subject
+HB582,Public Schools,Official LIS subject
+HB582,School Boards,Official LIS subject
+HB587,Housing,Official LIS subject
+HB587,Minors,Official LIS subject
+HB587,"Study Commissions, Committees, and Reports",Official LIS subject
+HB587,Uncodified Legislation,Official LIS subject
+HB602,Commonwealth Public Safety,Official LIS subject
+HB602,Firearms,Official LIS subject
+HB610,Insurance,Official LIS subject
+HB610,Diabetics or Diabetes,Official LIS subject
+HB610,Health Insurance,Official LIS subject
+HB620,Health,Official LIS subject
+HB620,"Medical Treatment, Care, and Assistance",Official LIS subject
+HB621,Income Tax,Official LIS subject
+HB621,Taxation,Official LIS subject
+HB627,Education,Official LIS subject
+HB627,Child Care,Official LIS subject
+HB627,Uncodified Legislation,Official LIS subject
+HB628,Behavioral Health and Developmental Services,Official LIS subject
+HB628,Health,Official LIS subject
+HB628,Hospitals and Hospitalization,Official LIS subject
+HB630,Emergency Services and Vehicles,Official LIS subject
+HB630,"Pensions, Benefits, and Retirement",Official LIS subject
+HB630,Local Government and Officials,Official LIS subject
+HB630,Retirement Systems,Official LIS subject
+HB631,"Pensions, Benefits, and Retirement",Official LIS subject
+HB631,Police,Official LIS subject
+HB631,Retirement Systems,Official LIS subject
+HB636,"Counties, Cities, and Towns",Official LIS subject
+HB636,Public Service Companies,Official LIS subject
+HB636,State Corporation Commission,Official LIS subject
+HB646,"Counties, Cities, and Towns",Official LIS subject
+HB646,Ordinances,Official LIS subject
+HB646,Zoning,Official LIS subject
+HB658,"Counties, Cities, and Towns",Official LIS subject
+HB658,Elections,Official LIS subject
+HB658,"Study Commissions, Committees, and Reports",Official LIS subject
+HB658,Voters and Voting,Official LIS subject
+HB662,Motor Vehicles,Official LIS subject
+HB662,Towing Services and Tow Trucks,Official LIS subject
+HB675,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HB675,Education,Official LIS subject
+HB675,Blind Persons,Official LIS subject
+HB675,Hearing-Impaired Persons,Official LIS subject
+HB675,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB676,Commonwealth Public Safety,Official LIS subject
+HB677,Education,Official LIS subject
+HB694,Elections,Official LIS subject
+HB694,Absentee Ballots,Official LIS subject
+HB694,Voters and Voting,Official LIS subject
+HB696,Education,Official LIS subject
+HB696,High Schools,Official LIS subject
+HB696,Uncodified Legislation,Official LIS subject
+HB697,Civil Remedies and Procedure,Official LIS subject
+HB697,Crimes and Offenses Generally,Official LIS subject
+HB697,"Study Commissions, Committees, and Reports",Official LIS subject
+HB721,"Counties, Cities, and Towns",Official LIS subject
+HB721,Rental Property,Official LIS subject
+HB725,"Counties, Cities, and Towns",Official LIS subject
+HB725,Local Government and Officials,Official LIS subject
+HB742,Administration of Government,Official LIS subject
+HB742,Elections,Official LIS subject
+HB742,General Assembly,Official LIS subject
+HB745,Conservation,Official LIS subject
+HB745,"Study Commissions, Committees, and Reports",Official LIS subject
+HB747,Trade and Commerce,Official LIS subject
+HB762,Taxation,Official LIS subject
+HB762,Organ Donor,Official LIS subject
+HB765,Courts Not of Record,Official LIS subject
+HB765,Domestic Relations,Official LIS subject
+HB765,Sexual Offenses,Official LIS subject
+HB766,Domestic Relations,Official LIS subject
+HB766,Minors,Official LIS subject
+HB774,"Counties, Cities, and Towns",Official LIS subject
+HB774,Crimes and Offenses Generally,Official LIS subject
+HB774,Alcohol Safety Action Program,Official LIS subject
+HB775,Administration of Government,Official LIS subject
+HB775,Police,Official LIS subject
+HB775,Highways and Other Surface Transportation Systems,Official LIS subject
+HB787,Administration of Government,Official LIS subject
+HB787,Administrative Process Act,Official LIS subject
+HB813,Behavioral Health and Developmental Services,Official LIS subject
+HB813,Domestic Relations,Official LIS subject
+HB813,Minors,Official LIS subject
+HB813,Professions and Occupations,Official LIS subject
+HB837,Courts Not of Record,Official LIS subject
+HB837,Juvenile and Domestic Relations District Courts,Official LIS subject
+HB842,Education,Official LIS subject
+HB842,School Boards,Official LIS subject
+HB842,Students,Official LIS subject
+HB847,Criminal Procedure,Official LIS subject
+HB859,Commonwealth Public Safety,Official LIS subject
+HB859,Crimes and Offenses Generally,Official LIS subject
+HB859,Criminal Justice Services,Official LIS subject
+HB859,Human Trafficking,Official LIS subject
+HB863,Property and Conveyances,Official LIS subject
+HB863,Virginia Residential Property Disclosure Act,Official LIS subject
+HB864,Insurance,Official LIS subject
+HB864,Health Insurance,Official LIS subject
+HB865,Income Tax,Official LIS subject
+HB865,Taxation,Official LIS subject
+HB878,"Counties, Cities, and Towns",Official LIS subject
+HB878,Affordable Housing,Official LIS subject
+HB882,Education,Official LIS subject
+HB882,Cell Phones,Official LIS subject
+HB882,Students,Official LIS subject
+HB884,Motor Vehicles,Official LIS subject
+HB886,Health,Official LIS subject
+HB886,Nursing Facilities,Official LIS subject
+HB887,Income Tax,Official LIS subject
+HB887,Taxation,Official LIS subject
+HB889,Sales and Use Tax,Official LIS subject
+HB889,Taxation,Official LIS subject
+HB889,Retail Sales and Use Tax,Official LIS subject
+HB890,Domestic Relations,Official LIS subject
+HB890,Children,Official LIS subject
+HB897,Administration of Government,Official LIS subject
+HB897,"Study Commissions, Committees, and Reports",Official LIS subject
+HB897,Small Businesses,Official LIS subject
+HB899,Administration of Government,Official LIS subject
+HB899,General Assembly,Official LIS subject
+HB899,Conflict of Interests,Official LIS subject
+HB899,Local Government and Officials,Official LIS subject
+HB900,"Counties, Cities, and Towns",Official LIS subject
+HB900,Ordinances,Official LIS subject
+HB900,Zoning,Official LIS subject
+HB907,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HB907,Elections,Official LIS subject
+HB907,Ballots and Balloting,Official LIS subject
+HB910,"Study Commissions, Committees, and Reports",Official LIS subject
+HB910,"Mines, Minerals, and Energy",Official LIS subject
+HB910,Data Centers,Official LIS subject
+HB915,Public Service Companies,Official LIS subject
+HB915,"Study Commissions, Committees, and Reports",Official LIS subject
+HB915,Highways and Other Surface Transportation Systems,Official LIS subject
+HB920,Police,Official LIS subject
+HB920,License Plates and Registration,Official LIS subject
+HB920,Highways and Other Surface Transportation Systems,Official LIS subject
+HB922,Property and Conveyances,Official LIS subject
+HB922,Pests and Pesticides,Official LIS subject
+HB923,"Study Commissions, Committees, and Reports",Official LIS subject
+HB923,Tolls,Official LIS subject
+HB923,Uncodified Legislation,Official LIS subject
+HB923,Highways and Other Surface Transportation Systems,Official LIS subject
+HB927,Health,Official LIS subject
+HB927,"Study Commissions, Committees, and Reports",Official LIS subject
+HB927,"Health and Human Resources, Secretary of",Official LIS subject
+HB927,Law-Enforcement Officers,Official LIS subject
+HB927,"Public Safety and Homeland Security, Secretary of",Official LIS subject
+HB927,Uncodified Legislation,Official LIS subject
+HB941,Elections,Official LIS subject
+HB941,Higher Education,Official LIS subject
+HB941,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB951,"Counties, Cities, and Towns",Official LIS subject
+HB951,Local Government and Officials,Official LIS subject
+HB952,"Counties, Cities, and Towns",Official LIS subject
+HB952,Condominiums,Official LIS subject
+HB954,Administration of Government,Official LIS subject
+HB954,Discrimination,Official LIS subject
+HB954,Human Rights,Official LIS subject
+HB961,Income Tax,Official LIS subject
+HB961,Taxation,Official LIS subject
+HB969,Taxation,Official LIS subject
+HB969,Children,Official LIS subject
+HB975,Public Service Companies,Official LIS subject
+HB975,Electric Companies,Official LIS subject
+HB976,Public Service Companies,Official LIS subject
+HB976,State Corporation Commission,Official LIS subject
+HB976,Electric Companies,Official LIS subject
+HB977,Education,Official LIS subject
+HB977,Students,Official LIS subject
+HB978,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HB978,Professions and Occupations,Official LIS subject
+HB978,Nurses,Official LIS subject
+HB978,Midwives,Official LIS subject
+HB981,Higher Education,Official LIS subject
+HB981,Tuition,Official LIS subject
+HB981,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB988,Behavioral Health and Developmental Services,Official LIS subject
+HB988,Prisons and Other Methods of Correction,Official LIS subject
+HB988,"Study Commissions, Committees, and Reports",Official LIS subject
+HB988,Correctional Enterprises,Official LIS subject
+HB988,"Corrections, Board of or Department of",Official LIS subject
+HB1013,"Wills, Trusts, and Fiduciaries",Official LIS subject
+HB1029,Augusta County,Official LIS subject
+HB1029,Bath County,Official LIS subject
+HB1029,School Boards,Official LIS subject
+HB1029,Uncodified Legislation,Official LIS subject
+HB1031,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HB1031,General Assembly,Official LIS subject
+HB1031,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1033,Accomack County,Official LIS subject
+HB1033,Education,Official LIS subject
+HB1033,Northampton County,Official LIS subject
+HB1033,School Boards,Official LIS subject
+HB1033,Uncodified Legislation,Official LIS subject
+HB1041,Insurance,Official LIS subject
+HB1041,Health Insurance,Official LIS subject
+HB1049,Emergency Services and Vehicles,Official LIS subject
+HB1049,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1049,Firefighters and Fire Marshals,Official LIS subject
+HB1049,Uncodified Legislation,Official LIS subject
+HB1049,Secretary of Public Safety and Homeland Security,Official LIS subject
+HB1051,Education,Official LIS subject
+HB1051,High Schools,Official LIS subject
+HB1051,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB1054,"Counties, Cities, and Towns",Official LIS subject
+HB1063,Health,Official LIS subject
+HB1063,Nursing Homes,Official LIS subject
+HB1070,Administration of Government,Official LIS subject
+HB1070,Attorney General,Official LIS subject
+HB1070,Authorities,Official LIS subject
+HB1070,"Counties, Cities, and Towns",Official LIS subject
+HB1078,Income Tax,Official LIS subject
+HB1078,Taxation,Official LIS subject
+HB1091,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1091,Career and Technical Education,Official LIS subject
+HB1091,Elementary Schools,Official LIS subject
+HB1091,Public Schools,Official LIS subject
+HB1091,Uncodified Legislation,Official LIS subject
+HB1092,Building Code,Official LIS subject
+HB1092,Uncodified Legislation,Official LIS subject
+HB1093,"Counties, Cities, and Towns",Official LIS subject
+HB1096,Housing,Official LIS subject
+HB1096,Taxation,Official LIS subject
+HB1101,Administration of Government,Official LIS subject
+HB1101,Virginia Public Procurement Act,Official LIS subject
+HB1121,Prisons and Other Methods of Correction,Official LIS subject
+HB1121,"Corrections, Board of or Department of",Official LIS subject
+HB1121,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB1122,"Counties, Cities, and Towns",Official LIS subject
+HB1122,"Richmond, City of",Official LIS subject
+HB1122,Affordable Housing,Official LIS subject
+HB1124,Housing,Official LIS subject
+HB1124,Religious and Charitable Matters; Cemeteries,Official LIS subject
+HB1124,Affordable Housing,Official LIS subject
+HB1129,Domestic Relations,Official LIS subject
+HB1185,Health,Official LIS subject
+HB1185,Professions and Occupations,Official LIS subject
+HB1185,Prescription Medicines,Official LIS subject
+HB1192,Administration of Government,Official LIS subject
+HB1225,"Counties, Cities, and Towns",Official LIS subject
+HB1226,Workers' Compensation,Official LIS subject
+HB1226,Firefighters and Fire Marshals,Official LIS subject
+HB1226,Law-Enforcement Officers,Official LIS subject
+HB1233,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1233,Highways and Other Surface Transportation Systems,Official LIS subject
+HB1235,Crimes and Offenses Generally,Official LIS subject
+HB1235,Concealed Weapons,Official LIS subject
+HB1235,Firearms,Official LIS subject
+HB1235,Handguns,Official LIS subject
+HB1235,Protective Orders,Official LIS subject
+HB1239,Health,Official LIS subject
+HB1239,Minors,Official LIS subject
+HB1239,Professions and Occupations,Official LIS subject
+HB1253,"Counties, Cities, and Towns",Official LIS subject
+HB1253,Persons With Disabilities,Official LIS subject
+HB1253,Affordable Housing,Official LIS subject
+HB1253,Ordinances,Official LIS subject
+HB1259,Emergency Services and Vehicles,Official LIS subject
+HB1259,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1259,Uncodified Legislation,Official LIS subject
+HB1263,Courts Not of Record,Official LIS subject
+HB1263,Courts of Record,Official LIS subject
+HB1263,Crimes and Offenses Generally,Official LIS subject
+HB1263,Criminal Procedure,Official LIS subject
+HB1263,Circuit Courts,Official LIS subject
+HB1263,Juvenile and Domestic Relations District Courts,Official LIS subject
+HB1263,Juveniles,Official LIS subject
+HB1273,Administration of Government,Official LIS subject
+HB1273,Virginia Public Procurement Act,Official LIS subject
+HB1280,Consumer Protection,Official LIS subject
+HB1280,Trade and Commerce,Official LIS subject
+HB1281,Income Tax,Official LIS subject
+HB1281,Taxation,Official LIS subject
+HB1284,Emergency Services and Vehicles,Official LIS subject
+HB1284,Labor and Employment,Official LIS subject
+HB1284,Firefighters and Fire Marshals,Official LIS subject
+HB1288,Public Service Companies,Official LIS subject
+HB1288,Electric Companies,Official LIS subject
+HB1292,Income Tax,Official LIS subject
+HB1292,Taxation,Official LIS subject
+HB1292,Firefighters and Fire Marshals,Official LIS subject
+HB1293,Authorities,Official LIS subject
+HB1293,Behavioral Health and Developmental Services,Official LIS subject
+HB1293,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1293,Nurses,Official LIS subject
+HB1293,Uncodified Legislation,Official LIS subject
+HB1295,Health,Official LIS subject
+HB1295,Water and Sewer Systems,Official LIS subject
+HB1305,Taxation,Official LIS subject
+HB1305,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB1307,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1307,Higher Education,Official LIS subject
+HB1307,Uncodified Legislation,Official LIS subject
+HB1307,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB1310,"Counties, Cities, and Towns",Official LIS subject
+HB1310,Zoning,Official LIS subject
+HB1311,Domestic Relations,Official LIS subject
+HB1311,Divorce,Official LIS subject
+HB1314,Elections,Official LIS subject
+HB1316,"Crime Commission, State",Official LIS subject
+HB1316,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1316,Uncodified Legislation,Official LIS subject
+HB1320,Consumer Protection,Official LIS subject
+HB1320,Trade and Commerce,Official LIS subject
+HB1322,Nurses,Official LIS subject
+HB1322,Professional and Occupational Regulation,Official LIS subject
+HB1344,Labor and Employment,Official LIS subject
+HB1347,Insurance,Official LIS subject
+HB1347,Health Insurance,Official LIS subject
+HB1347,Autism,Official LIS subject
+HB1348,Administration of Government,Official LIS subject
+HB1348,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1348,"General Services, Department of",Official LIS subject
+HB1355,Administration of Government,Official LIS subject
+HB1363,Administration of Government,Official LIS subject
+HB1363,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1363,Infrastructure,Official LIS subject
+HB1363,Uncodified Legislation,Official LIS subject
+HB1371,Administration of Government,Official LIS subject
+HB1371,Virginia Public Procurement Act,Official LIS subject
+HB1373,Authorities,Official LIS subject
+HB1373,Higher Education,Official LIS subject
+HB1373,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB1374,Armed Forces,Official LIS subject
+HB1374,Tuition,Official LIS subject
+HB1374,Virginia National Guard,Official LIS subject
+HB1374,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB1375,Education,Official LIS subject
+HB1375,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1375,Child Care,Official LIS subject
+HB1385,Courts Not of Record,Official LIS subject
+HB1385,Education,Official LIS subject
+HB1385,School Boards,Official LIS subject
+HB1387,Commonwealth Public Safety,Official LIS subject
+HB1387,Professions and Occupations,Official LIS subject
+HB1390,Administration of Government,Official LIS subject
+HB1393,"Pensions, Benefits, and Retirement",Official LIS subject
+HB1393,Law-Enforcement Officers,Official LIS subject
+HB1393,Retirement Systems,Official LIS subject
+HB1403,Conservation,Official LIS subject
+HB1403,Dams,Official LIS subject
+HB1405,Prisons and Other Methods of Correction,Official LIS subject
+HB1405,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1405,"Corrections, Board of or Department of",Official LIS subject
+HB1414,Taxation,Official LIS subject
+HB1414,Estates,Official LIS subject
+HB1424,Appropriations,Official LIS subject
+HB1424,Crimes and Offenses Generally,Official LIS subject
+HB1424,Firearms,Official LIS subject
+HB1434,Administration of Government,Official LIS subject
+HB1434,King William County,Official LIS subject
+HB1434,Property and Conveyances,Official LIS subject
+HB1434,Uncodified Legislation,Official LIS subject
+HB1434,Mattaponi Indian Tribe,Official LIS subject
+HB1438,"Pensions, Benefits, and Retirement",Official LIS subject
+HB1438,Retirement Systems,Official LIS subject
+HB1445,Workforce,Official LIS subject
+HB1445,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HB1446,Taxation,Official LIS subject
+HB1446,Affordable Housing,Official LIS subject
+HB1446,Real Property,Official LIS subject
+HB1463,Administration of Government,Official LIS subject
+HB1463,"General Services, Department of",Official LIS subject
+HB1463,Uncodified Legislation,Official LIS subject
+HB1470,Income Tax,Official LIS subject
+HB1470,Taxation,Official LIS subject
+HB1479,Administration of Government,Official LIS subject
+HB1479,Health,Official LIS subject
+HB1479,Professions and Occupations,Official LIS subject
+HB1481,Domestic Relations,Official LIS subject
+HB1490,Elections,Official LIS subject
+HB1490,Voters and Voting,Official LIS subject
+HB1492,"Judges, Justices, and Other Elective Officers",Official LIS subject
+HB1492,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1492,Supreme Court of Virginia,Official LIS subject
+HB1492,Magistrates,Official LIS subject
+HB1492,Victims of Crime,Official LIS subject
+HB1492,Uncodified Legislation,Official LIS subject
+HB1494,Juvenile Justice,Official LIS subject
+HB1494,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1494,Correctional Enterprises,Official LIS subject
+HB1494,Uncodified Legislation,Official LIS subject
+HB1495,Administration of Government,Official LIS subject
+HB1495,Television,Official LIS subject
+HB1497,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HB1497,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1497,Pharmacists,Official LIS subject
+HB1497,Uncodified Legislation,Official LIS subject
+HB1520,Chesapeake Bay,Official LIS subject
+HB1520,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1520,"Waters of the State, Ports, and Harbors",Official LIS subject
+HB1520,Uncodified Legislation,Official LIS subject
+HB1524,Taxation,Official LIS subject
+HB1524,Highways and Other Surface Transportation Systems,Official LIS subject
+HB1536,Sales and Use Tax,Official LIS subject
+HB1536,Taxation,Official LIS subject
+HB1536,Retail Sales and Use Tax,Official LIS subject
+HB1537,Joint Legislative Audit and Review Commission (JLARC),Official LIS subject
+HB1537,"Study Commissions, Committees, and Reports",Official LIS subject
+HB1537,Uncodified Legislation,Official LIS subject
+HB1546,Sales and Use Tax,Official LIS subject
+HB1546,Taxation,Official LIS subject
+HB1546,Data Centers,Official LIS subject
+HJ1,Constitutional Amendments,Official LIS subject
+HJ1,Human Rights,Official LIS subject
+HJ2,Constitutional Amendments,Official LIS subject
+HJ2,Elections,Official LIS subject
+HJ2,Voters and Voting,Official LIS subject
+HJ9,Constitutional Amendments,Official LIS subject
+HJ9,Marriage,Official LIS subject
+HJ14,General Assembly,Official LIS subject
+HJ14,Indian Tribes,Official LIS subject
+HJ14,Wolf Creek Cherokee Tribe of Virginia,Official LIS subject
+HJ15,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ15,Higher Education,Official LIS subject
+HJ15,Public Schools,Official LIS subject
+HJ15,Tuition,Official LIS subject
+HJ15,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HJ21,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ21,High Schools,Official LIS subject
+HJ21,Higher Education,Official LIS subject
+HJ21,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HJ22,Joint Legislative Audit and Review Commission (JLARC),Official LIS subject
+HJ22,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ22,Long-Term Care,Official LIS subject
+HJ22,Nurses,Official LIS subject
+HJ24,"Counties, Cities, and Towns",Official LIS subject
+HJ24,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ25,Senate of Virginia,Official LIS subject
+HJ25,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ25,Virginia House of Delegates,Official LIS subject
+HJ25,Colleges,Official LIS subject
+HJ25,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HJ29,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HJ29,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ29,Community Colleges,Official LIS subject
+HJ29,Workforce,Official LIS subject
+HJ32,Administration of Government,Official LIS subject
+HJ32,Joint Legislative Audit and Review Commission (JLARC),Official LIS subject
+HJ32,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ34,"Commissions, Boards, and Institutions Generally",Official LIS subject
+HJ34,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ34,Cell Phones,Official LIS subject
+HJ34,Public Schools,Official LIS subject
+HJ34,Students,Official LIS subject
+HJ35,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ35,Taxation,Official LIS subject
+HJ36,"Counties, Cities, and Towns",Official LIS subject
+HJ36,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ36,Local Government and Officials,Official LIS subject
+HJ39,Joint Legislative Audit and Review Commission (JLARC),Official LIS subject
+HJ39,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ39,Community Colleges,Official LIS subject
+HJ39,Tuition,Official LIS subject
+HJ40,"Counties, Cities, and Towns",Official LIS subject
+HJ40,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ40,Taxation,Official LIS subject
+HJ46,Motor Vehicles,Official LIS subject
+HJ46,"Police, State",Official LIS subject
+HJ46,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ51,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ51,"General Services, Department of",Official LIS subject
+HJ61,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ61,Higher Education,Official LIS subject
+HJ61,Students,Official LIS subject
+HJ61,Tuition,Official LIS subject
+HJ61,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+HJ63,Authorities,Official LIS subject
+HJ63,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ63,Cannabis,Official LIS subject
+HJ64,"Counties, Cities, and Towns",Official LIS subject
+HJ64,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ64,Infrastructure,Official LIS subject
+HJ64,Data Centers,Official LIS subject
+HJ65,"Counties, Cities, and Towns",Official LIS subject
+HJ65,Joint Legislative Audit and Review Commission (JLARC),Official LIS subject
+HJ65,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ65,Roads,Official LIS subject
+HJ65,Highways and Other Surface Transportation Systems,Official LIS subject
+HJ67,Education,Official LIS subject
+HJ67,Senate of Virginia,Official LIS subject
+HJ67,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ67,Virginia House of Delegates,Official LIS subject
+HJ82,"Property, Grounds, and Buildings, State-owned",Official LIS subject
+HJ82,"Study Commissions, Committees, and Reports",Official LIS subject
+HJ82,Washington County,Official LIS subject
+HJ82,State Parks,Official LIS subject
+SB10,Armed Forces,Official LIS subject
+SB10,Income Tax,Official LIS subject
+SB10,Taxation,Official LIS subject
+SB31,"Agriculture, Animal Care and Food",Official LIS subject
+SB31,Companion Animals,Official LIS subject
+SB33,Health,Official LIS subject
+SB33,Professions and Occupations,Official LIS subject
+SB33,"Study Commissions, Committees, and Reports",Official LIS subject
+SB33,Nurse Anesthetists,Official LIS subject
+SB61,Income Tax,Official LIS subject
+SB61,Taxation,Official LIS subject
+SB61,Firefighters and Fire Marshals,Official LIS subject
+SB62,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB72,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SB72,Education,Official LIS subject
+SB91,Labor and Employment,Official LIS subject
+SB96,Education,Official LIS subject
+SB96,"Study Commissions, Committees, and Reports",Official LIS subject
+SB108,Income Tax,Official LIS subject
+SB108,Taxation,Official LIS subject
+SB113,Administration of Government,Official LIS subject
+SB113,"Study Commissions, Committees, and Reports",Official LIS subject
+SB113,Veterans,Official LIS subject
+SB123,Property and Conveyances,Official LIS subject
+SB124,"Gambling, Lotteries, Etc.",Official LIS subject
+SB124,Taxation,Official LIS subject
+SB124,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB126,Administration of Government,Official LIS subject
+SB126,Motor Vehicles,Official LIS subject
+SB126,Personal Property and Personal Property Tax,Official LIS subject
+SB136,"Counties, Cities, and Towns",Official LIS subject
+SB136,Local Government and Officials,Official LIS subject
+SB137,Public Service Companies,Official LIS subject
+SB137,State Corporation Commission,Official LIS subject
+SB137,Electric Companies,Official LIS subject
+SB140,Administration of Government,Official LIS subject
+SB140,Health,Official LIS subject
+SB140,"Study Commissions, Committees, and Reports",Official LIS subject
+SB152,Public Service Companies,Official LIS subject
+SB152,State Corporation Commission,Official LIS subject
+SB152,Electric Companies,Official LIS subject
+SB163,Administration of Government,Official LIS subject
+SB163,Attorney General,Official LIS subject
+SB163,Authorities,Official LIS subject
+SB163,"Counties, Cities, and Towns",Official LIS subject
+SB164,Consumer Protection,Official LIS subject
+SB164,Trade and Commerce,Official LIS subject
+SB170,Education,Official LIS subject
+SB171,"Counties, Cities, and Towns",Official LIS subject
+SB171,Zoning,Official LIS subject
+SB181,Education,Official LIS subject
+SB181,Elementary Schools,Official LIS subject
+SB181,Public Schools,Official LIS subject
+SB181,Secondary Schools,Official LIS subject
+SB183,Income Tax,Official LIS subject
+SB183,Taxation,Official LIS subject
+SB191,Public Service Companies,Official LIS subject
+SB191,Electric Companies,Official LIS subject
+SB191,Uncodified Legislation,Official LIS subject
+SB192,Computer Services and Uses,Official LIS subject
+SB192,Sales and Use Tax,Official LIS subject
+SB192,Taxation,Official LIS subject
+SB192,Retail Sales and Use Tax,Official LIS subject
+SB197,Administration of Government,Official LIS subject
+SB197,Attorney General,Official LIS subject
+SB197,Children,Official LIS subject
+SB197,Sexual Offenses,Official LIS subject
+SB198,Motor Vehicles,Official LIS subject
+SB198,License Plates and Registration,Official LIS subject
+SB200,Advertising and Advertisements,Official LIS subject
+SB200,"Counties, Cities, and Towns",Official LIS subject
+SB218,"Pensions, Benefits, and Retirement",Official LIS subject
+SB218,Retirement Systems,Official LIS subject
+SB219,Tuition,Official LIS subject
+SB219,Virginia National Guard,Official LIS subject
+SB219,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB226,Motor Vehicles,Official LIS subject
+SB226,"Study Commissions, Committees, and Reports",Official LIS subject
+SB226,Uncodified Legislation,Official LIS subject
+SB226,Highways and Other Surface Transportation Systems,Official LIS subject
+SB229,"Study Commissions, Committees, and Reports",Official LIS subject
+SB229,Suicide,Official LIS subject
+SB229,Uncodified Legislation,Official LIS subject
+SB229,Veterans,Official LIS subject
+SB230,Public Service Companies,Official LIS subject
+SB233,Housing,Official LIS subject
+SB233,Religious and Charitable Matters; Cemeteries,Official LIS subject
+SB233,Affordable Housing,Official LIS subject
+SB234,"Study Commissions, Committees, and Reports",Official LIS subject
+SB234,Solar Energy,Official LIS subject
+SB234,"Mines, Minerals, and Energy",Official LIS subject
+SB247,Administration of Government,Official LIS subject
+SB247,"Counties, Cities, and Towns",Official LIS subject
+SB247,Ordinances,Official LIS subject
+SB251,Taxation,Official LIS subject
+SB251,Motion Pictures,Official LIS subject
+SB252,Consumer Protection,Official LIS subject
+SB252,Trade and Commerce,Official LIS subject
+SB270,Elections,Official LIS subject
+SB270,Primaries,Official LIS subject
+SB270,Voters and Voting,Official LIS subject
+SB278,Appropriations,Official LIS subject
+SB278,Civil Remedies and Procedure,Official LIS subject
+SB278,Criminal Procedure,Official LIS subject
+SB278,Health,Official LIS subject
+SB280,Appropriations,Official LIS subject
+SB280,Civil Remedies and Procedure,Official LIS subject
+SB280,Health,Official LIS subject
+SB280,Professions and Occupations,Official LIS subject
+SB284,"Counties, Cities, and Towns",Official LIS subject
+SB284,Data Centers,Official LIS subject
+SB285,"Counties, Cities, and Towns",Official LIS subject
+SB285,Data Centers,Official LIS subject
+SB289,Computer Services and Uses,Official LIS subject
+SB289,"Waters of the State, Ports, and Harbors",Official LIS subject
+SB289,Stormwater Management,Official LIS subject
+SB293,"Wills, Trusts, and Fiduciaries",Official LIS subject
+SB302,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SB302,"Study Commissions, Committees, and Reports",Official LIS subject
+SB302,Manufacturers,Official LIS subject
+SB302,Uncodified Legislation,Official LIS subject
+SB304,"Counties, Cities, and Towns",Official LIS subject
+SB304,Ordinances,Official LIS subject
+SB304,Zoning,Official LIS subject
+SB305,"Counties, Cities, and Towns",Official LIS subject
+SB305,Ordinances,Official LIS subject
+SB312,Persons With Disabilities,Official LIS subject
+SB315,Elections,Official LIS subject
+SB315,Voter Registration,Official LIS subject
+SB318,"Study Commissions, Committees, and Reports",Official LIS subject
+SB318,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB322,Highways and Other Surface Transportation Systems,Official LIS subject
+SB328,Emergency Services and Vehicles,Official LIS subject
+SB328,"Pensions, Benefits, and Retirement",Official LIS subject
+SB328,Local Government and Officials,Official LIS subject
+SB328,Retirement Systems,Official LIS subject
+SB332,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SB332,Crimes and Offenses Generally,Official LIS subject
+SB332,Misdemeanors,Official LIS subject
+SB333,Appropriations,Official LIS subject
+SB333,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SB333,Crimes and Offenses Generally,Official LIS subject
+SB333,Health,Official LIS subject
+SB333,Cancer,Official LIS subject
+SB333,"Medical Treatment, Care, and Assistance",Official LIS subject
+SB346,Public Service Companies,Official LIS subject
+SB346,State Corporation Commission,Official LIS subject
+SB346,Solar Energy,Official LIS subject
+SB347,Armed Forces,Official LIS subject
+SB347,"Study Commissions, Committees, and Reports",Official LIS subject
+SB347,"Finance, Secretary of",Official LIS subject
+SB347,Uncodified Legislation,Official LIS subject
+SB349,Motor Vehicles,Official LIS subject
+SB349,"Inspections, Motor Vehicle",Official LIS subject
+SB351,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SB351,Professions and Occupations,Official LIS subject
+SB351,Nurses,Official LIS subject
+SB351,Midwives,Official LIS subject
+SB359,Consumer Protection,Official LIS subject
+SB359,Trade and Commerce,Official LIS subject
+SB359,Children,Official LIS subject
+SB359,Social Media,Official LIS subject
+SB371,"Counties, Cities, and Towns",Official LIS subject
+SB371,King George County,Official LIS subject
+SB376,Insurance,Official LIS subject
+SB376,Health Insurance,Official LIS subject
+SB376,Prescription Medicines,Official LIS subject
+SB377,Administration of Government,Official LIS subject
+SB377,Appropriations,Official LIS subject
+SB377,Elections,Official LIS subject
+SB377,Campaign Practices,Official LIS subject
+SB378,Prisons and Other Methods of Correction,Official LIS subject
+SB378,Correctional Enterprises,Official LIS subject
+SB378,"Corrections, Board of or Department of",Official LIS subject
+SB390,Health,Official LIS subject
+SB390,Epilepsy,Official LIS subject
+SB395,Behavioral Health and Developmental Services,Official LIS subject
+SB395,Education,Official LIS subject
+SB395,Elementary Schools,Official LIS subject
+SB395,Public Schools,Official LIS subject
+SB395,Students,Official LIS subject
+SB395,Secondary Schools,Official LIS subject
+SB396,"Judges, Justices, and Other Elective Officers",Official LIS subject
+SB396,"Pensions, Benefits, and Retirement",Official LIS subject
+SB396,Retirement Systems,Official LIS subject
+SB404,Behavioral Health and Developmental Services,Official LIS subject
+SB404,Health,Official LIS subject
+SB404,Hospitals and Hospitalization,Official LIS subject
+SB406,Elections,Official LIS subject
+SB417,Administration of Government,Official LIS subject
+SB417,Persons With Disabilities,Official LIS subject
+SB417,Welfare (Social Services),Official LIS subject
+SB417,"Aging and Rehabilitative Services, Department for",Official LIS subject
+SB418,Administration of Government,Official LIS subject
+SB418,"Study Commissions, Committees, and Reports",Official LIS subject
+SB418,Museums,Official LIS subject
+SB418,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB419,Income Tax,Official LIS subject
+SB419,Taxation,Official LIS subject
+SB427,Criminal Procedure,Official LIS subject
+SB427,Correctional Enterprises,Official LIS subject
+SB430,"Counties, Cities, and Towns",Official LIS subject
+SB430,Affordable Housing,Official LIS subject
+SB431,Education,Official LIS subject
+SB431,School Boards,Official LIS subject
+SB431,Students,Official LIS subject
+SB432,Consumer Protection,Official LIS subject
+SB432,Trade and Commerce,Official LIS subject
+SB432,Children,Official LIS subject
+SB440,Commonwealth Public Safety,Official LIS subject
+SB440,Education,Official LIS subject
+SB440,Public Schools,Official LIS subject
+SB445,Armed Forces,Official LIS subject
+SB445,Education,Official LIS subject
+SB445,Teachers,Official LIS subject
+SB445,Veterans,Official LIS subject
+SB446,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SB446,Conservation,Official LIS subject
+SB446,"Waters of the State, Ports, and Harbors",Official LIS subject
+SB451,Conservation,Official LIS subject
+SB451,Corporations,Official LIS subject
+SB451,Income Tax,Official LIS subject
+SB451,Taxation,Official LIS subject
+SB457,"Mines, Minerals, and Energy",Official LIS subject
+SB459,Income Tax,Official LIS subject
+SB459,Taxation,Official LIS subject
+SB465,Conservation,Official LIS subject
+SB465,Land Conservation,Official LIS subject
+SB468,Augusta County,Official LIS subject
+SB468,Bath County,Official LIS subject
+SB468,School Boards,Official LIS subject
+SB468,Uncodified Legislation,Official LIS subject
+SB481,Courts Not of Record,Official LIS subject
+SB481,Courts of Record,Official LIS subject
+SB481,Crimes and Offenses Generally,Official LIS subject
+SB481,Criminal Procedure,Official LIS subject
+SB481,Circuit Courts,Official LIS subject
+SB481,Juvenile and Domestic Relations District Courts,Official LIS subject
+SB481,Juveniles,Official LIS subject
+SB482,Courts Not of Record,Official LIS subject
+SB482,Juveniles,Official LIS subject
+SB485,Labor and Employment,Official LIS subject
+SB492,Administration of Government,Official LIS subject
+SB492,Virginia Public Procurement Act,Official LIS subject
+SB492,Electric Vehicles,Official LIS subject
+SB500,Public Service Companies,Official LIS subject
+SB500,Electric Companies,Official LIS subject
+SB501,Taxation,Official LIS subject
+SB501,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB507,Labor and Employment,Official LIS subject
+SB518,Education,Official LIS subject
+SB518,High Schools,Official LIS subject
+SB518,Public Schools,Official LIS subject
+SB519,Domestic Relations,Official LIS subject
+SB519,Divorce,Official LIS subject
+SB520,Workers' Compensation,Official LIS subject
+SB548,"Pensions, Benefits, and Retirement",Official LIS subject
+SB548,Retirement Systems,Official LIS subject
+SB557,Public Service Companies,Official LIS subject
+SB562,Public Service Companies,Official LIS subject
+SB562,Coal Mining,Official LIS subject
+SB563,Education,Official LIS subject
+SB563,"Study Commissions, Committees, and Reports",Official LIS subject
+SB563,Career and Technical Education,Official LIS subject
+SB563,Uncodified Legislation,Official LIS subject
+SB563,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB567,"Counties, Cities, and Towns",Official LIS subject
+SB567,Public Service Companies,Official LIS subject
+SB567,State Corporation Commission,Official LIS subject
+SB571,Civil Remedies and Procedure,Official LIS subject
+SB571,Crimes and Offenses Generally,Official LIS subject
+SB575,Behavioral Health and Developmental Services,Official LIS subject
+SB575,Courts Not of Record,Official LIS subject
+SB575,Minors,Official LIS subject
+SB575,Elementary Schools,Official LIS subject
+SB575,Public Schools,Official LIS subject
+SB575,Students,Official LIS subject
+SB575,Secondary Schools,Official LIS subject
+SB578,Public Service Companies,Official LIS subject
+SB579,Health,Official LIS subject
+SB579,Liability Insurance,Official LIS subject
+SB579,Nursing Homes,Official LIS subject
+SB590,Behavioral Health and Developmental Services,Official LIS subject
+SB591,Public Service Companies,Official LIS subject
+SB592,Narcotics and Drugs,Official LIS subject
+SB592,Uncodified Legislation,Official LIS subject
+SB593,Workers' Compensation,Official LIS subject
+SB593,Firefighters and Fire Marshals,Official LIS subject
+SB593,Law-Enforcement Officers,Official LIS subject
+SB594,Emergency Services and Vehicles,Official LIS subject
+SB594,"Study Commissions, Committees, and Reports",Official LIS subject
+SB594,Uncodified Legislation,Official LIS subject
+SB596,Property and Conveyances,Official LIS subject
+SB596,Landlord and Tenant,Official LIS subject
+SB596,Virginia Residential Landlord and Tenant Act,Official LIS subject
+SB612,"Counties, Cities, and Towns",Official LIS subject
+SB612,Police,Official LIS subject
+SB617,Authorities,Official LIS subject
+SB617,"Washington, D.C. Metropolitan Area",Official LIS subject
+SB617,Highways and Other Surface Transportation Systems,Official LIS subject
+SB619,Courts Not of Record,Official LIS subject
+SB619,Education,Official LIS subject
+SB619,Elementary Schools,Official LIS subject
+SB619,Public Schools,Official LIS subject
+SB619,Secondary Schools,Official LIS subject
+SB623,Emergency Services and Vehicles,Official LIS subject
+SB623,Labor and Employment,Official LIS subject
+SB623,Firefighters and Fire Marshals,Official LIS subject
+SB631,Life Insurance,Official LIS subject
+SB631,Virginia National Guard,Official LIS subject
+SB631,Uncodified Legislation,Official LIS subject
+SB632,Income Tax,Official LIS subject
+SB632,Taxation,Official LIS subject
+SB633,Criminal Procedure,Official LIS subject
+SB633,Defendants,Official LIS subject
+SB636,Behavioral Health and Developmental Services,Official LIS subject
+SB636,"Study Commissions, Committees, and Reports",Official LIS subject
+SB636,Uncodified Legislation,Official LIS subject
+SB636,Veterans,Official LIS subject
+SB647,Administration of Government,Official LIS subject
+SB647,Virginia Public Procurement Act,Official LIS subject
+SB648,Emergency Services and Vehicles,Official LIS subject
+SB648,Fire Protection,Official LIS subject
+SB648,Motor Vehicles,Official LIS subject
+SB661,Health,Official LIS subject
+SB661,Electronic Monitoring,Official LIS subject
+SB661,Nursing Homes,Official LIS subject
+SB662,Income Tax,Official LIS subject
+SB662,"Police, State",Official LIS subject
+SB662,Taxation,Official LIS subject
+SB664,Public Service Companies,Official LIS subject
+SB664,Electric Companies,Official LIS subject
+SB664,Infrastructure,Official LIS subject
+SB664,Data Centers,Official LIS subject
+SB665,Authorities,Official LIS subject
+SB665,"Waters of the State, Ports, and Harbors",Official LIS subject
+SB665,Stormwater Management,Official LIS subject
+SB670,Insurance,Official LIS subject
+SB670,Taxation,Official LIS subject
+SB670,License Tax,Official LIS subject
+SB675,Fairfax County,Official LIS subject
+SB675,"Gambling, Lotteries, Etc.",Official LIS subject
+SB675,Taxation,Official LIS subject
+SB678,Students,Official LIS subject
+SB678,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB682,Administration of Government,Official LIS subject
+SB682,Health,Official LIS subject
+SB682,Professions and Occupations,Official LIS subject
+SB684,Trade and Commerce,Official LIS subject
+SB684,Children,Official LIS subject
+SB685,Labor and Employment,Official LIS subject
+SB685,Wages,Official LIS subject
+SB688,Public Service Companies,Official LIS subject
+SB689,Crimes and Offenses Generally,Official LIS subject
+SB689,"Gambling, Lotteries, Etc.",Official LIS subject
+SB693,Property and Conveyances,Official LIS subject
+SB693,Taxation,Official LIS subject
+SB694,Crimes and Offenses Generally,Official LIS subject
+SB694,"Gambling, Lotteries, Etc.",Official LIS subject
+SB697,"Counties, Cities, and Towns",Official LIS subject
+SB697,Solar Energy,Official LIS subject
+SB698,Conservation,Official LIS subject
+SB698,Dams,Official LIS subject
+SB708,Public Service Companies,Official LIS subject
+SB711,Taxation,Official LIS subject
+SB714,Motor Vehicles,Official LIS subject
+SB714,Northern Virginia,Official LIS subject
+SB717,Higher Education,Official LIS subject
+SB717,Institutions of Higher Education; Other Educational and Cultural Institutions,Official LIS subject
+SB721,"Counties, Cities, and Towns",Official LIS subject
+SB721,Local Government and Officials,Official LIS subject
+SB721,Ordinances,Official LIS subject
+SB721,Plats,Official LIS subject
+SB721,Zoning,Official LIS subject
+SB730,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SB730,Fisheries and Habitat of the Tidal Waters,Official LIS subject
+SB733,Administration of Government,Official LIS subject
+SB733,Governor,Official LIS subject
+SB735,Insurance,Official LIS subject
+SB735,Health Insurance,Official LIS subject
+SJ1,Constitutional Amendments,Official LIS subject
+SJ1,Human Rights,Official LIS subject
+SJ2,Constitutional Amendments,Official LIS subject
+SJ2,Elections,Official LIS subject
+SJ2,Voters and Voting,Official LIS subject
+SJ10,Attorney General,Official LIS subject
+SJ10,Constitutional Amendments,Official LIS subject
+SJ10,Lieutenant Governor,Official LIS subject
+SJ11,Constitutional Amendments,Official LIS subject
+SJ11,Marriage,Official LIS subject
+SJ14,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SJ14,Science and Technology,Official LIS subject
+SJ14,"Study Commissions, Committees, and Reports",Official LIS subject
+SJ18,"Counties, Cities, and Towns",Official LIS subject
+SJ18,"Study Commissions, Committees, and Reports",Official LIS subject
+SJ19,Prince William County,Official LIS subject
+SJ19,"Study Commissions, Committees, and Reports",Official LIS subject
+SJ19,Pedestrians,Official LIS subject
+SJ19,Roads,Official LIS subject
+SJ20,"Commissions, Boards, and Institutions Generally",Official LIS subject
+SJ20,"Study Commissions, Committees, and Reports",Official LIS subject
+SJ20,Community Colleges,Official LIS subject
+SJ20,Workforce,Official LIS subject
+SJ21,Administration of Government,Official LIS subject
+SJ21,Joint Legislative Audit and Review Commission (JLARC),Official LIS subject
+SJ21,"Study Commissions, Committees, and Reports",Official LIS subject
+SJ22,"Police, State",Official LIS subject
+SJ22,"Study Commissions, Committees, and Reports",Official LIS subject
+SJ22,Taxation,Official LIS subject
+SJ26,Joint Legislative Audit and Review Commission (JLARC),Official LIS subject
+SJ26,Narcotics and Drugs,Official LIS subject
+SJ26,"Study Commissions, Committees, and Reports",Official LIS subject
