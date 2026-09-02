@@ -1,0 +1,59 @@
+year,topic_name,classification,party,mixed_delegates,no_delegates,yes_delegates,classified_delegates
+2026,Agriculture and Food,Derived from LIS bill description,D,0.0,0.0,63.0,63.0
+2026,Agriculture and Food,Derived from LIS bill description,R,5.0,0.0,30.0,35.0
+2026,Behavioral Health,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Behavioral Health,Derived from LIS bill description,R,6.0,0.0,29.0,35.0
+2026,Budget and Appropriations,Derived from LIS bill description,D,0.0,0.0,64.0,64.0
+2026,Budget and Appropriations,Derived from LIS bill description,R,1.0,34.0,0.0,35.0
+2026,Business and Commerce,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Business and Commerce,Derived from LIS bill description,R,25.0,0.0,10.0,35.0
+2026,Constitutional Amendments,Official LIS subject,D,0.0,0.0,15.0,15.0
+2026,Constitutional Amendments,Official LIS subject,R,0.0,7.0,0.0,7.0
+2026,Courts and Civil Law,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Courts and Civil Law,Derived from LIS bill description,R,30.0,5.0,0.0,35.0
+2026,Criminal Justice,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Criminal Justice,Derived from LIS bill description,R,31.0,4.0,0.0,35.0
+2026,Education,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Education,Derived from LIS bill description,R,31.0,0.0,4.0,35.0
+2026,Elections and Voting,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Elections and Voting,Derived from LIS bill description,R,2.0,34.0,0.0,36.0
+2026,Energy and Utilities,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Energy and Utilities,Derived from LIS bill description,R,28.0,8.0,0.0,36.0
+2026,Environment and Conservation,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Environment and Conservation,Derived from LIS bill description,R,9.0,26.0,0.0,35.0
+2026,Family and Children,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Family and Children,Derived from LIS bill description,R,7.0,0.0,28.0,35.0
+2026,Firearms,Derived from LIS bill description,D,1.0,0.0,64.0,65.0
+2026,Firearms,Derived from LIS bill description,R,0.0,35.0,0.0,35.0
+2026,Health and Healthcare,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Health and Healthcare,Derived from LIS bill description,R,6.0,0.0,29.0,35.0
+2026,Higher Education,Derived from LIS bill description,D,0.0,0.0,64.0,64.0
+2026,Higher Education,Derived from LIS bill description,R,20.0,0.0,15.0,35.0
+2026,Housing,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Housing,Derived from LIS bill description,R,7.0,29.0,0.0,36.0
+2026,Insurance,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Insurance,Derived from LIS bill description,R,13.0,0.0,22.0,35.0
+2026,Labor and Employment,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Labor and Employment,Derived from LIS bill description,R,17.0,19.0,0.0,36.0
+2026,Labor and Employment,Official LIS subject,D,0.0,0.0,28.0,28.0
+2026,Labor and Employment,Official LIS subject,R,0.0,14.0,0.0,14.0
+2026,Local Government,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Local Government,Derived from LIS bill description,R,25.0,6.0,4.0,35.0
+2026,Marriage and Domestic Relations,Derived from LIS bill description,D,0.0,0.0,63.0,63.0
+2026,Marriage and Domestic Relations,Derived from LIS bill description,R,20.0,0.0,15.0,35.0
+2026,Public Safety,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Public Safety,Derived from LIS bill description,R,27.0,0.0,8.0,35.0
+2026,Social Services,Derived from LIS bill description,D,0.0,0.0,43.0,43.0
+2026,Social Services,Derived from LIS bill description,R,5.0,0.0,16.0,21.0
+2026,State Government,Derived from LIS bill description,D,0.0,0.0,63.0,63.0
+2026,State Government,Derived from LIS bill description,R,27.0,0.0,8.0,35.0
+2026,"Study Commissions, Committees, and Reports",Official LIS subject,D,0.0,0.0,59.0,59.0
+2026,"Study Commissions, Committees, and Reports",Official LIS subject,R,4.0,26.0,0.0,30.0
+2026,Taxes and Revenue,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Taxes and Revenue,Derived from LIS bill description,R,23.0,3.0,9.0,35.0
+2026,Technology and Data,Derived from LIS bill description,D,0.0,0.0,64.0,64.0
+2026,Technology and Data,Derived from LIS bill description,R,14.0,0.0,21.0,35.0
+2026,Transportation,Derived from LIS bill description,D,0.0,0.0,65.0,65.0
+2026,Transportation,Derived from LIS bill description,R,27.0,3.0,6.0,36.0
+2026,Uncodified Legislation,Official LIS subject,D,0.0,0.0,15.0,15.0
+2026,Uncodified Legislation,Official LIS subject,R,2.0,3.0,1.0,6.0

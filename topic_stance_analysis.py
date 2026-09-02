@@ -10,15 +10,15 @@ PROCESSED_ROOT = Path("data/processed")
 
 YEARS = [2025, 2026]
 
-# Minimum number of directional Y/N votes required
-# before assigning a stance.
+# Minimum number of directional Y/N topic votes required
+# before assigning a voting tendency.
 MIN_TOPIC_DIRECTIONAL_VOTES = 10
 
-# Stance thresholds
+# Voting tendency thresholds.
 YES_THRESHOLD = 0.65
 NO_THRESHOLD = 0.35
 
-# Only these classifications are valid from the pipeline.
+# Valid upstream classification labels.
 ALLOWED_CLASSIFICATIONS = {
     "Official LIS subject",
     "Derived from LIS bill description",
@@ -46,11 +46,24 @@ MEMBER_TOPIC_FILES = {
 def require_file(path):
 
     if not path.exists():
-
         raise FileNotFoundError(
             f"Missing required file: {path}"
         )
 
+
+def normalize_text(series):
+
+    return (
+        series
+        .fillna("")
+        .astype(str)
+        .str.strip()
+    )
+
+
+# =========================================================
+# LOAD MEMBER-VOTE-TOPIC
+# =========================================================
 
 def load_member_vote_topic(year):
 
@@ -60,14 +73,7 @@ def load_member_vote_topic(year):
 
     df = pd.read_csv(
         path,
-        dtype={
-            "member_id": str,
-            "MBR_NAME": str,
-            "party": str,
-            "vote": str,
-            "topic_name": str,
-            "classification": str,
-        }
+        dtype=str
     )
 
     required = {
@@ -87,56 +93,47 @@ def load_member_vote_topic(year):
     )
 
     if missing:
-
         raise ValueError(
             f"{path} missing columns: "
             f"{missing}"
         )
 
     df["member_id"] = (
-        df["member_id"]
-        .fillna("")
-        .str.strip()
+        normalize_text(
+            df["member_id"]
+        )
         .str.upper()
     )
 
-    df["MBR_NAME"] = (
+    df["MBR_NAME"] = normalize_text(
         df["MBR_NAME"]
-        .fillna("")
-        .str.strip()
     )
 
     df["party"] = (
-        df["party"]
-        .fillna("")
-        .str.strip()
+        normalize_text(
+            df["party"]
+        )
         .str.upper()
     )
 
     df["vote"] = (
-        df["vote"]
-        .fillna("")
-        .str.strip()
+        normalize_text(
+            df["vote"]
+        )
         .str.upper()
     )
 
-    df["topic_name"] = (
+    df["topic_name"] = normalize_text(
         df["topic_name"]
-        .fillna("")
-        .str.strip()
     )
 
-    df["classification"] = (
+    df["classification"] = normalize_text(
         df["classification"]
-        .fillna("")
-        .str.strip()
     )
 
     invalid_classifications = (
         set(
-            df[
-                "classification"
-            ]
+            df["classification"]
             .dropna()
             .unique()
         )
@@ -147,33 +144,35 @@ def load_member_vote_topic(year):
     if invalid_classifications:
 
         raise ValueError(
-            f"{year}: unexpected "
-            f"classification values: "
-            f"{invalid_classifications}"
+            f"{year}: unexpected classification "
+            f"values: {invalid_classifications}"
         )
 
     return df
 
 
 # =========================================================
-# STANCE LABEL
+# ASSIGN VOTING TENDENCY
 #
 # IMPORTANT:
 #
-# "YES" means a member tended to vote Y on bills/motions
+# YES means:
+# the delegate generally voted Yes on vote events
 # associated with this topic.
 #
-# It does NOT mean:
-# "supports the topic"
-# or
-# "is politically in favor of the issue."
+# NO means:
+# the delegate generally voted No on vote events
+# associated with this topic.
 #
-# Topics can contain bills with different policy directions.
+# MIXED means:
+# the delegate's Yes/No record is not strongly one-sided.
+#
+# This does NOT infer the delegate's personal policy view.
 # =========================================================
 
-def assign_stance(
+def assign_voting_tendency(
     directional_votes,
-    yes_pct
+    yes_rate
 ):
 
     if (
@@ -181,54 +180,51 @@ def assign_stance(
         <
         MIN_TOPIC_DIRECTIONAL_VOTES
     ):
-
         return "INSUFFICIENT DATA"
 
     if (
-        yes_pct
+        yes_rate
         >=
         YES_THRESHOLD
     ):
-
         return "YES"
 
     if (
-        yes_pct
+        yes_rate
         <=
         NO_THRESHOLD
     ):
-
         return "NO"
 
     return "MIXED"
 
 
 # =========================================================
-# BUILD DELEGATE × TOPIC STANCE
+# BUILD DELEGATE × TOPIC VOTING TENDENCY
 # =========================================================
 
-def build_delegate_topic_stance(
+def build_delegate_topic_voting_tendency(
     member_vote_topic
 ):
 
     # -----------------------------------------------------
-    # REMOVE UNCLASSIFIED FROM POLICY STANCE ANALYSIS
-    #
-    # It stays in upstream pipeline outputs.
+    # Exclude Unclassified from policy-topic tendency.
+    # It remains preserved upstream.
     # -----------------------------------------------------
 
-    df = member_vote_topic[
+    df = (
         member_vote_topic[
-            "classification"
+            member_vote_topic[
+                "classification"
+            ]
+            !=
+            "Unclassified"
         ]
-        !=
-        "Unclassified"
-    ].copy()
+        .copy()
+    )
 
     # -----------------------------------------------------
-    # DIRECTIONAL VOTES ONLY
-    #
-    # X / A are not interpreted as Yes or No.
+    # DIRECTIONAL FLAGS
     # -----------------------------------------------------
 
     df["is_yes"] = (
@@ -243,12 +239,8 @@ def build_delegate_topic_stance(
         "N"
     )
 
-    df[
-        "is_directional"
-    ] = (
-        df[
-            "vote"
-        ]
+    df["is_directional"] = (
+        df["vote"]
         .isin(
             [
                 "Y",
@@ -258,7 +250,7 @@ def build_delegate_topic_stance(
     )
 
     # -----------------------------------------------------
-    # AGGREGATE MEMBER × TOPIC
+    # AGGREGATE
     # -----------------------------------------------------
 
     summary = (
@@ -272,11 +264,9 @@ def build_delegate_topic_stance(
                 "topic_name",
                 "classification",
             ],
-
             as_index=False
         )
         .agg(
-
             topic_vote_events=(
                 "vote_id",
                 "nunique"
@@ -300,16 +290,11 @@ def build_delegate_topic_stance(
     )
 
     # -----------------------------------------------------
-    # RATES
+    # RATE CALCULATION
     # -----------------------------------------------------
 
-    summary[
-        "yes_pct"
-    ] = 0.0
-
-    summary[
-        "no_pct"
-    ] = 0.0
+    summary["yes_rate"] = 0.0
+    summary["no_rate"] = 0.0
 
     valid = (
         summary[
@@ -321,7 +306,7 @@ def build_delegate_topic_stance(
 
     summary.loc[
         valid,
-        "yes_pct"
+        "yes_rate"
     ] = (
         summary.loc[
             valid,
@@ -336,7 +321,7 @@ def build_delegate_topic_stance(
 
     summary.loc[
         valid,
-        "no_pct"
+        "no_rate"
     ] = (
         summary.loc[
             valid,
@@ -350,19 +335,19 @@ def build_delegate_topic_stance(
     )
 
     # -----------------------------------------------------
-    # STANCE
+    # ASSIGN TENDENCY
     # -----------------------------------------------------
 
     summary[
-        "stance"
+        "voting_tendency"
     ] = summary.apply(
         lambda row:
-            assign_stance(
+            assign_voting_tendency(
                 row[
                     "directional_topic_votes"
                 ],
                 row[
-                    "yes_pct"
+                    "yes_rate"
                 ]
             ),
         axis=1
@@ -376,7 +361,7 @@ def build_delegate_topic_stance(
         "yes_pct"
     ] = (
         summary[
-            "yes_pct"
+            "yes_rate"
         ]
         *
         100
@@ -386,10 +371,17 @@ def build_delegate_topic_stance(
         "no_pct"
     ] = (
         summary[
-            "no_pct"
+            "no_rate"
         ]
         *
         100
+    )
+
+    summary = summary.drop(
+        columns=[
+            "yes_rate",
+            "no_rate",
+        ]
     )
 
     return (
@@ -397,13 +389,15 @@ def build_delegate_topic_stance(
         .sort_values(
             [
                 "topic_name",
-                "stance",
+                "voting_tendency",
                 "yes_pct",
+                "MBR_NAME",
             ],
             ascending=[
                 True,
                 True,
                 False,
+                True,
             ]
         )
         .reset_index(
@@ -413,19 +407,19 @@ def build_delegate_topic_stance(
 
 
 # =========================================================
-# BUILD TOPIC ROSTER
+# BUILD TOPIC YES / NO / MIXED ROSTER
 #
-# This answers:
-#
-# "Who are the YES / NO / MIXED people for each subject?"
+# Answers:
+# "Who are the Yes, No, and Mixed delegates
+# for this topic?"
 # =========================================================
 
-def build_topic_stance_roster(
-    delegate_topic_stance
+def build_topic_voting_tendency_roster(
+    delegate_topic_tendency
 ):
 
     roster = (
-        delegate_topic_stance[
+        delegate_topic_tendency[
             [
                 "year",
                 "topic_name",
@@ -433,12 +427,13 @@ def build_topic_stance_roster(
                 "member_id",
                 "MBR_NAME",
                 "party",
+                "topic_vote_events",
                 "yes_votes",
                 "no_votes",
                 "directional_topic_votes",
                 "yes_pct",
                 "no_pct",
-                "stance",
+                "voting_tendency",
             ]
         ]
         .copy()
@@ -449,7 +444,7 @@ def build_topic_stance_roster(
         .sort_values(
             [
                 "topic_name",
-                "stance",
+                "voting_tendency",
                 "yes_pct",
                 "MBR_NAME",
             ],
@@ -469,18 +464,17 @@ def build_topic_stance_roster(
 # =========================================================
 # BUILD TOPIC SUMMARY
 #
-# This shows how many YES / NO / MIXED delegates exist
-# for each topic.
+# Counts Yes / No / Mixed delegates by topic.
 # =========================================================
 
-def build_topic_stance_summary(
-    delegate_topic_stance
+def build_topic_voting_tendency_summary(
+    delegate_topic_tendency
 ):
 
     usable = (
-        delegate_topic_stance[
-            delegate_topic_stance[
-                "stance"
+        delegate_topic_tendency[
+            delegate_topic_tendency[
+                "voting_tendency"
             ]
             !=
             "INSUFFICIENT DATA"
@@ -495,13 +489,12 @@ def build_topic_stance_summary(
                 "year",
                 "topic_name",
                 "classification",
-                "stance",
+                "voting_tendency",
             ]
         )
         .size()
         .reset_index(
-            name=
-                "delegates"
+            name="delegates"
         )
     )
 
@@ -513,13 +506,10 @@ def build_topic_stance_summary(
                 "topic_name",
                 "classification",
             ],
-
             columns=
-                "stance",
-
+                "voting_tendency",
             values=
                 "delegates",
-
             fill_value=
                 0
         )
@@ -532,15 +522,8 @@ def build_topic_stance_summary(
         "MIXED",
     ]:
 
-        if (
-            column
-            not in
-            pivot.columns
-        ):
-
-            pivot[
-                column
-            ] = 0
+        if column not in pivot.columns:
+            pivot[column] = 0
 
     pivot = pivot.rename(
         columns={
@@ -572,20 +555,15 @@ def build_topic_stance_summary(
     )
 
     # -----------------------------------------------------
-    # SHARES
+    # SHARE OF CLASSIFIED DELEGATES
     # -----------------------------------------------------
 
-    pivot[
-        "yes_delegate_pct"
-    ] = 0.0
-
-    pivot[
-        "no_delegate_pct"
-    ] = 0.0
-
-    pivot[
-        "mixed_delegate_pct"
-    ] = 0.0
+    for column in [
+        "yes_delegate_pct",
+        "no_delegate_pct",
+        "mixed_delegate_pct",
+    ]:
+        pivot[column] = 0.0
 
     valid = (
         pivot[
@@ -652,6 +630,7 @@ def build_topic_stance_summary(
             [
                 "year",
                 "topic_name",
+                "classification",
             ]
         )
         .reset_index(
@@ -661,20 +640,17 @@ def build_topic_stance_summary(
 
 
 # =========================================================
-# BUILD PARTY × TOPIC STANCE SUMMARY
-#
-# This helps answer:
-# "How do D / R delegates tend to vote within this topic?"
+# BUILD PARTY × TOPIC TENDENCY SUMMARY
 # =========================================================
 
-def build_party_topic_stance_summary(
-    delegate_topic_stance
+def build_party_topic_voting_tendency_summary(
+    delegate_topic_tendency
 ):
 
     usable = (
-        delegate_topic_stance[
-            delegate_topic_stance[
-                "stance"
+        delegate_topic_tendency[
+            delegate_topic_tendency[
+                "voting_tendency"
             ]
             !=
             "INSUFFICIENT DATA"
@@ -690,13 +666,12 @@ def build_party_topic_stance_summary(
                 "topic_name",
                 "classification",
                 "party",
-                "stance",
+                "voting_tendency",
             ]
         )
         .size()
         .reset_index(
-            name=
-                "delegates"
+            name="delegates"
         )
     )
 
@@ -709,13 +684,10 @@ def build_party_topic_stance_summary(
                 "classification",
                 "party",
             ],
-
             columns=
-                "stance",
-
+                "voting_tendency",
             values=
                 "delegates",
-
             fill_value=
                 0
         )
@@ -728,29 +700,20 @@ def build_party_topic_stance_summary(
         "MIXED",
     ]:
 
-        if (
-            column
-            not in
-            pivot.columns
-        ):
+        if column not in pivot.columns:
+            pivot[column] = 0
 
-            pivot[
-                column
-            ] = 0
+    pivot = pivot.rename(
+        columns={
+            "YES":
+                "yes_delegates",
 
-    pivot = (
-        pivot.rename(
-            columns={
-                "YES":
-                    "yes_delegates",
+            "NO":
+                "no_delegates",
 
-                "NO":
-                    "no_delegates",
-
-                "MIXED":
-                    "mixed_delegates",
-            }
-        )
+            "MIXED":
+                "mixed_delegates",
+        }
     )
 
     pivot[
@@ -775,6 +738,7 @@ def build_party_topic_stance_summary(
             [
                 "year",
                 "topic_name",
+                "classification",
                 "party",
             ]
         )
@@ -785,12 +749,12 @@ def build_party_topic_stance_summary(
 
 
 # =========================================================
-# YEAR-OVER-YEAR STANCE COMPARISON
+# BUILD YEAR-OVER-YEAR TENDENCY COMPARISON
 # =========================================================
 
-def build_stance_yoy(
-    stance_2025,
-    stance_2026
+def build_voting_tendency_yoy(
+    tendency_2025,
+    tendency_2026
 ):
 
     join_keys = [
@@ -800,7 +764,7 @@ def build_stance_yoy(
     ]
 
     left = (
-        stance_2025[
+        tendency_2025[
             join_keys
             +
             [
@@ -811,7 +775,7 @@ def build_stance_yoy(
                 "directional_topic_votes",
                 "yes_pct",
                 "no_pct",
-                "stance",
+                "voting_tendency",
             ]
         ]
         .copy()
@@ -838,14 +802,14 @@ def build_stance_yoy(
                 "no_pct":
                     "no_pct_2025",
 
-                "stance":
-                    "stance_2025",
+                "voting_tendency":
+                    "voting_tendency_2025",
             }
         )
     )
 
     right = (
-        stance_2026[
+        tendency_2026[
             join_keys
             +
             [
@@ -856,7 +820,7 @@ def build_stance_yoy(
                 "directional_topic_votes",
                 "yes_pct",
                 "no_pct",
-                "stance",
+                "voting_tendency",
             ]
         ]
         .copy()
@@ -883,24 +847,20 @@ def build_stance_yoy(
                 "no_pct":
                     "no_pct_2026",
 
-                "stance":
-                    "stance_2026",
+                "voting_tendency":
+                    "voting_tendency_2026",
             }
         )
     )
 
     yoy = left.merge(
         right,
-
         on=
             join_keys,
-
         how=
             "outer",
-
         indicator=
             True,
-
         validate=
             "one_to_one"
     )
@@ -931,6 +891,10 @@ def build_stance_yoy(
         ]
     )
 
+    # -----------------------------------------------------
+    # CURRENT NAME / PARTY DISPLAY
+    # -----------------------------------------------------
+
     yoy[
         "MBR_NAME"
     ] = (
@@ -958,7 +922,7 @@ def build_stance_yoy(
     )
 
     # -----------------------------------------------------
-    # YES-RATE CHANGE
+    # YES-PERCENT CHANGE
     # -----------------------------------------------------
 
     yoy[
@@ -974,37 +938,104 @@ def build_stance_yoy(
     )
 
     # -----------------------------------------------------
-    # STANCE CHANGE
+    # BOTH YEARS HAVE ENOUGH DATA?
     # -----------------------------------------------------
 
     yoy[
-        "stance_changed"
+        "comparable_tendency"
     ] = (
-        yoy[
-            "topic_status"
-        ]
-        .eq(
+        (
+            yoy[
+                "topic_status"
+            ]
+            ==
             "Present both years"
         )
         &
-        yoy[
-            "stance_2025"
-        ]
-        .notna()
-        &
-        yoy[
-            "stance_2026"
-        ]
-        .notna()
+        (
+            yoy[
+                "voting_tendency_2025"
+            ]
+            .isin(
+                [
+                    "YES",
+                    "NO",
+                    "MIXED",
+                ]
+            )
+        )
         &
         (
             yoy[
-                "stance_2025"
+                "voting_tendency_2026"
+            ]
+            .isin(
+                [
+                    "YES",
+                    "NO",
+                    "MIXED",
+                ]
+            )
+        )
+    )
+
+    # -----------------------------------------------------
+    # TRUE OBSERVED TENDENCY CHANGE
+    #
+    # Insufficient-data transitions are NOT counted.
+    # -----------------------------------------------------
+
+    yoy[
+        "voting_tendency_changed"
+    ] = (
+        yoy[
+            "comparable_tendency"
+        ]
+        &
+        (
+            yoy[
+                "voting_tendency_2025"
             ]
             !=
             yoy[
-                "stance_2026"
+                "voting_tendency_2026"
             ]
+        )
+    )
+
+    # -----------------------------------------------------
+    # DATA AVAILABILITY CHANGE
+    #
+    # Kept separately for QA / interpretation.
+    # -----------------------------------------------------
+
+    yoy[
+        "data_availability_changed"
+    ] = (
+        (
+            yoy[
+                "topic_status"
+            ]
+            ==
+            "Present both years"
+        )
+        &
+        (
+            (
+                yoy[
+                    "voting_tendency_2025"
+                ]
+                ==
+                "INSUFFICIENT DATA"
+            )
+            ^
+            (
+                yoy[
+                    "voting_tendency_2026"
+                ]
+                ==
+                "INSUFFICIENT DATA"
+            )
         )
     )
 
@@ -1012,11 +1043,12 @@ def build_stance_yoy(
         yoy
         .sort_values(
             [
-                "stance_changed",
+                "voting_tendency_changed",
+                "comparable_tendency",
                 "yes_pct_change",
             ],
-
             ascending=[
+                False,
                 False,
                 False,
             ]
@@ -1028,12 +1060,12 @@ def build_stance_yoy(
 
 
 # =========================================================
-# PRINT DELEGATE STANCE EXAMPLES
+# PRINT YEAR RESULTS
 # =========================================================
 
 def print_delegate_topic_results(
     year,
-    stance
+    tendency
 ):
 
     print(
@@ -1050,12 +1082,12 @@ def print_delegate_topic_results(
     )
 
     print(
-        "\nStance counts:"
+        "\nVoting tendency counts:"
     )
 
     print(
-        stance[
-            "stance"
+        tendency[
+            "voting_tendency"
         ]
         .value_counts(
             dropna=False
@@ -1063,9 +1095,9 @@ def print_delegate_topic_results(
     )
 
     usable = (
-        stance[
-            stance[
-                "stance"
+        tendency[
+            tendency[
+                "voting_tendency"
             ]
             !=
             "INSUFFICIENT DATA"
@@ -1074,7 +1106,7 @@ def print_delegate_topic_results(
     )
 
     print(
-        "\nExample rows:"
+        "\nExample classified rows:"
     )
 
     print(
@@ -1089,7 +1121,7 @@ def print_delegate_topic_results(
                 "no_votes",
                 "directional_topic_votes",
                 "yes_pct",
-                "stance",
+                "voting_tendency",
             ]
         ]
         .head(40)
@@ -1140,7 +1172,6 @@ def print_topic_roster_examples(
 
         return
 
-    # Show first five topics in console.
     for topic in topics[:5]:
 
         topic_rows = (
@@ -1165,8 +1196,9 @@ def print_topic_roster_examples(
                     "party",
                     "yes_votes",
                     "no_votes",
+                    "directional_topic_votes",
                     "yes_pct",
-                    "stance",
+                    "voting_tendency",
                 ]
             ]
             .head(30)
@@ -1180,11 +1212,11 @@ def print_topic_roster_examples(
 
 
 # =========================================================
-# PRINT YEAR-OVER-YEAR STANCE CHANGES
+# PRINT YOY RESULTS
 # =========================================================
 
-def print_stance_yoy(
-    stance_yoy
+def print_voting_tendency_yoy(
+    tendency_yoy
 ):
 
     print(
@@ -1192,30 +1224,68 @@ def print_stance_yoy(
     )
 
     print(
-        "2025 → 2026 TOPIC STANCE CHANGES"
+        "2025 → 2026 TOPIC VOTING TENDENCY CHANGES"
     )
 
     print(
         "=" * 78
     )
 
+    comparable = (
+        tendency_yoy[
+            tendency_yoy[
+                "comparable_tendency"
+            ]
+        ]
+        .copy()
+    )
+
     changed = (
-        stance_yoy[
-            stance_yoy[
-                "stance_changed"
+        tendency_yoy[
+            tendency_yoy[
+                "voting_tendency_changed"
+            ]
+        ]
+        .copy()
+    )
+
+    availability_changed = (
+        tendency_yoy[
+            tendency_yoy[
+                "data_availability_changed"
             ]
         ]
         .copy()
     )
 
     print(
-        "\nDelegate-topic pairs "
-        "with changed stance:"
+        "\nComparable delegate-topic pairs:"
+    )
+
+    print(
+        len(
+            comparable
+        )
+    )
+
+    print(
+        "\nTrue observed tendency changes:"
     )
 
     print(
         len(
             changed
+        )
+    )
+
+    print(
+        "\nData-availability changes "
+        "(not counted as behavioral changes):"
+    )
+
+    print(
+        len(
+            availability_changed
         )
     )
 
@@ -1226,9 +1296,8 @@ def print_stance_yoy(
         return
 
     print(
-        "\nLargest increases in "
-        "Yes-vote tendency among "
-        "changed classifications:"
+        "\nLargest increases in Yes-vote tendency "
+        "among comparable changed pairs:"
     )
 
     print(
@@ -1239,8 +1308,8 @@ def print_stance_yoy(
                 "party",
                 "topic_name",
                 "classification",
-                "stance_2025",
-                "stance_2026",
+                "voting_tendency_2025",
+                "voting_tendency_2026",
                 "yes_pct_2025",
                 "yes_pct_2026",
                 "yes_pct_change",
@@ -1261,14 +1330,49 @@ def print_stance_yoy(
         )
     )
 
+    print(
+        "\nLargest decreases in Yes-vote tendency "
+        "among comparable changed pairs:"
+    )
+
+    print(
+        changed[
+            [
+                "member_id",
+                "MBR_NAME",
+                "party",
+                "topic_name",
+                "classification",
+                "voting_tendency_2025",
+                "voting_tendency_2026",
+                "yes_pct_2025",
+                "yes_pct_2026",
+                "yes_pct_change",
+                "directional_topic_votes_2025",
+                "directional_topic_votes_2026",
+            ]
+        ]
+        .sort_values(
+            "yes_pct_change",
+            ascending=True
+        )
+        .head(30)
+        .to_string(
+            index=False,
+            float_format=
+                lambda x:
+                    f"{x:7.2f}"
+        )
+    )
+
 
 # =========================================================
-# SAVE OUTPUTS
+# SAVE YEAR OUTPUTS
 # =========================================================
 
 def save_year_outputs(
     year,
-    stance,
+    tendency,
     roster,
     topic_summary,
     party_topic_summary
@@ -1281,47 +1385,55 @@ def save_year_outputs(
 
     outputs = {
 
-        "delegate_topic_stance":
-            PROCESSED_ROOT
-            / f"delegate_topic_stance_{year}.csv",
+        "delegate_topic_voting_tendency":
+            (
+                PROCESSED_ROOT
+                / f"delegate_topic_voting_tendency_{year}.csv"
+            ),
 
-        "topic_roster":
-            PROCESSED_ROOT
-            / f"topic_yes_no_mixed_{year}.csv",
+        "topic_yes_no_mixed":
+            (
+                PROCESSED_ROOT
+                / f"topic_yes_no_mixed_{year}.csv"
+            ),
 
-        "topic_summary":
-            PROCESSED_ROOT
-            / f"topic_stance_summary_{year}.csv",
+        "topic_voting_tendency_summary":
+            (
+                PROCESSED_ROOT
+                / f"topic_voting_tendency_summary_{year}.csv"
+            ),
 
-        "party_topic_summary":
-            PROCESSED_ROOT
-            / f"party_topic_stance_summary_{year}.csv",
+        "party_topic_voting_tendency_summary":
+            (
+                PROCESSED_ROOT
+                / f"party_topic_voting_tendency_summary_{year}.csv"
+            ),
     }
 
-    stance.to_csv(
+    tendency.to_csv(
         outputs[
-            "delegate_topic_stance"
+            "delegate_topic_voting_tendency"
         ],
         index=False
     )
 
     roster.to_csv(
         outputs[
-            "topic_roster"
+            "topic_yes_no_mixed"
         ],
         index=False
     )
 
     topic_summary.to_csv(
         outputs[
-            "topic_summary"
+            "topic_voting_tendency_summary"
         ],
         index=False
     )
 
     party_topic_summary.to_csv(
         outputs[
-            "party_topic_summary"
+            "party_topic_voting_tendency_summary"
         ],
         index=False
     )
@@ -1329,16 +1441,23 @@ def save_year_outputs(
     return outputs
 
 
+# =========================================================
+# SAVE YOY OUTPUT
+# =========================================================
+
 def save_yoy_output(
-    stance_yoy
+    tendency_yoy
 ):
 
     path = (
         PROCESSED_ROOT
-        / "delegate_topic_stance_yoy_2025_2026.csv"
+        / (
+            "delegate_topic_voting_tendency_"
+            "yoy_2025_2026.csv"
+        )
     )
 
-    stance_yoy.to_csv(
+    tendency_yoy.to_csv(
         path,
         index=False
     )
@@ -1353,10 +1472,10 @@ def save_yoy_output(
 if __name__ == "__main__":
 
     print(
-        "Topic stance analysis started."
+        "Topic voting tendency analysis started."
     )
 
-    yearly_stance = {}
+    yearly_tendency = {}
     yearly_roster = {}
     yearly_topic_summary = {}
     yearly_party_topic_summary = {}
@@ -1380,33 +1499,33 @@ if __name__ == "__main__":
             )
         )
 
-        stance = (
-            build_delegate_topic_stance(
+        tendency = (
+            build_delegate_topic_voting_tendency(
                 member_vote_topic
             )
         )
 
         roster = (
-            build_topic_stance_roster(
-                stance
+            build_topic_voting_tendency_roster(
+                tendency
             )
         )
 
         topic_summary = (
-            build_topic_stance_summary(
-                stance
+            build_topic_voting_tendency_summary(
+                tendency
             )
         )
 
         party_topic_summary = (
-            build_party_topic_stance_summary(
-                stance
+            build_party_topic_voting_tendency_summary(
+                tendency
             )
         )
 
-        yearly_stance[
+        yearly_tendency[
             year
-        ] = stance
+        ] = tendency
 
         yearly_roster[
             year
@@ -1418,13 +1537,11 @@ if __name__ == "__main__":
 
         yearly_party_topic_summary[
             year
-        ] = (
-            party_topic_summary
-        )
+        ] = party_topic_summary
 
         print_delegate_topic_results(
             year,
-            stance
+            tendency
         )
 
         print_topic_roster_examples(
@@ -1435,7 +1552,7 @@ if __name__ == "__main__":
         outputs = (
             save_year_outputs(
                 year,
-                stance,
+                tendency,
                 roster,
                 topic_summary,
                 party_topic_summary
@@ -1447,27 +1564,27 @@ if __name__ == "__main__":
         )
 
     # -----------------------------------------------------
-    # YEAR-OVER-YEAR STANCE
+    # YEAR-OVER-YEAR
     # -----------------------------------------------------
 
-    stance_yoy = (
-        build_stance_yoy(
-            yearly_stance[
+    tendency_yoy = (
+        build_voting_tendency_yoy(
+            yearly_tendency[
                 2025
             ],
-            yearly_stance[
+            yearly_tendency[
                 2026
             ]
         )
     )
 
-    print_stance_yoy(
-        stance_yoy
+    print_voting_tendency_yoy(
+        tendency_yoy
     )
 
     yoy_path = (
         save_yoy_output(
-            stance_yoy
+            tendency_yoy
         )
     )
 
@@ -1491,9 +1608,7 @@ if __name__ == "__main__":
         "=" * 78
     )
 
-    for path in (
-        all_output_paths
-    ):
+    for path in all_output_paths:
 
         print(
             path
