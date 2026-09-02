@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from lis_pipeline import (
+from Version_1.lis_pipeline import (
     calculate_party_positions,
     add_own_party_position,
     flag_party_breaks,
