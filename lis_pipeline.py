@@ -1,10 +1,23 @@
 from pathlib import Path
 from datetime import datetime
 import csv
+import html
+import os
 import re
+from urllib.request import urlopen
 
 import pandas as pd
-import requests
+
+try:
+    import requests
+except ModuleNotFoundError:
+    requests = None
+
+DOWNLOAD_REQUEST_ERROR = (
+    requests.RequestException
+    if requests is not None
+    else OSError
+)
 
 
 # =========================================================
@@ -19,6 +32,12 @@ FILES = [
     "VOTE.CSV",
     "Members.csv",
     "CIBillSubjects.csv",
+    "Summaries.csv",
+    "Sponsors.csv",
+    "Committees.csv",
+    "CommitteeMembers.csv",
+    "VoteStatements.csv",
+    "CIParentChildSubjects.csv",
 ]
 
 BASE_URL = "https://lis.blob.core.windows.net/lisfiles"
@@ -38,7 +57,12 @@ RUN_DOWNLOAD = False
 #
 # ---------------------------------------------------------
 
-ANALYSIS_YEAR = 2025
+ANALYSIS_YEAR = int(
+    os.environ.get(
+        "LIS_ANALYSIS_YEAR",
+        "2025"
+    )
+)
 
 QA_SAMPLE_PER_TOPIC = 10
 QA_RANDOM_STATE = 42
@@ -50,8 +74,29 @@ QA_RANDOM_STATE = 42
 
 ALLOWED_CLASSIFICATIONS = {
     "Official LIS subject",
+    "Derived from LIS bill summary",
     "Derived from LIS bill description",
     "Unclassified",
+}
+
+TOPIC_LOOKUP_COLUMNS = [
+    "Bill_id",
+    "topic_name",
+    "classification",
+    "lis_subject_name",
+    "lis_parent_subject",
+    "source_file",
+    "source_text_used",
+    "rule_derived",
+    "matched_rule",
+]
+
+SUMMARY_TYPE_PRIORITY = {
+    "SUMMARY AS ENACTED WITH GOVERNOR'S RECOMMENDATION": 1,
+    "SUMMARY AS PASSED": 2,
+    "SUMMARY AS PASSED HOUSE": 3,
+    "SUMMARY AS PASSED SENATE": 3,
+    "SUMMARY AS INTRODUCED": 4,
 }
 
 
@@ -462,17 +507,21 @@ def download_file(
         / filename
     )
 
-    response = requests.get(
-        url,
-        timeout=30
-    )
-
-    response.raise_for_status()
+    if requests is not None:
+        response = requests.get(
+            url,
+            timeout=30
+        )
+        response.raise_for_status()
+        content = response.content
+    else:
+        with urlopen(url, timeout=30) as response:
+            content = response.read()
 
     try:
 
         output_path.write_bytes(
-            response.content
+            content
         )
 
     except PermissionError:
@@ -514,7 +563,7 @@ def download_year(year):
                 f"{path}"
             )
 
-        except requests.RequestException as error:
+        except DOWNLOAD_REQUEST_ERROR as error:
 
             print(
                 f"  ✗ Failed: "
@@ -2477,8 +2526,209 @@ def build_bill_lookup(
 # OFFICIAL LIS SUBJECTS
 # =========================================================
 
+def normalize_text_value(value):
+
+    if pd.isna(value):
+        return ""
+
+    return re.sub(
+        r"\s+",
+        " ",
+        str(value)
+    ).strip()
+
+
+def strip_summary_html(value):
+
+    text = normalize_text_value(value)
+
+    if not text:
+        return ""
+
+    text = re.sub(
+        r"<[^>]+>",
+        " ",
+        text
+    )
+
+    return normalize_text_value(
+        html.unescape(text)
+    )
+
+
+def build_lis_subject_hierarchy(year):
+
+    path = (
+        RAW_ROOT
+        / str(year)
+        / "CIParentChildSubjects.csv"
+    )
+
+    hierarchy = pd.read_csv(
+        path,
+        dtype=str
+    )
+
+    required = {
+        "Parent_Subject",
+        "P_Subject_Id",
+        "Child_Subject",
+        "C_Subject_Id",
+    }
+
+    missing = required - set(hierarchy.columns)
+
+    if missing:
+        raise ValueError(
+            f"{path} missing columns: {missing}"
+        )
+
+    hierarchy = hierarchy.rename(
+        columns={
+            "Parent_Subject": "lis_parent_subject",
+            "P_Subject_Id": "lis_parent_subject_id",
+            "Child_Subject": "lis_subject_name",
+            "C_Subject_Id": "lis_subject_id",
+        }
+    )
+
+    for column in hierarchy.columns:
+        hierarchy[column] = (
+            hierarchy[column]
+            .fillna("")
+            .astype(str)
+            .str.strip()
+        )
+
+    return (
+        hierarchy[
+            [
+                "lis_parent_subject_id",
+                "lis_parent_subject",
+                "lis_subject_id",
+                "lis_subject_name",
+            ]
+        ]
+        .drop_duplicates()
+        .reset_index(drop=True)
+    )
+
+
+def build_bill_summary_lookup(year):
+
+    path = (
+        RAW_ROOT
+        / str(year)
+        / "Summaries.csv"
+    )
+
+    summaries = pd.read_csv(
+        path,
+        dtype=str
+    )
+
+    required = {
+        "SUM_BILNO",
+        "SUMMARY_DOCID",
+        "SUMMARY_TYPE",
+        "SUMMARY_TEXT",
+    }
+
+    missing = required - set(summaries.columns)
+
+    if missing:
+        raise ValueError(
+            f"{path} missing columns: {missing}"
+        )
+
+    summaries = summaries.rename(
+        columns={
+            "SUM_BILNO": "Bill_id",
+            "SUMMARY_DOCID": "summary_doc_id",
+            "SUMMARY_TYPE": "summary_type",
+            "SUMMARY_TEXT": "summary_text_html",
+        }
+    )
+
+    summaries["Bill_id"] = (
+        summaries["Bill_id"]
+        .fillna("")
+        .str.strip()
+        .str.upper()
+    )
+
+    summaries["summary_doc_id"] = (
+        summaries["summary_doc_id"]
+        .fillna("")
+        .str.strip()
+    )
+
+    summaries["summary_type"] = (
+        summaries["summary_type"]
+        .fillna("")
+        .str.strip()
+        .str.upper()
+    )
+
+    summaries["summary_text"] = (
+        summaries["summary_text_html"]
+        .map(strip_summary_html)
+    )
+
+    summaries["summary_priority"] = (
+        summaries["summary_type"]
+        .map(SUMMARY_TYPE_PRIORITY)
+    )
+
+    supported = summaries[
+        summaries["summary_priority"].notna()
+        & summaries["Bill_id"].ne("")
+        & summaries["summary_text"].ne("")
+    ].copy()
+
+    supported["summary_priority"] = (
+        supported["summary_priority"]
+        .astype(int)
+    )
+
+    # House- and Senate-passed summaries intentionally share a maturity
+    # rank. Source order is the deterministic tie-breaker.
+    supported["source_row_number"] = supported.index + 2
+
+    selected = (
+        supported
+        .sort_values(
+            [
+                "Bill_id",
+                "summary_priority",
+                "source_row_number",
+            ],
+            kind="stable"
+        )
+        .drop_duplicates(
+            subset=["Bill_id"],
+            keep="first"
+        )
+        .reset_index(drop=True)
+    )
+
+    selected["source_file"] = "Summaries.csv"
+
+    return selected[
+        [
+            "Bill_id",
+            "summary_doc_id",
+            "summary_type",
+            "summary_priority",
+            "summary_text",
+            "source_file",
+            "source_row_number",
+        ]
+    ]
+
 def build_official_bill_subject_lookup(
-    year
+    year,
+    hierarchy=None
 ):
 
     path = (
@@ -2559,8 +2809,53 @@ def build_official_bill_subject_lookup(
                     "Bill_id",
 
                 "Subject_Name":
-                    "topic_name",
+                    "lis_subject_name",
+
+                "Subject_Id":
+                    "lis_subject_id",
             }
+        )
+    )
+
+    subjects["lis_subject_id"] = (
+        subjects["lis_subject_id"]
+        .fillna("")
+        .str.strip()
+    )
+
+    if hierarchy is None:
+        hierarchy = build_lis_subject_hierarchy(year)
+
+    hierarchy_lookup = (
+        hierarchy[
+            [
+                "lis_subject_id",
+                "lis_parent_subject",
+            ]
+        ]
+        .drop_duplicates(
+            subset=["lis_subject_id"]
+        )
+    )
+
+    subjects = subjects.merge(
+        hierarchy_lookup,
+        on="lis_subject_id",
+        how="left",
+        validate="many_to_one"
+    )
+
+    subjects["lis_parent_subject"] = (
+        subjects["lis_parent_subject"]
+        .fillna("")
+        .str.strip()
+    )
+
+    subjects["topic_name"] = (
+        subjects["lis_parent_subject"]
+        .where(
+            subjects["lis_parent_subject"].ne(""),
+            subjects["lis_subject_name"]
         )
     )
 
@@ -2570,13 +2865,14 @@ def build_official_bill_subject_lookup(
         "Official LIS subject"
     )
 
+    subjects["source_file"] = "CIBillSubjects.csv"
+    subjects["source_text_used"] = subjects["lis_subject_name"]
+    subjects["rule_derived"] = False
+    subjects["matched_rule"] = ""
+
     return (
         subjects[
-            [
-                "Bill_id",
-                "topic_name",
-                "classification",
-            ]
+            TOPIC_LOOKUP_COLUMNS
         ]
         .drop_duplicates()
         .reset_index(
@@ -2593,16 +2889,24 @@ def derive_topics_from_description(
     description
 ):
 
+    return [
+        match["topic_name"]
+        for match in derive_topics_with_rules(
+            description
+        )
+    ]
+
+
+def derive_topics_with_rules(text_value):
+
     if pd.isna(
-        description
+        text_value
     ):
 
         return []
 
     text = (
-        str(
-            description
-        )
+        str(text_value)
         .strip()
         .lower()
     )
@@ -2653,7 +2957,10 @@ def derive_topics_from_description(
             ):
 
                 matched_topics.append(
-                    topic_name
+                    {
+                        "topic_name": topic_name,
+                        "matched_rule": pattern,
+                    }
                 )
 
                 break
@@ -2664,22 +2971,35 @@ def derive_topics_from_description(
 # =========================================================
 # BUILD COMPLETE BILL TOPIC LOOKUP
 #
-# EXACTLY THREE CLASSIFICATIONS:
+# EXACTLY FOUR CLASSIFICATIONS:
 #
 # Official LIS subject
+# Derived from LIS bill summary
 # Derived from LIS bill description
 # Unclassified
 # =========================================================
 
 def build_bill_topic_lookup(
     year,
-    bill_lookup
+    bill_lookup,
+    hierarchy=None,
+    summary_lookup=None
 ):
 
     official = (
         build_official_bill_subject_lookup(
-            year
+            year,
+            hierarchy=hierarchy
         )
+    )
+
+    if summary_lookup is None:
+        summary_lookup = build_bill_summary_lookup(year)
+
+    summary_by_bill = (
+        summary_lookup
+        .set_index("Bill_id")["summary_text"]
+        .to_dict()
     )
 
     official_bill_ids = set(
@@ -2689,7 +3009,9 @@ def build_bill_topic_lookup(
         .unique()
     )
 
-    derived_records = []
+    summary_derived_records = []
+
+    description_derived_records = []
 
     unclassified_records = []
 
@@ -2722,29 +3044,58 @@ def build_bill_topic_lookup(
 
             continue
 
-        topics = (
-            derive_topics_from_description(
-                description
-            )
+        selected_summary = summary_by_bill.get(
+            bill_id,
+            ""
+        )
+
+        summary_topics = derive_topics_with_rules(
+            selected_summary
+        )
+
+        if summary_topics:
+
+            for match in summary_topics:
+
+                summary_derived_records.append(
+                    {
+                        "Bill_id": bill_id,
+                        "topic_name": match["topic_name"],
+                        "classification": (
+                            "Derived from LIS bill summary"
+                        ),
+                        "lis_subject_name": "",
+                        "lis_parent_subject": "",
+                        "source_file": "Summaries.csv",
+                        "source_text_used": selected_summary,
+                        "rule_derived": True,
+                        "matched_rule": match["matched_rule"],
+                    }
+                )
+
+            continue
+
+        topics = derive_topics_with_rules(
+            description
         )
 
         if topics:
 
             for topic_name in topics:
 
-                derived_records.append(
+                description_derived_records.append(
                     {
-                        "Bill_id":
-                            bill_id,
-
-                        "topic_name":
-                            topic_name,
-
-                        "classification":
-                            (
-                                "Derived from LIS "
-                                "bill description"
-                            ),
+                        "Bill_id": bill_id,
+                        "topic_name": topic_name["topic_name"],
+                        "classification": (
+                            "Derived from LIS bill description"
+                        ),
+                        "lis_subject_name": "",
+                        "lis_parent_subject": "",
+                        "source_file": "BILLS.CSV",
+                        "source_text_used": description,
+                        "rule_derived": True,
+                        "matched_rule": topic_name["matched_rule"],
                     }
                 )
 
@@ -2760,33 +3111,42 @@ def build_bill_topic_lookup(
 
                     "classification":
                         "Unclassified",
+
+                    "lis_subject_name": "",
+
+                    "lis_parent_subject": "",
+
+                    "source_file": "BILLS.CSV",
+
+                    "source_text_used": description,
+
+                    "rule_derived": False,
+
+                    "matched_rule": "",
                 }
             )
 
-    derived = pd.DataFrame(
-        derived_records,
+    summary_derived = pd.DataFrame(
+        summary_derived_records,
+        columns=TOPIC_LOOKUP_COLUMNS
+    )
 
-        columns=[
-            "Bill_id",
-            "topic_name",
-            "classification",
-        ]
+    description_derived = pd.DataFrame(
+        description_derived_records,
+        columns=TOPIC_LOOKUP_COLUMNS
     )
 
     unclassified = pd.DataFrame(
         unclassified_records,
 
-        columns=[
-            "Bill_id",
-            "topic_name",
-            "classification",
-        ]
+        columns=TOPIC_LOOKUP_COLUMNS
     )
 
     combined = pd.concat(
         [
             official,
-            derived,
+            summary_derived,
+            description_derived,
             unclassified,
         ],
 
@@ -2795,13 +3155,7 @@ def build_bill_topic_lookup(
 
     combined = (
         combined
-        .drop_duplicates(
-            subset=[
-                "Bill_id",
-                "topic_name",
-                "classification",
-            ]
-        )
+        .drop_duplicates()
         .reset_index(
             drop=True
         )
@@ -2809,7 +3163,8 @@ def build_bill_topic_lookup(
 
     return (
         official,
-        derived,
+        summary_derived,
+        description_derived,
         unclassified,
         combined
     )
@@ -2822,7 +3177,8 @@ def build_bill_topic_lookup(
 def validate_topic_classifications(
     bill_lookup,
     official,
-    derived,
+    summary_derived,
+    description_derived,
     unclassified,
     combined
 ):
@@ -2875,8 +3231,15 @@ def validate_topic_classifications(
         .nunique()
     )
 
-    derived_bills = (
-        derived[
+    summary_derived_bills = (
+        summary_derived[
+            "Bill_id"
+        ]
+        .nunique()
+    )
+
+    description_derived_bills = (
+        description_derived[
             "Bill_id"
         ]
         .nunique()
@@ -2909,6 +3272,19 @@ def validate_topic_classifications(
         classified_ids
     )
 
+    tier_counts = (
+        combined[
+            ["Bill_id", "classification"]
+        ]
+        .drop_duplicates()
+        .groupby("Bill_id")["classification"]
+        .nunique()
+    )
+
+    multi_tier_ids = tier_counts[
+        tier_counts.ne(1)
+    ].index.tolist()
+
     print(
         f"\nTotal LIS bills: "
         f"{total_bills:,}"
@@ -2924,11 +3300,20 @@ def validate_topic_classifications(
 
     print(
         "\nDerived from LIS "
+        "bill summary:"
+    )
+
+    print(
+        f"{summary_derived_bills:,}"
+    )
+
+    print(
+        "\nDerived from LIS "
         "bill description:"
     )
 
     print(
-        f"{derived_bills:,}"
+        f"{description_derived_bills:,}"
     )
 
     print(
@@ -2957,6 +3342,13 @@ def validate_topic_classifications(
             "classification record."
         )
 
+    if multi_tier_ids:
+
+        raise ValueError(
+            "Bills assigned to more than one provenance tier: "
+            f"{multi_tier_ids[:20]}"
+        )
+
     print(
         "\nClassification rows:"
     )
@@ -2972,8 +3364,60 @@ def validate_topic_classifications(
 
     print(
         "\n✓ Every bill has one of "
-        "the three permitted classifications."
+        "the four permitted classifications, "
+        "with one tier per bill."
     )
+
+
+def build_topic_coverage(
+    year,
+    bill_lookup,
+    bill_topic_lookup
+):
+
+    bill_classes = (
+        bill_topic_lookup[
+            ["Bill_id", "classification"]
+        ]
+        .drop_duplicates()
+    )
+
+    counts = (
+        bill_classes["classification"]
+        .value_counts()
+        .reindex(
+            [
+                "Official LIS subject",
+                "Derived from LIS bill summary",
+                "Derived from LIS bill description",
+                "Unclassified",
+            ],
+            fill_value=0
+        )
+    )
+
+    total_bills = bill_lookup["Bill_id"].nunique()
+
+    coverage = (
+        counts
+        .rename_axis("classification")
+        .reset_index(name="bill_count")
+    )
+
+    coverage.insert(0, "year", year)
+    coverage["total_bills"] = total_bills
+
+    if total_bills:
+        coverage["bill_percentage"] = (
+            coverage["bill_count"]
+            .div(total_bills)
+            .mul(100)
+            .round(4)
+        )
+    else:
+        coverage["bill_percentage"] = 0.0
+
+    return coverage
 
 
 # =========================================================
@@ -3010,11 +3454,12 @@ def build_topic_qa_sample(
     # -----------------------------------------------------
 
     derived = qa_source[
-        qa_source[
-            "classification"
-        ]
-        ==
-        "Derived from LIS bill description"
+        qa_source["classification"].isin(
+            [
+                "Derived from LIS bill summary",
+                "Derived from LIS bill description",
+            ]
+        )
     ].copy()
 
     derived_samples = []
@@ -3024,7 +3469,7 @@ def build_topic_qa_sample(
         group
     ) in (
         derived.groupby(
-            "topic_name"
+            ["classification", "topic_name"]
         )
     ):
 
@@ -3193,7 +3638,9 @@ def build_member_vote_topic(
                     "vote_id",
                     "Bill_id",
                 ]
-            ],
+            ].drop_duplicates(
+                subset=["vote_id", "Bill_id"]
+            ),
 
             on=
                 "vote_id",
@@ -3503,6 +3950,274 @@ def print_topic_summary(
 
 
 # =========================================================
+# SEPARATE OFFICIAL LIS ANALYTICAL LAYERS
+# =========================================================
+
+def build_sponsor_fact(year):
+
+    path = RAW_ROOT / str(year) / "Sponsors.csv"
+    sponsors = pd.read_csv(path, dtype=str)
+
+    required = {
+        "MEMBER_NAME",
+        "MEMBER_ID",
+        "BILL_NUMBER",
+        "PATRON_TYPE",
+    }
+    missing = required - set(sponsors.columns)
+
+    if missing:
+        raise ValueError(f"{path} missing columns: {missing}")
+
+    sponsors = sponsors.rename(
+        columns={
+            "MEMBER_NAME": "member_name",
+            "MEMBER_ID": "member_id",
+            "BILL_NUMBER": "Bill_id",
+            "PATRON_TYPE": "patron_type",
+        }
+    )
+
+    for column in [
+        "member_name",
+        "member_id",
+        "Bill_id",
+        "patron_type",
+    ]:
+        sponsors[column] = (
+            sponsors[column]
+            .fillna("")
+            .str.strip()
+        )
+
+    sponsors["member_id"] = sponsors["member_id"].str.upper()
+    sponsors["Bill_id"] = sponsors["Bill_id"].str.upper()
+
+    parsed = sponsors["patron_type"].str.extract(
+        r"^\s*(\d+)\s*-\s*(.*?)\s*$"
+    )
+    sponsors["patron_order"] = pd.to_numeric(
+        parsed[0],
+        errors="coerce"
+    ).astype("Int64")
+    sponsors["patron_role"] = parsed[1].fillna("").str.strip()
+    sponsors["is_chief_patron"] = (
+        sponsors["patron_role"].eq("Chief Patron")
+    )
+    sponsors["is_chief_co_patron"] = sponsors["patron_role"].isin(
+        [
+            "Chief Co-Patron",
+            "Incorporated Chief Co-Patron",
+        ]
+    )
+    sponsors["is_co_patron"] = sponsors["patron_role"].eq(
+        "Co-Patron"
+    )
+    sponsors.insert(0, "year", year)
+
+    return sponsors[
+        [
+            "year",
+            "member_id",
+            "member_name",
+            "Bill_id",
+            "patron_type",
+            "patron_order",
+            "patron_role",
+            "is_chief_patron",
+            "is_chief_co_patron",
+            "is_co_patron",
+        ]
+    ].drop_duplicates().reset_index(drop=True)
+
+
+def build_committees(year):
+
+    path = RAW_ROOT / str(year) / "Committees.csv"
+    committees = pd.read_csv(path, dtype=str)
+
+    required = {"CHAMBER", "COM_NAME", "COM_COMNO"}
+    missing = required - set(committees.columns)
+
+    if missing:
+        raise ValueError(f"{path} missing columns: {missing}")
+
+    committees = committees.rename(
+        columns={
+            "CHAMBER": "chamber",
+            "COM_NAME": "committee_name",
+            "COM_COMNO": "committee_id",
+        }
+    )
+
+    for column in ["chamber", "committee_name", "committee_id"]:
+        committees[column] = (
+            committees[column]
+            .fillna("")
+            .str.strip()
+        )
+
+    committees.insert(0, "year", year)
+
+    return committees[
+        ["year", "committee_id", "committee_name", "chamber"]
+    ].drop_duplicates().reset_index(drop=True)
+
+
+def build_committee_members(year, committees):
+
+    path = RAW_ROOT / str(year) / "CommitteeMembers.csv"
+    memberships = pd.read_csv(path, dtype=str)
+
+    required = {"CMB_COMNO", "CMB_MBRNO"}
+    missing = required - set(memberships.columns)
+
+    if missing:
+        raise ValueError(f"{path} missing columns: {missing}")
+
+    memberships = memberships.rename(
+        columns={
+            "CMB_COMNO": "committee_id",
+            "CMB_MBRNO": "member_id",
+        }
+    )
+
+    for column in ["committee_id", "member_id"]:
+        memberships[column] = (
+            memberships[column]
+            .fillna("")
+            .str.strip()
+            .str.upper()
+        )
+
+    member_path = RAW_ROOT / str(year) / "Members.csv"
+    members = pd.read_csv(member_path, dtype=str)
+    member_names = (
+        members[["MBR_MBRNO", "MBR_NAME"]]
+        .rename(
+            columns={
+                "MBR_MBRNO": "member_id",
+                "MBR_NAME": "member_name",
+            }
+        )
+    )
+    member_names["member_id"] = (
+        member_names["member_id"]
+        .fillna("")
+        .str.strip()
+        .str.upper()
+    )
+    member_names["member_name"] = (
+        member_names["member_name"]
+        .fillna("")
+        .str.strip()
+    )
+    member_names = member_names.drop_duplicates(
+        subset=["member_id"]
+    )
+
+    result = memberships.merge(
+        committees.drop(columns="year"),
+        on="committee_id",
+        how="left",
+        validate="many_to_one"
+    ).merge(
+        member_names,
+        on="member_id",
+        how="left",
+        validate="many_to_one"
+    )
+    result.insert(0, "year", year)
+
+    return result[
+        [
+            "year",
+            "committee_id",
+            "committee_name",
+            "chamber",
+            "member_id",
+            "member_name",
+        ]
+    ].drop_duplicates().reset_index(drop=True)
+
+
+def build_vote_statement_fact(year):
+
+    path = RAW_ROOT / str(year) / "VoteStatements.csv"
+    statements = pd.read_csv(path, dtype=str)
+
+    required = {
+        "Bill_ID",
+        "History_RefID",
+        "Vote_Date",
+        "Legislator_ID",
+        "Recorded_Vote",
+        "Vote_Statement",
+    }
+    missing = required - set(statements.columns)
+
+    if missing:
+        raise ValueError(f"{path} missing columns: {missing}")
+
+    statements = statements.rename(
+        columns={
+            "Bill_ID": "Bill_id",
+            "History_RefID": "vote_id",
+            "Vote_Date": "vote_date",
+            "Legislator_ID": "member_id",
+            "Recorded_Vote": "recorded_vote",
+            "Vote_Statement": "vote_statement",
+        }
+    )
+
+    for column in statements.columns:
+        statements[column] = (
+            statements[column]
+            .fillna("")
+            .astype(str)
+            .str.strip()
+        )
+
+    statements["Bill_id"] = statements["Bill_id"].str.upper()
+    statements["member_id"] = statements["member_id"].str.upper()
+    statements["recorded_vote"] = (
+        statements["recorded_vote"].str.upper()
+    )
+
+    intended = statements["vote_statement"].str.extract(
+        r"(?i)\bintended\s+to\s+vote\s+(yea|yes|nay|no)\b",
+        expand=False
+    ).fillna("").str.lower()
+
+    statements["intended_vote"] = intended.map(
+        {
+            "yea": "Y",
+            "yes": "Y",
+            "nay": "N",
+            "no": "N",
+        }
+    ).fillna("")
+    statements["intended_vote_explicit"] = (
+        statements["intended_vote"].ne("")
+    )
+    statements.insert(0, "year", year)
+
+    return statements[
+        [
+            "year",
+            "Bill_id",
+            "vote_id",
+            "vote_date",
+            "member_id",
+            "recorded_vote",
+            "vote_statement",
+            "intended_vote",
+            "intended_vote_explicit",
+        ]
+    ].drop_duplicates().reset_index(drop=True)
+
+
+# =========================================================
 # SAVE OUTPUTS
 # =========================================================
 
@@ -3511,10 +4226,18 @@ def save_outputs(
     vote_fact,
     vote_bill_bridge,
     bill_lookup,
+    subject_hierarchy,
+    summary_lookup,
     official,
-    derived,
+    summary_derived,
+    description_derived,
     unclassified,
     bill_topic_lookup,
+    topic_coverage,
+    sponsor_fact,
+    committees,
+    committee_members,
+    vote_statement_fact,
     delegate_summary,
     member_vote_topic,
     delegate_topic_summary,
@@ -3540,11 +4263,26 @@ def save_outputs(
             PROCESSED_ROOT
             / f"bill_lookup_{year}.csv",
 
+        "subject_hierarchy":
+            PROCESSED_ROOT
+            / f"lis_subject_hierarchy_{year}.csv",
+
+        "summary_lookup":
+            PROCESSED_ROOT
+            / f"bill_summary_lookup_{year}.csv",
+
         "official_lis_subjects":
             PROCESSED_ROOT
             / f"official_lis_subjects_{year}.csv",
 
-        "derived":
+        "summary_derived":
+            PROCESSED_ROOT
+            / (
+                f"derived_from_lis_"
+                f"bill_summary_{year}.csv"
+            ),
+
+        "description_derived":
             PROCESSED_ROOT
             / (
                 f"derived_from_lis_"
@@ -3558,6 +4296,26 @@ def save_outputs(
         "bill_topic_lookup":
             PROCESSED_ROOT
             / f"bill_topic_lookup_{year}.csv",
+
+        "topic_coverage":
+            PROCESSED_ROOT
+            / f"topic_coverage_{year}.csv",
+
+        "sponsor_fact":
+            PROCESSED_ROOT
+            / f"sponsor_fact_{year}.csv",
+
+        "committees":
+            PROCESSED_ROOT
+            / f"committees_{year}.csv",
+
+        "committee_members":
+            PROCESSED_ROOT
+            / f"committee_members_{year}.csv",
+
+        "vote_statement_fact":
+            PROCESSED_ROOT
+            / f"vote_statement_fact_{year}.csv",
 
         "delegate_behavior":
             PROCESSED_ROOT
@@ -3597,6 +4355,16 @@ def save_outputs(
         index=False
     )
 
+    subject_hierarchy.to_csv(
+        outputs["subject_hierarchy"],
+        index=False
+    )
+
+    summary_lookup.to_csv(
+        outputs["summary_lookup"],
+        index=False
+    )
+
     official.to_csv(
         outputs[
             "official_lis_subjects"
@@ -3604,9 +4372,16 @@ def save_outputs(
         index=False
     )
 
-    derived.to_csv(
+    summary_derived.to_csv(
         outputs[
-            "derived"
+            "summary_derived"
+        ],
+        index=False
+    )
+
+    description_derived.to_csv(
+        outputs[
+            "description_derived"
         ],
         index=False
     )
@@ -3622,6 +4397,31 @@ def save_outputs(
         outputs[
             "bill_topic_lookup"
         ],
+        index=False
+    )
+
+    topic_coverage.to_csv(
+        outputs["topic_coverage"],
+        index=False
+    )
+
+    sponsor_fact.to_csv(
+        outputs["sponsor_fact"],
+        index=False
+    )
+
+    committees.to_csv(
+        outputs["committees"],
+        index=False
+    )
+
+    committee_members.to_csv(
+        outputs["committee_members"],
+        index=False
+    )
+
+    vote_statement_fact.to_csv(
+        outputs["vote_statement_fact"],
         index=False
     )
 
@@ -3851,32 +4651,59 @@ if __name__ == "__main__":
     # -----------------------------------------------------
     # 10. BILL TOPICS
     #
-    # EXACTLY THREE CLASSIFICATIONS:
+    # EXACTLY FOUR CLASSIFICATIONS:
     #
     # Official LIS subject
+    # Derived from LIS bill summary
     # Derived from LIS bill description
     # Unclassified
     # -----------------------------------------------------
 
+    subject_hierarchy = build_lis_subject_hierarchy(
+        year
+    )
+
+    summary_lookup = build_bill_summary_lookup(
+        year
+    )
+
     (
         official,
-        derived,
+        summary_derived,
+        description_derived,
         unclassified,
         bill_topic_lookup
     ) = (
         build_bill_topic_lookup(
             year,
-            bill_lookup
+            bill_lookup,
+            hierarchy=subject_hierarchy,
+            summary_lookup=summary_lookup
         )
     )
 
     validate_topic_classifications(
         bill_lookup,
         official,
-        derived,
+        summary_derived,
+        description_derived,
         unclassified,
         bill_topic_lookup
     )
+
+    topic_coverage = build_topic_coverage(
+        year,
+        bill_lookup,
+        bill_topic_lookup
+    )
+
+    sponsor_fact = build_sponsor_fact(year)
+    committees = build_committees(year)
+    committee_members = build_committee_members(
+        year,
+        committees
+    )
+    vote_statement_fact = build_vote_statement_fact(year)
 
     # -----------------------------------------------------
     # 11. QA SAMPLE
@@ -3956,10 +4783,18 @@ if __name__ == "__main__":
             vote_fact,
             vote_bill_bridge,
             bill_lookup,
+            subject_hierarchy,
+            summary_lookup,
             official,
-            derived,
+            summary_derived,
+            description_derived,
             unclassified,
             bill_topic_lookup,
+            topic_coverage,
+            sponsor_fact,
+            committees,
+            committee_members,
+            vote_statement_fact,
             delegate_summary,
             member_vote_topic,
             delegate_topic_summary,
@@ -4029,8 +4864,14 @@ if __name__ == "__main__":
 
     print(
         f"Derived from LIS bill "
+        f"summary bills: "
+        f"{summary_derived['Bill_id'].nunique():,}"
+    )
+
+    print(
+        f"Derived from LIS bill "
         f"description bills: "
-        f"{derived['Bill_id'].nunique():,}"
+        f"{description_derived['Bill_id'].nunique():,}"
     )
 
     print(

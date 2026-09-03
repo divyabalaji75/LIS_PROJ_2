@@ -21,6 +21,7 @@ NO_THRESHOLD = 0.35
 # Valid upstream classification labels.
 ALLOWED_CLASSIFICATIONS = {
     "Official LIS subject",
+    "Derived from LIS bill summary",
     "Derived from LIS bill description",
     "Unclassified",
 }

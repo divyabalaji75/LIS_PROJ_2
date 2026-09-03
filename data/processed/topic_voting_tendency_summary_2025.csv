@@ -1,26 +1,36 @@
 year,topic_name,classification,mixed_delegates,no_delegates,yes_delegates,classified_delegates,yes_delegate_pct,no_delegate_pct,mixed_delegate_pct
-2025,Agriculture and Food,Derived from LIS bill description,1.0,0.0,70.0,71.0,98.59154929577466,0.0,1.4084507042253522
-2025,Behavioral Health,Derived from LIS bill description,21.0,0.0,78.0,99.0,78.78787878787878,0.0,21.21212121212121
-2025,Budget and Appropriations,Derived from LIS bill description,1.0,46.0,50.0,97.0,51.546391752577314,47.42268041237113,1.0309278350515463
-2025,Business and Commerce,Derived from LIS bill description,14.0,0.0,85.0,99.0,85.85858585858585,0.0,14.14141414141414
-2025,Courts and Civil Law,Derived from LIS bill description,40.0,4.0,54.0,98.0,55.10204081632652,4.081632653061225,40.816326530612244
-2025,Criminal Justice,Derived from LIS bill description,28.0,0.0,71.0,99.0,71.71717171717171,0.0,28.28282828282828
-2025,Education,Derived from LIS bill description,45.0,0.0,55.0,100.0,55.00000000000001,0.0,45.0
-2025,Elections and Voting,Derived from LIS bill description,31.0,16.0,52.0,99.0,52.52525252525253,16.161616161616163,31.313131313131315
-2025,Energy and Utilities,Derived from LIS bill description,32.0,17.0,51.0,100.0,51.0,17.0,32.0
-2025,Environment and Conservation,Derived from LIS bill description,25.0,3.0,71.0,99.0,71.71717171717171,3.0303030303030303,25.252525252525253
-2025,Family and Children,Derived from LIS bill description,1.0,0.0,98.0,99.0,98.98989898989899,0.0,1.0101010101010102
-2025,Firearms,Derived from LIS bill description,2.0,46.0,51.0,99.0,51.515151515151516,46.464646464646464,2.0202020202020203
-2025,Health and Healthcare,Derived from LIS bill description,9.0,0.0,91.0,100.0,91.0,0.0,9.0
-2025,Higher Education,Derived from LIS bill description,0.0,0.0,22.0,22.0,100.0,0.0,0.0
-2025,Housing,Derived from LIS bill description,21.0,27.0,51.0,99.0,51.515151515151516,27.27272727272727,21.21212121212121
-2025,Insurance,Derived from LIS bill description,14.0,0.0,85.0,99.0,85.85858585858585,0.0,14.14141414141414
-2025,Labor and Employment,Derived from LIS bill description,30.0,19.0,51.0,100.0,51.0,19.0,30.0
-2025,Local Government,Derived from LIS bill description,38.0,8.0,52.0,98.0,53.06122448979592,8.16326530612245,38.775510204081634
-2025,Marriage and Domestic Relations,Derived from LIS bill description,14.0,0.0,35.0,49.0,71.42857142857143,0.0,28.57142857142857
-2025,Public Safety,Derived from LIS bill description,4.0,0.0,94.0,98.0,95.91836734693877,0.0,4.081632653061225
-2025,Social Services,Derived from LIS bill description,14.0,0.0,84.0,98.0,85.71428571428571,0.0,14.285714285714285
-2025,State Government,Derived from LIS bill description,0.0,0.0,6.0,6.0,100.0,0.0,0.0
-2025,Taxes and Revenue,Derived from LIS bill description,5.0,0.0,94.0,99.0,94.94949494949495,0.0,5.05050505050505
-2025,Technology and Data,Derived from LIS bill description,16.0,4.0,37.0,57.0,64.91228070175438,7.017543859649122,28.07017543859649
-2025,Transportation,Derived from LIS bill description,12.0,0.0,87.0,99.0,87.87878787878788,0.0,12.121212121212121
+2025,Agriculture and Food,Derived from LIS bill summary,31.0,0.0,69.0,100.0,69.0,0.0,31.0
+2025,Behavioral Health,Derived from LIS bill summary,36.0,0.0,64.0,100.0,64.0,0.0,36.0
+2025,Budget and Appropriations,Derived from LIS bill summary,45.0,2.0,53.0,100.0,53.0,2.0,45.0
+2025,Business and Commerce,Derived from LIS bill description,6.0,0.0,25.0,31.0,80.64516129032258,0.0,19.35483870967742
+2025,Business and Commerce,Derived from LIS bill summary,44.0,0.0,56.0,100.0,56.00000000000001,0.0,44.0
+2025,Courts and Civil Law,Derived from LIS bill summary,45.0,4.0,51.0,100.0,51.0,4.0,45.0
+2025,Criminal Justice,Derived from LIS bill description,18.0,0.0,80.0,98.0,81.63265306122449,0.0,18.367346938775512
+2025,Criminal Justice,Derived from LIS bill summary,43.0,0.0,57.0,100.0,56.99999999999999,0.0,43.0
+2025,Education,Derived from LIS bill description,32.0,0.0,66.0,98.0,67.3469387755102,0.0,32.6530612244898
+2025,Education,Derived from LIS bill summary,37.0,0.0,63.0,100.0,63.0,0.0,37.0
+2025,Elections and Voting,Derived from LIS bill description,39.0,8.0,51.0,98.0,52.04081632653062,8.16326530612245,39.795918367346935
+2025,Elections and Voting,Derived from LIS bill summary,37.0,11.0,51.0,99.0,51.515151515151516,11.11111111111111,37.37373737373738
+2025,Energy and Utilities,Derived from LIS bill description,1.0,8.0,11.0,20.0,55.00000000000001,40.0,5.0
+2025,Energy and Utilities,Derived from LIS bill summary,35.0,14.0,51.0,100.0,51.0,14.000000000000002,35.0
+2025,Environment and Conservation,Derived from LIS bill summary,21.0,0.0,79.0,100.0,79.0,0.0,21.0
+2025,Family and Children,Derived from LIS bill description,0.0,0.0,73.0,73.0,100.0,0.0,0.0
+2025,Family and Children,Derived from LIS bill summary,17.0,0.0,83.0,100.0,83.0,0.0,17.0
+2025,Firearms,Derived from LIS bill description,0.0,10.0,12.0,22.0,54.54545454545454,45.45454545454545,0.0
+2025,Firearms,Derived from LIS bill summary,3.0,44.0,52.0,99.0,52.52525252525253,44.44444444444444,3.0303030303030303
+2025,Health and Healthcare,Derived from LIS bill description,0.0,0.0,22.0,22.0,100.0,0.0,0.0
+2025,Health and Healthcare,Derived from LIS bill summary,29.0,0.0,71.0,100.0,71.0,0.0,28.999999999999996
+2025,Higher Education,Derived from LIS bill summary,28.0,0.0,72.0,100.0,72.0,0.0,28.000000000000004
+2025,Housing,Derived from LIS bill summary,35.0,13.0,51.0,99.0,51.515151515151516,13.131313131313133,35.35353535353536
+2025,Insurance,Derived from LIS bill summary,20.0,1.0,78.0,99.0,78.78787878787878,1.0101010101010102,20.2020202020202
+2025,Labor and Employment,Derived from LIS bill description,6.0,41.0,50.0,97.0,51.546391752577314,42.2680412371134,6.185567010309279
+2025,Labor and Employment,Derived from LIS bill summary,47.0,1.0,52.0,100.0,52.0,1.0,47.0
+2025,Local Government,Derived from LIS bill summary,43.0,4.0,53.0,100.0,53.0,4.0,43.0
+2025,Marriage and Domestic Relations,Derived from LIS bill summary,44.0,0.0,54.0,98.0,55.10204081632652,0.0,44.89795918367347
+2025,Public Safety,Derived from LIS bill summary,24.0,0.0,76.0,100.0,76.0,0.0,24.0
+2025,Social Services,Derived from LIS bill summary,9.0,0.0,90.0,99.0,90.9090909090909,0.0,9.090909090909092
+2025,State Government,Derived from LIS bill summary,42.0,0.0,58.0,100.0,57.99999999999999,0.0,42.0
+2025,Taxes and Revenue,Derived from LIS bill summary,10.0,0.0,90.0,100.0,90.0,0.0,10.0
+2025,Technology and Data,Derived from LIS bill summary,45.0,1.0,52.0,98.0,53.06122448979592,1.0204081632653061,45.91836734693878
+2025,Transportation,Derived from LIS bill description,0.0,0.0,3.0,3.0,100.0,0.0,0.0
+2025,Transportation,Derived from LIS bill summary,30.0,0.0,70.0,100.0,70.0,0.0,30.0

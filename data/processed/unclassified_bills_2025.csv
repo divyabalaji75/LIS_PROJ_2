@@ -1,1868 +1,1321 @@
-Bill_id,topic_name,classification
-HB1554,Unclassified,Unclassified
-HB1557,Unclassified,Unclassified
-HB1558,Unclassified,Unclassified
-HB1563,Unclassified,Unclassified
-HB1564,Unclassified,Unclassified
-HB1565,Unclassified,Unclassified
-HB1567,Unclassified,Unclassified
-HB1568,Unclassified,Unclassified
-HB1571,Unclassified,Unclassified
-HB1572,Unclassified,Unclassified
-HB1575,Unclassified,Unclassified
-HB1576,Unclassified,Unclassified
-HB1586,Unclassified,Unclassified
-HB1587,Unclassified,Unclassified
-HB1598,Unclassified,Unclassified
-HB1599,Unclassified,Unclassified
-HB1605,Unclassified,Unclassified
-HB1606,Unclassified,Unclassified
-HB1610,Unclassified,Unclassified
-HB1611,Unclassified,Unclassified
-HB1617,Unclassified,Unclassified
-HB1618,Unclassified,Unclassified
-HB1619,Unclassified,Unclassified
-HB1628,Unclassified,Unclassified
-HB1630,Unclassified,Unclassified
-HB1632,Unclassified,Unclassified
-HB1634,Unclassified,Unclassified
-HB1640,Unclassified,Unclassified
-HB1644,Unclassified,Unclassified
-HB1646,Unclassified,Unclassified
-HB1647,Unclassified,Unclassified
-HB1648,Unclassified,Unclassified
-HB1650,Unclassified,Unclassified
-HB1653,Unclassified,Unclassified
-HB1654,Unclassified,Unclassified
-HB1656,Unclassified,Unclassified
-HB1658,Unclassified,Unclassified
-HB1659,Unclassified,Unclassified
-HB1660,Unclassified,Unclassified
-HB1661,Unclassified,Unclassified
-HB1662,Unclassified,Unclassified
-HB1666,Unclassified,Unclassified
-HB1671,Unclassified,Unclassified
-HB1673,Unclassified,Unclassified
-HB1676,Unclassified,Unclassified
-HB1677,Unclassified,Unclassified
-HB1680,Unclassified,Unclassified
-HB1681,Unclassified,Unclassified
-HB1684,Unclassified,Unclassified
-HB1687,Unclassified,Unclassified
-HB1688,Unclassified,Unclassified
-HB1690,Unclassified,Unclassified
-HB1693,Unclassified,Unclassified
-HB1695,Unclassified,Unclassified
-HB1696,Unclassified,Unclassified
-HB1697,Unclassified,Unclassified
-HB1699,Unclassified,Unclassified
-HB1702,Unclassified,Unclassified
-HB1703,Unclassified,Unclassified
-HB1704,Unclassified,Unclassified
-HB1705,Unclassified,Unclassified
-HB1707,Unclassified,Unclassified
-HB1708,Unclassified,Unclassified
-HB1711,Unclassified,Unclassified
-HB1712,Unclassified,Unclassified
-HB1714,Unclassified,Unclassified
-HB1715,Unclassified,Unclassified
-HB1716,Unclassified,Unclassified
-HB1721,Unclassified,Unclassified
-HB1722,Unclassified,Unclassified
-HB1724,Unclassified,Unclassified
-HB1726,Unclassified,Unclassified
-HB1727,Unclassified,Unclassified
-HB1728,Unclassified,Unclassified
-HB1732,Unclassified,Unclassified
-HB1734,Unclassified,Unclassified
-HB1737,Unclassified,Unclassified
-HB1738,Unclassified,Unclassified
-HB1739,Unclassified,Unclassified
-HB1740,Unclassified,Unclassified
-HB1742,Unclassified,Unclassified
-HB1748,Unclassified,Unclassified
-HB1756,Unclassified,Unclassified
-HB1757,Unclassified,Unclassified
-HB1759,Unclassified,Unclassified
-HB1761,Unclassified,Unclassified
-HB1762,Unclassified,Unclassified
-HB1763,Unclassified,Unclassified
-HB1764,Unclassified,Unclassified
-HB1766,Unclassified,Unclassified
-HB1767,Unclassified,Unclassified
-HB1768,Unclassified,Unclassified
-HB1769,Unclassified,Unclassified
-HB1770,Unclassified,Unclassified
-HB1772,Unclassified,Unclassified
-HB1774,Unclassified,Unclassified
-HB1776,Unclassified,Unclassified
-HB1778,Unclassified,Unclassified
-HB1780,Unclassified,Unclassified
-HB1781,Unclassified,Unclassified
-HB1782,Unclassified,Unclassified
-HB1785,Unclassified,Unclassified
-HB1786,Unclassified,Unclassified
-HB1787,Unclassified,Unclassified
-HB1791,Unclassified,Unclassified
-HB1793,Unclassified,Unclassified
-HB1799,Unclassified,Unclassified
-HB1800,Unclassified,Unclassified
-HB1801,Unclassified,Unclassified
-HB1802,Unclassified,Unclassified
-HB1803,Unclassified,Unclassified
-HB1805,Unclassified,Unclassified
-HB1807,Unclassified,Unclassified
-HB1810,Unclassified,Unclassified
-HB1812,Unclassified,Unclassified
-HB1814,Unclassified,Unclassified
-HB1815,Unclassified,Unclassified
-HB1823,Unclassified,Unclassified
-HB1826,Unclassified,Unclassified
-HB1827,Unclassified,Unclassified
-HB1832,Unclassified,Unclassified
-HB1833,Unclassified,Unclassified
-HB1834,Unclassified,Unclassified
-HB1835,Unclassified,Unclassified
-HB1836,Unclassified,Unclassified
-HB1838,Unclassified,Unclassified
-HB1839,Unclassified,Unclassified
-HB1842,Unclassified,Unclassified
-HB1843,Unclassified,Unclassified
-HB1844,Unclassified,Unclassified
-HB1847,Unclassified,Unclassified
-HB1848,Unclassified,Unclassified
-HB1849,Unclassified,Unclassified
-HB1852,Unclassified,Unclassified
-HB1853,Unclassified,Unclassified
-HB1854,Unclassified,Unclassified
-HB1857,Unclassified,Unclassified
-HB1859,Unclassified,Unclassified
-HB1861,Unclassified,Unclassified
-HB1864,Unclassified,Unclassified
-HB1865,Unclassified,Unclassified
-HB1871,Unclassified,Unclassified
-HB1873,Unclassified,Unclassified
-HB1879,Unclassified,Unclassified
-HB1882,Unclassified,Unclassified
-HB1884,Unclassified,Unclassified
-HB1887,Unclassified,Unclassified
-HB1888,Unclassified,Unclassified
-HB1889,Unclassified,Unclassified
-HB1891,Unclassified,Unclassified
-HB1897,Unclassified,Unclassified
-HB1898,Unclassified,Unclassified
-HB1899,Unclassified,Unclassified
-HB1901,Unclassified,Unclassified
-HB1902,Unclassified,Unclassified
-HB1910,Unclassified,Unclassified
-HB1911,Unclassified,Unclassified
-HB1912,Unclassified,Unclassified
-HB1913,Unclassified,Unclassified
-HB1914,Unclassified,Unclassified
-HB1916,Unclassified,Unclassified
-HB1917,Unclassified,Unclassified
-HB1918,Unclassified,Unclassified
-HB1920,Unclassified,Unclassified
-HB1929,Unclassified,Unclassified
-HB1930,Unclassified,Unclassified
-HB1931,Unclassified,Unclassified
-HB1932,Unclassified,Unclassified
-HB1940,Unclassified,Unclassified
-HB1941,Unclassified,Unclassified
-HB1942,Unclassified,Unclassified
-HB1943,Unclassified,Unclassified
-HB1944,Unclassified,Unclassified
-HB1946,Unclassified,Unclassified
-HB1948,Unclassified,Unclassified
-HB1949,Unclassified,Unclassified
-HB1950,Unclassified,Unclassified
-HB1955,Unclassified,Unclassified
-HB1956,Unclassified,Unclassified
-HB1963,Unclassified,Unclassified
-HB1964,Unclassified,Unclassified
-HB1967,Unclassified,Unclassified
-HB1970,Unclassified,Unclassified
-HB1971,Unclassified,Unclassified
-HB1974,Unclassified,Unclassified
-HB1981,Unclassified,Unclassified
-HB1984,Unclassified,Unclassified
-HB1987,Unclassified,Unclassified
-HB1991,Unclassified,Unclassified
-HB1994,Unclassified,Unclassified
-HB1996,Unclassified,Unclassified
-HB1998,Unclassified,Unclassified
-HB2000,Unclassified,Unclassified
-HB2001,Unclassified,Unclassified
-HB2005,Unclassified,Unclassified
-HB2006,Unclassified,Unclassified
-HB2008,Unclassified,Unclassified
-HB2012,Unclassified,Unclassified
-HB2013,Unclassified,Unclassified
-HB2016,Unclassified,Unclassified
-HB2019,Unclassified,Unclassified
-HB2021,Unclassified,Unclassified
-HB2022,Unclassified,Unclassified
-HB2026,Unclassified,Unclassified
-HB2027,Unclassified,Unclassified
-HB2031,Unclassified,Unclassified
-HB2039,Unclassified,Unclassified
-HB2040,Unclassified,Unclassified
-HB2041,Unclassified,Unclassified
-HB2042,Unclassified,Unclassified
-HB2043,Unclassified,Unclassified
-HB2048,Unclassified,Unclassified
-HB2050,Unclassified,Unclassified
-HB2051,Unclassified,Unclassified
-HB2058,Unclassified,Unclassified
-HB2067,Unclassified,Unclassified
-HB2071,Unclassified,Unclassified
-HB2073,Unclassified,Unclassified
-HB2074,Unclassified,Unclassified
-HB2077,Unclassified,Unclassified
-HB2078,Unclassified,Unclassified
-HB2080,Unclassified,Unclassified
-HB2081,Unclassified,Unclassified
-HB2083,Unclassified,Unclassified
-HB2089,Unclassified,Unclassified
-HB2095,Unclassified,Unclassified
-HB2096,Unclassified,Unclassified
-HB2100,Unclassified,Unclassified
-HB2102,Unclassified,Unclassified
-HB2103,Unclassified,Unclassified
-HB2109,Unclassified,Unclassified
-HB2110,Unclassified,Unclassified
-HB2112,Unclassified,Unclassified
-HB2115,Unclassified,Unclassified
-HB2117,Unclassified,Unclassified
-HB2119,Unclassified,Unclassified
-HB2120,Unclassified,Unclassified
-HB2121,Unclassified,Unclassified
-HB2123,Unclassified,Unclassified
-HB2124,Unclassified,Unclassified
-HB2130,Unclassified,Unclassified
-HB2131,Unclassified,Unclassified
-HB2134,Unclassified,Unclassified
-HB2135,Unclassified,Unclassified
-HB2137,Unclassified,Unclassified
-HB2138,Unclassified,Unclassified
-HB2143,Unclassified,Unclassified
-HB2144,Unclassified,Unclassified
-HB2148,Unclassified,Unclassified
-HB2149,Unclassified,Unclassified
-HB2152,Unclassified,Unclassified
-HB2153,Unclassified,Unclassified
-HB2155,Unclassified,Unclassified
-HB2157,Unclassified,Unclassified
-HB2158,Unclassified,Unclassified
-HB2159,Unclassified,Unclassified
-HB2160,Unclassified,Unclassified
-HB2161,Unclassified,Unclassified
-HB2162,Unclassified,Unclassified
-HB2163,Unclassified,Unclassified
-HB2166,Unclassified,Unclassified
-HB2167,Unclassified,Unclassified
-HB2169,Unclassified,Unclassified
-HB2170,Unclassified,Unclassified
-HB2175,Unclassified,Unclassified
-HB2178,Unclassified,Unclassified
-HB2179,Unclassified,Unclassified
-HB2181,Unclassified,Unclassified
-HB2183,Unclassified,Unclassified
-HB2184,Unclassified,Unclassified
-HB2186,Unclassified,Unclassified
-HB2189,Unclassified,Unclassified
-HB2191,Unclassified,Unclassified
-HB2193,Unclassified,Unclassified
-HB2194,Unclassified,Unclassified
-HB2196,Unclassified,Unclassified
-HB2198,Unclassified,Unclassified
-HB2199,Unclassified,Unclassified
-HB2203,Unclassified,Unclassified
-HB2204,Unclassified,Unclassified
-HB2205,Unclassified,Unclassified
-HB2206,Unclassified,Unclassified
-HB2207,Unclassified,Unclassified
-HB2210,Unclassified,Unclassified
-HB2211,Unclassified,Unclassified
-HB2214,Unclassified,Unclassified
-HB2215,Unclassified,Unclassified
-HB2217,Unclassified,Unclassified
-HB2222,Unclassified,Unclassified
-HB2223,Unclassified,Unclassified
-HB2225,Unclassified,Unclassified
-HB2227,Unclassified,Unclassified
-HB2228,Unclassified,Unclassified
-HB2230,Unclassified,Unclassified
-HB2231,Unclassified,Unclassified
-HB2232,Unclassified,Unclassified
-HB2233,Unclassified,Unclassified
-HB2238,Unclassified,Unclassified
-HB2242,Unclassified,Unclassified
-HB2243,Unclassified,Unclassified
-HB2246,Unclassified,Unclassified
-HB2249,Unclassified,Unclassified
-HB2251,Unclassified,Unclassified
-HB2258,Unclassified,Unclassified
-HB2260,Unclassified,Unclassified
-HB2261,Unclassified,Unclassified
-HB2263,Unclassified,Unclassified
-HB2266,Unclassified,Unclassified
-HB2270,Unclassified,Unclassified
-HB2271,Unclassified,Unclassified
-HB2273,Unclassified,Unclassified
-HB2274,Unclassified,Unclassified
-HB2275,Unclassified,Unclassified
-HB2280,Unclassified,Unclassified
-HB2283,Unclassified,Unclassified
-HB2285,Unclassified,Unclassified
-HB2288,Unclassified,Unclassified
-HB2289,Unclassified,Unclassified
-HB2292,Unclassified,Unclassified
-HB2293,Unclassified,Unclassified
-HB2294,Unclassified,Unclassified
-HB2295,Unclassified,Unclassified
-HB2296,Unclassified,Unclassified
-HB2300,Unclassified,Unclassified
-HB2303,Unclassified,Unclassified
-HB2304,Unclassified,Unclassified
-HB2306,Unclassified,Unclassified
-HB2308,Unclassified,Unclassified
-HB2309,Unclassified,Unclassified
-HB2310,Unclassified,Unclassified
-HB2312,Unclassified,Unclassified
-HB2313,Unclassified,Unclassified
-HB2314,Unclassified,Unclassified
-HB2315,Unclassified,Unclassified
-HB2316,Unclassified,Unclassified
-HB2317,Unclassified,Unclassified
-HB2318,Unclassified,Unclassified
-HB2319,Unclassified,Unclassified
-HB2321,Unclassified,Unclassified
-HB2322,Unclassified,Unclassified
-HB2325,Unclassified,Unclassified
-HB2327,Unclassified,Unclassified
-HB2328,Unclassified,Unclassified
-HB2330,Unclassified,Unclassified
-HB2331,Unclassified,Unclassified
-HB2332,Unclassified,Unclassified
-HB2335,Unclassified,Unclassified
-HB2340,Unclassified,Unclassified
-HB2342,Unclassified,Unclassified
-HB2343,Unclassified,Unclassified
-HB2344,Unclassified,Unclassified
-HB2347,Unclassified,Unclassified
-HB2349,Unclassified,Unclassified
-HB2350,Unclassified,Unclassified
-HB2351,Unclassified,Unclassified
-HB2352,Unclassified,Unclassified
-HB2354,Unclassified,Unclassified
-HB2358,Unclassified,Unclassified
-HB2359,Unclassified,Unclassified
-HB2361,Unclassified,Unclassified
-HB2364,Unclassified,Unclassified
-HB2367,Unclassified,Unclassified
-HB2368,Unclassified,Unclassified
-HB2370,Unclassified,Unclassified
-HB2374,Unclassified,Unclassified
-HB2376,Unclassified,Unclassified
-HB2377,Unclassified,Unclassified
-HB2378,Unclassified,Unclassified
-HB2379,Unclassified,Unclassified
-HB2381,Unclassified,Unclassified
-HB2383,Unclassified,Unclassified
-HB2387,Unclassified,Unclassified
-HB2389,Unclassified,Unclassified
-HB2393,Unclassified,Unclassified
-HB2396,Unclassified,Unclassified
-HB2397,Unclassified,Unclassified
-HB2398,Unclassified,Unclassified
-HB2405,Unclassified,Unclassified
-HB2406,Unclassified,Unclassified
-HB2407,Unclassified,Unclassified
-HB2416,Unclassified,Unclassified
-HB2419,Unclassified,Unclassified
-HB2421,Unclassified,Unclassified
-HB2423,Unclassified,Unclassified
-HB2425,Unclassified,Unclassified
-HB2427,Unclassified,Unclassified
-HB2428,Unclassified,Unclassified
-HB2429,Unclassified,Unclassified
-HB2432,Unclassified,Unclassified
-HB2433,Unclassified,Unclassified
-HB2440,Unclassified,Unclassified
-HB2443,Unclassified,Unclassified
-HB2447,Unclassified,Unclassified
-HB2448,Unclassified,Unclassified
-HB2450,Unclassified,Unclassified
-HB2453,Unclassified,Unclassified
-HB2460,Unclassified,Unclassified
-HB2461,Unclassified,Unclassified
-HB2468,Unclassified,Unclassified
-HB2472,Unclassified,Unclassified
-HB2474,Unclassified,Unclassified
-HB2476,Unclassified,Unclassified
-HB2477,Unclassified,Unclassified
-HB2485,Unclassified,Unclassified
-HB2488,Unclassified,Unclassified
-HB2490,Unclassified,Unclassified
-HB2491,Unclassified,Unclassified
-HB2493,Unclassified,Unclassified
-HB2494,Unclassified,Unclassified
-HB2496,Unclassified,Unclassified
-HB2497,Unclassified,Unclassified
-HB2498,Unclassified,Unclassified
-HB2499,Unclassified,Unclassified
-HB2500,Unclassified,Unclassified
-HB2501,Unclassified,Unclassified
-HB2503,Unclassified,Unclassified
-HB2507,Unclassified,Unclassified
-HB2510,Unclassified,Unclassified
-HB2511,Unclassified,Unclassified
-HB2512,Unclassified,Unclassified
-HB2516,Unclassified,Unclassified
-HB2517,Unclassified,Unclassified
-HB2520,Unclassified,Unclassified
-HB2521,Unclassified,Unclassified
-HB2522,Unclassified,Unclassified
-HB2523,Unclassified,Unclassified
-HB2526,Unclassified,Unclassified
-HB2529,Unclassified,Unclassified
-HB2530,Unclassified,Unclassified
-HB2533,Unclassified,Unclassified
-HB2534,Unclassified,Unclassified
-HB2536,Unclassified,Unclassified
-HB2540,Unclassified,Unclassified
-HB2542,Unclassified,Unclassified
-HB2543,Unclassified,Unclassified
-HB2545,Unclassified,Unclassified
-HB2546,Unclassified,Unclassified
-HB2550,Unclassified,Unclassified
-HB2551,Unclassified,Unclassified
-HB2553,Unclassified,Unclassified
-HB2556,Unclassified,Unclassified
-HB2557,Unclassified,Unclassified
-HB2562,Unclassified,Unclassified
-HB2564,Unclassified,Unclassified
-HB2565,Unclassified,Unclassified
-HB2570,Unclassified,Unclassified
-HB2571,Unclassified,Unclassified
-HB2572,Unclassified,Unclassified
-HB2577,Unclassified,Unclassified
-HB2579,Unclassified,Unclassified
-HB2581,Unclassified,Unclassified
-HB2587,Unclassified,Unclassified
-HB2589,Unclassified,Unclassified
-HB2590,Unclassified,Unclassified
-HB2591,Unclassified,Unclassified
-HB2592,Unclassified,Unclassified
-HB2593,Unclassified,Unclassified
-HB2594,Unclassified,Unclassified
-HB2596,Unclassified,Unclassified
-HB2597,Unclassified,Unclassified
-HB2599,Unclassified,Unclassified
-HB2612,Unclassified,Unclassified
-HB2617,Unclassified,Unclassified
-HB2621,Unclassified,Unclassified
-HB2622,Unclassified,Unclassified
-HB2623,Unclassified,Unclassified
-HB2624,Unclassified,Unclassified
-HB2625,Unclassified,Unclassified
-HB2628,Unclassified,Unclassified
-HB2629,Unclassified,Unclassified
-HB2632,Unclassified,Unclassified
-HB2634,Unclassified,Unclassified
-HB2636,Unclassified,Unclassified
-HB2640,Unclassified,Unclassified
-HB2642,Unclassified,Unclassified
-HB2643,Unclassified,Unclassified
-HB2644,Unclassified,Unclassified
-HB2647,Unclassified,Unclassified
-HB2648,Unclassified,Unclassified
-HB2649,Unclassified,Unclassified
-HB2650,Unclassified,Unclassified
-HB2651,Unclassified,Unclassified
-HB2652,Unclassified,Unclassified
-HB2654,Unclassified,Unclassified
-HB2656,Unclassified,Unclassified
-HB2658,Unclassified,Unclassified
-HB2660,Unclassified,Unclassified
-HB2664,Unclassified,Unclassified
-HB2669,Unclassified,Unclassified
-HB2671,Unclassified,Unclassified
-HB2674,Unclassified,Unclassified
-HB2677,Unclassified,Unclassified
-HB2680,Unclassified,Unclassified
-HB2681,Unclassified,Unclassified
-HB2682,Unclassified,Unclassified
-HB2684,Unclassified,Unclassified
-HB2686,Unclassified,Unclassified
-HB2691,Unclassified,Unclassified
-HB2692,Unclassified,Unclassified
-HB2695,Unclassified,Unclassified
-HB2696,Unclassified,Unclassified
-HB2699,Unclassified,Unclassified
-HB2702,Unclassified,Unclassified
-HB2703,Unclassified,Unclassified
-HB2704,Unclassified,Unclassified
-HB2706,Unclassified,Unclassified
-HB2708,Unclassified,Unclassified
-HB2709,Unclassified,Unclassified
-HB2710,Unclassified,Unclassified
-HB2711,Unclassified,Unclassified
-HB2712,Unclassified,Unclassified
-HB2713,Unclassified,Unclassified
-HB2714,Unclassified,Unclassified
-HB2716,Unclassified,Unclassified
-HB2718,Unclassified,Unclassified
-HB2721,Unclassified,Unclassified
-HB2722,Unclassified,Unclassified
-HB2724,Unclassified,Unclassified
-HB2725,Unclassified,Unclassified
-HB2726,Unclassified,Unclassified
-HB2727,Unclassified,Unclassified
-HB2729,Unclassified,Unclassified
-HB2731,Unclassified,Unclassified
-HB2732,Unclassified,Unclassified
-HB2735,Unclassified,Unclassified
-HB2739,Unclassified,Unclassified
-HB2748,Unclassified,Unclassified
-HB2749,Unclassified,Unclassified
-HB2750,Unclassified,Unclassified
-HB2755,Unclassified,Unclassified
-HB2760,Unclassified,Unclassified
-HB2766,Unclassified,Unclassified
-HB2769,Unclassified,Unclassified
-HB2770,Unclassified,Unclassified
-HB2775,Unclassified,Unclassified
-HB2778,Unclassified,Unclassified
-HB2779,Unclassified,Unclassified
-HB2783,Unclassified,Unclassified
-HJ429,Unclassified,Unclassified
-HJ430,Unclassified,Unclassified
-HJ433,Unclassified,Unclassified
-HJ435,Unclassified,Unclassified
-HJ436,Unclassified,Unclassified
-HJ437,Unclassified,Unclassified
-HJ446,Unclassified,Unclassified
-HJ450,Unclassified,Unclassified
-HJ452,Unclassified,Unclassified
-HJ453,Unclassified,Unclassified
-HJ455,Unclassified,Unclassified
-HJ458,Unclassified,Unclassified
-HJ459,Unclassified,Unclassified
-HJ460,Unclassified,Unclassified
-HJ461,Unclassified,Unclassified
-HJ462,Unclassified,Unclassified
-HJ463,Unclassified,Unclassified
-HJ465,Unclassified,Unclassified
-HJ466,Unclassified,Unclassified
-HJ467,Unclassified,Unclassified
-HJ469,Unclassified,Unclassified
-HJ470,Unclassified,Unclassified
-HJ471,Unclassified,Unclassified
-HJ472,Unclassified,Unclassified
-HJ475,Unclassified,Unclassified
-HJ476,Unclassified,Unclassified
-HJ477,Unclassified,Unclassified
-HJ478,Unclassified,Unclassified
-HJ479,Unclassified,Unclassified
-HJ480,Unclassified,Unclassified
-HJ483,Unclassified,Unclassified
-HJ484,Unclassified,Unclassified
-HJ485,Unclassified,Unclassified
-HJ486,Unclassified,Unclassified
-HJ487,Unclassified,Unclassified
-HJ488,Unclassified,Unclassified
-HJ489,Unclassified,Unclassified
-HJ490,Unclassified,Unclassified
-HJ491,Unclassified,Unclassified
-HJ492,Unclassified,Unclassified
-HJ493,Unclassified,Unclassified
-HJ494,Unclassified,Unclassified
-HJ495,Unclassified,Unclassified
-HJ496,Unclassified,Unclassified
-HJ497,Unclassified,Unclassified
-HJ498,Unclassified,Unclassified
-HJ499,Unclassified,Unclassified
-HJ501,Unclassified,Unclassified
-HJ502,Unclassified,Unclassified
-HJ503,Unclassified,Unclassified
-HJ504,Unclassified,Unclassified
-HJ505,Unclassified,Unclassified
-HJ506,Unclassified,Unclassified
-HJ507,Unclassified,Unclassified
-HJ508,Unclassified,Unclassified
-HJ509,Unclassified,Unclassified
-HJ510,Unclassified,Unclassified
-HJ511,Unclassified,Unclassified
-HJ512,Unclassified,Unclassified
-HJ513,Unclassified,Unclassified
-HJ514,Unclassified,Unclassified
-HJ515,Unclassified,Unclassified
-HJ516,Unclassified,Unclassified
-HJ517,Unclassified,Unclassified
-HJ518,Unclassified,Unclassified
-HJ519,Unclassified,Unclassified
-HJ520,Unclassified,Unclassified
-HJ521,Unclassified,Unclassified
-HJ522,Unclassified,Unclassified
-HJ523,Unclassified,Unclassified
-HJ524,Unclassified,Unclassified
-HJ525,Unclassified,Unclassified
-HJ526,Unclassified,Unclassified
-HJ527,Unclassified,Unclassified
-HJ528,Unclassified,Unclassified
-HJ529,Unclassified,Unclassified
-HJ530,Unclassified,Unclassified
-HJ531,Unclassified,Unclassified
-HJ532,Unclassified,Unclassified
-HJ533,Unclassified,Unclassified
-HJ534,Unclassified,Unclassified
-HJ535,Unclassified,Unclassified
-HJ536,Unclassified,Unclassified
-HJ537,Unclassified,Unclassified
-HJ538,Unclassified,Unclassified
-HJ539,Unclassified,Unclassified
-HJ540,Unclassified,Unclassified
-HJ541,Unclassified,Unclassified
-HJ542,Unclassified,Unclassified
-HJ543,Unclassified,Unclassified
-HJ544,Unclassified,Unclassified
-HJ545,Unclassified,Unclassified
-HJ546,Unclassified,Unclassified
-HJ547,Unclassified,Unclassified
-HJ548,Unclassified,Unclassified
-HJ549,Unclassified,Unclassified
-HJ550,Unclassified,Unclassified
-HJ551,Unclassified,Unclassified
-HJ552,Unclassified,Unclassified
-HJ553,Unclassified,Unclassified
-HJ554,Unclassified,Unclassified
-HJ555,Unclassified,Unclassified
-HJ558,Unclassified,Unclassified
-HJ559,Unclassified,Unclassified
-HJ560,Unclassified,Unclassified
-HJ562,Unclassified,Unclassified
-HJ563,Unclassified,Unclassified
-HJ564,Unclassified,Unclassified
-HJ565,Unclassified,Unclassified
-HJ566,Unclassified,Unclassified
-HJ567,Unclassified,Unclassified
-HJ568,Unclassified,Unclassified
-HJ569,Unclassified,Unclassified
-HJ570,Unclassified,Unclassified
-HJ571,Unclassified,Unclassified
-HJ572,Unclassified,Unclassified
-HJ573,Unclassified,Unclassified
-HJ574,Unclassified,Unclassified
-HJ575,Unclassified,Unclassified
-HJ576,Unclassified,Unclassified
-HJ577,Unclassified,Unclassified
-HJ578,Unclassified,Unclassified
-HJ579,Unclassified,Unclassified
-HJ580,Unclassified,Unclassified
-HJ581,Unclassified,Unclassified
-HJ582,Unclassified,Unclassified
-HJ583,Unclassified,Unclassified
-HJ584,Unclassified,Unclassified
-HJ585,Unclassified,Unclassified
-HJ586,Unclassified,Unclassified
-HJ587,Unclassified,Unclassified
-HJ588,Unclassified,Unclassified
-HJ590,Unclassified,Unclassified
-HJ591,Unclassified,Unclassified
-HJ592,Unclassified,Unclassified
-HJ593,Unclassified,Unclassified
-HJ594,Unclassified,Unclassified
-HJ595,Unclassified,Unclassified
-HJ596,Unclassified,Unclassified
-HJ597,Unclassified,Unclassified
-HJ598,Unclassified,Unclassified
-HJ599,Unclassified,Unclassified
-HJ600,Unclassified,Unclassified
-HJ601,Unclassified,Unclassified
-HJ602,Unclassified,Unclassified
-HJ603,Unclassified,Unclassified
-HJ604,Unclassified,Unclassified
-HJ605,Unclassified,Unclassified
-HJ606,Unclassified,Unclassified
-HJ607,Unclassified,Unclassified
-HJ608,Unclassified,Unclassified
-HJ609,Unclassified,Unclassified
-HJ610,Unclassified,Unclassified
-HJ611,Unclassified,Unclassified
-HJ612,Unclassified,Unclassified
-HJ613,Unclassified,Unclassified
-HJ614,Unclassified,Unclassified
-HJ615,Unclassified,Unclassified
-HJ616,Unclassified,Unclassified
-HJ617,Unclassified,Unclassified
-HJ618,Unclassified,Unclassified
-HJ619,Unclassified,Unclassified
-HJ620,Unclassified,Unclassified
-HJ621,Unclassified,Unclassified
-HJ622,Unclassified,Unclassified
-HJ623,Unclassified,Unclassified
-HJ624,Unclassified,Unclassified
-HJ625,Unclassified,Unclassified
-HJ626,Unclassified,Unclassified
-HJ627,Unclassified,Unclassified
-HJ629,Unclassified,Unclassified
-HJ630,Unclassified,Unclassified
-HJ631,Unclassified,Unclassified
-HJ632,Unclassified,Unclassified
-HJ633,Unclassified,Unclassified
-HJ634,Unclassified,Unclassified
-HJ635,Unclassified,Unclassified
-HJ636,Unclassified,Unclassified
-HJ637,Unclassified,Unclassified
-HJ638,Unclassified,Unclassified
-HJ639,Unclassified,Unclassified
-HJ640,Unclassified,Unclassified
-HJ641,Unclassified,Unclassified
-HJ642,Unclassified,Unclassified
-HJ643,Unclassified,Unclassified
-HJ645,Unclassified,Unclassified
-HJ646,Unclassified,Unclassified
-HJ647,Unclassified,Unclassified
-HJ648,Unclassified,Unclassified
-HJ649,Unclassified,Unclassified
-HJ650,Unclassified,Unclassified
-HJ651,Unclassified,Unclassified
-HJ652,Unclassified,Unclassified
-HJ653,Unclassified,Unclassified
-HJ654,Unclassified,Unclassified
-HJ655,Unclassified,Unclassified
-HJ656,Unclassified,Unclassified
-HJ657,Unclassified,Unclassified
-HJ658,Unclassified,Unclassified
-HJ659,Unclassified,Unclassified
-HJ660,Unclassified,Unclassified
-HJ661,Unclassified,Unclassified
-HJ662,Unclassified,Unclassified
-HJ663,Unclassified,Unclassified
-HJ666,Unclassified,Unclassified
-HJ667,Unclassified,Unclassified
-HJ668,Unclassified,Unclassified
-HJ669,Unclassified,Unclassified
-HJ670,Unclassified,Unclassified
-HJ671,Unclassified,Unclassified
-HJ672,Unclassified,Unclassified
-HJ673,Unclassified,Unclassified
-HJ674,Unclassified,Unclassified
-HJ675,Unclassified,Unclassified
-HJ676,Unclassified,Unclassified
-HJ677,Unclassified,Unclassified
-HJ679,Unclassified,Unclassified
-HJ680,Unclassified,Unclassified
-HJ681,Unclassified,Unclassified
-HJ682,Unclassified,Unclassified
-HJ683,Unclassified,Unclassified
-HJ684,Unclassified,Unclassified
-HJ685,Unclassified,Unclassified
-HJ686,Unclassified,Unclassified
-HJ687,Unclassified,Unclassified
-HJ688,Unclassified,Unclassified
-HJ689,Unclassified,Unclassified
-HJ690,Unclassified,Unclassified
-HJ691,Unclassified,Unclassified
-HJ693,Unclassified,Unclassified
-HJ696,Unclassified,Unclassified
-HJ697,Unclassified,Unclassified
-HJ698,Unclassified,Unclassified
-HJ699,Unclassified,Unclassified
-HJ700,Unclassified,Unclassified
-HJ701,Unclassified,Unclassified
-HJ702,Unclassified,Unclassified
-HJ703,Unclassified,Unclassified
-HJ704,Unclassified,Unclassified
-HJ705,Unclassified,Unclassified
-HJ706,Unclassified,Unclassified
-HJ707,Unclassified,Unclassified
-HJ708,Unclassified,Unclassified
-HJ709,Unclassified,Unclassified
-HJ710,Unclassified,Unclassified
-HJ711,Unclassified,Unclassified
-HJ712,Unclassified,Unclassified
-HJ713,Unclassified,Unclassified
-HJ714,Unclassified,Unclassified
-HJ715,Unclassified,Unclassified
-HJ716,Unclassified,Unclassified
-HJ717,Unclassified,Unclassified
-HJ718,Unclassified,Unclassified
-HJ719,Unclassified,Unclassified
-HJ720,Unclassified,Unclassified
-HJ721,Unclassified,Unclassified
-HJ722,Unclassified,Unclassified
-HJ723,Unclassified,Unclassified
-HJ724,Unclassified,Unclassified
-HJ726,Unclassified,Unclassified
-HJ727,Unclassified,Unclassified
-HJ728,Unclassified,Unclassified
-HJ729,Unclassified,Unclassified
-HJ730,Unclassified,Unclassified
-HJ731,Unclassified,Unclassified
-HJ732,Unclassified,Unclassified
-HJ735,Unclassified,Unclassified
-HJ737,Unclassified,Unclassified
-HJ738,Unclassified,Unclassified
-HJ739,Unclassified,Unclassified
-HJ741,Unclassified,Unclassified
-HJ742,Unclassified,Unclassified
-HJ743,Unclassified,Unclassified
-HJ744,Unclassified,Unclassified
-HJ745,Unclassified,Unclassified
-HJ746,Unclassified,Unclassified
-HJ747,Unclassified,Unclassified
-HJ748,Unclassified,Unclassified
-HJ749,Unclassified,Unclassified
-HJ750,Unclassified,Unclassified
-HJ751,Unclassified,Unclassified
-HJ752,Unclassified,Unclassified
-HJ753,Unclassified,Unclassified
-HJ754,Unclassified,Unclassified
-HJ755,Unclassified,Unclassified
-HJ758,Unclassified,Unclassified
-HJ759,Unclassified,Unclassified
-HJ760,Unclassified,Unclassified
-HR453,Unclassified,Unclassified
-HR454,Unclassified,Unclassified
-HR455,Unclassified,Unclassified
-HR456,Unclassified,Unclassified
-HR457,Unclassified,Unclassified
-HR459,Unclassified,Unclassified
-HR460,Unclassified,Unclassified
-HR462,Unclassified,Unclassified
-HR463,Unclassified,Unclassified
-HR464,Unclassified,Unclassified
-HR465,Unclassified,Unclassified
-HR466,Unclassified,Unclassified
-HR467,Unclassified,Unclassified
-HR468,Unclassified,Unclassified
-HR469,Unclassified,Unclassified
-HR470,Unclassified,Unclassified
-HR471,Unclassified,Unclassified
-HR472,Unclassified,Unclassified
-HR473,Unclassified,Unclassified
-HR475,Unclassified,Unclassified
-HR476,Unclassified,Unclassified
-HR478,Unclassified,Unclassified
-HR480,Unclassified,Unclassified
-HR481,Unclassified,Unclassified
-HR482,Unclassified,Unclassified
-HR483,Unclassified,Unclassified
-HR484,Unclassified,Unclassified
-HR485,Unclassified,Unclassified
-HR486,Unclassified,Unclassified
-HR487,Unclassified,Unclassified
-HR488,Unclassified,Unclassified
-HR489,Unclassified,Unclassified
-HR490,Unclassified,Unclassified
-HR491,Unclassified,Unclassified
-HR492,Unclassified,Unclassified
-HR493,Unclassified,Unclassified
-HR494,Unclassified,Unclassified
-HR496,Unclassified,Unclassified
-HR498,Unclassified,Unclassified
-HR499,Unclassified,Unclassified
-HR500,Unclassified,Unclassified
-HR502,Unclassified,Unclassified
-HR504,Unclassified,Unclassified
-HR505,Unclassified,Unclassified
-HR506,Unclassified,Unclassified
-HR507,Unclassified,Unclassified
-HR508,Unclassified,Unclassified
-HR509,Unclassified,Unclassified
-HR510,Unclassified,Unclassified
-HR511,Unclassified,Unclassified
-HR512,Unclassified,Unclassified
-HR513,Unclassified,Unclassified
-HR514,Unclassified,Unclassified
-HR515,Unclassified,Unclassified
-HR516,Unclassified,Unclassified
-HR517,Unclassified,Unclassified
-HR518,Unclassified,Unclassified
-HR520,Unclassified,Unclassified
-HR521,Unclassified,Unclassified
-HR522,Unclassified,Unclassified
-HR523,Unclassified,Unclassified
-HR524,Unclassified,Unclassified
-HR525,Unclassified,Unclassified
-HR526,Unclassified,Unclassified
-HR527,Unclassified,Unclassified
-HR528,Unclassified,Unclassified
-HR529,Unclassified,Unclassified
-HR530,Unclassified,Unclassified
-HR531,Unclassified,Unclassified
-HR532,Unclassified,Unclassified
-HR534,Unclassified,Unclassified
-HR535,Unclassified,Unclassified
-HR536,Unclassified,Unclassified
-HR537,Unclassified,Unclassified
-HR538,Unclassified,Unclassified
-HR539,Unclassified,Unclassified
-HR540,Unclassified,Unclassified
-HR541,Unclassified,Unclassified
-HR542,Unclassified,Unclassified
-HR543,Unclassified,Unclassified
-HR544,Unclassified,Unclassified
-HR545,Unclassified,Unclassified
-HR546,Unclassified,Unclassified
-HR547,Unclassified,Unclassified
-HR548,Unclassified,Unclassified
-HR549,Unclassified,Unclassified
-HR550,Unclassified,Unclassified
-HR551,Unclassified,Unclassified
-HR552,Unclassified,Unclassified
-HR553,Unclassified,Unclassified
-HR554,Unclassified,Unclassified
-HR555,Unclassified,Unclassified
-HR556,Unclassified,Unclassified
-HR557,Unclassified,Unclassified
-HR558,Unclassified,Unclassified
-HR559,Unclassified,Unclassified
-HR560,Unclassified,Unclassified
-HR561,Unclassified,Unclassified
-HR562,Unclassified,Unclassified
-HR563,Unclassified,Unclassified
-HR564,Unclassified,Unclassified
-HR565,Unclassified,Unclassified
-HR566,Unclassified,Unclassified
-HR567,Unclassified,Unclassified
-HR568,Unclassified,Unclassified
-HR569,Unclassified,Unclassified
-HR570,Unclassified,Unclassified
-HR571,Unclassified,Unclassified
-HR572,Unclassified,Unclassified
-HR573,Unclassified,Unclassified
-HR574,Unclassified,Unclassified
-HR575,Unclassified,Unclassified
-HR576,Unclassified,Unclassified
-HR577,Unclassified,Unclassified
-HR578,Unclassified,Unclassified
-HR579,Unclassified,Unclassified
-HR580,Unclassified,Unclassified
-HR582,Unclassified,Unclassified
-HR583,Unclassified,Unclassified
-HR584,Unclassified,Unclassified
-HR585,Unclassified,Unclassified
-HR586,Unclassified,Unclassified
-HR587,Unclassified,Unclassified
-HR588,Unclassified,Unclassified
-HR589,Unclassified,Unclassified
-HR590,Unclassified,Unclassified
-HR591,Unclassified,Unclassified
-HR592,Unclassified,Unclassified
-HR593,Unclassified,Unclassified
-HR594,Unclassified,Unclassified
-HR595,Unclassified,Unclassified
-HR596,Unclassified,Unclassified
-HR597,Unclassified,Unclassified
-HR598,Unclassified,Unclassified
-HR599,Unclassified,Unclassified
-HR600,Unclassified,Unclassified
-HR601,Unclassified,Unclassified
-HR602,Unclassified,Unclassified
-HR603,Unclassified,Unclassified
-HR604,Unclassified,Unclassified
-HR605,Unclassified,Unclassified
-HR607,Unclassified,Unclassified
-HR608,Unclassified,Unclassified
-HR609,Unclassified,Unclassified
-HR610,Unclassified,Unclassified
-HR611,Unclassified,Unclassified
-HR612,Unclassified,Unclassified
-HR615,Unclassified,Unclassified
-HR616,Unclassified,Unclassified
-HR617,Unclassified,Unclassified
-HR618,Unclassified,Unclassified
-HR619,Unclassified,Unclassified
-HR620,Unclassified,Unclassified
-HR621,Unclassified,Unclassified
-HR622,Unclassified,Unclassified
-HR623,Unclassified,Unclassified
-HR624,Unclassified,Unclassified
-HR625,Unclassified,Unclassified
-HR626,Unclassified,Unclassified
-HR627,Unclassified,Unclassified
-HR628,Unclassified,Unclassified
-HR629,Unclassified,Unclassified
-HR631,Unclassified,Unclassified
-HR632,Unclassified,Unclassified
-HR633,Unclassified,Unclassified
-HR634,Unclassified,Unclassified
-HR635,Unclassified,Unclassified
-HR636,Unclassified,Unclassified
-HR637,Unclassified,Unclassified
-HR638,Unclassified,Unclassified
-HR639,Unclassified,Unclassified
-HR640,Unclassified,Unclassified
-HR641,Unclassified,Unclassified
-HR642,Unclassified,Unclassified
-HR643,Unclassified,Unclassified
-HR644,Unclassified,Unclassified
-HR645,Unclassified,Unclassified
-HR646,Unclassified,Unclassified
-HR647,Unclassified,Unclassified
-HR648,Unclassified,Unclassified
-HR649,Unclassified,Unclassified
-HR650,Unclassified,Unclassified
-HR652,Unclassified,Unclassified
-HR653,Unclassified,Unclassified
-HR654,Unclassified,Unclassified
-HR656,Unclassified,Unclassified
-HR657,Unclassified,Unclassified
-HR658,Unclassified,Unclassified
-HR659,Unclassified,Unclassified
-HR660,Unclassified,Unclassified
-HR661,Unclassified,Unclassified
-HR662,Unclassified,Unclassified
-HR663,Unclassified,Unclassified
-HR664,Unclassified,Unclassified
-HR665,Unclassified,Unclassified
-HR666,Unclassified,Unclassified
-HR667,Unclassified,Unclassified
-HR668,Unclassified,Unclassified
-HR670,Unclassified,Unclassified
-HR671,Unclassified,Unclassified
-HR672,Unclassified,Unclassified
-HR673,Unclassified,Unclassified
-HR674,Unclassified,Unclassified
-HR675,Unclassified,Unclassified
-HR676,Unclassified,Unclassified
-HR677,Unclassified,Unclassified
-HR679,Unclassified,Unclassified
-HR680,Unclassified,Unclassified
-HR681,Unclassified,Unclassified
-HR682,Unclassified,Unclassified
-HR683,Unclassified,Unclassified
-HR684,Unclassified,Unclassified
-HR685,Unclassified,Unclassified
-HR686,Unclassified,Unclassified
-HR687,Unclassified,Unclassified
-HR688,Unclassified,Unclassified
-HR689,Unclassified,Unclassified
-HR690,Unclassified,Unclassified
-HR691,Unclassified,Unclassified
-HR692,Unclassified,Unclassified
-HR693,Unclassified,Unclassified
-HR694,Unclassified,Unclassified
-HR695,Unclassified,Unclassified
-HR696,Unclassified,Unclassified
-HR697,Unclassified,Unclassified
-HR698,Unclassified,Unclassified
-HR699,Unclassified,Unclassified
-HR700,Unclassified,Unclassified
-HR701,Unclassified,Unclassified
-HR702,Unclassified,Unclassified
-HR703,Unclassified,Unclassified
-HR704,Unclassified,Unclassified
-HR706,Unclassified,Unclassified
-HR708,Unclassified,Unclassified
-HR709,Unclassified,Unclassified
-HR710,Unclassified,Unclassified
-HR711,Unclassified,Unclassified
-HR712,Unclassified,Unclassified
-HR713,Unclassified,Unclassified
-HR714,Unclassified,Unclassified
-HR715,Unclassified,Unclassified
-HR716,Unclassified,Unclassified
-HR717,Unclassified,Unclassified
-HR718,Unclassified,Unclassified
-HR719,Unclassified,Unclassified
-HR720,Unclassified,Unclassified
-HR721,Unclassified,Unclassified
-HR722,Unclassified,Unclassified
-HR723,Unclassified,Unclassified
-HR724,Unclassified,Unclassified
-HR725,Unclassified,Unclassified
-HR726,Unclassified,Unclassified
-HR727,Unclassified,Unclassified
-HR728,Unclassified,Unclassified
-HR729,Unclassified,Unclassified
-HR730,Unclassified,Unclassified
-HR731,Unclassified,Unclassified
-HR733,Unclassified,Unclassified
-HR735,Unclassified,Unclassified
-HR736,Unclassified,Unclassified
-HR737,Unclassified,Unclassified
-HR738,Unclassified,Unclassified
-HR739,Unclassified,Unclassified
-HR740,Unclassified,Unclassified
-HR741,Unclassified,Unclassified
-HR742,Unclassified,Unclassified
-HR746,Unclassified,Unclassified
-HR747,Unclassified,Unclassified
-HR748,Unclassified,Unclassified
-HR749,Unclassified,Unclassified
-HR750,Unclassified,Unclassified
-HR751,Unclassified,Unclassified
-HR752,Unclassified,Unclassified
-HR753,Unclassified,Unclassified
-HR754,Unclassified,Unclassified
-HR755,Unclassified,Unclassified
-HR756,Unclassified,Unclassified
-HR757,Unclassified,Unclassified
-HR758,Unclassified,Unclassified
-HR759,Unclassified,Unclassified
-HR760,Unclassified,Unclassified
-HR761,Unclassified,Unclassified
-HR762,Unclassified,Unclassified
-HR763,Unclassified,Unclassified
-HR764,Unclassified,Unclassified
-HR765,Unclassified,Unclassified
-HR766,Unclassified,Unclassified
-HR768,Unclassified,Unclassified
-HR769,Unclassified,Unclassified
-HR770,Unclassified,Unclassified
-HR771,Unclassified,Unclassified
-HR772,Unclassified,Unclassified
-HR773,Unclassified,Unclassified
-HR774,Unclassified,Unclassified
-HR775,Unclassified,Unclassified
-HR776,Unclassified,Unclassified
-HR777,Unclassified,Unclassified
-HR778,Unclassified,Unclassified
-HR779,Unclassified,Unclassified
-HR780,Unclassified,Unclassified
-HR781,Unclassified,Unclassified
-HR782,Unclassified,Unclassified
-HR783,Unclassified,Unclassified
-HR784,Unclassified,Unclassified
-HR785,Unclassified,Unclassified
-HR786,Unclassified,Unclassified
-HR787,Unclassified,Unclassified
-HR788,Unclassified,Unclassified
-HR789,Unclassified,Unclassified
-HR790,Unclassified,Unclassified
-HR791,Unclassified,Unclassified
-HR792,Unclassified,Unclassified
-HR793,Unclassified,Unclassified
-HR794,Unclassified,Unclassified
-HR796,Unclassified,Unclassified
-HR797,Unclassified,Unclassified
-HR798,Unclassified,Unclassified
-HR799,Unclassified,Unclassified
-HR800,Unclassified,Unclassified
-HR801,Unclassified,Unclassified
-HR802,Unclassified,Unclassified
-HR803,Unclassified,Unclassified
-HR805,Unclassified,Unclassified
-HR806,Unclassified,Unclassified
-HR807,Unclassified,Unclassified
-HR808,Unclassified,Unclassified
-HR809,Unclassified,Unclassified
-HR810,Unclassified,Unclassified
-HR811,Unclassified,Unclassified
-HR812,Unclassified,Unclassified
-HR813,Unclassified,Unclassified
-HR814,Unclassified,Unclassified
-HR815,Unclassified,Unclassified
-HR816,Unclassified,Unclassified
-HR817,Unclassified,Unclassified
-HR818,Unclassified,Unclassified
-HR819,Unclassified,Unclassified
-HR820,Unclassified,Unclassified
-HR821,Unclassified,Unclassified
-HR822,Unclassified,Unclassified
-HR823,Unclassified,Unclassified
-HR824,Unclassified,Unclassified
-HR825,Unclassified,Unclassified
-HR826,Unclassified,Unclassified
-HR827,Unclassified,Unclassified
-HR828,Unclassified,Unclassified
-HR829,Unclassified,Unclassified
-HR830,Unclassified,Unclassified
-HR831,Unclassified,Unclassified
-HR832,Unclassified,Unclassified
-HR833,Unclassified,Unclassified
-HR834,Unclassified,Unclassified
-HR835,Unclassified,Unclassified
-HR836,Unclassified,Unclassified
-HR837,Unclassified,Unclassified
-HR838,Unclassified,Unclassified
-HR839,Unclassified,Unclassified
-HR840,Unclassified,Unclassified
-HR841,Unclassified,Unclassified
-HR843,Unclassified,Unclassified
-HR844,Unclassified,Unclassified
-HR845,Unclassified,Unclassified
-HR846,Unclassified,Unclassified
-HR847,Unclassified,Unclassified
-HR848,Unclassified,Unclassified
-HR849,Unclassified,Unclassified
-HR851,Unclassified,Unclassified
-HR852,Unclassified,Unclassified
-HR853,Unclassified,Unclassified
-HR854,Unclassified,Unclassified
-HR855,Unclassified,Unclassified
-HR856,Unclassified,Unclassified
-HR858,Unclassified,Unclassified
-HR859,Unclassified,Unclassified
-HR860,Unclassified,Unclassified
-HR861,Unclassified,Unclassified
-HR862,Unclassified,Unclassified
-HR863,Unclassified,Unclassified
-HR864,Unclassified,Unclassified
-HR865,Unclassified,Unclassified
-HR866,Unclassified,Unclassified
-HR867,Unclassified,Unclassified
-HR868,Unclassified,Unclassified
-HR869,Unclassified,Unclassified
-HR870,Unclassified,Unclassified
-HR872,Unclassified,Unclassified
-HR873,Unclassified,Unclassified
-HR874,Unclassified,Unclassified
-HR875,Unclassified,Unclassified
-HR876,Unclassified,Unclassified
-HR877,Unclassified,Unclassified
-HR878,Unclassified,Unclassified
-HR879,Unclassified,Unclassified
-HR880,Unclassified,Unclassified
-HR881,Unclassified,Unclassified
-HR882,Unclassified,Unclassified
-HR883,Unclassified,Unclassified
-HR884,Unclassified,Unclassified
-SB741,Unclassified,Unclassified
-SB742,Unclassified,Unclassified
-SB748,Unclassified,Unclassified
-SB751,Unclassified,Unclassified
-SB753,Unclassified,Unclassified
-SB757,Unclassified,Unclassified
-SB761,Unclassified,Unclassified
-SB762,Unclassified,Unclassified
-SB766,Unclassified,Unclassified
-SB769,Unclassified,Unclassified
-SB771,Unclassified,Unclassified
-SB774,Unclassified,Unclassified
-SB778,Unclassified,Unclassified
-SB785,Unclassified,Unclassified
-SB786,Unclassified,Unclassified
-SB787,Unclassified,Unclassified
-SB792,Unclassified,Unclassified
-SB793,Unclassified,Unclassified
-SB794,Unclassified,Unclassified
-SB796,Unclassified,Unclassified
-SB797,Unclassified,Unclassified
-SB799,Unclassified,Unclassified
-SB807,Unclassified,Unclassified
-SB808,Unclassified,Unclassified
-SB811,Unclassified,Unclassified
-SB817,Unclassified,Unclassified
-SB819,Unclassified,Unclassified
-SB820,Unclassified,Unclassified
-SB824,Unclassified,Unclassified
-SB825,Unclassified,Unclassified
-SB826,Unclassified,Unclassified
-SB831,Unclassified,Unclassified
-SB832,Unclassified,Unclassified
-SB833,Unclassified,Unclassified
-SB834,Unclassified,Unclassified
-SB835,Unclassified,Unclassified
-SB836,Unclassified,Unclassified
-SB838,Unclassified,Unclassified
-SB842,Unclassified,Unclassified
-SB850,Unclassified,Unclassified
-SB851,Unclassified,Unclassified
-SB852,Unclassified,Unclassified
-SB857,Unclassified,Unclassified
-SB858,Unclassified,Unclassified
-SB861,Unclassified,Unclassified
-SB862,Unclassified,Unclassified
-SB863,Unclassified,Unclassified
-SB864,Unclassified,Unclassified
-SB866,Unclassified,Unclassified
-SB867,Unclassified,Unclassified
-SB868,Unclassified,Unclassified
-SB869,Unclassified,Unclassified
-SB872,Unclassified,Unclassified
-SB873,Unclassified,Unclassified
-SB876,Unclassified,Unclassified
-SB877,Unclassified,Unclassified
-SB878,Unclassified,Unclassified
-SB882,Unclassified,Unclassified
-SB886,Unclassified,Unclassified
-SB887,Unclassified,Unclassified
-SB888,Unclassified,Unclassified
-SB889,Unclassified,Unclassified
-SB901,Unclassified,Unclassified
-SB906,Unclassified,Unclassified
-SB907,Unclassified,Unclassified
-SB909,Unclassified,Unclassified
-SB910,Unclassified,Unclassified
-SB911,Unclassified,Unclassified
-SB912,Unclassified,Unclassified
-SB916,Unclassified,Unclassified
-SB921,Unclassified,Unclassified
-SB922,Unclassified,Unclassified
-SB923,Unclassified,Unclassified
-SB924,Unclassified,Unclassified
-SB927,Unclassified,Unclassified
-SB929,Unclassified,Unclassified
-SB931,Unclassified,Unclassified
-SB932,Unclassified,Unclassified
-SB933,Unclassified,Unclassified
-SB937,Unclassified,Unclassified
-SB939,Unclassified,Unclassified
-SB944,Unclassified,Unclassified
-SB948,Unclassified,Unclassified
-SB949,Unclassified,Unclassified
-SB950,Unclassified,Unclassified
-SB955,Unclassified,Unclassified
-SB957,Unclassified,Unclassified
-SB959,Unclassified,Unclassified
-SB963,Unclassified,Unclassified
-SB964,Unclassified,Unclassified
-SB965,Unclassified,Unclassified
-SB969,Unclassified,Unclassified
-SB970,Unclassified,Unclassified
-SB972,Unclassified,Unclassified
-SB973,Unclassified,Unclassified
-SB974,Unclassified,Unclassified
-SB976,Unclassified,Unclassified
-SB977,Unclassified,Unclassified
-SB978,Unclassified,Unclassified
-SB980,Unclassified,Unclassified
-SB981,Unclassified,Unclassified
-SB984,Unclassified,Unclassified
-SB985,Unclassified,Unclassified
-SB987,Unclassified,Unclassified
-SB989,Unclassified,Unclassified
-SB990,Unclassified,Unclassified
-SB992,Unclassified,Unclassified
-SB993,Unclassified,Unclassified
-SB995,Unclassified,Unclassified
-SB996,Unclassified,Unclassified
-SB997,Unclassified,Unclassified
-SB999,Unclassified,Unclassified
-SB1004,Unclassified,Unclassified
-SB1008,Unclassified,Unclassified
-SB1010,Unclassified,Unclassified
-SB1011,Unclassified,Unclassified
-SB1013,Unclassified,Unclassified
-SB1014,Unclassified,Unclassified
-SB1015,Unclassified,Unclassified
-SB1018,Unclassified,Unclassified
-SB1019,Unclassified,Unclassified
-SB1020,Unclassified,Unclassified
-SB1022,Unclassified,Unclassified
-SB1023,Unclassified,Unclassified
-SB1028,Unclassified,Unclassified
-SB1029,Unclassified,Unclassified
-SB1031,Unclassified,Unclassified
-SB1042,Unclassified,Unclassified
-SB1045,Unclassified,Unclassified
-SB1046,Unclassified,Unclassified
-SB1051,Unclassified,Unclassified
-SB1053,Unclassified,Unclassified
-SB1054,Unclassified,Unclassified
-SB1056,Unclassified,Unclassified
-SB1058,Unclassified,Unclassified
-SB1059,Unclassified,Unclassified
-SB1060,Unclassified,Unclassified
-SB1061,Unclassified,Unclassified
-SB1063,Unclassified,Unclassified
-SB1065,Unclassified,Unclassified
-SB1067,Unclassified,Unclassified
-SB1068,Unclassified,Unclassified
-SB1069,Unclassified,Unclassified
-SB1074,Unclassified,Unclassified
-SB1075,Unclassified,Unclassified
-SB1076,Unclassified,Unclassified
-SB1079,Unclassified,Unclassified
-SB1081,Unclassified,Unclassified
-SB1083,Unclassified,Unclassified
-SB1084,Unclassified,Unclassified
-SB1086,Unclassified,Unclassified
-SB1087,Unclassified,Unclassified
-SB1088,Unclassified,Unclassified
-SB1089,Unclassified,Unclassified
-SB1090,Unclassified,Unclassified
-SB1092,Unclassified,Unclassified
-SB1093,Unclassified,Unclassified
-SB1095,Unclassified,Unclassified
-SB1096,Unclassified,Unclassified
-SB1101,Unclassified,Unclassified
-SB1105,Unclassified,Unclassified
-SB1116,Unclassified,Unclassified
-SB1120,Unclassified,Unclassified
-SB1121,Unclassified,Unclassified
-SB1123,Unclassified,Unclassified
-SB1127,Unclassified,Unclassified
-SB1129,Unclassified,Unclassified
-SB1133,Unclassified,Unclassified
-SB1135,Unclassified,Unclassified
-SB1136,Unclassified,Unclassified
-SB1137,Unclassified,Unclassified
-SB1138,Unclassified,Unclassified
-SB1140,Unclassified,Unclassified
-SB1141,Unclassified,Unclassified
-SB1142,Unclassified,Unclassified
-SB1145,Unclassified,Unclassified
-SB1146,Unclassified,Unclassified
-SB1147,Unclassified,Unclassified
-SB1150,Unclassified,Unclassified
-SB1151,Unclassified,Unclassified
-SB1154,Unclassified,Unclassified
-SB1156,Unclassified,Unclassified
-SB1158,Unclassified,Unclassified
-SB1162,Unclassified,Unclassified
-SB1163,Unclassified,Unclassified
-SB1166,Unclassified,Unclassified
-SB1169,Unclassified,Unclassified
-SB1171,Unclassified,Unclassified
-SB1172,Unclassified,Unclassified
-SB1173,Unclassified,Unclassified
-SB1176,Unclassified,Unclassified
-SB1183,Unclassified,Unclassified
-SB1184,Unclassified,Unclassified
-SB1187,Unclassified,Unclassified
-SB1188,Unclassified,Unclassified
-SB1189,Unclassified,Unclassified
-SB1195,Unclassified,Unclassified
-SB1197,Unclassified,Unclassified
-SB1199,Unclassified,Unclassified
-SB1202,Unclassified,Unclassified
-SB1203,Unclassified,Unclassified
-SB1206,Unclassified,Unclassified
-SB1207,Unclassified,Unclassified
-SB1208,Unclassified,Unclassified
-SB1209,Unclassified,Unclassified
-SB1213,Unclassified,Unclassified
-SB1217,Unclassified,Unclassified
-SB1219,Unclassified,Unclassified
-SB1222,Unclassified,Unclassified
-SB1225,Unclassified,Unclassified
-SB1226,Unclassified,Unclassified
-SB1227,Unclassified,Unclassified
-SB1231,Unclassified,Unclassified
-SB1232,Unclassified,Unclassified
-SB1233,Unclassified,Unclassified
-SB1234,Unclassified,Unclassified
-SB1235,Unclassified,Unclassified
-SB1241,Unclassified,Unclassified
-SB1242,Unclassified,Unclassified
-SB1246,Unclassified,Unclassified
-SB1247,Unclassified,Unclassified
-SB1251,Unclassified,Unclassified
-SB1252,Unclassified,Unclassified
-SB1253,Unclassified,Unclassified
-SB1255,Unclassified,Unclassified
-SB1256,Unclassified,Unclassified
-SB1259,Unclassified,Unclassified
-SB1261,Unclassified,Unclassified
-SB1262,Unclassified,Unclassified
-SB1263,Unclassified,Unclassified
-SB1265,Unclassified,Unclassified
-SB1266,Unclassified,Unclassified
-SB1267,Unclassified,Unclassified
-SB1268,Unclassified,Unclassified
-SB1270,Unclassified,Unclassified
-SB1271,Unclassified,Unclassified
-SB1272,Unclassified,Unclassified
-SB1273,Unclassified,Unclassified
-SB1274,Unclassified,Unclassified
-SB1275,Unclassified,Unclassified
-SB1278,Unclassified,Unclassified
-SB1280,Unclassified,Unclassified
-SB1284,Unclassified,Unclassified
-SB1286,Unclassified,Unclassified
-SB1287,Unclassified,Unclassified
-SB1289,Unclassified,Unclassified
-SB1291,Unclassified,Unclassified
-SB1292,Unclassified,Unclassified
-SB1295,Unclassified,Unclassified
-SB1296,Unclassified,Unclassified
-SB1298,Unclassified,Unclassified
-SB1300,Unclassified,Unclassified
-SB1302,Unclassified,Unclassified
-SB1304,Unclassified,Unclassified
-SB1309,Unclassified,Unclassified
-SB1319,Unclassified,Unclassified
-SB1325,Unclassified,Unclassified
-SB1326,Unclassified,Unclassified
-SB1327,Unclassified,Unclassified
-SB1330,Unclassified,Unclassified
-SB1332,Unclassified,Unclassified
-SB1333,Unclassified,Unclassified
-SB1335,Unclassified,Unclassified
-SB1337,Unclassified,Unclassified
-SB1339,Unclassified,Unclassified
-SB1340,Unclassified,Unclassified
-SB1343,Unclassified,Unclassified
-SB1344,Unclassified,Unclassified
-SB1346,Unclassified,Unclassified
-SB1347,Unclassified,Unclassified
-SB1350,Unclassified,Unclassified
-SB1355,Unclassified,Unclassified
-SB1356,Unclassified,Unclassified
-SB1358,Unclassified,Unclassified
-SB1360,Unclassified,Unclassified
-SB1361,Unclassified,Unclassified
-SB1363,Unclassified,Unclassified
-SB1364,Unclassified,Unclassified
-SB1369,Unclassified,Unclassified
-SB1370,Unclassified,Unclassified
-SB1371,Unclassified,Unclassified
-SB1375,Unclassified,Unclassified
-SB1379,Unclassified,Unclassified
-SB1380,Unclassified,Unclassified
-SB1382,Unclassified,Unclassified
-SB1384,Unclassified,Unclassified
-SB1385,Unclassified,Unclassified
-SB1386,Unclassified,Unclassified
-SB1387,Unclassified,Unclassified
-SB1392,Unclassified,Unclassified
-SB1393,Unclassified,Unclassified
-SB1395,Unclassified,Unclassified
-SB1396,Unclassified,Unclassified
-SB1399,Unclassified,Unclassified
-SB1402,Unclassified,Unclassified
-SB1405,Unclassified,Unclassified
-SB1407,Unclassified,Unclassified
-SB1408,Unclassified,Unclassified
-SB1409,Unclassified,Unclassified
-SB1410,Unclassified,Unclassified
-SB1417,Unclassified,Unclassified
-SB1419,Unclassified,Unclassified
-SB1420,Unclassified,Unclassified
-SB1422,Unclassified,Unclassified
-SB1424,Unclassified,Unclassified
-SB1428,Unclassified,Unclassified
-SB1429,Unclassified,Unclassified
-SB1431,Unclassified,Unclassified
-SB1432,Unclassified,Unclassified
-SB1437,Unclassified,Unclassified
-SB1438,Unclassified,Unclassified
-SB1441,Unclassified,Unclassified
-SB1444,Unclassified,Unclassified
-SB1446,Unclassified,Unclassified
-SB1448,Unclassified,Unclassified
-SB1452,Unclassified,Unclassified
-SB1453,Unclassified,Unclassified
-SB1455,Unclassified,Unclassified
-SB1457,Unclassified,Unclassified
-SB1458,Unclassified,Unclassified
-SB1460,Unclassified,Unclassified
-SB1463,Unclassified,Unclassified
-SB1467,Unclassified,Unclassified
-SB1468,Unclassified,Unclassified
-SB1470,Unclassified,Unclassified
-SB1471,Unclassified,Unclassified
-SB1473,Unclassified,Unclassified
-SB1474,Unclassified,Unclassified
-SB1475,Unclassified,Unclassified
-SB1477,Unclassified,Unclassified
-SB1478,Unclassified,Unclassified
-SB1482,Unclassified,Unclassified
-SB1483,Unclassified,Unclassified
-SB1487,Unclassified,Unclassified
-SB1492,Unclassified,Unclassified
-SB1493,Unclassified,Unclassified
-SB1494,Unclassified,Unclassified
-SJ247,Unclassified,Unclassified
-SJ250,Unclassified,Unclassified
-SJ254,Unclassified,Unclassified
-SJ257,Unclassified,Unclassified
-SJ258,Unclassified,Unclassified
-SJ259,Unclassified,Unclassified
-SJ262,Unclassified,Unclassified
-SJ263,Unclassified,Unclassified
-SJ264,Unclassified,Unclassified
-SJ265,Unclassified,Unclassified
-SJ266,Unclassified,Unclassified
-SJ267,Unclassified,Unclassified
-SJ268,Unclassified,Unclassified
-SJ269,Unclassified,Unclassified
-SJ270,Unclassified,Unclassified
-SJ271,Unclassified,Unclassified
-SJ272,Unclassified,Unclassified
-SJ273,Unclassified,Unclassified
-SJ274,Unclassified,Unclassified
-SJ275,Unclassified,Unclassified
-SJ276,Unclassified,Unclassified
-SJ277,Unclassified,Unclassified
-SJ278,Unclassified,Unclassified
-SJ279,Unclassified,Unclassified
-SJ280,Unclassified,Unclassified
-SJ281,Unclassified,Unclassified
-SJ282,Unclassified,Unclassified
-SJ283,Unclassified,Unclassified
-SJ284,Unclassified,Unclassified
-SJ285,Unclassified,Unclassified
-SJ286,Unclassified,Unclassified
-SJ287,Unclassified,Unclassified
-SJ288,Unclassified,Unclassified
-SJ289,Unclassified,Unclassified
-SJ290,Unclassified,Unclassified
-SJ291,Unclassified,Unclassified
-SJ292,Unclassified,Unclassified
-SJ295,Unclassified,Unclassified
-SJ296,Unclassified,Unclassified
-SJ297,Unclassified,Unclassified
-SJ298,Unclassified,Unclassified
-SJ299,Unclassified,Unclassified
-SJ300,Unclassified,Unclassified
-SJ301,Unclassified,Unclassified
-SJ302,Unclassified,Unclassified
-SJ303,Unclassified,Unclassified
-SJ304,Unclassified,Unclassified
-SJ305,Unclassified,Unclassified
-SJ306,Unclassified,Unclassified
-SJ307,Unclassified,Unclassified
-SJ308,Unclassified,Unclassified
-SJ309,Unclassified,Unclassified
-SJ310,Unclassified,Unclassified
-SJ312,Unclassified,Unclassified
-SJ313,Unclassified,Unclassified
-SJ314,Unclassified,Unclassified
-SJ315,Unclassified,Unclassified
-SJ316,Unclassified,Unclassified
-SJ317,Unclassified,Unclassified
-SJ318,Unclassified,Unclassified
-SJ319,Unclassified,Unclassified
-SJ320,Unclassified,Unclassified
-SJ321,Unclassified,Unclassified
-SJ322,Unclassified,Unclassified
-SJ323,Unclassified,Unclassified
-SJ324,Unclassified,Unclassified
-SJ325,Unclassified,Unclassified
-SJ326,Unclassified,Unclassified
-SJ327,Unclassified,Unclassified
-SJ328,Unclassified,Unclassified
-SJ329,Unclassified,Unclassified
-SJ330,Unclassified,Unclassified
-SJ331,Unclassified,Unclassified
-SJ332,Unclassified,Unclassified
-SJ333,Unclassified,Unclassified
-SJ334,Unclassified,Unclassified
-SJ335,Unclassified,Unclassified
-SJ336,Unclassified,Unclassified
-SJ337,Unclassified,Unclassified
-SJ338,Unclassified,Unclassified
-SJ339,Unclassified,Unclassified
-SJ340,Unclassified,Unclassified
-SJ341,Unclassified,Unclassified
-SJ342,Unclassified,Unclassified
-SJ343,Unclassified,Unclassified
-SJ344,Unclassified,Unclassified
-SJ345,Unclassified,Unclassified
-SJ346,Unclassified,Unclassified
-SJ347,Unclassified,Unclassified
-SJ349,Unclassified,Unclassified
-SJ352,Unclassified,Unclassified
-SJ353,Unclassified,Unclassified
-SJ354,Unclassified,Unclassified
-SJ355,Unclassified,Unclassified
-SJ356,Unclassified,Unclassified
-SJ357,Unclassified,Unclassified
-SJ358,Unclassified,Unclassified
-SJ359,Unclassified,Unclassified
-SJ360,Unclassified,Unclassified
-SJ361,Unclassified,Unclassified
-SJ362,Unclassified,Unclassified
-SJ363,Unclassified,Unclassified
-SJ364,Unclassified,Unclassified
-SJ365,Unclassified,Unclassified
-SJ366,Unclassified,Unclassified
-SJ367,Unclassified,Unclassified
-SJ368,Unclassified,Unclassified
-SJ370,Unclassified,Unclassified
-SJ371,Unclassified,Unclassified
-SJ372,Unclassified,Unclassified
-SJ373,Unclassified,Unclassified
-SJ374,Unclassified,Unclassified
-SJ375,Unclassified,Unclassified
-SJ377,Unclassified,Unclassified
-SJ378,Unclassified,Unclassified
-SJ379,Unclassified,Unclassified
-SJ380,Unclassified,Unclassified
-SJ381,Unclassified,Unclassified
-SJ383,Unclassified,Unclassified
-SJ384,Unclassified,Unclassified
-SJ385,Unclassified,Unclassified
-SJ386,Unclassified,Unclassified
-SJ387,Unclassified,Unclassified
-SJ389,Unclassified,Unclassified
-SJ390,Unclassified,Unclassified
-SJ391,Unclassified,Unclassified
-SJ392,Unclassified,Unclassified
-SJ393,Unclassified,Unclassified
-SJ394,Unclassified,Unclassified
-SJ395,Unclassified,Unclassified
-SJ396,Unclassified,Unclassified
-SJ397,Unclassified,Unclassified
-SJ398,Unclassified,Unclassified
-SJ403,Unclassified,Unclassified
-SJ405,Unclassified,Unclassified
-SJ406,Unclassified,Unclassified
-SJ407,Unclassified,Unclassified
-SJ408,Unclassified,Unclassified
-SJ409,Unclassified,Unclassified
-SJ411,Unclassified,Unclassified
-SJ412,Unclassified,Unclassified
-SJ413,Unclassified,Unclassified
-SJ414,Unclassified,Unclassified
-SJ415,Unclassified,Unclassified
-SJ416,Unclassified,Unclassified
-SJ417,Unclassified,Unclassified
-SJ418,Unclassified,Unclassified
-SJ419,Unclassified,Unclassified
-SJ420,Unclassified,Unclassified
-SJ421,Unclassified,Unclassified
-SJ422,Unclassified,Unclassified
-SJ424,Unclassified,Unclassified
-SJ425,Unclassified,Unclassified
-SJ426,Unclassified,Unclassified
-SJ427,Unclassified,Unclassified
-SJ428,Unclassified,Unclassified
-SJ429,Unclassified,Unclassified
-SJ430,Unclassified,Unclassified
-SJ431,Unclassified,Unclassified
-SJ433,Unclassified,Unclassified
-SJ434,Unclassified,Unclassified
-SJ436,Unclassified,Unclassified
-SJ437,Unclassified,Unclassified
-SJ438,Unclassified,Unclassified
-SJ439,Unclassified,Unclassified
-SJ440,Unclassified,Unclassified
-SJ442,Unclassified,Unclassified
-SJ443,Unclassified,Unclassified
-SJ444,Unclassified,Unclassified
-SJ445,Unclassified,Unclassified
-SJ447,Unclassified,Unclassified
-SR186,Unclassified,Unclassified
-SR187,Unclassified,Unclassified
-SR188,Unclassified,Unclassified
-SR189,Unclassified,Unclassified
-SR190,Unclassified,Unclassified
-SR191,Unclassified,Unclassified
-SR192,Unclassified,Unclassified
-SR193,Unclassified,Unclassified
-SR194,Unclassified,Unclassified
-SR195,Unclassified,Unclassified
-SR196,Unclassified,Unclassified
-SR198,Unclassified,Unclassified
-SR199,Unclassified,Unclassified
-SR200,Unclassified,Unclassified
-SR201,Unclassified,Unclassified
-SR202,Unclassified,Unclassified
-SR203,Unclassified,Unclassified
-SR204,Unclassified,Unclassified
-SR205,Unclassified,Unclassified
-SR206,Unclassified,Unclassified
-SR208,Unclassified,Unclassified
-SR209,Unclassified,Unclassified
-SR210,Unclassified,Unclassified
-SR211,Unclassified,Unclassified
-SR212,Unclassified,Unclassified
-SR213,Unclassified,Unclassified
-SR214,Unclassified,Unclassified
-SR215,Unclassified,Unclassified
-SR216,Unclassified,Unclassified
-SR217,Unclassified,Unclassified
-SR218,Unclassified,Unclassified
-SR219,Unclassified,Unclassified
-SR221,Unclassified,Unclassified
-SR222,Unclassified,Unclassified
-SR223,Unclassified,Unclassified
-SR224,Unclassified,Unclassified
-SR226,Unclassified,Unclassified
-SR227,Unclassified,Unclassified
-SR228,Unclassified,Unclassified
-SR229,Unclassified,Unclassified
-SR230,Unclassified,Unclassified
-SR231,Unclassified,Unclassified
-SR232,Unclassified,Unclassified
-SR233,Unclassified,Unclassified
-SR234,Unclassified,Unclassified
-SR235,Unclassified,Unclassified
-SR236,Unclassified,Unclassified
-SR237,Unclassified,Unclassified
-SR238,Unclassified,Unclassified
-SR239,Unclassified,Unclassified
-SR240,Unclassified,Unclassified
-SR241,Unclassified,Unclassified
-SR242,Unclassified,Unclassified
-SR243,Unclassified,Unclassified
-SR244,Unclassified,Unclassified
-SR245,Unclassified,Unclassified
-SR246,Unclassified,Unclassified
-SR247,Unclassified,Unclassified
-SR248,Unclassified,Unclassified
-SR249,Unclassified,Unclassified
-SR250,Unclassified,Unclassified
-SR251,Unclassified,Unclassified
-SR252,Unclassified,Unclassified
-SR253,Unclassified,Unclassified
-SR254,Unclassified,Unclassified
-SR255,Unclassified,Unclassified
-SR257,Unclassified,Unclassified
-SR258,Unclassified,Unclassified
-SR260,Unclassified,Unclassified
-SR261,Unclassified,Unclassified
-SR262,Unclassified,Unclassified
-SR263,Unclassified,Unclassified
-SR264,Unclassified,Unclassified
-SR265,Unclassified,Unclassified
-SR266,Unclassified,Unclassified
-SR267,Unclassified,Unclassified
-SR268,Unclassified,Unclassified
-SR269,Unclassified,Unclassified
-SR270,Unclassified,Unclassified
-SR271,Unclassified,Unclassified
-SR272,Unclassified,Unclassified
-SR273,Unclassified,Unclassified
-SR274,Unclassified,Unclassified
-SR275,Unclassified,Unclassified
-SR276,Unclassified,Unclassified
-SR277,Unclassified,Unclassified
-SR278,Unclassified,Unclassified
-SR279,Unclassified,Unclassified
-SR281,Unclassified,Unclassified
-SR282,Unclassified,Unclassified
-SR283,Unclassified,Unclassified
-SR284,Unclassified,Unclassified
-SR285,Unclassified,Unclassified
-SR286,Unclassified,Unclassified
-SR287,Unclassified,Unclassified
-SR288,Unclassified,Unclassified
-SR289,Unclassified,Unclassified
-SR290,Unclassified,Unclassified
-SR291,Unclassified,Unclassified
-SR293,Unclassified,Unclassified
-SR294,Unclassified,Unclassified
-SR295,Unclassified,Unclassified
-SR296,Unclassified,Unclassified
-SR297,Unclassified,Unclassified
-SR298,Unclassified,Unclassified
-SR299,Unclassified,Unclassified
-SR300,Unclassified,Unclassified
-SR301,Unclassified,Unclassified
-SR302,Unclassified,Unclassified
-SR303,Unclassified,Unclassified
-SR304,Unclassified,Unclassified
-SR305,Unclassified,Unclassified
-SR306,Unclassified,Unclassified
-SR307,Unclassified,Unclassified
-SR308,Unclassified,Unclassified
-SR309,Unclassified,Unclassified
-SR310,Unclassified,Unclassified
-SR311,Unclassified,Unclassified
-SR313,Unclassified,Unclassified
-SR314,Unclassified,Unclassified
-SR315,Unclassified,Unclassified
-SR316,Unclassified,Unclassified
-SR317,Unclassified,Unclassified
-SR318,Unclassified,Unclassified
-SR319,Unclassified,Unclassified
-SR320,Unclassified,Unclassified
-SR321,Unclassified,Unclassified
-SR322,Unclassified,Unclassified
-SR323,Unclassified,Unclassified
-SR325,Unclassified,Unclassified
-SR326,Unclassified,Unclassified
-SR327,Unclassified,Unclassified
-SR329,Unclassified,Unclassified
-SR330,Unclassified,Unclassified
-SR331,Unclassified,Unclassified
+Bill_id,topic_name,classification,lis_subject_name,lis_parent_subject,source_file,source_text_used,rule_derived,matched_rule
+HB1554,Unclassified,Unclassified,,,BILLS.CSV,Funding for deputy sheriffs.,False,
+HB1565,Unclassified,Unclassified,,,BILLS.CSV,Governor; appointment of chief of staff and Governor's Secretaries.,False,
+HB1567,Unclassified,Unclassified,,,BILLS.CSV,Virginia Economic Development Partnership Authority; operational plan submission.,False,
+HB1598,Unclassified,Unclassified,,,BILLS.CSV,First-time Homebuyer Grant Program; established.,False,
+HB1605,Unclassified,Unclassified,,,BILLS.CSV,Uniform Trust Code; qualified trustee; definition.,False,
+HB1606,Unclassified,Unclassified,,,BILLS.CSV,Claims to unclaimed property; authority of administrator.,False,
+HB1630,Unclassified,Unclassified,,,BILLS.CSV,"Discovery; definition of ""electronic means.""",False,
+HB1634,Unclassified,Unclassified,,,BILLS.CSV,Charter; City of Portsmouth.,False,
+HB1640,Unclassified,Unclassified,,,BILLS.CSV,Virginia Disposition of Unclaimed Property Act; administrator to exercise due diligence to locate owner.,False,
+HB1647,Unclassified,Unclassified,,,BILLS.CSV,Board of Medicine; licensure of anesthesiologist assistants.,False,
+HB1650,Unclassified,Unclassified,,,BILLS.CSV,Virginia Antiterrorism Act established; civil penalties.,False,
+HB1653,Unclassified,Unclassified,,,BILLS.CSV,Real Estate Board; regulations related to fees charged to a licensee.,False,
+HB1658,Unclassified,Unclassified,,,BILLS.CSV,Board of Housing and Community Development; USBC; stakeholder group to evaluate temperature regulation.,False,
+HB1661,Unclassified,Unclassified,,,BILLS.CSV,Deferred or installment payment agreements; universal minimum payments.,False,
+HB1671,Unclassified,Unclassified,,,BILLS.CSV,Virginia Real Estate Time-Share Act; recordkeeping by resellers.,False,
+HB1677,Unclassified,Unclassified,,,BILLS.CSV,Charter; City of Martinsville.,False,
+HB1687,Unclassified,Unclassified,,,BILLS.CSV,Charter; City of Virginia Beach.,False,
+HB1690,Unclassified,Unclassified,,,BILLS.CSV,Eminent domain; documents provided to landowner.,False,
+HB1696,Unclassified,Unclassified,,,BILLS.CSV,Charter; City of Norfolk.,False,
+HB1697,Unclassified,Unclassified,,,BILLS.CSV,Fishing with trawl nets and drag nets; shrimp and horseshoe crab; license fee; penalty.,False,
+HB1703,Unclassified,Unclassified,,,BILLS.CSV,Alcoholic beverage control; tied house exceptions.,False,
+HB1708,Unclassified,Unclassified,,,BILLS.CSV,Access to Housing Task Force; report.,False,
+HB1737,Unclassified,Unclassified,,,BILLS.CSV,Department of Veterans Services; powers and duties of Commissioner; online portal.,False,
+HB1740,Unclassified,Unclassified,,,BILLS.CSV,Virginia state militia; officers of certain educational institutions; Randolph-Macon Academy.,False,
+HB1748,Unclassified,Unclassified,,,BILLS.CSV,Wrongful death action; who may bring.,False,
+HB1756,Unclassified,Unclassified,,,BILLS.CSV,Southwest Regional Recreation Authority; directors.,False,
+HB1757,Unclassified,Unclassified,,,BILLS.CSV,Compensation of court-appointed counsel.,False,
+HB1763,Unclassified,Unclassified,,,BILLS.CSV,"Virginia Freedom of Information Act; virtual meetings; advisory boards, commissions, and councils.",False,
+HB1767,Unclassified,Unclassified,,,BILLS.CSV,Unemployment benefits; maximum duration.,False,
+HB1770,Unclassified,Unclassified,,,BILLS.CSV,"Uniform Trust Code; adds ""electronic"" to definitions in Code.",False,
+HB1774,Unclassified,Unclassified,,,BILLS.CSV,County services; provision of services within towns.,False,
+HB1782,Unclassified,Unclassified,,,BILLS.CSV,"Newborn screening requirements; federal Recommended Uniform Screening Panel, evaluation, report.",False,
+HB1786,Unclassified,Unclassified,,,BILLS.CSV,"Child day centers operated by religious institutions; exemption from licensure, conditions.",False,
+HB1793,Unclassified,Unclassified,,,BILLS.CSV,"Captain Matthew ""Chevy"" Chiaverotti Memorial Bridge; designates bridge over I-264 in VA. Beach.",False,
+HB1799,Unclassified,Unclassified,,,BILLS.CSV,Virginia Lottery; disclosure of identity of winners.,False,
+HB1800,Unclassified,Unclassified,,,BILLS.CSV,Persons with disabilities; rights to the full and free use of public playgrounds.,False,
+HB1801,Unclassified,Unclassified,,,BILLS.CSV,School crossing zones; increases maximum boundaries of a zone from limits of school property.,False,
+HB1803,Unclassified,Unclassified,,,BILLS.CSV,"Human Resource Management, Department of; establishing a career group for licensed behavior analysts",False,
+HB1810,Unclassified,Unclassified,,,BILLS.CSV,"Marine Resources Commission; encroachment on subaqueous beds, permitting requirements.",False,
+HB1833,Unclassified,Unclassified,,,BILLS.CSV,"Small Family Day Home Provider Incentive Pilot Program; established, sunset.",False,
+HB1838,Unclassified,Unclassified,,,BILLS.CSV,"General Assembly Conflicts of Interests Act; definition of ""gift.""",False,
+HB1842,Unclassified,Unclassified,,,BILLS.CSV,Industrial development authorities; Town of Front Royal.,False,
+HB1843,Unclassified,Unclassified,,,BILLS.CSV,"Legal holidays; replaces Columbus Day, the second Monday in October, with Indigenous Peoples' Day.",False,
+HB1849,Unclassified,Unclassified,,,BILLS.CSV,"Fentanyl; manufacturing, selling, etc., weight-based and pill-based penalties.",False,
+HB1853,Unclassified,Unclassified,,,BILLS.CSV,"Deputy Hunter D. Reedy Memorial Bridge; designating as bridge on Adwolfe Rd., etc. over I-81.",False,
+HB1857,Unclassified,Unclassified,,,BILLS.CSV,Department of Professional and Occupational Regulation; boards; appointment requirements; years of experience.,False,
+HB1861,Unclassified,Unclassified,,,BILLS.CSV,Department of Health Professions; health regulatory boards; regulations; licensure by endorsement.,False,
+HB1871,Unclassified,Unclassified,,,BILLS.CSV,Transfer on death deeds; inter vivos deed conveying real property to another.,False,
+HB1879,Unclassified,Unclassified,,,BILLS.CSV,Department of Housing and Community Development; rental assistance pilot program.,False,
+HB1889,Unclassified,Unclassified,,,BILLS.CSV,Notarial act; definition.,False,
+HB1891,Unclassified,Unclassified,,,BILLS.CSV,Transfer of certain incarcerated persons to U.S. Immigration and Customs Enforcement.,False,
+HB1901,Unclassified,Unclassified,,,BILLS.CSV,"Virginia Sports Tourism Grant Program; established, report.",False,
+HB1913,Unclassified,Unclassified,,,BILLS.CSV,Land records; recording and indexing fees.,False,
+HB1930,Unclassified,Unclassified,,,BILLS.CSV,Christopher Newport University Board of Visitors; annual meetings.,False,
+HB1932,Unclassified,Unclassified,,,BILLS.CSV,"Property Appraisal and Valuation Equity, Task Force on; created, report, sunset.",False,
+HB1940,Unclassified,Unclassified,,,BILLS.CSV,International licensure and certification; regulations.,False,
+HB1942,Unclassified,Unclassified,,,BILLS.CSV,"Financial institutions; regulation of money transmitters, penalty, effective date.",False,
+HB1996,Unclassified,Unclassified,,,BILLS.CSV,Planning and zoning; second public hearing notice.,False,
+HB2001,Unclassified,Unclassified,,,BILLS.CSV,"Eastern Daylight Time; Commonwealth shall observe year-round upon enactment by Congress, etc.",False,
+HB2005,Unclassified,Unclassified,,,BILLS.CSV,"Roanoke, City of; amending charter, appointment of director of real estate valuation.",False,
+HB2019,Unclassified,Unclassified,,,BILLS.CSV,"Shenandoah, Town of; new charter (previous charter repealed).",False,
+HB2021,Unclassified,Unclassified,,,BILLS.CSV,"Fair Voice Purchasing Act; established, penalties.",False,
+HB2022,Unclassified,Unclassified,,,BILLS.CSV,Registration of aircraft; fees.,False,
+HB2031,Unclassified,Unclassified,,,BILLS.CSV,"Sewage disposal; alternative onsite sewage systems, elimination of report filing fee.",False,
+HB2043,Unclassified,Unclassified,,,BILLS.CSV,"Consumer Data Protection Act; user-generated content protected, civil penalty.",False,
+HB2058,Unclassified,Unclassified,,,BILLS.CSV,Alcoholic beverage control; delivery of mixed beverages.,False,
+HB2081,Unclassified,Unclassified,,,BILLS.CSV,Virginia Human Rights Act; unlawful discrimination.,False,
+HB2109,Unclassified,Unclassified,,,BILLS.CSV,"Maternal Health Data and Quality Measures, Task Force on; State Health Commissioner to reestablish.",False,
+HB2110,Unclassified,Unclassified,,,BILLS.CSV,"Resale Disclosure Act; resale certificate, prohibition on requiring purchaser's name.",False,
+HB2115,Unclassified,Unclassified,,,BILLS.CSV,"Summonses of a juvenile; custody, visitation, and support proceedings.",False,
+HB2119,Unclassified,Unclassified,,,BILLS.CSV,Certificate of public need; task force to develop recommendation for expedited application & review.,False,
+HB2120,Unclassified,Unclassified,,,BILLS.CSV,"Vulnerable adults; seizure of property used in connection with financial exploitation, etc.",False,
+HB2123,Unclassified,Unclassified,,,BILLS.CSV,"Protective orders; maximum time valid, exception.",False,
+HB2134,Unclassified,Unclassified,,,BILLS.CSV,"American Indians, Va. recognized tribes, and federally recognized tribes; definitions, sovereignty.",False,
+HB2135,Unclassified,Unclassified,,,BILLS.CSV,Unemployment compensation; allowance for dependents.,False,
+HB2152,Unclassified,Unclassified,,,BILLS.CSV,Virginia Freedom of Information Act; public body's FOIA officer training.,False,
+HB2162,Unclassified,Unclassified,,,BILLS.CSV,Substitute judge of a district court; per diem compensation.,False,
+HB2163,Unclassified,Unclassified,,,BILLS.CSV,"Enterprise zone grant program; real property investment grants, report.",False,
+HB2166,Unclassified,Unclassified,,,BILLS.CSV,Horse racing and pari-mutuel wagering; amends definition of breakage.,False,
+HB2193,Unclassified,Unclassified,,,BILLS.CSV,Virginia National Guard; deployment to active duty combat.,False,
+HB2203,Unclassified,Unclassified,,,BILLS.CSV,"Housing and Community Development, Dept. of; consolidation of varying due dates for certain reports.",False,
+HB2210,Unclassified,Unclassified,,,BILLS.CSV,"Real Estate Board; membership, qualifications.",False,
+HB2217,Unclassified,Unclassified,,,BILLS.CSV,Person not free on bail; court appearance.,False,
+HB2223,Unclassified,Unclassified,,,BILLS.CSV,Legal representation of indigent defendant; abolition of fees.,False,
+HB2227,Unclassified,Unclassified,,,BILLS.CSV,Human trafficking; issuance of writ of vacatur for victims.,False,
+HB2232,Unclassified,Unclassified,,,BILLS.CSV,Tri-Cities Improvement Commission; established.,False,
+HB2243,Unclassified,Unclassified,,,BILLS.CSV,Uniform Trust Code; expands certain specific powers of trustee.,False,
+HB2246,Unclassified,Unclassified,,,BILLS.CSV,Funerals; disagreements among next of kin.,False,
+HB2249,Unclassified,Unclassified,,,BILLS.CSV,Judges; increases maximum number in general district court in Ninth Judicial District.,False,
+HB2251,Unclassified,Unclassified,,,BILLS.CSV,International licensure and certification; regulations.,False,
+HB2261,Unclassified,Unclassified,,,BILLS.CSV,"Trailer franchise requirements; applicability to certain trailers, definitions.",False,
+HB2283,Unclassified,Unclassified,,,BILLS.CSV,"Hopewell, City of; amending charter, duties of treasurer.",False,
+HB2292,Unclassified,Unclassified,,,BILLS.CSV,Common interest communities; termination of certain management contracts.,False,
+HB2304,Unclassified,Unclassified,,,BILLS.CSV,Parents who provide home instruction; options for providing evidence of progress.,False,
+HB2308,Unclassified,Unclassified,,,BILLS.CSV,"Nitrous oxide; inhaling drugs or other noxious chemical substances or causing others to do so, etc.",False,
+HB2309,Unclassified,Unclassified,,,BILLS.CSV,Local health districts and health departments; guidance for septic and well permits.,False,
+HB2312,Unclassified,Unclassified,,,BILLS.CSV,"Discovery; electronic means, report.",False,
+HB2313,Unclassified,Unclassified,,,BILLS.CSV,"Boarding establishments; inspections by animal control officers, report.",False,
+HB2316,Unclassified,Unclassified,,,BILLS.CSV,Protective orders; dissolution of existing order.,False,
+HB2319,Unclassified,Unclassified,,,BILLS.CSV,Drug and controlled paraphernalia; creates exception for drug checking products.,False,
+HB2330,Unclassified,Unclassified,,,BILLS.CSV,"Notice of certain land use actions; first-class mail to last known address, etc., of property owner.",False,
+HB2332,Unclassified,Unclassified,,,BILLS.CSV,"Urbanna, Town of; amending charter, mayor shall be a member of town council.",False,
+HB2342,Unclassified,Unclassified,,,BILLS.CSV,Alcoholic beverage control; confectionery mixed beverage retail license.,False,
+HB2349,Unclassified,Unclassified,,,BILLS.CSV,Developer performance guarantees; clarifies existing provisions related to periodic partial release.,False,
+HB2361,Unclassified,Unclassified,,,BILLS.CSV,Judges; increases maximum number in general district court in the Thirty-first Judicial District.,False,
+HB2368,Unclassified,Unclassified,,,BILLS.CSV,Toll relief; maximum charges.,False,
+HB2378,Unclassified,Unclassified,,,BILLS.CSV,Therapeutically equivalent drug products; provisions for return of outdated drugs.,False,
+HB2379,Unclassified,Unclassified,,,BILLS.CSV,Dangerous dogs; criteria for adjudication.,False,
+HB2393,Unclassified,Unclassified,,,BILLS.CSV,Human trafficking; issuance of writ of vacatur for victims.,False,
+HB2397,Unclassified,Unclassified,,,BILLS.CSV,Virginia Growth and Opportunity Act; expands eligibility for grants.,False,
+HB2405,Unclassified,Unclassified,,,BILLS.CSV,Gender reassignment surgery; prohibition on individuals younger than 18 years of age.,False,
+HB2416,Unclassified,Unclassified,,,BILLS.CSV,"Compulsory school attendance; attorneys. etc., for the Commonwealth to prosecute cases",False,
+HB2432,Unclassified,Unclassified,,,BILLS.CSV,"Pari-mutuel wagering; historical horse racing, percentage retained for distribution.",False,
+HB2443,Unclassified,Unclassified,,,BILLS.CSV,Portable benefit accounts; Va. resident who has worked as an independent contractor to establish.,False,
+HB2447,Unclassified,Unclassified,,,BILLS.CSV,Line of Duty Act & Va. Law Officers' Retirement Sys.; enhanced benefits for certain fire personnel.,False,
+HB2448,Unclassified,Unclassified,,,BILLS.CSV,Interstate Massage Compact; authorizes Virginia to become a signatory to Compact.,False,
+HB2474,Unclassified,Unclassified,,,BILLS.CSV,School resource officers and school security officers; crisis intervention training.,False,
+HB2476,Unclassified,Unclassified,,,BILLS.CSV,"Public officers; death, resignation, or ceasing to hold office, automatic substitution.",False,
+HB2477,Unclassified,Unclassified,,,BILLS.CSV,Property under common ownership; creation of easements.,False,
+HB2485,Unclassified,Unclassified,,,BILLS.CSV,"Cannabis control; establishes framework for creating retail market, penalties.",False,
+HB2493,Unclassified,Unclassified,,,BILLS.CSV,"Gaming; conduct of Texas Hold'em poker tournaments, fantasy contests, age restrictions.",False,
+HB2503,Unclassified,Unclassified,,,BILLS.CSV,Virginia coordinate systems; updates several references in Code.,False,
+HB2510,Unclassified,Unclassified,,,BILLS.CSV,Safety and Health Codes Board; THC impairment standard for certain work sites.,False,
+HB2533,Unclassified,Unclassified,,,BILLS.CSV,"Counties, cities, and towns; comprehensive plan may include tiny homes or accessory dwelling units.",False,
+HB2542,Unclassified,Unclassified,,,BILLS.CSV,Common interest communities; amateur radio antennas permitted.,False,
+HB2545,Unclassified,Unclassified,,,BILLS.CSV,Gas pipeline safety; regulations.,False,
+HB2556,Unclassified,Unclassified,,,BILLS.CSV,"Address Confidentiality Program; removal of Program participant, penalty.",False,
+HB2565,Unclassified,Unclassified,,,BILLS.CSV,Subpoena duces tecum; motions to quash or modify.,False,
+HB2570,Unclassified,Unclassified,,,BILLS.CSV,Uniform Statewide Building Code; installation of natural gas leak detectors in residential building.,False,
+HB2587,Unclassified,Unclassified,,,BILLS.CSV,"Poquoson, City of; amending charter, powers of city council.",False,
+HB2612,Unclassified,Unclassified,,,BILLS.CSV,Massage therapists; increases hours of minimum training for licensure.,False,
+HB2624,Unclassified,Unclassified,,,BILLS.CSV,"Local officers; removal of officer appointed for a certain term, etc.",False,
+HB2632,Unclassified,Unclassified,,,BILLS.CSV,Jurors; failure to return jury questionnaire.,False,
+HB2634,Unclassified,Unclassified,,,BILLS.CSV,"Charitable gaming; use of proceeds, charitable gaming adjusted gross receipts, effective date.",False,
+HB2636,Unclassified,Unclassified,,,BILLS.CSV,Assignment of causes of action; limitations.,False,
+HB2642,Unclassified,Unclassified,,,BILLS.CSV,Statewide Fire Prevention Code Act; counterfeit and unsafe lighters prohibited.,False,
+HB2643,Unclassified,Unclassified,,,BILLS.CSV,"Estimated tax; failure by individual, trust, or estate to pay.",False,
+HB2648,Unclassified,Unclassified,,,BILLS.CSV,State Corporation Commission; time frame for completion of certain transmission lines proceedings.,False,
+HB2649,Unclassified,Unclassified,,,BILLS.CSV,"Prescription Monitoring Program; exemptions, licensed narcotic maintenance treatment programs.",False,
+HB2654,Unclassified,Unclassified,,,BILLS.CSV,Unlawful dissemination of intimate images of another; creates a tiered system of penalties.,False,
+HB2658,Unclassified,Unclassified,,,BILLS.CSV,Local treasurers; increases maximum amount of surety bond required.,False,
+HB2664,Unclassified,Unclassified,,,BILLS.CSV,City of Lexington Industrial Development Authority; appointment of members.,False,
+HB2669,Unclassified,Unclassified,,,BILLS.CSV,Cosmetologist and cosmetology; amending definitions.,False,
+HB2671,Unclassified,Unclassified,,,BILLS.CSV,"Authorized septic system inspectors; definitions, minimum requirements, penalty.",False,
+HB2677,Unclassified,Unclassified,,,BILLS.CSV,Dinwiddie Airport and Industrial Authority; residency requirements.,False,
+HB2682,Unclassified,Unclassified,,,BILLS.CSV,Building permit and certificate of occupancy processes; work group to identify certain changes.,False,
+HB2684,Unclassified,Unclassified,,,BILLS.CSV,Phase II Utility; plan for certain generation and transmission infrastructure costs.,False,
+HB2691,Unclassified,Unclassified,,,BILLS.CSV,"Relief; Duffy, Keshawn Clarence, compensation for wrongful incarceration.",False,
+HB2695,Unclassified,Unclassified,,,BILLS.CSV,Library Board; conferral of the honorary degree of patron of letters.,False,
+HB2704,Unclassified,Unclassified,,,BILLS.CSV,"Library boards; removal of members, appeal.",False,
+HB2708,Unclassified,Unclassified,,,BILLS.CSV,"Controlled substances; prohibited equipment related to manufacturing, selling, etc.; penalties.",False,
+HB2711,Unclassified,Unclassified,,,BILLS.CSV,Water & wastewater utilities; eligible infrastructure replacement and enhancement.,False,
+HB2716,Unclassified,Unclassified,,,BILLS.CSV,"Photo speed monitoring devices; private vendors compensated for calibration, civil penalty.",False,
+HB2718,Unclassified,Unclassified,,,BILLS.CSV,Photo speed monitoring devices; school crossing zones.,False,
+HB2721,Unclassified,Unclassified,,,BILLS.CSV,"License plates, special; supporters of Washington Commanders.",False,
+HB2729,Unclassified,Unclassified,,,BILLS.CSV,Judges in each judicial districts and circuits; increases maximum number.,False,
+HB2735,Unclassified,Unclassified,,,BILLS.CSV,Involuntary admission for treatment.,False,
+HB2739,Unclassified,Unclassified,,,BILLS.CSV,Time zone; permanent standard time in Virginia.,False,
+HB2750,Unclassified,Unclassified,,,BILLS.CSV,Common interest communities; termination of certain management contracts.,False,
+HB2770,Unclassified,Unclassified,,,BILLS.CSV,"Virginia School Safety Preparedness Fund and Program; created and established, report.",False,
+HB2775,Unclassified,Unclassified,,,BILLS.CSV,Hemp product; clarifies definition.,False,
+HJ429,Unclassified,Unclassified,,,BILLS.CSV,General Assembly; establishes 2026 Regular Session prefiling schedule.,False,
+HJ430,Unclassified,Unclassified,,,BILLS.CSV,General Assembly; establishes schedule for conduct of business coming before 2025 Regular Session.,False,
+HJ433,Unclassified,Unclassified,,,BILLS.CSV,Commending the Alexandria Archaeological Commission.,False,
+HJ435,Unclassified,Unclassified,,,BILLS.CSV,Guam History and Chamorro Heritage Day.,False,
+HJ436,Unclassified,Unclassified,,,BILLS.CSV,Vehicle noise-monitoring devices; VSP to study feasibility and impact of implementing devices.,False,
+HJ437,Unclassified,Unclassified,,,BILLS.CSV,"Recurrent Flooding, Joint Subcommittee on; reestablished and its work continued.",False,
+HJ446,Unclassified,Unclassified,,,BILLS.CSV,Zero Waste Awareness Week; designating as first full week of Sept. 2025 & each succeeding year.,False,
+HJ450,Unclassified,Unclassified,,,BILLS.CSV,Constitutional amendment; right to work (first reference).,False,
+HJ452,Unclassified,Unclassified,,,BILLS.CSV,Constitutional amendment; right to food choice (first reference).,False,
+HJ453,Unclassified,Unclassified,,,BILLS.CSV,Recognition of the Wolf Creek Cherokee Tribe of Virginia.,False,
+HJ455,Unclassified,Unclassified,,,BILLS.CSV,Notifying the Governor of organization.,False,
+HJ458,Unclassified,Unclassified,,,BILLS.CSV,"Armenian Genocide Remembrance Day; designating as April 24, 2025 & each succeeding year thereafter.",False,
+HJ459,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of James Stuart Weston, MD.",False,
+HJ460,Unclassified,Unclassified,,,BILLS.CSV,Washington County; DCR to study feasibility of establishing state park in Holston River Watershed.,False,
+HJ461,Unclassified,Unclassified,,,BILLS.CSV,"Rural Affairs, Secretariat of; JLARC to study need for and feasibility of creating position.",False,
+HJ462,Unclassified,Unclassified,,,BILLS.CSV,Tractor-trailers; study of need for expansion of parking along the I-66 & I-95,False,
+HJ463,Unclassified,Unclassified,,,BILLS.CSV,Migration of individuals age 60 & older; JLARC to study causation and resulting impact.,False,
+HJ465,Unclassified,Unclassified,,,BILLS.CSV,Commending Shenandoah University.,False,
+HJ466,Unclassified,Unclassified,,,BILLS.CSV,Amyotrophic Lateral Sclerosis Awareness Month; designating as May 2025 and in each succeeding year.,False,
+HJ467,Unclassified,Unclassified,,,BILLS.CSV,Commending Ray Reynolds.,False,
+HJ469,Unclassified,Unclassified,,,BILLS.CSV,Commending Mel Price.,False,
+HJ470,Unclassified,Unclassified,,,BILLS.CSV,Commending program partners for the Virginia American Revolution 250 Commission's Fincastle Resolutions events.,False,
+HJ471,Unclassified,Unclassified,,,BILLS.CSV,Commending the Animal Welfare League of Arlington.,False,
+HJ472,Unclassified,Unclassified,,,BILLS.CSV,Commending the American Friends of Lafayette.,False,
+HJ475,Unclassified,Unclassified,,,BILLS.CSV,Commending the Charlotte County Virginia Angels softball team.,False,
+HJ476,Unclassified,Unclassified,,,BILLS.CSV,"Judges; election in Circuit Court, General District Court etc.",False,
+HJ477,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Henry Furlong Baldwin.,False,
+HJ478,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of the Honorable William R. O'Brien.,False,
+HJ479,Unclassified,Unclassified,,,BILLS.CSV,Commending the Community Foundation of the New River Valley.,False,
+HJ480,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Holly Jennings King.,False,
+HJ483,Unclassified,Unclassified,,,BILLS.CSV,"Commending Cadet Colonel Anna Stroz, CAP.",False,
+HJ484,Unclassified,Unclassified,,,BILLS.CSV,Commending Debbie Rountree.,False,
+HJ485,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Rafael Torrech III.,False,
+HJ486,Unclassified,Unclassified,,,BILLS.CSV,Commending Caleb Gilbert.,False,
+HJ487,Unclassified,Unclassified,,,BILLS.CSV,Commending Grant Holloway.,False,
+HJ488,Unclassified,Unclassified,,,BILLS.CSV,Commending Maurice Moody.,False,
+HJ489,Unclassified,Unclassified,,,BILLS.CSV,Commending Marie Nave.,False,
+HJ490,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of John Lee Orrock.,False,
+HJ491,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Jackie Francis Shepard, Jr.",False,
+HJ492,Unclassified,Unclassified,,,BILLS.CSV,Constitutional amendment; right to work (first reference).,False,
+HJ493,Unclassified,Unclassified,,,BILLS.CSV,Commending Blackwater Baptist Church.,False,
+HJ494,Unclassified,Unclassified,,,BILLS.CSV,Commending the Historic St. John's Church.,False,
+HJ495,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Patricia Buckley Moss.,False,
+HJ496,Unclassified,Unclassified,,,BILLS.CSV,Commending Al Alexander.,False,
+HJ497,Unclassified,Unclassified,,,BILLS.CSV,Retail cannabis market; joint commission established to oversee transition of the Commonwealth.,False,
+HJ498,Unclassified,Unclassified,,,BILLS.CSV,Kindness Day.,False,
+HJ499,Unclassified,Unclassified,,,BILLS.CSV,Krabbe Disease Awareness Day.,False,
+HJ501,Unclassified,Unclassified,,,BILLS.CSV,"Constitutional amendment; Literary 5 Fund, exemption for certain asset forfeiture (first reference).",False,
+HJ502,Unclassified,Unclassified,,,BILLS.CSV,Governor; portrait.,False,
+HJ503,Unclassified,Unclassified,,,BILLS.CSV,Commending Torri Huske.,False,
+HJ504,Unclassified,Unclassified,,,BILLS.CSV,Commending the National Conference of State Legislatures.,False,
+HJ505,Unclassified,Unclassified,,,BILLS.CSV,"Commending Donald Sullivan, Jr.",False,
+HJ506,Unclassified,Unclassified,,,BILLS.CSV,Commending the Culpeper Sheriff's Office.,False,
+HJ507,Unclassified,Unclassified,,,BILLS.CSV,Emergency Management Professionals Week.,False,
+HJ508,Unclassified,Unclassified,,,BILLS.CSV,"Commemorating the life and legacy of Private Oscar Cleveland Hicks, USA.",False,
+HJ509,Unclassified,Unclassified,,,BILLS.CSV,Commending Shrine Mont.,False,
+HJ510,Unclassified,Unclassified,,,BILLS.CSV,Commending the Gloucester County Branch of the NAACP.,False,
+HJ511,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Nikki Giovanni.,False,
+HJ512,Unclassified,Unclassified,,,BILLS.CSV,Commending the Roanoke Star.,False,
+HJ513,Unclassified,Unclassified,,,BILLS.CSV,Commending M'lissa Dunn.,False,
+HJ514,Unclassified,Unclassified,,,BILLS.CSV,Commending Valerie Pisierra.,False,
+HJ515,Unclassified,Unclassified,,,BILLS.CSV,Commending Rachel Roberts.,False,
+HJ516,Unclassified,Unclassified,,,BILLS.CSV,Commending Anthony Cimino-Johnson.,False,
+HJ517,Unclassified,Unclassified,,,BILLS.CSV,Commending the Tarara Summer Concert Series.,False,
+HJ518,Unclassified,Unclassified,,,BILLS.CSV,Commending Brody Dawyot.,False,
+HJ519,Unclassified,Unclassified,,,BILLS.CSV,Commending Pat B. Huber.,False,
+HJ520,Unclassified,Unclassified,,,BILLS.CSV,Commending Sandra Davis.,False,
+HJ521,Unclassified,Unclassified,,,BILLS.CSV,Commending the Rotary Club of Woodstock.,False,
+HJ522,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Charlotte Hall Hutt.,False,
+HJ523,Unclassified,Unclassified,,,BILLS.CSV,Commending the Buckhorn Volunteer Fire Department.,False,
+HJ524,Unclassified,Unclassified,,,BILLS.CSV,Commending Harris Funeral Homes.,False,
+HJ525,Unclassified,Unclassified,,,BILLS.CSV,Commending Arrington's Home Furnishings.,False,
+HJ526,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Rescue College of the Virginia Association of Volunteer Rescue Squads, Inc.",False,
+HJ527,Unclassified,Unclassified,,,BILLS.CSV,"Commending Janet Gullickson, Ed.D.",False,
+HJ528,Unclassified,Unclassified,,,BILLS.CSV,Commending Belinda Black.,False,
+HJ529,Unclassified,Unclassified,,,BILLS.CSV,Commending the MOC Beagles.,False,
+HJ530,Unclassified,Unclassified,,,BILLS.CSV,Commending Emily Ann Fox.,False,
+HJ531,Unclassified,Unclassified,,,BILLS.CSV,Commending Keith H. Johnson.,False,
+HJ532,Unclassified,Unclassified,,,BILLS.CSV,Commending the Adler Center for Caring on the Van Metre Campus.,False,
+HJ533,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Stella Dikos.,False,
+HJ534,Unclassified,Unclassified,,,BILLS.CSV,Commending Ron Montgomery.,False,
+HJ535,Unclassified,Unclassified,,,BILLS.CSV,Commending Sheila S. Noll.,False,
+HJ536,Unclassified,Unclassified,,,BILLS.CSV,Commending Thomas G. Shepperd.,False,
+HJ537,Unclassified,Unclassified,,,BILLS.CSV,Commending Elizabeth S. Kostelny.,False,
+HJ538,Unclassified,Unclassified,,,BILLS.CSV,Commending the Lackey Clinic.,False,
+HJ539,Unclassified,Unclassified,,,BILLS.CSV,Commending The Arc of Greater Williamsburg.,False,
+HJ540,Unclassified,Unclassified,,,BILLS.CSV,Commending Busch Gardens Williamsburg.,False,
+HJ541,Unclassified,Unclassified,,,BILLS.CSV,Commending the Yorktown Arts Foundation.,False,
+HJ542,Unclassified,Unclassified,,,BILLS.CSV,Commending The Bargain Box.,False,
+HJ543,Unclassified,Unclassified,,,BILLS.CSV,Commending Bishop Fishing Supply.,False,
+HJ544,Unclassified,Unclassified,,,BILLS.CSV,Commending Ross A. Mugler.,False,
+HJ545,Unclassified,Unclassified,,,BILLS.CSV,Commending Lara Shearin Overy.,False,
+HJ546,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Charles Daniel Spruill.,False,
+HJ547,Unclassified,Unclassified,,,BILLS.CSV,Commending the organizers of Virginia American Revolution 250 Commission events in Historic Yorktown.,False,
+HJ548,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Electoral Board Association.,False,
+HJ549,Unclassified,Unclassified,,,BILLS.CSV,Commending Dover Hall.,False,
+HJ550,Unclassified,Unclassified,,,BILLS.CSV,Commending Erin Schaible.,False,
+HJ551,Unclassified,Unclassified,,,BILLS.CSV,Commending the Edwards family.,False,
+HJ552,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Thomas Clyde Evelyn.,False,
+HJ553,Unclassified,Unclassified,,,BILLS.CSV,Commending Rebecca Nunn.,False,
+HJ554,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Major General John Dean Taylor, VDF, Ret.",False,
+HJ555,Unclassified,Unclassified,,,BILLS.CSV,Commending the Council of Virginia Archaeologists.,False,
+HJ558,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Mary Ann Sobieralski.,False,
+HJ559,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of William David Dolan III.,False,
+HJ560,Unclassified,Unclassified,,,BILLS.CSV,Commending the Faison Center.,False,
+HJ562,Unclassified,Unclassified,,,BILLS.CSV,Commending Wesley Housing.,False,
+HJ563,Unclassified,Unclassified,,,BILLS.CSV,Commending Wayne F. Pryor.,False,
+HJ564,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Honorable Henry Levander Marsh, III.",False,
+HJ565,Unclassified,Unclassified,,,BILLS.CSV,Commending the Town of Glade Spring.,False,
+HJ566,Unclassified,Unclassified,,,BILLS.CSV,Commending Port City Brewing Company.,False,
+HJ567,Unclassified,Unclassified,,,BILLS.CSV,Commending the Campagna Center.,False,
+HJ568,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Louis Peter Kokonis.,False,
+HJ569,Unclassified,Unclassified,,,BILLS.CSV,"Commending Tammy Mann, Ph.D.",False,
+HJ570,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Russ Adams.,False,
+HJ571,Unclassified,Unclassified,,,BILLS.CSV,Commending the Alexandria Historical Society.,False,
+HJ572,Unclassified,Unclassified,,,BILLS.CSV,Commending ACT for Alexandria.,False,
+HJ573,Unclassified,Unclassified,,,BILLS.CSV,Commending Computer CORE.,False,
+HJ574,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia chapter of the American Association of University Women.,False,
+HJ575,Unclassified,Unclassified,,,BILLS.CSV,Commending St. Stephen's and St. Agnes School.,False,
+HJ576,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Shannon Clay Scott.,False,
+HJ577,Unclassified,Unclassified,,,BILLS.CSV,Commending Dave Perno.,False,
+HJ578,Unclassified,Unclassified,,,BILLS.CSV,Commending Art on the Avenue.,False,
+HJ579,Unclassified,Unclassified,,,BILLS.CSV,Commending the John H. Enders Fire Company and Rescue Squad.,False,
+HJ580,Unclassified,Unclassified,,,BILLS.CSV,Commending Ross A. Mugler.,False,
+HJ581,Unclassified,Unclassified,,,BILLS.CSV,Commending the Alpha-gal Foundation.,False,
+HJ582,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Paulina Yager Campbell.,False,
+HJ583,Unclassified,Unclassified,,,BILLS.CSV,Commending Billy Wagner.,False,
+HJ584,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Dr. Golden Bethune-Hill.,False,
+HJ585,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Mark Spain.,False,
+HJ586,Unclassified,Unclassified,,,BILLS.CSV,Commending the Friends of Loudoun County Animal Services.,False,
+HJ587,Unclassified,Unclassified,,,BILLS.CSV,Commending the Leesburg Movement.,False,
+HJ588,Unclassified,Unclassified,,,BILLS.CSV,Commending Lonnie Andrews III.,False,
+HJ590,Unclassified,Unclassified,,,BILLS.CSV,Commending Griffin McDorman Yow.,False,
+HJ591,Unclassified,Unclassified,,,BILLS.CSV,Commending Noah Lyles.,False,
+HJ592,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of William M. McCarty.,False,
+HJ593,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Diana Lee Creasey.,False,
+HJ594,Unclassified,Unclassified,,,BILLS.CSV,Commending Manakin Episcopal Church.,False,
+HJ595,Unclassified,Unclassified,,,BILLS.CSV,Commending The Salvation Army of Harrisonburg and Rockingham County.,False,
+HJ596,Unclassified,Unclassified,,,BILLS.CSV,Commending Dr. Terry E. Arbogast II.,False,
+HJ597,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Charles C. Pace.,False,
+HJ598,Unclassified,Unclassified,,,BILLS.CSV,Commending Colette Sheehy.,False,
+HJ599,Unclassified,Unclassified,,,BILLS.CSV,Commending Medlin Art Gallery.,False,
+HJ600,Unclassified,Unclassified,,,BILLS.CSV,Commending Christian Tabash.,False,
+HJ601,Unclassified,Unclassified,,,BILLS.CSV,Commending Michael Hughes.,False,
+HJ602,Unclassified,Unclassified,,,BILLS.CSV,Commending Hadley Nicole Husisian.,False,
+HJ603,Unclassified,Unclassified,,,BILLS.CSV,Commending the Paris 2024 Team USA Olympians from the University of Virginia.,False,
+HJ604,Unclassified,Unclassified,,,BILLS.CSV,Commending the O. Winston Link Museum.,False,
+HJ605,Unclassified,Unclassified,,,BILLS.CSV,Commending Dr Pepper Park at the Bridges.,False,
+HJ606,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Danny Joe Dales, D.C.",False,
+HJ607,Unclassified,Unclassified,,,BILLS.CSV,Commending Thomas Heilman.,False,
+HJ608,Unclassified,Unclassified,,,BILLS.CSV,Commending Paula Kwiek.,False,
+HJ609,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Robert Carl Gibbons.,False,
+HJ610,Unclassified,Unclassified,,,BILLS.CSV,Commending Robert R. Lindgren.,False,
+HJ611,Unclassified,Unclassified,,,BILLS.CSV,Commending the City of Roanoke Municipal Volunteer Program.,False,
+HJ612,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Lloyd W. Enoch.,False,
+HJ613,Unclassified,Unclassified,,,BILLS.CSV,Commending LaKisha Kyle.,False,
+HJ614,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Sterling Compton Broyles II.,False,
+HJ615,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of William H. Brown, Sr.",False,
+HJ616,Unclassified,Unclassified,,,BILLS.CSV,Commending Colonel Gary T. Settle.,False,
+HJ617,Unclassified,Unclassified,,,BILLS.CSV,Commending Boxes of Basics.,False,
+HJ618,Unclassified,Unclassified,,,BILLS.CSV,Commending the Culture Cup.,False,
+HJ619,Unclassified,Unclassified,,,BILLS.CSV,Commending Dianne Piotrowski.,False,
+HJ620,Unclassified,Unclassified,,,BILLS.CSV,Commending NORTH of the JAMES magazine.,False,
+HJ621,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Arthur Laxton Eller.,False,
+HJ622,Unclassified,Unclassified,,,BILLS.CSV,Commending the South Hill Longbeards Chapter of the National Wild Turkey Federation.,False,
+HJ623,Unclassified,Unclassified,,,BILLS.CSV,Commending the Drakes Branch Volunteer Fire Department.,False,
+HJ624,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Honorable Robert G. Woodson, Jr.",False,
+HJ625,Unclassified,Unclassified,,,BILLS.CSV,Commending the Honorable G. Glenn Oder.,False,
+HJ626,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Benjamin Pollard Alsop Warthen.,False,
+HJ627,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Robert Arthur Young, Ph.D.",False,
+HJ629,Unclassified,Unclassified,,,BILLS.CSV,Commending Patricia Healy.,False,
+HJ630,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Bonnie Sue Neighbour.,False,
+HJ631,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Carolyn Powell Crist.,False,
+HJ632,Unclassified,Unclassified,,,BILLS.CSV,Commending Marymount University.,False,
+HJ633,Unclassified,Unclassified,,,BILLS.CSV,Commending the passage of the Older Americans Act.,False,
+HJ634,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Matthew Robert Chiaverotti.,False,
+HJ635,Unclassified,Unclassified,,,BILLS.CSV,Commending Coresix Precision Glass.,False,
+HJ636,Unclassified,Unclassified,,,BILLS.CSV,Commending the Honorable R. Frances O'Brien.,False,
+HJ637,Unclassified,Unclassified,,,BILLS.CSV,Commending Corliss Udoema.,False,
+HJ638,Unclassified,Unclassified,,,BILLS.CSV,Commending Rita Jean Shropshire.,False,
+HJ639,Unclassified,Unclassified,,,BILLS.CSV,Commending Herbert Jesse Yeatts.,False,
+HJ640,Unclassified,Unclassified,,,BILLS.CSV,"Commending Lawrence Distributing Company, Inc.",False,
+HJ641,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of George W. Lester II.,False,
+HJ642,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Robert Evans Talbott.,False,
+HJ643,Unclassified,Unclassified,,,BILLS.CSV,"Commending Crews Construction and Asphalt Paving, Inc.",False,
+HJ645,Unclassified,Unclassified,,,BILLS.CSV,Commending John Edward Burton III.,False,
+HJ646,Unclassified,Unclassified,,,BILLS.CSV,Commending Jimmie H. Barrett.,False,
+HJ647,Unclassified,Unclassified,,,BILLS.CSV,Commending Benjamin T. Polk.,False,
+HJ648,Unclassified,Unclassified,,,BILLS.CSV,Commending Patricia Miller.,False,
+HJ649,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Stewart Hamilton Gamage.,False,
+HJ650,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Clayton Tune Lester.,False,
+HJ651,Unclassified,Unclassified,,,BILLS.CSV,Commending Judy Simmons.,False,
+HJ652,Unclassified,Unclassified,,,BILLS.CSV,Commending Dr. Mark R. Jones.,False,
+HJ653,Unclassified,Unclassified,,,BILLS.CSV,"Commending Tiffany McKillip Franks, Ed.D.",False,
+HJ654,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Gloria Williams Campbell.,False,
+HJ655,Unclassified,Unclassified,,,BILLS.CSV,Commending WSVA.,False,
+HJ656,Unclassified,Unclassified,,,BILLS.CSV,Commending Anne Cochrane Pace.,False,
+HJ657,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of David Charles Gompert.,False,
+HJ658,Unclassified,Unclassified,,,BILLS.CSV,Commending the Honorable Donald W. Merricks.,False,
+HJ659,Unclassified,Unclassified,,,BILLS.CSV,"Commending Mekhi Becton, Sr.",False,
+HJ660,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Patricia W. Lovelace.,False,
+HJ661,Unclassified,Unclassified,,,BILLS.CSV,Commending Kimberly Ann Bobo.,False,
+HJ662,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Michael Gregory Brown.,False,
+HJ663,Unclassified,Unclassified,,,BILLS.CSV,Commending Owen Love.,False,
+HJ666,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Peggy Lynn Davis.,False,
+HJ667,Unclassified,Unclassified,,,BILLS.CSV,Commending Dave Perno.,False,
+HJ668,Unclassified,Unclassified,,,BILLS.CSV,Commending Leesburg Animal Park.,False,
+HJ669,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Vernon S. Lee II.,False,
+HJ670,Unclassified,Unclassified,,,BILLS.CSV,Commending The Roanoker,False,
+HJ671,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Irene Louise Schubert.,False,
+HJ672,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Colonel Gerald William Hyland, USAF, Ret.",False,
+HJ673,Unclassified,Unclassified,,,BILLS.CSV,Confirming appointments by the Speaker of the House of Delegates.,False,
+HJ674,Unclassified,Unclassified,,,BILLS.CSV,Commending Kayla Nguyen.,False,
+HJ675,Unclassified,Unclassified,,,BILLS.CSV,Commending Todd Biller.,False,
+HJ676,Unclassified,Unclassified,,,BILLS.CSV,Commending the Stroke Comeback Center.,False,
+HJ677,Unclassified,Unclassified,,,BILLS.CSV,Commending James Holland.,False,
+HJ679,Unclassified,Unclassified,,,BILLS.CSV,Commending United Methodist Family Services.,False,
+HJ680,Unclassified,Unclassified,,,BILLS.CSV,Commending the Combat Antisemitism Movement.,False,
+HJ681,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Meghan Rose Hinger.,False,
+HJ682,Unclassified,Unclassified,,,BILLS.CSV,Commemorating the life and legacy of William Flora.,False,
+HJ683,Unclassified,Unclassified,,,BILLS.CSV,Commemorating the life and legacy of William Woodford.,False,
+HJ684,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the lives of Loudoun County community members aboard American Airlines Flight 5342.,False,
+HJ685,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Wing of the Civil Air Patrol.,False,
+HJ686,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the lives of Olivia Eve Ter and Olesya Taylor.,False,
+HJ687,Unclassified,Unclassified,,,BILLS.CSV,Commending Literacy for Life.,False,
+HJ688,Unclassified,Unclassified,,,BILLS.CSV,Commending Woodlawn Little League.,False,
+HJ689,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Peggy Lynn Davis.,False,
+HJ690,Unclassified,Unclassified,,,BILLS.CSV,Commending Haidee Napier Ratliff.,False,
+HJ691,Unclassified,Unclassified,,,BILLS.CSV,Commending the McLean Community Center.,False,
+HJ693,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Giuseppe Cecchi.,False,
+HJ696,Unclassified,Unclassified,,,BILLS.CSV,Commending the McLean Citizens Association.,False,
+HJ697,Unclassified,Unclassified,,,BILLS.CSV,Commending Claire Collins.,False,
+HJ698,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Jake Kincaid.,False,
+HJ699,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Cheryl Hydrick Guedri.,False,
+HJ700,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Martha Franklin Brockinton Stone.,False,
+HJ701,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Joan Woltz Robins.,False,
+HJ702,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Morton G. Thalhimer, Jr.",False,
+HJ703,Unclassified,Unclassified,,,BILLS.CSV,Commending Deborah D. Oswalt.,False,
+HJ704,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Collie Burton III.,False,
+HJ705,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Thomas Knapp Stone.,False,
+HJ706,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Louise Stuart Tabb Whipple.,False,
+HJ707,Unclassified,Unclassified,,,BILLS.CSV,Commending Melvin Carter.,False,
+HJ708,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Cloyd Kent Titus, M.D.",False,
+HJ709,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Joseph Haynes Monk.,False,
+HJ710,Unclassified,Unclassified,,,BILLS.CSV,Commending Barry Eugene DuVal.,False,
+HJ711,Unclassified,Unclassified,,,BILLS.CSV,Commending no-kill animal rescues and shelters in Virginia.,False,
+HJ712,Unclassified,Unclassified,,,BILLS.CSV,Commending Providence Baptist Church.,False,
+HJ713,Unclassified,Unclassified,,,BILLS.CSV,Commending Phyllis Randall.,False,
+HJ714,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Poultry Federation.,False,
+HJ715,Unclassified,Unclassified,,,BILLS.CSV,Commending Paul M. Platt.,False,
+HJ716,Unclassified,Unclassified,,,BILLS.CSV,Commending Anthony Guy Bennett.,False,
+HJ717,Unclassified,Unclassified,,,BILLS.CSV,Commending the Lionsbridge Football Club.,False,
+HJ718,Unclassified,Unclassified,,,BILLS.CSV,"Commending the McGaheysville Volunteer Fire Company, Inc.",False,
+HJ719,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Donald W. Foster, Sr.",False,
+HJ720,Unclassified,Unclassified,,,BILLS.CSV,Commending Paula Loomis.,False,
+HJ721,Unclassified,Unclassified,,,BILLS.CSV,Commending Norfolk State University.,False,
+HJ722,Unclassified,Unclassified,,,BILLS.CSV,Commending Nancy Howell Agee.,False,
+HJ723,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Lewis S. Wiley.,False,
+HJ724,Unclassified,Unclassified,,,BILLS.CSV,Commending Donna T. Rogers.,False,
+HJ726,Unclassified,Unclassified,,,BILLS.CSV,Commending Carlos Canas,False,
+HJ727,Unclassified,Unclassified,,,BILLS.CSV,"Commending Felipe Hernandez, Jr.",False,
+HJ728,Unclassified,Unclassified,,,BILLS.CSV,Commending Heman Bekele.,False,
+HJ729,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Robert Smith Quinn, Jr.",False,
+HJ730,Unclassified,Unclassified,,,BILLS.CSV,Commending Dr. Jessica M. Jones.,False,
+HJ731,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Bobby Gene Atkinson.,False,
+HJ732,Unclassified,Unclassified,,,BILLS.CSV,Commending the Ridgeway Ruritan Club.,False,
+HJ735,Unclassified,Unclassified,,,BILLS.CSV,Commending Aslin Beer Company.,False,
+HJ737,Unclassified,Unclassified,,,BILLS.CSV,Commending Fox Mill Woods Swim and Tennis Club.,False,
+HJ738,Unclassified,Unclassified,,,BILLS.CSV,Commending Sterner's Tae Kwon Do Academy.,False,
+HJ739,Unclassified,Unclassified,,,BILLS.CSV,Commending the Herndon Village Network.,False,
+HJ741,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Augustine Joseph Matson.,False,
+HJ742,Unclassified,Unclassified,,,BILLS.CSV,Commending the Plumbers and Gasfitters of Local Union 5.,False,
+HJ743,Unclassified,Unclassified,,,BILLS.CSV,Commending Diantha McKeel.,False,
+HJ744,Unclassified,Unclassified,,,BILLS.CSV,Commending the Center at Belvedere.,False,
+HJ745,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Virgil Alexander Wood, Ed.D.",False,
+HJ746,Unclassified,Unclassified,,,BILLS.CSV,Commending Marta Keane.,False,
+HJ747,Unclassified,Unclassified,,,BILLS.CSV,Commending Sin Barreras.,False,
+HJ748,Unclassified,Unclassified,,,BILLS.CSV,Commending the Center for Nonprofit Excellence.,False,
+HJ749,Unclassified,Unclassified,,,BILLS.CSV,Commending the Charlottesville-Albemarle Society for the Prevention of Cruelty to Animals.,False,
+HJ750,Unclassified,Unclassified,,,BILLS.CSV,Commending the Charlottesville Twelve.,False,
+HJ751,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Thomas Cahill Johnson.,False,
+HJ752,Unclassified,Unclassified,,,BILLS.CSV,Commending Christian Parker.,False,
+HJ753,Unclassified,Unclassified,,,BILLS.CSV,Commending Ken Luersen.,False,
+HJ754,Unclassified,Unclassified,,,BILLS.CSV,Commending Dr. Susan Schultz Huxman.,False,
+HJ755,Unclassified,Unclassified,,,BILLS.CSV,Commending Willing Warriors.,False,
+HJ758,Unclassified,Unclassified,,,BILLS.CSV,Commending Geraldine Maskelony.,False,
+HJ759,Unclassified,Unclassified,,,BILLS.CSV,Commending Dr. Heisung Lee.,False,
+HJ760,Unclassified,Unclassified,,,BILLS.CSV,"Judges; elections in circuit court, general district court, etc.",False,
+HR453,Unclassified,Unclassified,,,BILLS.CSV,Commending Leland Teets.,False,
+HR454,Unclassified,Unclassified,,,BILLS.CSV,"Reproductive freedom; Speaker of HOD to order study of loyal effects & consequences, etc.",False,
+HR455,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Foundation for Healthy Youth.,False,
+HR456,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Michael David Killian.,False,
+HR457,Unclassified,Unclassified,,,BILLS.CSV,"House of Delegates; salaries, contingent and incidental expenses.",False,
+HR459,Unclassified,Unclassified,,,BILLS.CSV,Commending Tomahawk Creek Middle School.,False,
+HR460,Unclassified,Unclassified,,,BILLS.CSV,Commending Michele Moyer Lee.,False,
+HR462,Unclassified,Unclassified,,,BILLS.CSV,Commending Mark Merrill.,False,
+HR463,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Kathy Nerangis.,False,
+HR464,Unclassified,Unclassified,,,BILLS.CSV,Commending Mary Werkheiser.,False,
+HR465,Unclassified,Unclassified,,,BILLS.CSV,Commending the Iranian American community in Virginia.,False,
+HR466,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Tobacco Region Revitalization Commission.,False,
+HR467,Unclassified,Unclassified,,,BILLS.CSV,Commending Fredericksburg Comic Con.,False,
+HR468,Unclassified,Unclassified,,,BILLS.CSV,"Commending Charlie Frye, Jr.",False,
+HR469,Unclassified,Unclassified,,,BILLS.CSV,Commending the Clover Volunteer Fire Department.,False,
+HR470,Unclassified,Unclassified,,,BILLS.CSV,Commending Doris B. Land.,False,
+HR471,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Dorothy Southall.,False,
+HR472,Unclassified,Unclassified,,,BILLS.CSV,Judges; nominations for election to circuit court.,False,
+HR473,Unclassified,Unclassified,,,BILLS.CSV,Judges; nominations for election to general district court.,False,
+HR475,Unclassified,Unclassified,,,BILLS.CSV,Judicial Inquiry and Review Commission; nomination for election of member.,False,
+HR476,Unclassified,Unclassified,,,BILLS.CSV,Auditor of Public Accounts; nomination for election.,False,
+HR478,Unclassified,Unclassified,,,BILLS.CSV,Commending Olivia Bryant.,False,
+HR480,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Lamuel Scott Prater.,False,
+HR481,Unclassified,Unclassified,,,BILLS.CSV,Commending Lawrence Douglas Wilder.,False,
+HR482,Unclassified,Unclassified,,,BILLS.CSV,Commending the Warm Springs Valley Garden Club.,False,
+HR483,Unclassified,Unclassified,,,BILLS.CSV,Commending Carlehr Swanson.,False,
+HR484,Unclassified,Unclassified,,,BILLS.CSV,Commending David W. Poole.,False,
+HR485,Unclassified,Unclassified,,,BILLS.CSV,Commending Mill Swamp Baptist Church.,False,
+HR486,Unclassified,Unclassified,,,BILLS.CSV,Commending Ryan Alam and the Alam family.,False,
+HR487,Unclassified,Unclassified,,,BILLS.CSV,"Israel, State of; reaffirming Commonwealth's support and commitment to its supporters.",False,
+HR488,Unclassified,Unclassified,,,BILLS.CSV,Commending the Riverside Center for the Performing Arts.,False,
+HR489,Unclassified,Unclassified,,,BILLS.CSV,Commending Todd Brown.,False,
+HR490,Unclassified,Unclassified,,,BILLS.CSV,Commending the Lighthouse Community Center.,False,
+HR491,Unclassified,Unclassified,,,BILLS.CSV,"Commending Timothy P. Duffy, Ph.D.",False,
+HR492,Unclassified,Unclassified,,,BILLS.CSV,Commending the Charlottesville Area Association of REALTORS?.,False,
+HR493,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Hunter Dakota Reedy.,False,
+HR494,Unclassified,Unclassified,,,BILLS.CSV,Commending Elijah Aistrop.,False,
+HR496,Unclassified,Unclassified,,,BILLS.CSV,Celebration of Life Crystal Michelle Kestner.,False,
+HR498,Unclassified,Unclassified,,,BILLS.CSV,Commending the Ivor Volunteer Fire Department.,False,
+HR499,Unclassified,Unclassified,,,BILLS.CSV,Commending the Brunswick Academy girls' volleyball team.,False,
+HR500,Unclassified,Unclassified,,,BILLS.CSV,Commending the Brunswick Academy football team.,False,
+HR502,Unclassified,Unclassified,,,BILLS.CSV,Commending HRE Bakery.,False,
+HR504,Unclassified,Unclassified,,,BILLS.CSV,Commending Justin Dowell.,False,
+HR505,Unclassified,Unclassified,,,BILLS.CSV,Commending KeyWest Lock & Safe.,False,
+HR506,Unclassified,Unclassified,,,BILLS.CSV,Commending Aarav Chokshi.,False,
+HR507,Unclassified,Unclassified,,,BILLS.CSV,Commending Kayla Heath.,False,
+HR508,Unclassified,Unclassified,,,BILLS.CSV,Commending Cosmo's Corner Doggie Daycare.,False,
+HR509,Unclassified,Unclassified,,,BILLS.CSV,Commending Bit of England Dart and Game Shoppe.,False,
+HR510,Unclassified,Unclassified,,,BILLS.CSV,Commending Wonderly Lights.,False,
+HR511,Unclassified,Unclassified,,,BILLS.CSV,Commending Sarah Routsis.,False,
+HR512,Unclassified,Unclassified,,,BILLS.CSV,Commending G4 Kegs.,False,
+HR513,Unclassified,Unclassified,,,BILLS.CSV,Commending Andy Yang.,False,
+HR514,Unclassified,Unclassified,,,BILLS.CSV,Commending Daniel Claiborne Hudson.,False,
+HR515,Unclassified,Unclassified,,,BILLS.CSV,Commending the Swiftwater Rescue Team of the Virginia Beach Fire Department.,False,
+HR516,Unclassified,Unclassified,,,BILLS.CSV,Commending Providence Presbyterian Church.,False,
+HR517,Unclassified,Unclassified,,,BILLS.CSV,Commending Vada Carawan.,False,
+HR518,Unclassified,Unclassified,,,BILLS.CSV,Commending St. Francis Episcopal Church.,False,
+HR520,Unclassified,Unclassified,,,BILLS.CSV,Commending First Lynnhaven Baptist Church.,False,
+HR521,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of George G. Brown.,False,
+HR522,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of William Gerald Massengill.,False,
+HR523,Unclassified,Unclassified,,,BILLS.CSV,Commending Baila Fuzion Dance and Creative Arts Center.,False,
+HR524,Unclassified,Unclassified,,,BILLS.CSV,"Commending STIHL, Inc.",False,
+HR525,Unclassified,Unclassified,,,BILLS.CSV,Commending Beat da Odds.,False,
+HR526,Unclassified,Unclassified,,,BILLS.CSV,Commending The Sweet Spot.,False,
+HR527,Unclassified,Unclassified,,,BILLS.CSV,Commending the Fredericksburg Nationals.,False,
+HR528,Unclassified,Unclassified,,,BILLS.CSV,Commending Teach to Reach Teens.,False,
+HR529,Unclassified,Unclassified,,,BILLS.CSV,Commending Offix.,False,
+HR530,Unclassified,Unclassified,,,BILLS.CSV,Commending Judi Miller.,False,
+HR531,Unclassified,Unclassified,,,BILLS.CSV,Commending Cakes by Happy Eatery.,False,
+HR532,Unclassified,Unclassified,,,BILLS.CSV,Commending Cub Scout Pack 2831.,False,
+HR534,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Peter John Kemp, MD.",False,
+HR535,Unclassified,Unclassified,,,BILLS.CSV,Commending Deirdre Love.,False,
+HR536,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Shirley Kenneth Jones.,False,
+HR537,Unclassified,Unclassified,,,BILLS.CSV,"Commending Jon R. Stehle, Jr.",False,
+HR538,Unclassified,Unclassified,,,BILLS.CSV,Commending Kate G. Doyle Feingold.,False,
+HR539,Unclassified,Unclassified,,,BILLS.CSV,Commending Jeffrey C. Greenfield.,False,
+HR540,Unclassified,Unclassified,,,BILLS.CSV,Commending D. Thomas Ross.,False,
+HR541,Unclassified,Unclassified,,,BILLS.CSV,Commending So Lim.,False,
+HR542,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of First Lieutenant Zachary Dart Galli, USA.",False,
+HR543,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Jeannette Windsor Howard.,False,
+HR544,Unclassified,Unclassified,,,BILLS.CSV,Commending Anvil Campground.,False,
+HR545,Unclassified,Unclassified,,,BILLS.CSV,Commending the Hampton Roads Leadership Prayer Breakfast.,False,
+HR546,Unclassified,Unclassified,,,BILLS.CSV,Commending Bill Rilee.,False,
+HR547,Unclassified,Unclassified,,,BILLS.CSV,"Commending John Percy Burch, Jr.",False,
+HR548,Unclassified,Unclassified,,,BILLS.CSV,Commending Radford University.,False,
+HR549,Unclassified,Unclassified,,,BILLS.CSV,Commending the first responders of Marion and Smyth County.,False,
+HR550,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Beach Antique Mall.,False,
+HR551,Unclassified,Unclassified,,,BILLS.CSV,Commending Cool Stuff.,False,
+HR552,Unclassified,Unclassified,,,BILLS.CSV,Commending Comic Kings.,False,
+HR553,Unclassified,Unclassified,,,BILLS.CSV,Commending Iglesia Cristiana Nueva Vida.,False,
+HR554,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Stephen M. Quillen.,False,
+HR555,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of George Thomas Kiser, Jr.",False,
+HR556,Unclassified,Unclassified,,,BILLS.CSV,Commending Kaitlyn Gabriel.,False,
+HR557,Unclassified,Unclassified,,,BILLS.CSV,Commending Samuel Crowe.,False,
+HR558,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Roxane Gatling Gilmore.,False,
+HR559,Unclassified,Unclassified,,,BILLS.CSV,Commending Nick Mayhugh.,False,
+HR560,Unclassified,Unclassified,,,BILLS.CSV,"Commending Master Gunnery Sergeant Carroll Braxton, USMC, Ret.",False,
+HR561,Unclassified,Unclassified,,,BILLS.CSV,Commending Evan Kinsel.,False,
+HR562,Unclassified,Unclassified,,,BILLS.CSV,Commending Great Meadow.,False,
+HR563,Unclassified,Unclassified,,,BILLS.CSV,Commending Charlie Porterfield.,False,
+HR564,Unclassified,Unclassified,,,BILLS.CSV,Commending Thomas Dix.,False,
+HR565,Unclassified,Unclassified,,,BILLS.CSV,Commending the Warren Coalition.,False,
+HR566,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Ethel Dunbar Doherty.,False,
+HR567,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Greater Rappahannock (VA) Chapter of The Links, Incorporated.",False,
+HR568,Unclassified,Unclassified,,,BILLS.CSV,Commending the Egyptian Coptic Christian community in Virginia.,False,
+HR569,Unclassified,Unclassified,,,BILLS.CSV,Wathiq Alakelee; commending.,False,
+HR570,Unclassified,Unclassified,,,BILLS.CSV,Commending 3North.,False,
+HR571,Unclassified,Unclassified,,,BILLS.CSV,Kevin Armstrong Paredes; commending.,False,
+HR572,Unclassified,Unclassified,,,BILLS.CSV,Commending the Jewish community in Virginia.,False,
+HR573,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Bradford Windley Phillips.,False,
+HR574,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Linda Burrell Porter.,False,
+HR575,Unclassified,Unclassified,,,BILLS.CSV,Commending Saint Anne Catholic School.,False,
+HR576,Unclassified,Unclassified,,,BILLS.CSV,"Archer, Vernice Bell; commending.",False,
+HR577,Unclassified,Unclassified,,,BILLS.CSV,Commending Jon Phillip Lugbill.,False,
+HR578,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Rufus A. Banks, Sr.",False,
+HR579,Unclassified,Unclassified,,,BILLS.CSV,Commending Kim W. Brown and Valerie K. Brown.,False,
+HR580,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Georgia Stewart Allison.,False,
+HR582,Unclassified,Unclassified,,,BILLS.CSV,Commending Tony Wishard.,False,
+HR583,Unclassified,Unclassified,,,BILLS.CSV,Commending William Raybold.,False,
+HR584,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Lexie Isabelle Sullivan.,False,
+HR585,Unclassified,Unclassified,,,BILLS.CSV,Commending Grant Holloway.,False,
+HR586,Unclassified,Unclassified,,,BILLS.CSV,Commending the Prince William County Department of Fire and Rescue Swift Water Rescue Team.,False,
+HR587,Unclassified,Unclassified,,,BILLS.CSV,Commending McKay Used Books.,False,
+HR588,Unclassified,Unclassified,,,BILLS.CSV,Commending the Carrollton Ruritan Club.,False,
+HR589,Unclassified,Unclassified,,,BILLS.CSV,Commending Stan Holloway.,False,
+HR590,Unclassified,Unclassified,,,BILLS.CSV,Commending the Suffolk Interdenominational Ministerial Alliance.,False,
+HR591,Unclassified,Unclassified,,,BILLS.CSV,Commending SUFF.Impact.,False,
+HR592,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Demont? Lamont Tillery.,False,
+HR593,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of William Eugene Goodman, Jr.",False,
+HR594,Unclassified,Unclassified,,,BILLS.CSV,Commending the King William County Courthouse.,False,
+HR595,Unclassified,Unclassified,,,BILLS.CSV,Commending Giovanni Antonio Snidle.,False,
+HR596,Unclassified,Unclassified,,,BILLS.CSV,Commending David Long.,False,
+HR597,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Jonathan Linden Way.,False,
+HR598,Unclassified,Unclassified,,,BILLS.CSV,Commending 25-year members of the Prince William County Department of Fire and Rescue.,False,
+HR599,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Lillian Mary Orlich.,False,
+HR600,Unclassified,Unclassified,,,BILLS.CSV,Commending 35-year members of the Prince William County Department of Fire and Rescue.,False,
+HR601,Unclassified,Unclassified,,,BILLS.CSV,Commending 20-year members of the Prince William County Department of Fire and Rescue.,False,
+HR602,Unclassified,Unclassified,,,BILLS.CSV,Commending Tin Cannon Brewing Company.,False,
+HR603,Unclassified,Unclassified,,,BILLS.CSV,Commending 30-year members of the Prince William County Department of Fire and Rescue.,False,
+HR604,Unclassified,Unclassified,,,BILLS.CSV,Commending Godson Vondee.,False,
+HR605,Unclassified,Unclassified,,,BILLS.CSV,Commending the Brentsville FFA.,False,
+HR607,Unclassified,Unclassified,,,BILLS.CSV,"Commending Annamarie Bollino, Ph.D.",False,
+HR608,Unclassified,Unclassified,,,BILLS.CSV,Commending Charles August Swanson.,False,
+HR609,Unclassified,Unclassified,,,BILLS.CSV,Commending James Younts.,False,
+HR610,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Women and Family Support Center.,False,
+HR611,Unclassified,Unclassified,,,BILLS.CSV,Commending Brenda Johnson.,False,
+HR612,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Michael Steven Wright.,False,
+HR615,Unclassified,Unclassified,,,BILLS.CSV,Commending Galilee Church.,False,
+HR616,Unclassified,Unclassified,,,BILLS.CSV,Commending Aldo's Ristorante.,False,
+HR617,Unclassified,Unclassified,,,BILLS.CSV,Commending The Gala 417.,False,
+HR618,Unclassified,Unclassified,,,BILLS.CSV,Commending Doc Taylor's Restaurant.,False,
+HR619,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Nellie Hayse.,False,
+HR620,Unclassified,Unclassified,,,BILLS.CSV,Commending First Presbyterian Church of Virginia Beach.,False,
+HR621,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Marie Goodman Johnson.,False,
+HR622,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Henry Martin Walters.,False,
+HR623,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Reverend Dr. Fernando Eugene Temple, Sr.",False,
+HR624,Unclassified,Unclassified,,,BILLS.CSV,Commending the Albemarle County Human Services Alternative Response Team.,False,
+HR625,Unclassified,Unclassified,,,BILLS.CSV,Commending Senior Statesmen of Virginia.,False,
+HR626,Unclassified,Unclassified,,,BILLS.CSV,Commending the Nelson County Sheriff's Office.,False,
+HR627,Unclassified,Unclassified,,,BILLS.CSV,Commending Camp Holiday Trails.,False,
+HR628,Unclassified,Unclassified,,,BILLS.CSV,"Commending the advocates, survivors, families, and others impacted by triple-negative breast cancer.",False,
+HR629,Unclassified,Unclassified,,,BILLS.CSV,Commending Marshall Jarrett.,False,
+HR631,Unclassified,Unclassified,,,BILLS.CSV,Commending Molly and Robert Hardie.,False,
+HR632,Unclassified,Unclassified,,,BILLS.CSV,Commending Bay Local Eatery.,False,
+HR633,Unclassified,Unclassified,,,BILLS.CSV,Commending the TASTE Family of Businesses.,False,
+HR634,Unclassified,Unclassified,,,BILLS.CSV,Commending Il Giardino Ristorante.,False,
+HR635,Unclassified,Unclassified,,,BILLS.CSV,Commending Cobalt Grille.,False,
+HR636,Unclassified,Unclassified,,,BILLS.CSV,Commending Wareing's Gym.,False,
+HR637,Unclassified,Unclassified,,,BILLS.CSV,Commending Mizuno Japanese Restaurant.,False,
+HR638,Unclassified,Unclassified,,,BILLS.CSV,Commending Polish Boutique.,False,
+HR639,Unclassified,Unclassified,,,BILLS.CSV,Commending Captain George's Seafood Restaurant.,False,
+HR640,Unclassified,Unclassified,,,BILLS.CSV,Commending Coastal Grill.,False,
+HR641,Unclassified,Unclassified,,,BILLS.CSV,Commending Citrus.,False,
+HR642,Unclassified,Unclassified,,,BILLS.CSV,Commending Smartmouth Brewing Company.,False,
+HR643,Unclassified,Unclassified,,,BILLS.CSV,Commending the Black Angus Restaurant.,False,
+HR644,Unclassified,Unclassified,,,BILLS.CSV,Commending Lemon Cabana.,False,
+HR645,Unclassified,Unclassified,,,BILLS.CSV,Commending Jane Parke Batten.,False,
+HR646,Unclassified,Unclassified,,,BILLS.CSV,Commending Tautog's Restaurant.,False,
+HR647,Unclassified,Unclassified,,,BILLS.CSV,Commending the Norfolk Academy field hockey team.,False,
+HR648,Unclassified,Unclassified,,,BILLS.CSV,Commending Dr. Mark R. Jones.,False,
+HR649,Unclassified,Unclassified,,,BILLS.CSV,Commending Phillips Equipment Corporation.,False,
+HR650,Unclassified,Unclassified,,,BILLS.CSV,Commending Elizabeth S. Green.,False,
+HR652,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Virgil Alexander Wood, Ed.D.",False,
+HR653,Unclassified,Unclassified,,,BILLS.CSV,Commending Wood Brothers Racing.,False,
+HR654,Unclassified,Unclassified,,,BILLS.CSV,"Commending Reaching Out Now, Inc.",False,
+HR656,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of George E. Banks.,False,
+HR657,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of the Reverend William Lee Statzer.,False,
+HR658,Unclassified,Unclassified,,,BILLS.CSV,Commending the Falls Church Volunteer Fire Department.,False,
+HR659,Unclassified,Unclassified,,,BILLS.CSV,Commending Lori Allyne Hilton.,False,
+HR660,Unclassified,Unclassified,,,BILLS.CSV,Commending Charles Collier.,False,
+HR661,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Warren Marcelous DePriest, Sr.",False,
+HR662,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Elizabeth Sampson Johnson.,False,
+HR663,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Dr. Wilbert L. Jenkins.,False,
+HR664,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Gladys Delores Argro Kidd.,False,
+HR665,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Winston E. Hubbard, Jr.",False,
+HR666,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Annette Teresa Lawrence Robinson.,False,
+HR667,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Union University football team.,False,
+HR668,Unclassified,Unclassified,,,BILLS.CSV,Commending the 2025 inductees to the Virginia Sports Hall of Fame.,False,
+HR670,Unclassified,Unclassified,,,BILLS.CSV,Commending Mariners Landing.,False,
+HR671,Unclassified,Unclassified,,,BILLS.CSV,Commending JR's Auto Care.,False,
+HR672,Unclassified,Unclassified,,,BILLS.CSV,"Commending Workboat Life, Inc.",False,
+HR673,Unclassified,Unclassified,,,BILLS.CSV,Commending Paul Kakol.,False,
+HR674,Unclassified,Unclassified,,,BILLS.CSV,Commending Arthur Ellsworth Dick Howard.,False,
+HR675,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Dr. La Francis Rodgers-Rose.,False,
+HR676,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Michael Gregory Brown.,False,
+HR677,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of the Reverend Robert Calloway Davis.,False,
+HR679,Unclassified,Unclassified,,,BILLS.CSV,Commending George Walton Weller.,False,
+HR680,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Algie Gray Crouse.,False,
+HR681,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Kris Kehoe Southwick.,False,
+HR682,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of the Honorable Donald May Haddock.,False,
+HR683,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Justin Lee Butler, Jr.",False,
+HR684,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of the Reverend Dr. Wilson E. Shannon.,False,
+HR685,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Kimaun Tyrese Ewell.,False,
+HR686,Unclassified,Unclassified,,,BILLS.CSV,Commending the Honorable Dr. William Ferguson Reid.,False,
+HR687,Unclassified,Unclassified,,,BILLS.CSV,Commending Perkinson Construction.,False,
+HR688,Unclassified,Unclassified,,,BILLS.CSV,Commending Greg Dynia.,False,
+HR689,Unclassified,Unclassified,,,BILLS.CSV,"Commending Rudy L. Hawkins Electrical Contractor, Inc.",False,
+HR690,Unclassified,Unclassified,,,BILLS.CSV,Commending Enon Baptist Church.,False,
+HR691,Unclassified,Unclassified,,,BILLS.CSV,Commending Meredith Dean.,False,
+HR692,Unclassified,Unclassified,,,BILLS.CSV,Commending Alma Bella Academy.,False,
+HR693,Unclassified,Unclassified,,,BILLS.CSV,Commending Harlan Construction.,False,
+HR694,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Wesley Isaiah Harrison-James.,False,
+HR695,Unclassified,Unclassified,,,BILLS.CSV,Commending the Mary Star of the Sea Council 511 of the Knights of Columbus.,False,
+HR696,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Chief Warrant Officer 2 Andrew Lloyd Eaves, USA.",False,
+HR697,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Staff Sergeant Ryan Austin O'Hara, USA.",False,
+HR698,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Honorable Gordon C. Helsel, Jr.",False,
+HR699,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Captain Rebecca M. Lobach, USA.",False,
+HR700,Unclassified,Unclassified,,,BILLS.CSV,Commending the Lorton Community Action Center.,False,
+HR701,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Edward Lee Watkins.,False,
+HR702,Unclassified,Unclassified,,,BILLS.CSV,Commending Moore and Giles.,False,
+HR703,Unclassified,Unclassified,,,BILLS.CSV,Commending Sam and Shelly Hunt.,False,
+HR704,Unclassified,Unclassified,,,BILLS.CSV,Commending Tommy Scott.,False,
+HR706,Unclassified,Unclassified,,,BILLS.CSV,Commending Martin Leamy.,False,
+HR708,Unclassified,Unclassified,,,BILLS.CSV,Commending Walter and Lou Ann Bass.,False,
+HR709,Unclassified,Unclassified,,,BILLS.CSV,Commending Joji Purdy.,False,
+HR710,Unclassified,Unclassified,,,BILLS.CSV,Commending Cooper Cutchins.,False,
+HR711,Unclassified,Unclassified,,,BILLS.CSV,Confirming nominations; House Ethics Advisory Panel.,False,
+HR712,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Honorable Walter Benjamin Keister, Sr.",False,
+HR713,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Louis Mansfield Johnson.,False,
+HR714,Unclassified,Unclassified,,,BILLS.CSV,"Commending Clint Mitchell, Ed.D.",False,
+HR715,Unclassified,Unclassified,,,BILLS.CSV,Commending Spreading Smiles at Renatos.,False,
+HR716,Unclassified,Unclassified,,,BILLS.CSV,Commending the Vienna Assembly of God.,False,
+HR717,Unclassified,Unclassified,,,BILLS.CSV,Commending Vienna Youth Soccer.,False,
+HR718,Unclassified,Unclassified,,,BILLS.CSV,Commending the Society of Hispanic Professional Engineers.,False,
+HR719,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Joshua Plante.,False,
+HR720,Unclassified,Unclassified,,,BILLS.CSV,Commending the Shepherd's Center of Fairfax-Burke.,False,
+HR721,Unclassified,Unclassified,,,BILLS.CSV,Commending Great American Restaurants.,False,
+HR722,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Bob Eddison Bracey.,False,
+HR723,Unclassified,Unclassified,,,BILLS.CSV,Commending the Chesterfield Food Bank Outreach Center.,False,
+HR724,Unclassified,Unclassified,,,BILLS.CSV,Commending Chester Presbyterian Church.,False,
+HR725,Unclassified,Unclassified,,,BILLS.CSV,"Commending James R. Jones Builder, Inc.",False,
+HR726,Unclassified,Unclassified,,,BILLS.CSV,Commending Barber Construction.,False,
+HR727,Unclassified,Unclassified,,,BILLS.CSV,Commending Richard Halas.,False,
+HR728,Unclassified,Unclassified,,,BILLS.CSV,"Commending Lebow Eye Associates, P.C.",False,
+HR729,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Dr. Carol Jocelyn Pretlow.,False,
+HR730,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Mary Carol Evans Hecht.,False,
+HR731,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Gregory Scott Cook.,False,
+HR733,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Landon Jeremiah Artis.,False,
+HR735,Unclassified,Unclassified,,,BILLS.CSV,Commending Charles H. Harbaugh IV.,False,
+HR736,Unclassified,Unclassified,,,BILLS.CSV,Commending Chuck Pruitt.,False,
+HR737,Unclassified,Unclassified,,,BILLS.CSV,Commending Saad Shafi.,False,
+HR738,Unclassified,Unclassified,,,BILLS.CSV,Commending Total Action for Progress.,False,
+HR739,Unclassified,Unclassified,,,BILLS.CSV,Commending Keswick Hall.,False,
+HR740,Unclassified,Unclassified,,,BILLS.CSV,Commending Colton Moye.,False,
+HR741,Unclassified,Unclassified,,,BILLS.CSV,Commending Pat B. Huber.,False,
+HR742,Unclassified,Unclassified,,,BILLS.CSV,Commending Deborah D. Oswalt.,False,
+HR746,Unclassified,Unclassified,,,BILLS.CSV,Commending Tyler William Warren.,False,
+HR747,Unclassified,Unclassified,,,BILLS.CSV,Commending Gale Allen Harvey.,False,
+HR748,Unclassified,Unclassified,,,BILLS.CSV,Commending David K. Wood.,False,
+HR749,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Clarence Stewart Preston.,False,
+HR750,Unclassified,Unclassified,,,BILLS.CSV,Commending Virginia Union University.,False,
+HR751,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Omicron Chi Omega chapter of Alpha Kappa Alpha Sorority, Inc.",False,
+HR752,Unclassified,Unclassified,,,BILLS.CSV,Commending Shaboozey.,False,
+HR753,Unclassified,Unclassified,,,BILLS.CSV,Commending Penelope Nowell-Shortt.,False,
+HR754,Unclassified,Unclassified,,,BILLS.CSV,Commending Curtis O. Porter.,False,
+HR755,Unclassified,Unclassified,,,BILLS.CSV,Commending Rick S. Judd.,False,
+HR756,Unclassified,Unclassified,,,BILLS.CSV,Commending Stephen Rau.,False,
+HR757,Unclassified,Unclassified,,,BILLS.CSV,Commending Gary Fuller.,False,
+HR758,Unclassified,Unclassified,,,BILLS.CSV,Commending the Information Technology-Information Sharing Analysis Center.,False,
+HR759,Unclassified,Unclassified,,,BILLS.CSV,Commending Juan Salguero.,False,
+HR760,Unclassified,Unclassified,,,BILLS.CSV,Commending Angie's Bakery.,False,
+HR761,Unclassified,Unclassified,,,BILLS.CSV,Commending Doug Robbins.,False,
+HR762,Unclassified,Unclassified,,,BILLS.CSV,Commending the Southside Swim League.,False,
+HR763,Unclassified,Unclassified,,,BILLS.CSV,Commending the River's Bend Community Association swim team.,False,
+HR764,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the lives of Peter, Donna, Everly, and Alydia Livingston.",False,
+HR765,Unclassified,Unclassified,,,BILLS.CSV,Commending Michael J. Higginbotham.,False,
+HR766,Unclassified,Unclassified,,,BILLS.CSV,Commending the Timberlake Tavern.,False,
+HR768,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Clarence Hiram Jones, Jr.",False,
+HR769,Unclassified,Unclassified,,,BILLS.CSV,Commending Gary E. Penn.,False,
+HR770,Unclassified,Unclassified,,,BILLS.CSV,Commending Ally and Michael Stebner.,False,
+HR771,Unclassified,Unclassified,,,BILLS.CSV,Commending CHIKO.,False,
+HR772,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Richard Joseph Grosh.,False,
+HR773,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Jeff Meredith.,False,
+HR774,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Benjamin Rodriguez.,False,
+HR775,Unclassified,Unclassified,,,BILLS.CSV,Commending Shorebreak Pizza and Taphouse.,False,
+HR776,Unclassified,Unclassified,,,BILLS.CSV,Commending Waller Tire Place.,False,
+HR777,Unclassified,Unclassified,,,BILLS.CSV,Commending New Mount Vernon Baptist Church.,False,
+HR778,Unclassified,Unclassified,,,BILLS.CSV,Commending Chris Scott.,False,
+HR779,Unclassified,Unclassified,,,BILLS.CSV,Commending Kwame Alexander.,False,
+HR780,Unclassified,Unclassified,,,BILLS.CSV,Commending Pat Woodbury.,False,
+HR781,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Ann Marie Sullivan, Ph.D.",False,
+HR782,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Elwood Lorenzo Williams.,False,
+HR783,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Lieutenant General Arthur J. Gregg, USA, Ret.",False,
+HR784,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Luther Foster Brown, Jr.",False,
+HR785,Unclassified,Unclassified,,,BILLS.CSV,Commending Bishop Samuel L. Carruth.,False,
+HR786,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Honorable Von LeRoy Piersall, Jr.",False,
+HR787,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Corey Rashaad Peterson.,False,
+HR788,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Spencer J. Prayer.,False,
+HR789,Unclassified,Unclassified,,,BILLS.CSV,Commemorating the life and legacy of David Walker.,False,
+HR790,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Ella Wease Tucker Jarrett.,False,
+HR791,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of the Reverend Dr. Milton Roy Blount.,False,
+HR792,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Harold Alvin Goodman, Sr.",False,
+HR793,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Bismarck Myrick, Sr.",False,
+HR794,Unclassified,Unclassified,,,BILLS.CSV,Commending Phillip C. Stone.,False,
+HR796,Unclassified,Unclassified,,,BILLS.CSV,"Commending Captain Michelle M. Williams, USN.",False,
+HR797,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Claude Allen Cobler.,False,
+HR798,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Gamma Delta Omega Chapter of Alpha Kappa Alpha Sorority, Inc.",False,
+HR799,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Enis Rodney Jenkins.,False,
+HR800,Unclassified,Unclassified,,,BILLS.CSV,Commending Andrew Terrill.,False,
+HR801,Unclassified,Unclassified,,,BILLS.CSV,Commending My Cravingz.,False,
+HR802,Unclassified,Unclassified,,,BILLS.CSV,Nominating persons to be elected to circuit court judgeships.,False,
+HR803,Unclassified,Unclassified,,,BILLS.CSV,Nominating persons to be elected to general district court judgeships.,False,
+HR805,Unclassified,Unclassified,,,BILLS.CSV,Judicial Inquiry and Review Commission; nomination for election of member.,False,
+HR806,Unclassified,Unclassified,,,BILLS.CSV,Commending Margaret Higgins Disney.,False,
+HR807,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia State Police Association.,False,
+HR808,Unclassified,Unclassified,,,BILLS.CSV,Commending the Chesterfield County Jail Helping Addicts Recover Progressively program.,False,
+HR809,Unclassified,Unclassified,,,BILLS.CSV,Commending Social Burger.,False,
+HR810,Unclassified,Unclassified,,,BILLS.CSV,Commending the Town of Vienna.,False,
+HR811,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Marvin Hyatt Watkins.,False,
+HR812,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Franklin Jay Pepper, M.D.",False,
+HR813,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Jacquelyn G. Hontz.,False,
+HR814,Unclassified,Unclassified,,,BILLS.CSV,Commending Friends of the Rappahannock.,False,
+HR815,Unclassified,Unclassified,,,BILLS.CSV,"Commending Judith Brooks-Buck, Ph.D.",False,
+HR816,Unclassified,Unclassified,,,BILLS.CSV,Commending the Washington Commanders.,False,
+HR817,Unclassified,Unclassified,,,BILLS.CSV,Commending Carlos Castro.,False,
+HR818,Unclassified,Unclassified,,,BILLS.CSV,Commending Waller and Company Jewelers.,False,
+HR819,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Ivan Elbert Horton, Jr.",False,
+HR820,Unclassified,Unclassified,,,BILLS.CSV,Commending Magaly Perez-Rives.,False,
+HR821,Unclassified,Unclassified,,,BILLS.CSV,"Commending Simmons and Associates Realty, Inc.",False,
+HR822,Unclassified,Unclassified,,,BILLS.CSV,Commending Robert Trent Jones Golf Club.,False,
+HR823,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Beverly Hicks Diamonstein.,False,
+HR824,Unclassified,Unclassified,,,BILLS.CSV,Commending Natale Christian.,False,
+HR825,Unclassified,Unclassified,,,BILLS.CSV,Commemorating the 80th anniversary of the National Liberation Day of Korea.,False,
+HR826,Unclassified,Unclassified,,,BILLS.CSV,Commending Tarrick McGuire.,False,
+HR827,Unclassified,Unclassified,,,BILLS.CSV,Commending the Hermitage Museum and Gardens.,False,
+HR828,Unclassified,Unclassified,,,BILLS.CSV,Commending Jahmari DeLoatch.,False,
+HR829,Unclassified,Unclassified,,,BILLS.CSV,Commending Lonnie Andrews.,False,
+HR830,Unclassified,Unclassified,,,BILLS.CSV,Commending Brandon Nesbit.,False,
+HR831,Unclassified,Unclassified,,,BILLS.CSV,Commending Travis Johnson.,False,
+HR832,Unclassified,Unclassified,,,BILLS.CSV,Commending Malachi White.,False,
+HR833,Unclassified,Unclassified,,,BILLS.CSV,Commending Dory Wilson.,False,
+HR834,Unclassified,Unclassified,,,BILLS.CSV,Commending Jordan Rayner.,False,
+HR835,Unclassified,Unclassified,,,BILLS.CSV,Commending Josh Sweat.,False,
+HR836,Unclassified,Unclassified,,,BILLS.CSV,Commending Bob Adkins.,False,
+HR837,Unclassified,Unclassified,,,BILLS.CSV,Commending Witold Brick.,False,
+HR838,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of William Denman Zirkle.,False,
+HR839,Unclassified,Unclassified,,,BILLS.CSV,Commending Thelma R. Pemberton-Abbott.,False,
+HR840,Unclassified,Unclassified,,,BILLS.CSV,Commending Henderson Motorsports.,False,
+HR841,Unclassified,Unclassified,,,BILLS.CSV,"Commending John Garrett, M.D., FACS.",False,
+HR843,Unclassified,Unclassified,,,BILLS.CSV,"Commending Howard G. Adams, Ph.D., and Eloise Adams, Ph.D.",False,
+HR844,Unclassified,Unclassified,,,BILLS.CSV,Commending Stephanie Roble.,False,
+HR845,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Southside Youth Football League, the Huntersville Wolverines Football and Cheer Organization, and the Park Place Kings Football and Cheer Organization.",False,
+HR846,Unclassified,Unclassified,,,BILLS.CSV,Commemorating the life and legacy of Carter G. Woodson.,False,
+HR847,Unclassified,Unclassified,,,BILLS.CSV,Commending the Prince William County Community Foundation.,False,
+HR848,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Carol J. Pretlow.,False,
+HR849,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Prince William County Alumnae Chapter of Delta Sigma Theta Sorority, Inc.",False,
+HR851,Unclassified,Unclassified,,,BILLS.CSV,Commending the Larchmont-Edgewater Civic League.,False,
+HR852,Unclassified,Unclassified,,,BILLS.CSV,Commending Sarah Everhardt.,False,
+HR853,Unclassified,Unclassified,,,BILLS.CSV,"Commending Khadijeh ""Malieh"" Aslankhani.",False,
+HR854,Unclassified,Unclassified,,,BILLS.CSV,Commending Veronica Del Bagno.,False,
+HR855,Unclassified,Unclassified,,,BILLS.CSV,Commending Marjorie Mayfield Jackson.,False,
+HR856,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Clarice Lorine Jordan.,False,
+HR858,Unclassified,Unclassified,,,BILLS.CSV,Commending the First Landing 1607 Project.,False,
+HR859,Unclassified,Unclassified,,,BILLS.CSV,"Commending Dr. Charles W. Sydnor, Jr.",False,
+HR860,Unclassified,Unclassified,,,BILLS.CSV,Commending Honeysuckle Cafe.,False,
+HR861,Unclassified,Unclassified,,,BILLS.CSV,"Commending McKinley L. Price, D.D.S.",False,
+HR862,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of James Earl Carter, Jr., M.D.",False,
+HR863,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Carylon Crouch Buck.,False,
+HR864,Unclassified,Unclassified,,,BILLS.CSV,Commending Habitat for Humanity Peninsula and Greater Williamsburg.,False,
+HR865,Unclassified,Unclassified,,,BILLS.CSV,Commending Amanda Castellucci.,False,
+HR866,Unclassified,Unclassified,,,BILLS.CSV,Commending Keyshawn Davis.,False,
+HR867,Unclassified,Unclassified,,,BILLS.CSV,Commending TreVeyon Henderson,False,
+HR868,Unclassified,Unclassified,,,BILLS.CSV,"Commending Edward L. Wright, Jr.",False,
+HR869,Unclassified,Unclassified,,,BILLS.CSV,"Commending Paul L. Wilson, Sr.",False,
+HR870,Unclassified,Unclassified,,,BILLS.CSV,"Commending Horace S. Savage, Jr.",False,
+HR872,Unclassified,Unclassified,,,BILLS.CSV,Commending David S. Widzer.,False,
+HR873,Unclassified,Unclassified,,,BILLS.CSV,"Commending Liz Noto, Ph.D.",False,
+HR874,Unclassified,Unclassified,,,BILLS.CSV,Commending Emily Burrell.,False,
+HR875,Unclassified,Unclassified,,,BILLS.CSV,Commending the Ideaventions Academy Daedalus robotics team.,False,
+HR876,Unclassified,Unclassified,,,BILLS.CSV,Commending Greg Duncan.,False,
+HR877,Unclassified,Unclassified,,,BILLS.CSV,Commending Elizabeth Staton.,False,
+HR878,Unclassified,Unclassified,,,BILLS.CSV,Commending the Bowling Park Chapter of Moms in Touch International.,False,
+HR879,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Henry P. Henson.,False,
+HR880,Unclassified,Unclassified,,,BILLS.CSV,Commending Eggleston Services.,False,
+HR881,Unclassified,Unclassified,,,BILLS.CSV,Commending Theresa V. Jackson.,False,
+HR882,Unclassified,Unclassified,,,BILLS.CSV,Commending James R. Tucker II.,False,
+HR883,Unclassified,Unclassified,,,BILLS.CSV,Commending Tucker Wright.,False,
+HR884,Unclassified,Unclassified,,,BILLS.CSV,Commending the Vietnamese American community.,False,
+SB741,Unclassified,Unclassified,,,BILLS.CSV,Public aircraft; extends sunset provision.,False,
+SB742,Unclassified,Unclassified,,,BILLS.CSV,Richard Bland College; governance.,False,
+SB748,Unclassified,Unclassified,,,BILLS.CSV,Uniform Statewide Building Code; stakeholder group to evaluate temperature regulation.,False,
+SB751,Unclassified,Unclassified,,,BILLS.CSV,Protective orders; military protective orders.,False,
+SB753,Unclassified,Unclassified,,,BILLS.CSV,"Standards of Quality; SOL assessments in languages other than English, development & administration.",False,
+SB757,Unclassified,Unclassified,,,BILLS.CSV,"Trespass with an unmanned aircraft system; contracted defense facility, penalty.",False,
+SB761,Unclassified,Unclassified,,,BILLS.CSV,Civil actions brought by warrant; extends date range for court appearance.,False,
+SB762,Unclassified,Unclassified,,,BILLS.CSV,"Supervisors, boards of; increases statutory salary caps for certain counties.",False,
+SB766,Unclassified,Unclassified,,,BILLS.CSV,"Museum of the Virginia National Guard; established, report.",False,
+SB769,Unclassified,Unclassified,,,BILLS.CSV,Consumer Data Protection Act; controller privacy notice; cookies; consumer consent.,False,
+SB771,Unclassified,Unclassified,,,BILLS.CSV,Christopher Newport University Board of Visitors; annual meetings.,False,
+SB774,Unclassified,Unclassified,,,BILLS.CSV,Essential health benefits benchmark plan review; members of stakeholder work group.,False,
+SB778,Unclassified,Unclassified,,,BILLS.CSV,"Juveniles; adjudication of delinquency, when and how child may be taken into immediate custody.",False,
+SB785,Unclassified,Unclassified,,,BILLS.CSV,"Real Estate Board; transfer of license, fee.",False,
+SB786,Unclassified,Unclassified,,,BILLS.CSV,Nationally Certified School Psychologist Program; established.,False,
+SB787,Unclassified,Unclassified,,,BILLS.CSV,"Housing and Community Development, Dept. of; consolidation of varying due dates for certain reports.",False,
+SB792,Unclassified,Unclassified,,,BILLS.CSV,SCHEV; publishing of certain institution-level data on website required.,False,
+SB793,Unclassified,Unclassified,,,BILLS.CSV,"Va. Birth-Related Neurological Injury Compensation Program; electronic filing, review of claims.",False,
+SB794,Unclassified,Unclassified,,,BILLS.CSV,"Tire stewardship program; established, report.",False,
+SB796,Unclassified,Unclassified,,,BILLS.CSV,Virginia Recreational Facilities Authority; authority to dissolve.,False,
+SB797,Unclassified,Unclassified,,,BILLS.CSV,"VA School for the Deaf & the Blind, Board of Visitors of the; authority to establish campus police.",False,
+SB799,Unclassified,Unclassified,,,BILLS.CSV,School Health Services Committee; extends sunset date.,False,
+SB807,Unclassified,Unclassified,,,BILLS.CSV,Virginia Real Estate Time-Share Act; recordkeeping by resellers.,False,
+SB808,Unclassified,Unclassified,,,BILLS.CSV,"Resale Disclosure Act; resale certificate, responsibility for payment of insurance deductible.",False,
+SB811,Unclassified,Unclassified,,,BILLS.CSV,Alcoholic beverage control; delivery of mixed beverages.,False,
+SB817,Unclassified,Unclassified,,,BILLS.CSV,Public elementary & secondary schools; cardiac emergency response or emergency action plans.,False,
+SB819,Unclassified,Unclassified,,,BILLS.CSV,Community-based outpatient stabilization programs for voluntary treatment; referrals.,False,
+SB820,Unclassified,Unclassified,,,BILLS.CSV,"Virginia School Improvement Grant Program; established, report.",False,
+SB824,Unclassified,Unclassified,,,BILLS.CSV,State Corporation Commission; powers and duties.,False,
+SB825,Unclassified,Unclassified,,,BILLS.CSV,Vulnerable adults; seizure of property used in connection with/derived from financial exploitation.,False,
+SB826,Unclassified,Unclassified,,,BILLS.CSV,Predetermination for licensing eligibility; prior convictions.,False,
+SB831,Unclassified,Unclassified,,,BILLS.CSV,Pregnant individuals; DMAS to seek federal authority to implement presumptive eligibility.,False,
+SB832,Unclassified,Unclassified,,,BILLS.CSV,"Rental assistance voucher pilot program; established, report.",False,
+SB833,Unclassified,Unclassified,,,BILLS.CSV,"Hampton, City of; operation of the district health department.",False,
+SB834,Unclassified,Unclassified,,,BILLS.CSV,Alcoholic beverage control; tied house exceptions.,False,
+SB835,Unclassified,Unclassified,,,BILLS.CSV,"Virginia College Opportunity Endowment and Fund; established, report.",False,
+SB836,Unclassified,Unclassified,,,BILLS.CSV,"Poquoson, City of; amending charter, powers of city council.",False,
+SB838,Unclassified,Unclassified,,,BILLS.CSV,"Recovery residences; certification required penalty, report.",False,
+SB842,Unclassified,Unclassified,,,BILLS.CSV,Mobile health clinics; DHCD to include broadband access services for clinics.,False,
+SB850,Unclassified,Unclassified,,,BILLS.CSV,Water & wastewater utilities; eligible infrastructure replacement and enhancement.,False,
+SB851,Unclassified,Unclassified,,,BILLS.CSV,"Rainwater harvesting systems, certain; local ordinances for use.",False,
+SB852,Unclassified,Unclassified,,,BILLS.CSV,Photo speed monitoring devices; proof of violation affirmed by retired law-enforcement officials.,False,
+SB857,Unclassified,Unclassified,,,BILLS.CSV,"Dam Safety Act; powers and duties of DCR, rights and requirements of dam owners, civil penalty.",False,
+SB858,Unclassified,Unclassified,,,BILLS.CSV,"License plates, special; issuance for supporters of the Shenandoah Apple Blossom Festival.",False,
+SB861,Unclassified,Unclassified,,,BILLS.CSV,Escape from jail or custody; penalty.,False,
+SB862,Unclassified,Unclassified,,,BILLS.CSV,Casino gaming; set-off of debts to the Commonwealth from prizes.,False,
+SB863,Unclassified,Unclassified,,,BILLS.CSV,Fantasy Contests Act; minimum age requirement.,False,
+SB864,Unclassified,Unclassified,,,BILLS.CSV,Horse racing and pari-mutuel wagering; amends definition of breakage.,False,
+SB866,Unclassified,Unclassified,,,BILLS.CSV,"Real Estate Board; membership, qualifications.",False,
+SB867,Unclassified,Unclassified,,,BILLS.CSV,Virginia Disposition of Unclaimed Property Act; administrator to exercise due diligence to locate owner.,False,
+SB868,Unclassified,Unclassified,,,BILLS.CSV,Mixed bev. licensees; prohibition on delivery to consumer of original bottle of alcoholic beverage.,False,
+SB869,Unclassified,Unclassified,,,BILLS.CSV,Autism spectrum disorder or a developmental disability; custodial interrogation of person.,False,
+SB872,Unclassified,Unclassified,,,BILLS.CSV,Charter; City of Portsmouth.,False,
+SB873,Unclassified,Unclassified,,,BILLS.CSV,"Richlands, Town of; amending charter, relates to ordinance.",False,
+SB876,Unclassified,Unclassified,,,BILLS.CSV,Virginia Freedom of Information Act; public bodies to post agenda on website prior to meetings.,False,
+SB877,Unclassified,Unclassified,,,BILLS.CSV,"Post-release job search assistance services; DOC, et al., to provide.",False,
+SB878,Unclassified,Unclassified,,,BILLS.CSV,"Unemployment Compensation, Commission on; increases membership, powers and duties.",False,
+SB882,Unclassified,Unclassified,,,BILLS.CSV,Anesthesiologist assistants; establishes criteria for licensure.,False,
+SB886,Unclassified,Unclassified,,,BILLS.CSV,"Trigger activator; definition does not include semi-automatic replacement trigger, etc., penalty.",False,
+SB887,Unclassified,Unclassified,,,BILLS.CSV,Dulles Greenway; toll rates.,False,
+SB888,Unclassified,Unclassified,,,BILLS.CSV,"Manufacturing, selling, giving, distributing, or possessing with intent to manufacture, sell, give, or distribute a controlled substance or an imitation controlled substance prohibited; penalties.",False,
+SB889,Unclassified,Unclassified,,,BILLS.CSV,Pari-mutuel wagering; historical horse racing; percentage retained for distribution.,False,
+SB901,Unclassified,Unclassified,,,BILLS.CSV,Compensation of court-appointed counsel.,False,
+SB906,Unclassified,Unclassified,,,BILLS.CSV,"Campaign advertisements; independent expenditures, electioneering communications.",False,
+SB907,Unclassified,Unclassified,,,BILLS.CSV,"Animal testing facility operated by a state agency; nonhuman primates, care and treatment.",False,
+SB909,Unclassified,Unclassified,,,BILLS.CSV,"Motor sports facility; advertising alcoholic beverages, liquid nicotine, & nicotine vapor products.",False,
+SB910,Unclassified,Unclassified,,,BILLS.CSV,Certificate of public need program; phased elimination.,False,
+SB911,Unclassified,Unclassified,,,BILLS.CSV,"Aerial pesticide application; Virginia Pollinator Protection Strategy, civil penalty.",False,
+SB912,Unclassified,Unclassified,,,BILLS.CSV,Safety and Health Codes Board; THC impairment standard for certain work sites.,False,
+SB916,Unclassified,Unclassified,,,BILLS.CSV,Local ordinances; regulation of pet shops.,False,
+SB921,Unclassified,Unclassified,,,BILLS.CSV,"Large animal veterinary grant program; State Veterinarian to establish, report.",False,
+SB922,Unclassified,Unclassified,,,BILLS.CSV,Claims to unclaimed property; authority of administrator.,False,
+SB923,Unclassified,Unclassified,,,BILLS.CSV,Virginia Water Protection Permit; interbasin transfers of water prohibited.,False,
+SB924,Unclassified,Unclassified,,,BILLS.CSV,Drug paraphernalia and controlled paraphernalia; drug checking products.,False,
+SB927,Unclassified,Unclassified,,,BILLS.CSV,"Virginia Sports Tourism Grant Program; established, report.",False,
+SB929,Unclassified,Unclassified,,,BILLS.CSV,Abandoned Mine Land Grant Retention Fund established.,False,
+SB931,Unclassified,Unclassified,,,BILLS.CSV,"Obscene materials; restrictions on purchase, distribution, exhibition, or loan; exceptions; libraries and schools.",False,
+SB932,Unclassified,Unclassified,,,BILLS.CSV,"Counties, cities, and towns; comprehensive plan may include tiny homes or accessory dwelling units.",False,
+SB933,Unclassified,Unclassified,,,BILLS.CSV,Fishing with trawl nets and drag nets; shrimp and horseshoe crab; license fee; penalty.,False,
+SB937,Unclassified,Unclassified,,,BILLS.CSV,Administrative Process Act; provisional license to an assisted living facility or adult day center.,False,
+SB939,Unclassified,Unclassified,,,BILLS.CSV,"Mail theft; definitions, penalty.",False,
+SB944,Unclassified,Unclassified,,,BILLS.CSV,"Natural gas utilities; retail supply choice, report.",False,
+SB948,Unclassified,Unclassified,,,BILLS.CSV,Registration of aircraft; fees.,False,
+SB949,Unclassified,Unclassified,,,BILLS.CSV,"American Indians, Va. recognized tribes, and federally recognized tribes; definitions, sovereignty.",False,
+SB950,Unclassified,Unclassified,,,BILLS.CSV,Virginia Retirement System; increased retirement allowance for certain judges.,False,
+SB955,Unclassified,Unclassified,,,BILLS.CSV,Textbook review; DOE to evaluate current review process to include high-quality instr. materials.,False,
+SB957,Unclassified,Unclassified,,,BILLS.CSV,Protective orders; military protective orders.,False,
+SB959,Unclassified,Unclassified,,,BILLS.CSV,Vehicle owners; proof of financial responsibility in the future.,False,
+SB963,Unclassified,Unclassified,,,BILLS.CSV,Discovery materials or evidence; allows accused to request the Commonwealth to copy or photograph.,False,
+SB964,Unclassified,Unclassified,,,BILLS.CSV,Collective bargaining; individual home care providers.,False,
+SB965,Unclassified,Unclassified,,,BILLS.CSV,District courts; recording of proceedings.,False,
+SB969,Unclassified,Unclassified,,,BILLS.CSV,"Mineral Mine Safety Act; definition of ""surface mineral mine""; mine inspectors; certificate renewal; use of cyanide or cyanide compound.",False,
+SB970,Unclassified,Unclassified,,,BILLS.CSV,"Cannabis control; establishes framework for creating retail market, penalties.",False,
+SB972,Unclassified,Unclassified,,,BILLS.CSV,Emergency Response Exposure Grant Fund and Program.,False,
+SB973,Unclassified,Unclassified,,,BILLS.CSV,"Captured waste mine methane pilot program; electric generation, renewable portfolio standard.",False,
+SB974,Unclassified,Unclassified,,,BILLS.CSV,"Subdivision ordinance; plan review by designated agent, definition of ""designated agent.""",False,
+SB976,Unclassified,Unclassified,,,BILLS.CSV,Cloud Computing Cluster Infrastructure Grant Fund; performance agreement.,False,
+SB977,Unclassified,Unclassified,,,BILLS.CSV,"Standards of Quality; certain calculations, support services.",False,
+SB978,Unclassified,Unclassified,,,BILLS.CSV,"Mathematics Improvement, Office of; established, mathematics improvement/advancement policies, etc.",False,
+SB980,Unclassified,Unclassified,,,BILLS.CSV,Certified community health workers; state plan amendment to provide reimbursement for services.,False,
+SB981,Unclassified,Unclassified,,,BILLS.CSV,"Certified community health workers; Department of Health shall evaluate status of workers, report.",False,
+SB984,Unclassified,Unclassified,,,BILLS.CSV,"Virginia Fire Personnel and Equipment Grant Program; established, report.",False,
+SB985,Unclassified,Unclassified,,,BILLS.CSV,Short-term rental properties; human trafficking awareness training.,False,
+SB987,Unclassified,Unclassified,,,BILLS.CSV,Charter; City of Norfolk.,False,
+SB989,Unclassified,Unclassified,,,BILLS.CSV,Declinable preneed funeral guarantee fee; amends definition.,False,
+SB990,Unclassified,Unclassified,,,BILLS.CSV,Mattress Stewardship Program established; report; civil penalties.,False,
+SB992,Unclassified,Unclassified,,,BILLS.CSV,Zoning; civil penalties for certain repeat violations in Planning District 23 (Hampton Roads).,False,
+SB993,Unclassified,Unclassified,,,BILLS.CSV,"Real estate brokers, salespersons, and rental location agents; exemptions.",False,
+SB995,Unclassified,Unclassified,,,BILLS.CSV,Department of Housing and Community Development; Task Force on Property Appraisal and Valuation Equity.,False,
+SB996,Unclassified,Unclassified,,,BILLS.CSV,Claims to unclaimed property; authority of administrator.,False,
+SB997,Unclassified,Unclassified,,,BILLS.CSV,Local officers; oath of office.,False,
+SB999,Unclassified,Unclassified,,,BILLS.CSV,"Appeals; security for appeal and fees, procedure on appeal.",False,
+SB1004,Unclassified,Unclassified,,,BILLS.CSV,Trailer franchise requirements; applicability to certain trailers.,False,
+SB1008,Unclassified,Unclassified,,,BILLS.CSV,"Contractors, Board for; licensing examinations.",False,
+SB1010,Unclassified,Unclassified,,,BILLS.CSV,"Subpoenas duces tecum; financial records of nonparty, report.",False,
+SB1022,Unclassified,Unclassified,,,BILLS.CSV,State Corporation Commission; time frame for completion of certain transmission lines proceedings.,False,
+SB1023,Unclassified,Unclassified,,,BILLS.CSV,"Consumer Data Protection Act; data controller responsibilities, precise geolocation data.",False,
+SB1051,Unclassified,Unclassified,,,BILLS.CSV,"Boarding establishments; inspections by animal control officers, report.",False,
+SB1069,Unclassified,Unclassified,,,BILLS.CSV,Retired justices and judges; per diem payments for attendance at mandatory judicial conferences.,False,
+SB1089,Unclassified,Unclassified,,,BILLS.CSV,Virginia Economic Development Partnership Authority; operational plan submission.,False,
+SB1092,Unclassified,Unclassified,,,BILLS.CSV,"Address Confidentiality Program; removal of Program participant, penalty.",False,
+SB1101,Unclassified,Unclassified,,,BILLS.CSV,Breakthrough Therapies for Veteran Suicide Prevention Advisory Council; established.,False,
+SB1105,Unclassified,Unclassified,,,BILLS.CSV,"Contraception; establishes right to obtain, applicability, enforcement.",False,
+SB1116,Unclassified,Unclassified,,,BILLS.CSV,"Uniform Trust Code; expands definitions of ""independent qualified trustee"" and ""qualified trustee"".",False,
+SB1141,Unclassified,Unclassified,,,BILLS.CSV,U.S. Immigration and Customs Enforcement; transfer of certain incarcerated persons.,False,
+SB1150,Unclassified,Unclassified,,,BILLS.CSV,"Shenandoah, Town of; new charter(previous charter repealed).",False,
+SB1169,Unclassified,Unclassified,,,BILLS.CSV,"Marine Resources Commission; encroachment on subaqueous beds, permitting requirements.",False,
+SB1173,Unclassified,Unclassified,,,BILLS.CSV,Virginia coordinate systems; updates several references in Code.,False,
+SB1176,Unclassified,Unclassified,,,BILLS.CSV,"Roanoke, City of; amending charter, appointment of director of real estate valuation.",False,
+SB1188,Unclassified,Unclassified,,,BILLS.CSV,International licensure and certification; regulations.,False,
+SB1209,Unclassified,Unclassified,,,BILLS.CSV,"Photo speed monitoring devices; private vendors compensated for calibration, civil penalty.",False,
+SB1227,Unclassified,Unclassified,,,BILLS.CSV,Person not free on bail; court appearance.,False,
+SB1234,Unclassified,Unclassified,,,BILLS.CSV,"Private well permit application; application shall include whether repair of existing well, etc.",False,
+SB1242,Unclassified,Unclassified,,,BILLS.CSV,"Watershed general permits for nutrients; priority projects, compliance schedule.",False,
+SB1253,Unclassified,Unclassified,,,BILLS.CSV,"Physical Therapy, Doctor of; added to list of titles that are unlawful to use without a license.",False,
+SB1256,Unclassified,Unclassified,,,BILLS.CSV,"Counties, cities, and towns; comprehensive plan may include use of accessory dwelling units.",False,
+SB1278,Unclassified,Unclassified,,,BILLS.CSV,"Fentanyl and Heroin Enforcement, Task Force on; bimonthly meetings.",False,
+SB1280,Unclassified,Unclassified,,,BILLS.CSV,Gaming; posting of problem gambling helpline information.,False,
+SB1286,Unclassified,Unclassified,,,BILLS.CSV,Line of Duty Act; auxiliary police officers and volunteer deputy sheriffs.,False,
+SB1291,Unclassified,Unclassified,,,BILLS.CSV,General district courts; increases jurisdictional limits.,False,
+SB1339,Unclassified,Unclassified,,,BILLS.CSV,Virginia Telephone Privacy Protection Act; telephone solicitations by text message.,False,
+SB1344,Unclassified,Unclassified,,,BILLS.CSV,Virginia Housing Trust Fund; creation and management.,False,
+SB1350,Unclassified,Unclassified,,,BILLS.CSV,Restaurants; food allergy awareness notice required.,False,
+SB1355,Unclassified,Unclassified,,,BILLS.CSV,"Discovery; electronic means, report.",False,
+SB1363,Unclassified,Unclassified,,,BILLS.CSV,"Health Professions, Board of; transfer of powers and duties.",False,
+SB1364,Unclassified,Unclassified,,,BILLS.CSV,"Professional and Occupational Regulation, Department of; board appointment requirements.",False,
+SB1371,Unclassified,Unclassified,,,BILLS.CSV,"Gift certificates; prohibits imposition of a dormancy fee, etc.",False,
+SB1375,Unclassified,Unclassified,,,BILLS.CSV,"Dynamic stockpile strategy; Div. of Purchases & Supply, et al., to study use in times of emergency.",False,
+SB1385,Unclassified,Unclassified,,,BILLS.CSV,"Emergency management and state health regions, etc.; study of makeup and composition.",False,
+SB1387,Unclassified,Unclassified,,,BILLS.CSV,"Emergency resource management system; Chief Information Officer, et al.; to develop.",False,
+SB1410,Unclassified,Unclassified,,,BILLS.CSV,"Estimated tax; failure by individual, trust, or estate to pay.",False,
+SB1422,Unclassified,Unclassified,,,BILLS.CSV,"Zoning violations; appeals, fines.",False,
+SB1428,Unclassified,Unclassified,,,BILLS.CSV,"Deputy Hunter D. Reedy Memorial Bridge; designating as bridge on Adwolfe Rd., etc. over I-81.",False,
+SB1438,Unclassified,Unclassified,,,BILLS.CSV,"Health regulatory boards; regulations, licensure by endorsement.",False,
+SB1444,Unclassified,Unclassified,,,BILLS.CSV,"Manassas Park, City of; amending charter, city powers, etc.",False,
+SB1452,Unclassified,Unclassified,,,BILLS.CSV,Conveyance or assumption; certain restrictions prohibited.,False,
+SB1460,Unclassified,Unclassified,,,BILLS.CSV,Human trafficking; issuance of writ of vacatur for victims.,False,
+SB1463,Unclassified,Unclassified,,,BILLS.CSV,Toll limits; electronic toll collection device.,False,
+SB1468,Unclassified,Unclassified,,,BILLS.CSV,Military and emergency laws; acquisition of land adjacent to a military base.,False,
+SB1470,Unclassified,Unclassified,,,BILLS.CSV,Judicial Inquiry and Review Commission; submission of annual report.,False,
+SB1471,Unclassified,Unclassified,,,BILLS.CSV,"Veterans Services, Department of; powers and duties of Commissioner, online portal.",False,
+SB1473,Unclassified,Unclassified,,,BILLS.CSV,Six-year capital outlay plan and funding; removes certain requirement.,False,
+SB1475,Unclassified,Unclassified,,,BILLS.CSV,"Dentists & dental hygienists; work group to assess expedited pathways for licensure, report.",False,
+SB1482,Unclassified,Unclassified,,,BILLS.CSV,Bribes to officers or candidates for office; gratuities for previous acts.,False,
+SB1492,Unclassified,Unclassified,,,BILLS.CSV,Mass Violence Care Fund; established.,False,
+SB1493,Unclassified,Unclassified,,,BILLS.CSV,Contraception; right to access.,False,
+SB1494,Unclassified,Unclassified,,,BILLS.CSV,Registration of lobbyists & conflict of interest; disclosure by those making political contribution.,False,
+SJ247,Unclassified,Unclassified,,,BILLS.CSV,Constitutional amendment; fundamental right to reproductive freedom (first reference).,False,
+SJ250,Unclassified,Unclassified,,,BILLS.CSV,"Women Veterans Day; designating as June 12, 2025, and each succeeding year thereafter.",False,
+SJ254,Unclassified,Unclassified,,,BILLS.CSV,Ehlers-Danlos Syndromes Awareness Month; designating as May 2025 & each succeeding year thereafter.,False,
+SJ257,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Dorothy Belle Scates Langmack.,False,
+SJ258,Unclassified,Unclassified,,,BILLS.CSV,Virginia's manufacturing sector; JLARC to update its 2016 study of the impact of regulations.,False,
+SJ259,Unclassified,Unclassified,,,BILLS.CSV,Study; JLARC; methodology used to determine judicial allocations; report.,False,
+SJ262,Unclassified,Unclassified,,,BILLS.CSV,"Rural Affairs, Secretariat of; JLARC to study need for and feasibility of creating position.",False,
+SJ263,Unclassified,Unclassified,,,BILLS.CSV,Surry County; DOT to study need for constructing bridge to James City County or Charles City County.,False,
+SJ264,Unclassified,Unclassified,,,BILLS.CSV,"Virginia Private College Week; designating as week of July 13, 2025, & 3rd week of July each year.",False,
+SJ265,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of John Andrew Brown.,False,
+SJ266,Unclassified,Unclassified,,,BILLS.CSV,Commending Debbie Rountree.,False,
+SJ267,Unclassified,Unclassified,,,BILLS.CSV,Commending the National Conference of State Legislatures.,False,
+SJ268,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Captain Jerome A. Sheppard, USAF, Ret.",False,
+SJ269,Unclassified,Unclassified,,,BILLS.CSV,Persian Heritage Month.,False,
+SJ270,Unclassified,Unclassified,,,BILLS.CSV,Constitutional amendment; term limits for Lieutenant Governor & Attorney General (first reference).,False,
+SJ271,Unclassified,Unclassified,,,BILLS.CSV,Constitutional amendment (first reference); right to work.,False,
+SJ272,Unclassified,Unclassified,,,BILLS.CSV,Commending Anne Cochrane Pace.,False,
+SJ273,Unclassified,Unclassified,,,BILLS.CSV,Governor; confirming appointments.,False,
+SJ274,Unclassified,Unclassified,,,BILLS.CSV,Confirming Governor's appointments; October 1.,False,
+SJ275,Unclassified,Unclassified,,,BILLS.CSV,Confirming Governor's appointments; August 1.,False,
+SJ276,Unclassified,Unclassified,,,BILLS.CSV,Confirming Governor's appointments; January 10.,False,
+SJ277,Unclassified,Unclassified,,,BILLS.CSV,Commending Lawrence Douglas Wilder.,False,
+SJ278,Unclassified,Unclassified,,,BILLS.CSV,Native Plant Month.,False,
+SJ279,Unclassified,Unclassified,,,BILLS.CSV,Commending the Reverend Dr. Kirkland R. Walton.,False,
+SJ280,Unclassified,Unclassified,,,BILLS.CSV,Commending the 2025 House-Senate basketball game to benefit Massey Cancer Center.,False,
+SJ281,Unclassified,Unclassified,,,BILLS.CSV,Commending the Honorable G. Glenn Oder.,False,
+SJ282,Unclassified,Unclassified,,,BILLS.CSV,"Commending Leo C. Bowers, M.D.",False,
+SJ283,Unclassified,Unclassified,,,BILLS.CSV,Commending Ross A. Mugler.,False,
+SJ284,Unclassified,Unclassified,,,BILLS.CSV,Reaffirming the Commonwealth's support and commitment to the State of Israel and its supporters.,False,
+SJ285,Unclassified,Unclassified,,,BILLS.CSV,"Commemorating the life and legacy of Private Oscar Cleveland Hicks, USA.",False,
+SJ286,Unclassified,Unclassified,,,BILLS.CSV,Confirming Governors appointments; December 1.,False,
+SJ287,Unclassified,Unclassified,,,BILLS.CSV,Commending Shrine Mont.,False,
+SJ288,Unclassified,Unclassified,,,BILLS.CSV,"Commending Jon R. Stehle, Jr.",False,
+SJ289,Unclassified,Unclassified,,,BILLS.CSV,Commending So Lim.,False,
+SJ290,Unclassified,Unclassified,,,BILLS.CSV,Commending D. Thomas Ross.,False,
+SJ291,Unclassified,Unclassified,,,BILLS.CSV,Commending Jeffrey C. Greenfield.,False,
+SJ292,Unclassified,Unclassified,,,BILLS.CSV,Commending Kate G. Doyle Feingold.,False,
+SJ295,Unclassified,Unclassified,,,BILLS.CSV,Commending M'lissa Dunn.,False,
+SJ296,Unclassified,Unclassified,,,BILLS.CSV,Commending Ronald G. Montgomery.,False,
+SJ297,Unclassified,Unclassified,,,BILLS.CSV,Commending the Rotary Club of Woodstock.,False,
+SJ298,Unclassified,Unclassified,,,BILLS.CSV,Commending Peace Camp at the Unitarian Universalist Church of Arlington.,False,
+SJ299,Unclassified,Unclassified,,,BILLS.CSV,Commending PathForward.,False,
+SJ300,Unclassified,Unclassified,,,BILLS.CSV,Commending Fairfax Court Appointed Special Advocates.,False,
+SJ301,Unclassified,Unclassified,,,BILLS.CSV,Commending Karen Schwartzkopf.,False,
+SJ302,Unclassified,Unclassified,,,BILLS.CSV,Commending Kimberley Ann Bobo.,False,
+SJ303,Unclassified,Unclassified,,,BILLS.CSV,Commending Master Gardeners of Northern Virginia.,False,
+SJ304,Unclassified,Unclassified,,,BILLS.CSV,Commending Scott McGeary.,False,
+SJ305,Unclassified,Unclassified,,,BILLS.CSV,"Commending Colonel James B. Cogbill, USA, Ret.",False,
+SJ306,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of James Downer Ogg.,False,
+SJ307,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Joy Ann Durham Painter.,False,
+SJ308,Unclassified,Unclassified,,,BILLS.CSV,Commending Garland Nuckols.,False,
+SJ309,Unclassified,Unclassified,,,BILLS.CSV,Commending Carlos Del Toro.,False,
+SJ310,Unclassified,Unclassified,,,BILLS.CSV,Commending Bliley's Funeral Home.,False,
+SJ312,Unclassified,Unclassified,,,BILLS.CSV,Commending the Hickory Hill School.,False,
+SJ313,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Stella Dikos.,False,
+SJ314,Unclassified,Unclassified,,,BILLS.CSV,Commending Bradley Muranko.,False,
+SJ315,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Electoral Board Association.,False,
+SJ316,Unclassified,Unclassified,,,BILLS.CSV,Commending Erin Schaible.,False,
+SJ317,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Kathi Gabriella Renee Simons.,False,
+SJ318,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Elvin Russell Cosby, Jr.",False,
+SJ319,Unclassified,Unclassified,,,BILLS.CSV,Commending the King William County Courthouse.,False,
+SJ320,Unclassified,Unclassified,,,BILLS.CSV,Commending Gregory Trepp.,False,
+SJ321,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Rafael Torrech III.,False,
+SJ322,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Honorable Henry Levander Marsh, III.",False,
+SJ323,Unclassified,Unclassified,,,BILLS.CSV,Commending Billy Wagner.,False,
+SJ324,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Honorable Frank Miller Ruff, Jr.",False,
+SJ325,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Thomas S. Whipple.,False,
+SJ326,Unclassified,Unclassified,,,BILLS.CSV,Self Storage Association; commemorating its 50th anniversary.,False,
+SJ327,Unclassified,Unclassified,,,BILLS.CSV,Commending Noah Lyles.,False,
+SJ328,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Michele Irene Chapman.,False,
+SJ329,Unclassified,Unclassified,,,BILLS.CSV,Commending the Alexandria Little League Intermediate Division baseball team.,False,
+SJ330,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of William M. McCarty.,False,
+SJ331,Unclassified,Unclassified,,,BILLS.CSV,Commending the Minnie H. Peyton Community Center at Baileys.,False,
+SJ332,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Marquise Sterling Hunt.,False,
+SJ333,Unclassified,Unclassified,,,BILLS.CSV,Commending veteran residents of Westminster-Canterbury on Chesapeake Bay.,False,
+SJ334,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of the Reverend Dr. Milton Roy Blount.,False,
+SJ335,Unclassified,Unclassified,,,BILLS.CSV,Governor; confirming appointments.,False,
+SJ336,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Peter John Kemp, MD.",False,
+SJ337,Unclassified,Unclassified,,,BILLS.CSV,Commending Ken Jessup.,False,
+SJ338,Unclassified,Unclassified,,,BILLS.CSV,Commending the Elizabeth River Republican Women's Club.,False,
+SJ339,Unclassified,Unclassified,,,BILLS.CSV,Commending Belinda Black.,False,
+SJ340,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Benjamin ""Rod"" Rodriguez.",False,
+SJ341,Unclassified,Unclassified,,,BILLS.CSV,Commending the Charlottesville Area Association of REALTORS?.,False,
+SJ342,Unclassified,Unclassified,,,BILLS.CSV,Commending Colette Sheehy.,False,
+SJ343,Unclassified,Unclassified,,,BILLS.CSV,Commending Vidya Ambati.,False,
+SJ344,Unclassified,Unclassified,,,BILLS.CSV,Commending Elizabeth Carlson Hilscher.,False,
+SJ345,Unclassified,Unclassified,,,BILLS.CSV,Commending Stephen King.,False,
+SJ346,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Ellis Whedon James.,False,
+SJ347,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Reverend Roy Alphonso Carter, Sr.",False,
+SJ349,Unclassified,Unclassified,,,BILLS.CSV,Commending Jim Thompson.,False,
+SJ352,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of George G. Brown.,False,
+SJ353,Unclassified,Unclassified,,,BILLS.CSV,Commending Abigail Rhudy.,False,
+SJ354,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Danny Joe Dales, D.C.",False,
+SJ355,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Frank Earnest Atwell, Jr.",False,
+SJ356,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Jeremy Lathan Compton.,False,
+SJ357,Unclassified,Unclassified,,,BILLS.CSV,Commending the Nepali Community of Greater Richmond Virginia.,False,
+SJ358,Unclassified,Unclassified,,,BILLS.CSV,"Commending STIHL, Inc.",False,
+SJ359,Unclassified,Unclassified,,,BILLS.CSV,Commending Keith H. Johnson.,False,
+SJ360,Unclassified,Unclassified,,,BILLS.CSV,Commending the Loudoun Therapeutic Riding Center.,False,
+SJ361,Unclassified,Unclassified,,,BILLS.CSV,Commending the Chincoteague Island Pony Swim.,False,
+SJ362,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Sergeant Floyd Hugo Miles, Jr.",False,
+SJ363,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Spaceport Authority.,False,
+SJ364,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Robert McCabe Ryan.,False,
+SJ365,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of George W. Lester II.,False,
+SJ366,Unclassified,Unclassified,,,BILLS.CSV,Commending Leanne Eyler.,False,
+SJ367,Unclassified,Unclassified,,,BILLS.CSV,Commending the 100th Infantry (Century) Division.,False,
+SJ368,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Grover C. Wilson, Jr.",False,
+SJ370,Unclassified,Unclassified,,,BILLS.CSV,Commending Linda Ford.,False,
+SJ371,Unclassified,Unclassified,,,BILLS.CSV,Commending Hoda Kotb.,False,
+SJ372,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Honorable L.A. Harris, Jr.",False,
+SJ373,Unclassified,Unclassified,,,BILLS.CSV,Commending Chesterfield County.,False,
+SJ374,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Joseph Lee Dean McClellan.,False,
+SJ375,Unclassified,Unclassified,,,BILLS.CSV,Commending Ruth Anne Walker.,False,
+SJ377,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Elizabeth Boden.,False,
+SJ378,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Harry Arthur Tenney.,False,
+SJ379,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of the Honorable Walter Benjamin Keister, Sr.",False,
+SJ380,Unclassified,Unclassified,,,BILLS.CSV,Commending Rising Mount Zion Baptist Church.,False,
+SJ381,Unclassified,Unclassified,,,BILLS.CSV,Commending Sally Bell's Kitchen.,False,
+SJ383,Unclassified,Unclassified,,,BILLS.CSV,Commending Charles August Swanson.,False,
+SJ384,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Thaddeus Rubel Shelly III.,False,
+SJ385,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Richard Morris Bagby Rennolds.,False,
+SJ386,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Michael Alden Breeden.,False,
+SJ387,Unclassified,Unclassified,,,BILLS.CSV,Commending Colonel Gary T. Settle.,False,
+SJ389,Unclassified,Unclassified,,,BILLS.CSV,"Commending Janet Gullickson, Ed.D.",False,
+SJ390,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Henry Conrad Warlick, Ed.D.",False,
+SJ391,Unclassified,Unclassified,,,BILLS.CSV,Commending Janel Donohue.,False,
+SJ392,Unclassified,Unclassified,,,BILLS.CSV,Commending Teri McNally.,False,
+SJ393,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of His Highness Prince Karim Agakhan.,False,
+SJ394,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Jake Kincaid.,False,
+SJ395,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of David Eugene Dillow.,False,
+SJ396,Unclassified,Unclassified,,,BILLS.CSV,Commending The Family Foundation of Virginia.,False,
+SJ397,Unclassified,Unclassified,,,BILLS.CSV,Commending the Reverend Dr. Darrell K. White.,False,
+SJ398,Unclassified,Unclassified,,,BILLS.CSV,Commending EduTutorVA.,False,
+SJ403,Unclassified,Unclassified,,,BILLS.CSV,Commending Harvest Assembly Baptist Church.,False,
+SJ405,Unclassified,Unclassified,,,BILLS.CSV,Commending Woodlawn Little League.,False,
+SJ406,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia Wing of the Civil Air Patrol.,False,
+SJ407,Unclassified,Unclassified,,,BILLS.CSV,Commending Hollin Hills.,False,
+SJ408,Unclassified,Unclassified,,,BILLS.CSV,Commending the United States Army.,False,
+SJ409,Unclassified,Unclassified,,,BILLS.CSV,Commending the Lorton Community Action Center.,False,
+SJ411,Unclassified,Unclassified,,,BILLS.CSV,Commending J. Dean Norton.,False,
+SJ412,Unclassified,Unclassified,,,BILLS.CSV,Commending Karen Black.,False,
+SJ413,Unclassified,Unclassified,,,BILLS.CSV,Commending Barry Eugene DuVal.,False,
+SJ414,Unclassified,Unclassified,,,BILLS.CSV,Commending Aubrey Jones.,False,
+SJ415,Unclassified,Unclassified,,,BILLS.CSV,Commending Roy Holder.,False,
+SJ416,Unclassified,Unclassified,,,BILLS.CSV,Commending WSVA.,False,
+SJ417,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Central Va. Cricket Assoc., Capital Women's Cricket League, & Richmond Youth Cricket.",False,
+SJ418,Unclassified,Unclassified,,,BILLS.CSV,Commending Hamidullah Noori.,False,
+SJ419,Unclassified,Unclassified,,,BILLS.CSV,Commending Fellowship Square.,False,
+SJ420,Unclassified,Unclassified,,,BILLS.CSV,Commending the Virginia chapter of the American Association of University Women.,False,
+SJ421,Unclassified,Unclassified,,,BILLS.CSV,Commending Sheila A. Olem.,False,
+SJ422,Unclassified,Unclassified,,,BILLS.CSV,Commending Namaste Club.,False,
+SJ424,Unclassified,Unclassified,,,BILLS.CSV,Commending Virginia Banton.,False,
+SJ425,Unclassified,Unclassified,,,BILLS.CSV,Commending Kaiya Amani Williams.,False,
+SJ426,Unclassified,Unclassified,,,BILLS.CSV,Commending Lina Liakakos.,False,
+SJ427,Unclassified,Unclassified,,,BILLS.CSV,Commending Donielle M. Scherff.,False,
+SJ428,Unclassified,Unclassified,,,BILLS.CSV,Commending Susy Reyes.,False,
+SJ429,Unclassified,Unclassified,,,BILLS.CSV,Commending Pradip Dhakal.,False,
+SJ430,Unclassified,Unclassified,,,BILLS.CSV,Commending Mia Mortman.,False,
+SJ431,Unclassified,Unclassified,,,BILLS.CSV,Commending Kian Tatsuo Linam.,False,
+SJ433,Unclassified,Unclassified,,,BILLS.CSV,Commending Renee Shi.,False,
+SJ434,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Honorable William Ferguson Reid, M.D.",False,
+SJ436,Unclassified,Unclassified,,,BILLS.CSV,Commending John Ulfelder.,False,
+SJ437,Unclassified,Unclassified,,,BILLS.CSV,Commending Anthony Guy Bennett.,False,
+SJ438,Unclassified,Unclassified,,,BILLS.CSV,Commending Shaboozey.,False,
+SJ439,Unclassified,Unclassified,,,BILLS.CSV,Commending the Cameron Foundation.,False,
+SJ440,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of John William Lyver IV.,False,
+SJ442,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Henry Mills Harris.,False,
+SJ443,Unclassified,Unclassified,,,BILLS.CSV,Commending Tara Dower.,False,
+SJ444,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Lieutenant General Arthur J. Gregg, USA, Ret.",False,
+SJ445,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Matthew Charles Obenshain.,False,
+SJ447,Unclassified,Unclassified,,,BILLS.CSV,Commending Kathryn Ha.,False,
+SR186,Unclassified,Unclassified,,,BILLS.CSV,Commending Grant Holloway.,False,
+SR187,Unclassified,Unclassified,,,BILLS.CSV,Senate; 2025 operating resolution.,False,
+SR188,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of John Wilder McMillan, Jr.",False,
+SR189,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Robert Douglas Wright.,False,
+SR190,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Charlotte Hall Hutt.,False,
+SR191,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Malcolm Tecumseh Custalow, Jr.",False,
+SR192,Unclassified,Unclassified,,,BILLS.CSV,Commending the Brunswick Academy softball team.,False,
+SR193,Unclassified,Unclassified,,,BILLS.CSV,Commending Benn's United Methodist Church.,False,
+SR194,Unclassified,Unclassified,,,BILLS.CSV,Commending Bethany Presbyterian Church.,False,
+SR195,Unclassified,Unclassified,,,BILLS.CSV,"Commending Lieutenant Colonel Theresa M. Claiborne, USAF, Ret.",False,
+SR196,Unclassified,Unclassified,,,BILLS.CSV,Commending Producers Peanut Company.,False,
+SR198,Unclassified,Unclassified,,,BILLS.CSV,Commending the Smithfield Packers Youth Sports 12U girls' flag football team.,False,
+SR199,Unclassified,Unclassified,,,BILLS.CSV,Commending David W. Poole.,False,
+SR200,Unclassified,Unclassified,,,BILLS.CSV,Commending Mill Swamp Baptist Church.,False,
+SR201,Unclassified,Unclassified,,,BILLS.CSV,Commending Greg May.,False,
+SR202,Unclassified,Unclassified,,,BILLS.CSV,Commending Rashiem D. Franklin.,False,
+SR203,Unclassified,Unclassified,,,BILLS.CSV,Commending Manakin Episcopal Church.,False,
+SR204,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Charles Daniel Spruill.,False,
+SR205,Unclassified,Unclassified,,,BILLS.CSV,Nominating persons to be elected to circuit court judgeships.,False,
+SR206,Unclassified,Unclassified,,,BILLS.CSV,Nominating persons to be elected to general district court judgeships.,False,
+SR208,Unclassified,Unclassified,,,BILLS.CSV,Nominating persons to be elected as members of the Judicial Inquiry and Review Commission.,False,
+SR209,Unclassified,Unclassified,,,BILLS.CSV,Nominating a person to be elected as the Auditor of Public Accounts.,False,
+SR210,Unclassified,Unclassified,,,BILLS.CSV,Commending Lawrence Douglas Wilder.,False,
+SR211,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Roosevelt Harmon, Jr.",False,
+SR212,Unclassified,Unclassified,,,BILLS.CSV,Commending Phyliss Bryum.,False,
+SR213,Unclassified,Unclassified,,,BILLS.CSV,"Commending Judith Brooks-Buck, Ph.D.",False,
+SR214,Unclassified,Unclassified,,,BILLS.CSV,"Commending Josh A. Wyche, Sr.",False,
+SR215,Unclassified,Unclassified,,,BILLS.CSV,Commending Wesley Brown.,False,
+SR216,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Mark Robert Outlaw.,False,
+SR217,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Abraham Mitchell.,False,
+SR218,Unclassified,Unclassified,,,BILLS.CSV,"Commending Captain Thomas Theodore Scambos, USN, Ret.",False,
+SR219,Unclassified,Unclassified,,,BILLS.CSV,Commending South Quay Baptist Church.,False,
+SR221,Unclassified,Unclassified,,,BILLS.CSV,Commending Emma Randel.,False,
+SR222,Unclassified,Unclassified,,,BILLS.CSV,Commending Persian Rugs & More.,False,
+SR223,Unclassified,Unclassified,,,BILLS.CSV,"Commending Major General Cedric Terry Wins, USA, Ret.",False,
+SR224,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Nikki Giovanni.,False,
+SR226,Unclassified,Unclassified,,,BILLS.CSV,Commending Cub Scout Pack 2831.,False,
+SR227,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Leon Foster Pope.,False,
+SR228,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Xi Alpha Lambda Chapter of Alpha Phi Alpha Fraternity, Inc.",False,
+SR229,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Nikki Giovanni.,False,
+SR230,Unclassified,Unclassified,,,BILLS.CSV,Commending Juli M. Porto.,False,
+SR231,Unclassified,Unclassified,,,BILLS.CSV,Commending General Lewis B. Chesty Puller Post 1503 of the Veterans of Foreign Wars.,False,
+SR232,Unclassified,Unclassified,,,BILLS.CSV,Commending the Rotary Club of Lake Ridge.,False,
+SR233,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Harold Alvin Goodman, Sr.",False,
+SR234,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Virginia Opera Association, Inc.",False,
+SR235,Unclassified,Unclassified,,,BILLS.CSV,Commending Dr. Jessica M. Jones.,False,
+SR236,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Paulina Yager Campbell.,False,
+SR237,Unclassified,Unclassified,,,BILLS.CSV,Commending Jack Einstein.,False,
+SR238,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Robert Clark Dively.,False,
+SR239,Unclassified,Unclassified,,,BILLS.CSV,Commending Pat Woodbury.,False,
+SR240,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Hunter Dakota Reedy.,False,
+SR241,Unclassified,Unclassified,,,BILLS.CSV,Commending Grove Christian Outreach Center.,False,
+SR242,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Nellie Hayse.,False,
+SR243,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Pi Lambda Lambda Chapter of Omega Psi Phi Fraternity, Inc.",False,
+SR244,Unclassified,Unclassified,,,BILLS.CSV,Commending the Rotary Club of Woodbridge.,False,
+SR245,Unclassified,Unclassified,,,BILLS.CSV,Commending Arthur Ellsworth Dick Howard.,False,
+SR246,Unclassified,Unclassified,,,BILLS.CSV,Commending Eggleston Services.,False,
+SR247,Unclassified,Unclassified,,,BILLS.CSV,Commending Jon Phillip Lugbill.,False,
+SR248,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Jane Baber White.,False,
+SR249,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of William Francis Sibert.,False,
+SR250,Unclassified,Unclassified,,,BILLS.CSV,Commending the Petersburg Home for Ladies.,False,
+SR251,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of William Gerald Massengill.,False,
+SR252,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Dr. Lucious Edwards, Jr.",False,
+SR253,Unclassified,Unclassified,,,BILLS.CSV,Commending the Jamestown-Scotland Ferry.,False,
+SR254,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Peggy Lynn Davis.,False,
+SR255,Unclassified,Unclassified,,,BILLS.CSV,Commending Surry United Methodist Church.,False,
+SR257,Unclassified,Unclassified,,,BILLS.CSV,Commending Hollin Hall Cleaners.,False,
+SR258,Unclassified,Unclassified,,,BILLS.CSV,Commending the United States Army.,False,
+SR260,Unclassified,Unclassified,,,BILLS.CSV,Commending J. Dean Norton.,False,
+SR261,Unclassified,Unclassified,,,BILLS.CSV,Commending the Lorton Community Action Center.,False,
+SR262,Unclassified,Unclassified,,,BILLS.CSV,Commending the Arab America Foundation.,False,
+SR263,Unclassified,Unclassified,,,BILLS.CSV,"Commending Olwen Herron, Ed.D.",False,
+SR264,Unclassified,Unclassified,,,BILLS.CSV,Commending Harold Heatley.,False,
+SR265,Unclassified,Unclassified,,,BILLS.CSV,Commending Virginia Natural Gas.,False,
+SR266,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Sister Andrea Verchuck.,False,
+SR267,Unclassified,Unclassified,,,BILLS.CSV,Commending Emily Ann Fox.,False,
+SR268,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Joseph Woodrow Snavely, Jr.",False,
+SR269,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Shirley Kenneth Jones.,False,
+SR270,Unclassified,Unclassified,,,BILLS.CSV,"Commending Colonnas Shipyard, Inc.",False,
+SR271,Unclassified,Unclassified,,,BILLS.CSV,Commending the Suffolk Christian Academy junior varsity girls' basketball team.,False,
+SR272,Unclassified,Unclassified,,,BILLS.CSV,Commending Paula Loomis.,False,
+SR273,Unclassified,Unclassified,,,BILLS.CSV,Commending Hawkins-Reeve Post 7916 of the Veterans of Foreign Wars.,False,
+SR274,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Omicron Zeta Sigma Chapter of Phi Beta Sigma Fraternity, Inc.",False,
+SR275,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Beta Alpha Omega Alumni Chapter of Iota Phi Theta Fraternity, Inc.",False,
+SR276,Unclassified,Unclassified,,,BILLS.CSV,"Commending the Woodbridge Alumni Chapter of Kappa Alpha Psi Fraternity, Inc.",False,
+SR277,Unclassified,Unclassified,,,BILLS.CSV,Senate chamber; sale of chairs.,False,
+SR278,Unclassified,Unclassified,,,BILLS.CSV,Commending Queen Street Baptist Church.,False,
+SR279,Unclassified,Unclassified,,,BILLS.CSV,Commending Phillip C. Stone.,False,
+SR281,Unclassified,Unclassified,,,BILLS.CSV,Commending Adria Vanhoozier.,False,
+SR282,Unclassified,Unclassified,,,BILLS.CSV,Commending the Petersburg Garden Club.,False,
+SR283,Unclassified,Unclassified,,,BILLS.CSV,Commending Janet V. Green.,False,
+SR284,Unclassified,Unclassified,,,BILLS.CSV,Commending First Baptist Church of Petersburg.,False,
+SR285,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Terry D. Lewis, Sr.",False,
+SR286,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Rashaun Dehaven Boland.,False,
+SR287,Unclassified,Unclassified,,,BILLS.CSV,"Commending Robert Alexander Pearson, Jr.",False,
+SR288,Unclassified,Unclassified,,,BILLS.CSV,Commending the Community of Faith Food Pantry.,False,
+SR289,Unclassified,Unclassified,,,BILLS.CSV,Commending Teresa Clawson-Keeton.,False,
+SR290,Unclassified,Unclassified,,,BILLS.CSV,Nominating persons to be elected to circuit court judgeships.,False,
+SR291,Unclassified,Unclassified,,,BILLS.CSV,Nominating persons to be elected to general district court judgeships.,False,
+SR293,Unclassified,Unclassified,,,BILLS.CSV,Judicial Inquiry and Review Commission; nomination for election of member.,False,
+SR294,Unclassified,Unclassified,,,BILLS.CSV,Commending Marshall DeHaven.,False,
+SR295,Unclassified,Unclassified,,,BILLS.CSV,Commending Leland C. Teets.,False,
+SR296,Unclassified,Unclassified,,,BILLS.CSV,"Commending James Douglas Butler, Sr.",False,
+SR297,Unclassified,Unclassified,,,BILLS.CSV,Commending Daisy Moore.,False,
+SR298,Unclassified,Unclassified,,,BILLS.CSV,Commending Felix Maurizio.,False,
+SR299,Unclassified,Unclassified,,,BILLS.CSV,Commending the Washington Commanders.,False,
+SR300,Unclassified,Unclassified,,,BILLS.CSV,Commending Michael Carter.,False,
+SR301,Unclassified,Unclassified,,,BILLS.CSV,Commending Tarrick McGuire.,False,
+SR302,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Sergeant David Jay Benfield, Jr., USA.",False,
+SR303,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Gary Stephen Michel.,False,
+SR304,Unclassified,Unclassified,,,BILLS.CSV,Commending Sydney Sawyer.,False,
+SR305,Unclassified,Unclassified,,,BILLS.CSV,Commending Brant Baber and Kathy Kalinowski.,False,
+SR306,Unclassified,Unclassified,,,BILLS.CSV,Commending Lynn Screen.,False,
+SR307,Unclassified,Unclassified,,,BILLS.CSV,Commending Geri and Susan Yantis.,False,
+SR308,Unclassified,Unclassified,,,BILLS.CSV,Commending the Town of Glade Spring.,False,
+SR309,Unclassified,Unclassified,,,BILLS.CSV,Commending Saint Anne Catholic School.,False,
+SR310,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of Shannon Clay Scott.,False,
+SR311,Unclassified,Unclassified,,,BILLS.CSV,Commending Henderson Motorsports.,False,
+SR313,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of Jackson Stuart White, Jr.",False,
+SR314,Unclassified,Unclassified,,,BILLS.CSV,Commending the Institute of Chartered Accountants of India Washington D.C. Chapter.,False,
+SR315,Unclassified,Unclassified,,,BILLS.CSV,Commending the Federation of Kerala Associations in North America.,False,
+SR316,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of William Denman Zirkle.,False,
+SR317,Unclassified,Unclassified,,,BILLS.CSV,"Commending McKinley L. Price, D.D.S.",False,
+SR318,Unclassified,Unclassified,,,BILLS.CSV,Commending Keyshawn Davis.,False,
+SR319,Unclassified,Unclassified,,,BILLS.CSV,Commending Amy Angel.,False,
+SR320,Unclassified,Unclassified,,,BILLS.CSV,Commending Pamela J. Sebesky.,False,
+SR321,Unclassified,Unclassified,,,BILLS.CSV,Commending Trent Daniels.,False,
+SR322,Unclassified,Unclassified,,,BILLS.CSV,"Commending Colonel Douglas E. Moore, USA, Ret.",False,
+SR323,Unclassified,Unclassified,,,BILLS.CSV,Commending Evan Kinsel.,False,
+SR325,Unclassified,Unclassified,,,BILLS.CSV,Commending Darnell Greene.,False,
+SR326,Unclassified,Unclassified,,,BILLS.CSV,Commending Habitat for Humanity Peninsula and Greater Williamsburg.,False,
+SR327,Unclassified,Unclassified,,,BILLS.CSV,"Celebrating the life of John James Skinner, Jr.",False,
+SR329,Unclassified,Unclassified,,,BILLS.CSV,Commending the Roanoke Bar Association.,False,
+SR330,Unclassified,Unclassified,,,BILLS.CSV,Celebrating the life of the Honorable Gerald ONeal Clemens.,False,
+SR331,Unclassified,Unclassified,,,BILLS.CSV,Commending the Salem Red Sox.,False,

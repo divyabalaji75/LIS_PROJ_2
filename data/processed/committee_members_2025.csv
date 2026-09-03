@@ -1,0 +1,471 @@
+year,committee_id,committee_name,chamber,member_id,member_name
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0239,Alfonso H. Lopez
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0336,Nadarius E. Clark
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0177,David L. Bulova
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0305,Kathy K.L. Tran
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0317,Dan I. Helmer
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0323,Shelly A. Simonds
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0327,Rodney T. Willett
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0208,Charniele L. Herring
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0281,Paul E. Krizek
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0349,Jackie H. Glass
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0366,Phil M. Hernandez
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0371,Amy J. Laufer
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0124,R. Lee Ware
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0136,"Thomas C. Wright, Jr."
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0073,"Robert D. Orrock, Sr."
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0150,"Daniel W. Marshall, III"
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0231,Tony O. Wilt
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0247,Michael J. Webert
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0267,"Robert S. Bloxom, Jr."
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0259,"Hyland F. ""Buddy"" Fowler, Jr."
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0321,Chris S. Runion
+2025,H01,"Agriculture, Chesapeake and Natural Resources",H,H0369,Hillary Pugh Kent
+2025,H02,Appropriations,H,H0227,Luke E. Torian
+2025,H02,Appropriations,H,H0172,Mark D. Sickles
+2025,H02,Appropriations,H,H0177,David L. Bulova
+2025,H02,Appropriations,H,H0212,Betsy B. Carr
+2025,H02,Appropriations,H,H0207,Delores L. McQuinn
+2025,H02,Appropriations,H,H0281,Paul E. Krizek
+2025,H02,Appropriations,H,H0285,"C.E. Cliff Hayes, Jr."
+2025,H02,Appropriations,H,H0301,David A. Reid
+2025,H02,Appropriations,H,H0266,Sam Rasoul
+2025,H02,Appropriations,H,H0327,Rodney T. Willett
+2025,H02,Appropriations,H,H0343,Briana D. Sewell
+2025,H02,Appropriations,H,H0311,Alex Q. Askew
+2025,H02,Appropriations,H,H0253,Terry L. Austin
+2025,H02,Appropriations,H,H0224,James W. Morefield
+2025,H02,Appropriations,H,H0267,"Robert S. Bloxom, Jr."
+2025,H02,Appropriations,H,H0150,"Daniel W. Marshall, III"
+2025,H02,Appropriations,H,H0238,M. Keith Hodges
+2025,H02,Appropriations,H,H0315,Carrie E. Coyner
+2025,H02,Appropriations,H,H0328,Scott A. Wyatt
+2025,H02,Appropriations,H,H0329,Bill Wiley
+2025,H02,Appropriations,H,H0350,Ellen H. Campbell
+2025,H02,Appropriations,H,H0345,Anne Ferrell Tata
+2025,H07,"Counties, Cities and Towns",H,H0330,Candi Mundon King
+2025,H07,"Counties, Cities and Towns",H,H0334,Elizabeth B. Bennett-Parker
+2025,H07,"Counties, Cities and Towns",H,H0343,Briana D. Sewell
+2025,H07,"Counties, Cities and Towns",H,H0344,Irene Shin
+2025,H07,"Counties, Cities and Towns",H,H0323,Shelly A. Simonds
+2025,H07,"Counties, Cities and Towns",H,H0311,Alex Q. Askew
+2025,H07,"Counties, Cities and Towns",H,H0380,Atoosa R. Reaser
+2025,H07,"Counties, Cities and Towns",H,H0354,Katrina Callsen
+2025,H07,"Counties, Cities and Towns",H,H0355,Laura Jane Cohen
+2025,H07,"Counties, Cities and Towns",H,H0368,Michael J. Jones
+2025,H07,"Counties, Cities and Towns",H,H0361,Debra D. Gardner
+2025,H07,"Counties, Cities and Towns",H,H0374,Marty Martinez
+2025,H07,"Counties, Cities and Towns",H,H0206,Barry D. Knight
+2025,H07,"Counties, Cities and Towns",H,H0224,James W. Morefield
+2025,H07,"Counties, Cities and Towns",H,H0238,M. Keith Hodges
+2025,H07,"Counties, Cities and Towns",H,H0308,Joseph P. McNamara
+2025,H07,"Counties, Cities and Towns",H,H0328,Scott A. Wyatt
+2025,H07,"Counties, Cities and Towns",H,H0345,Anne Ferrell Tata
+2025,H07,"Counties, Cities and Towns",H,H0350,Ellen H. Campbell
+2025,H07,"Counties, Cities and Towns",H,H0377,Delores Oates
+2025,H07,"Counties, Cities and Towns",H,H0367,Geary Higgins
+2025,H07,"Counties, Cities and Towns",H,H0373,Ian T. Lovejoy
+2025,H08,Courts of Justice,H,H0219,Patrick A. Hope
+2025,H08,Courts of Justice,H,H0264,Marcus B. Simon
+2025,H08,Courts of Justice,H,H0108,Vivian E. Watts
+2025,H08,Courts of Justice,H,H0269,"Richard C. ""Rip"" Sullivan, Jr."
+2025,H08,Courts of Justice,H,H0294,Karrie K. Delaney
+2025,H08,Courts of Justice,H,H0340,Michelle Lopes Maldonado
+2025,H08,Courts of Justice,H,H0366,Phil M. Hernandez
+2025,H08,Courts of Justice,H,H0356,Rae Cousins
+2025,H08,Courts of Justice,H,H0380,Atoosa R. Reaser
+2025,H08,Courts of Justice,H,H0382,Joshua E. Thomas
+2025,H08,Courts of Justice,H,H0354,Katrina Callsen
+2025,H08,Courts of Justice,H,H0370,Karen Keys-Gamarra
+2025,H08,Courts of Justice,H,H0056,Terry G. Kilgore
+2025,H08,Courts of Justice,H,H0262,"James A. ""Jay"" Leftwich"
+2025,H08,Courts of Justice,H,H0333,Jason S. Ballard
+2025,H08,Courts of Justice,H,H0348,Wren M. Williams
+2025,H08,Courts of Justice,H,H0313,Amanda E. Batten
+2025,H08,Courts of Justice,H,H0337,A.C. Cordoza
+2025,H08,Courts of Justice,H,H0352,"Jonathan ""Jed"" Arnold"
+2025,H08,Courts of Justice,H,H0357,Will Davis
+2025,H08,Courts of Justice,H,H0378,Chris Obenshain
+2025,H08,Courts of Justice,H,H0358,"Mark L. Earley, Jr."
+2025,H09,Education,H,H0266,Sam Rasoul
+2025,H09,Education,H,H0323,Shelly A. Simonds
+2025,H09,Education,H,H0207,Delores L. McQuinn
+2025,H09,Education,H,H0343,Briana D. Sewell
+2025,H09,Education,H,H0295,Kelly K. Convirs-Fowler
+2025,H09,Education,H,H0311,Alex Q. Askew
+2025,H09,Education,H,H0336,Nadarius E. Clark
+2025,H09,Education,H,H0356,Rae Cousins
+2025,H09,Education,H,H0380,Atoosa R. Reaser
+2025,H09,Education,H,H0371,Amy J. Laufer
+2025,H09,Education,H,H0355,Laura Jane Cohen
+2025,H09,Education,H,H0372,Destiny LeVere Bolling
+2025,H09,Education,H,H0313,Amanda E. Batten
+2025,H09,Education,H,H0279,Nicholas J. Freitas
+2025,H09,Education,H,H0315,Carrie E. Coyner
+2025,H09,Education,H,H0335,Mike A. Cherry
+2025,H09,Education,H,H0345,Anne Ferrell Tata
+2025,H09,Education,H,H0342,Phillip A. Scott
+2025,H09,Education,H,H0362,"Thomas A. Garrett, Jr."
+2025,H09,Education,H,H0359,N. Baxter Ennis
+2025,H09,Education,H,H0363,W. Chad Green
+2025,H09,Education,H,H0383,Eric R. Zehr
+2025,H10,Finance,H,H0108,Vivian E. Watts
+2025,H10,Finance,H,H0269,"Richard C. ""Rip"" Sullivan, Jr."
+2025,H10,Finance,H,H0330,Candi Mundon King
+2025,H10,Finance,H,H0334,Elizabeth B. Bennett-Parker
+2025,H10,Finance,H,H0305,Kathy K.L. Tran
+2025,H10,Finance,H,H0323,Shelly A. Simonds
+2025,H10,Finance,H,H0366,Phil M. Hernandez
+2025,H10,Finance,H,H0371,Amy J. Laufer
+2025,H10,Finance,H,H0353,Bonita G. Anthony
+2025,H10,Finance,H,H0354,Katrina Callsen
+2025,H10,Finance,H,H0361,Debra D. Gardner
+2025,H10,Finance,H,H0370,Karen Keys-Gamarra
+2025,H10,Finance,H,H0073,"Robert D. Orrock, Sr."
+2025,H10,Finance,H,H0124,R. Lee Ware
+2025,H10,Finance,H,H0259,"Hyland F. ""Buddy"" Fowler, Jr."
+2025,H10,Finance,H,H0279,Nicholas J. Freitas
+2025,H10,Finance,H,H0308,Joseph P. McNamara
+2025,H10,Finance,H,H0325,Wendell S. Walker
+2025,H10,Finance,H,H0321,Chris S. Runion
+2025,H10,Finance,H,H0362,"Thomas A. Garrett, Jr."
+2025,H10,Finance,H,H0357,Will Davis
+2025,H10,Finance,H,H0369,Hillary Pugh Kent
+2025,H11,General Laws,H,H0177,David L. Bulova
+2025,H11,General Laws,H,H0212,Betsy B. Carr
+2025,H11,General Laws,H,H0227,Luke E. Torian
+2025,H11,General Laws,H,H0284,"Marcia S. ""Cia"" Price"
+2025,H11,General Laws,H,H0281,Paul E. Krizek
+2025,H11,General Laws,H,H0264,Marcus B. Simon
+2025,H11,General Laws,H,H0294,Karrie K. Delaney
+2025,H11,General Laws,H,H0334,Elizabeth B. Bennett-Parker
+2025,H11,General Laws,H,H0351,Holly M. Seibold
+2025,H11,General Laws,H,H0314,Joshua G. Cole
+2025,H11,General Laws,H,H0375,Adele Y. McClure
+2025,H11,General Laws,H,H0382,Joshua E. Thomas
+2025,H11,General Laws,H,H0206,Barry D. Knight
+2025,H11,General Laws,H,H0262,"James A. ""Jay"" Leftwich"
+2025,H11,General Laws,H,H0224,James W. Morefield
+2025,H11,General Laws,H,H0259,"Hyland F. ""Buddy"" Fowler, Jr."
+2025,H11,General Laws,H,H0315,Carrie E. Coyner
+2025,H11,General Laws,H,H0253,Terry L. Austin
+2025,H11,General Laws,H,H0267,"Robert S. Bloxom, Jr."
+2025,H11,General Laws,H,H0329,Bill Wiley
+2025,H11,General Laws,H,H0350,Ellen H. Campbell
+2025,H11,General Laws,H,H0352,"Jonathan ""Jed"" Arnold"
+2025,H14,Labor and Commerce,H,H0173,Jeion A. Ward
+2025,H14,Labor and Commerce,H,H0208,Charniele L. Herring
+2025,H14,Labor and Commerce,H,H0239,Alfonso H. Lopez
+2025,H14,Labor and Commerce,H,H0269,"Richard C. ""Rip"" Sullivan, Jr."
+2025,H14,Labor and Commerce,H,H0295,Kelly K. Convirs-Fowler
+2025,H14,Labor and Commerce,H,H0317,Dan I. Helmer
+2025,H14,Labor and Commerce,H,H0330,Candi Mundon King
+2025,H14,Labor and Commerce,H,H0340,Michelle Lopes Maldonado
+2025,H14,Labor and Commerce,H,H0344,Irene Shin
+2025,H14,Labor and Commerce,H,H0368,Michael J. Jones
+2025,H14,Labor and Commerce,H,H0372,Destiny LeVere Bolling
+2025,H14,Labor and Commerce,H,H0360,Michael B. Feggans
+2025,H14,Labor and Commerce,H,H0056,Terry G. Kilgore
+2025,H14,Labor and Commerce,H,H0150,"Daniel W. Marshall, III"
+2025,H14,Labor and Commerce,H,H0242,Israel D. O'Quinn
+2025,H14,Labor and Commerce,H,H0247,Michael J. Webert
+2025,H14,Labor and Commerce,H,H0231,Tony O. Wilt
+2025,H14,Labor and Commerce,H,H0308,Joseph P. McNamara
+2025,H14,Labor and Commerce,H,H0181,C. Todd Gilbert
+2025,H14,Labor and Commerce,H,H0321,Chris S. Runion
+2025,H14,Labor and Commerce,H,H0333,Jason S. Ballard
+2025,H14,Labor and Commerce,H,H0348,Wren M. Williams
+2025,H15,Public Safety,H,H0264,Marcus B. Simon
+2025,H15,Public Safety,H,H0330,Candi Mundon King
+2025,H15,Public Safety,H,H0219,Patrick A. Hope
+2025,H15,Public Safety,H,H0239,Alfonso H. Lopez
+2025,H15,Public Safety,H,H0266,Sam Rasoul
+2025,H15,Public Safety,H,H0336,Nadarius E. Clark
+2025,H15,Public Safety,H,H0317,Dan I. Helmer
+2025,H15,Public Safety,H,H0351,Holly M. Seibold
+2025,H15,Public Safety,H,H0375,Adele Y. McClure
+2025,H15,Public Safety,H,H0356,Rae Cousins
+2025,H15,Public Safety,H,H0382,Joshua E. Thomas
+2025,H15,Public Safety,H,H0360,Michael B. Feggans
+2025,H15,Public Safety,H,H0231,Tony O. Wilt
+2025,H15,Public Safety,H,H0247,Michael J. Webert
+2025,H15,Public Safety,H,H0313,Amanda E. Batten
+2025,H15,Public Safety,H,H0337,A.C. Cordoza
+2025,H15,Public Safety,H,H0346,Kim A. Taylor
+2025,H15,Public Safety,H,H0359,N. Baxter Ennis
+2025,H15,Public Safety,H,H0377,Delores Oates
+2025,H15,Public Safety,H,H0378,Chris Obenshain
+2025,H15,Public Safety,H,H0379,David Owen
+2025,H15,Public Safety,H,H0384,Eric Phillips
+2025,H18,Privileges and Elections,H,H0284,"Marcia S. ""Cia"" Price"
+2025,H18,Privileges and Elections,H,H0295,Kelly K. Convirs-Fowler
+2025,H18,Privileges and Elections,H,H0172,Mark D. Sickles
+2025,H18,Privileges and Elections,H,H0281,Paul E. Krizek
+2025,H18,Privileges and Elections,H,H0301,David A. Reid
+2025,H18,Privileges and Elections,H,H0340,Michelle Lopes Maldonado
+2025,H18,Privileges and Elections,H,H0349,Jackie H. Glass
+2025,H18,Privileges and Elections,H,H0314,Joshua G. Cole
+2025,H18,Privileges and Elections,H,H0365,"Rozia A. Henson, Jr."
+2025,H18,Privileges and Elections,H,H0353,Bonita G. Anthony
+2025,H18,Privileges and Elections,H,H0372,Destiny LeVere Bolling
+2025,H18,Privileges and Elections,H,H0242,Israel D. O'Quinn
+2025,H18,Privileges and Elections,H,H0181,C. Todd Gilbert
+2025,H18,Privileges and Elections,H,H0262,"James A. ""Jay"" Leftwich"
+2025,H18,Privileges and Elections,H,H0267,"Robert S. Bloxom, Jr."
+2025,H18,Privileges and Elections,H,H0342,Phillip A. Scott
+2025,H18,Privileges and Elections,H,H0347,"H. Otto Wachsmann, Jr."
+2025,H18,Privileges and Elections,H,H0335,Mike A. Cherry
+2025,H18,Privileges and Elections,H,H0376,Paul V. Milde
+2025,H18,Privileges and Elections,H,H0363,W. Chad Green
+2025,H18,Privileges and Elections,H,H0384,Eric Phillips
+2025,H18,Privileges and Elections,H,H0385,JJ Singh
+2025,H19,Transportation,H,H0294,Karrie K. Delaney
+2025,H19,Transportation,H,H0301,David A. Reid
+2025,H19,Transportation,H,H0173,Jeion A. Ward
+2025,H19,Transportation,H,H0207,Delores L. McQuinn
+2025,H19,Transportation,H,H0212,Betsy B. Carr
+2025,H19,Transportation,H,H0108,Vivian E. Watts
+2025,H19,Transportation,H,H0343,Briana D. Sewell
+2025,H19,Transportation,H,H0349,Jackie H. Glass
+2025,H19,Transportation,H,H0375,Adele Y. McClure
+2025,H19,Transportation,H,H0353,Bonita G. Anthony
+2025,H19,Transportation,H,H0355,Laura Jane Cohen
+2025,H19,Transportation,H,H0360,Michael B. Feggans
+2025,H19,Transportation,H,H0206,Barry D. Knight
+2025,H19,Transportation,H,H0253,Terry L. Austin
+2025,H19,Transportation,H,H0328,Scott A. Wyatt
+2025,H19,Transportation,H,H0329,Bill Wiley
+2025,H19,Transportation,H,H0242,Israel D. O'Quinn
+2025,H19,Transportation,H,H0333,Jason S. Ballard
+2025,H19,Transportation,H,H0348,Wren M. Williams
+2025,H19,Transportation,H,H0376,Paul V. Milde
+2025,H19,Transportation,H,H0364,Timothy P. Griffin
+2025,H19,Transportation,H,H0383,Eric R. Zehr
+2025,H20,Rules,H,H0322,Don Scott
+2025,H20,Rules,H,H0317,Dan I. Helmer
+2025,H20,Rules,H,H0108,Vivian E. Watts
+2025,H20,Rules,H,H0173,Jeion A. Ward
+2025,H20,Rules,H,H0172,Mark D. Sickles
+2025,H20,Rules,H,H0208,Charniele L. Herring
+2025,H20,Rules,H,H0212,Betsy B. Carr
+2025,H20,Rules,H,H0227,Luke E. Torian
+2025,H20,Rules,H,H0264,Marcus B. Simon
+2025,H20,Rules,H,H0285,"C.E. Cliff Hayes, Jr."
+2025,H20,Rules,H,H0269,"Richard C. ""Rip"" Sullivan, Jr."
+2025,H20,Rules,H,H0305,Kathy K.L. Tran
+2025,H20,Rules,H,H0181,C. Todd Gilbert
+2025,H20,Rules,H,H0056,Terry G. Kilgore
+2025,H20,Rules,H,H0253,Terry L. Austin
+2025,H20,Rules,H,H0247,Michael J. Webert
+2025,H20,Rules,H,H0242,Israel D. O'Quinn
+2025,H20,Rules,H,H0315,Carrie E. Coyner
+2025,H21,"Communications, Technology and Innovation",H,H0285,"C.E. Cliff Hayes, Jr."
+2025,H21,"Communications, Technology and Innovation",H,H0344,Irene Shin
+2025,H21,"Communications, Technology and Innovation",H,H0239,Alfonso H. Lopez
+2025,H21,"Communications, Technology and Innovation",H,H0173,Jeion A. Ward
+2025,H21,"Communications, Technology and Innovation",H,H0336,Nadarius E. Clark
+2025,H21,"Communications, Technology and Innovation",H,H0349,Jackie H. Glass
+2025,H21,"Communications, Technology and Innovation",H,H0351,Holly M. Seibold
+2025,H21,"Communications, Technology and Innovation",H,H0340,Michelle Lopes Maldonado
+2025,H21,"Communications, Technology and Innovation",H,H0365,"Rozia A. Henson, Jr."
+2025,H21,"Communications, Technology and Innovation",H,H0368,Michael J. Jones
+2025,H21,"Communications, Technology and Innovation",H,H0370,Karen Keys-Gamarra
+2025,H21,"Communications, Technology and Innovation",H,H0374,Marty Martinez
+2025,H21,"Communications, Technology and Innovation",H,H0308,Joseph P. McNamara
+2025,H21,"Communications, Technology and Innovation",H,H0238,M. Keith Hodges
+2025,H21,"Communications, Technology and Innovation",H,H0346,Kim A. Taylor
+2025,H21,"Communications, Technology and Innovation",H,H0337,A.C. Cordoza
+2025,H21,"Communications, Technology and Innovation",H,H0136,"Thomas C. Wright, Jr."
+2025,H21,"Communications, Technology and Innovation",H,H0279,Nicholas J. Freitas
+2025,H21,"Communications, Technology and Innovation",H,H0347,"H. Otto Wachsmann, Jr."
+2025,H21,"Communications, Technology and Innovation",H,H0364,Timothy P. Griffin
+2025,H21,"Communications, Technology and Innovation",H,H0358,"Mark L. Earley, Jr."
+2025,H21,"Communications, Technology and Innovation",H,H0373,Ian T. Lovejoy
+2025,H24,Health and Human Services,H,H0172,Mark D. Sickles
+2025,H24,Health and Human Services,H,H0305,Kathy K.L. Tran
+2025,H24,Health and Human Services,H,H0219,Patrick A. Hope
+2025,H24,Health and Human Services,H,H0284,"Marcia S. ""Cia"" Price"
+2025,H24,Health and Human Services,H,H0285,"C.E. Cliff Hayes, Jr."
+2025,H24,Health and Human Services,H,H0327,Rodney T. Willett
+2025,H24,Health and Human Services,H,H0208,Charniele L. Herring
+2025,H24,Health and Human Services,H,H0344,Irene Shin
+2025,H24,Health and Human Services,H,H0314,Joshua G. Cole
+2025,H24,Health and Human Services,H,H0365,"Rozia A. Henson, Jr."
+2025,H24,Health and Human Services,H,H0361,Debra D. Gardner
+2025,H24,Health and Human Services,H,H0073,"Robert D. Orrock, Sr."
+2025,H24,Health and Human Services,H,H0238,M. Keith Hodges
+2025,H24,Health and Human Services,H,H0325,Wendell S. Walker
+2025,H24,Health and Human Services,H,H0335,Mike A. Cherry
+2025,H24,Health and Human Services,H,H0342,Phillip A. Scott
+2025,H24,Health and Human Services,H,H0347,"H. Otto Wachsmann, Jr."
+2025,H24,Health and Human Services,H,H0346,Kim A. Taylor
+2025,H24,Health and Human Services,H,H0359,N. Baxter Ennis
+2025,H24,Health and Human Services,H,H0367,Geary Higgins
+2025,H24,Health and Human Services,H,H0379,David Owen
+2025,H24,Health and Human Services,H,H0385,JJ Singh
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0126,Danica A. Roem
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0080,David W. Marsden
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0068,Mark D. Obenshain
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0078,Richard H. Stuart
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0082,"William M. Stanley, Jr."
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0101,David R. Suetterlein
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0108,Ghazala F. Hashmi
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0112,T. Travis Hackworth
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0130,Angelia Williams Graves
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0125,Russet Perry
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0124,Stella G. Pekarsky
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0121,Timmy French
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0127,Saddam Azlan Salim
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0131,Tammy Brankley Mulchi
+2025,S01,"Agriculture, Conservation and Natural Resources",S,S0133,Kannan Srinivasan
+2025,S02,Commerce and Labor,S,S0062,R. Creigh Deeds
+2025,S02,Commerce and Labor,S,S0068,Mark D. Obenshain
+2025,S02,Commerce and Labor,S,S0019,L. Louise Lucas
+2025,S02,Commerce and Labor,S,S0080,David W. Marsden
+2025,S02,Commerce and Labor,S,S0085,Adam P. Ebbin
+2025,S02,Commerce and Labor,S,S0100,Scott A. Surovell
+2025,S02,Commerce and Labor,S,S0082,"William M. Stanley, Jr."
+2025,S02,Commerce and Labor,S,S0069,Ryan T. McDougle
+2025,S02,Commerce and Labor,S,S0067,Mamie E. Locke
+2025,S02,Commerce and Labor,S,S0088,Bryce E. Reeves
+2025,S02,Commerce and Labor,S,S0096,Bill DeSteph
+2025,S02,Commerce and Labor,S,S0098,Jeremy S. McPike
+2025,S02,Commerce and Labor,S,S0105,Mark J. Peake
+2025,S02,Commerce and Labor,S,S0113,Aaron R. Rouse
+2025,S02,Commerce and Labor,S,S0114,Lamont Bagby
+2025,S04,Education and Health,S,S0108,Ghazala F. Hashmi
+2025,S04,Education and Health,S,S0019,L. Louise Lucas
+2025,S04,Education and Health,S,S0067,Mamie E. Locke
+2025,S04,Education and Health,S,S0101,David R. Suetterlein
+2025,S04,Education and Health,S,S0105,Mark J. Peake
+2025,S04,Education and Health,S,S0111,Todd E. Pillion
+2025,S04,Education and Health,S,S0086,Barbara A. Favola
+2025,S04,Education and Health,S,S0106,Jennifer B. Boysko
+2025,S04,Education and Health,S,S0114,Lamont Bagby
+2025,S04,Education and Health,S,S0122,Christopher T. Head
+2025,S04,Education and Health,S,S0115,Lashrecse D. Aird
+2025,S04,Education and Health,S,S0129,Schuyler T. VanValkenburg
+2025,S04,Education and Health,S,S0120,Tara A. Durant
+2025,S04,Education and Health,S,S0124,Stella G. Pekarsky
+2025,S04,Education and Health,S,S0118,Christie New Craig
+2025,S05,Finance and Appropriations,S,S0019,L. Louise Lucas
+2025,S05,Finance and Appropriations,S,S0062,R. Creigh Deeds
+2025,S05,Finance and Appropriations,S,S0067,Mamie E. Locke
+2025,S05,Finance and Appropriations,S,S0080,David W. Marsden
+2025,S05,Finance and Appropriations,S,S0085,Adam P. Ebbin
+2025,S05,Finance and Appropriations,S,S0069,Ryan T. McDougle
+2025,S05,Finance and Appropriations,S,S0068,Mark D. Obenshain
+2025,S05,Finance and Appropriations,S,S0078,Richard H. Stuart
+2025,S05,Finance and Appropriations,S,S0088,Bryce E. Reeves
+2025,S05,Finance and Appropriations,S,S0086,Barbara A. Favola
+2025,S05,Finance and Appropriations,S,S0100,Scott A. Surovell
+2025,S05,Finance and Appropriations,S,S0098,Jeremy S. McPike
+2025,S05,Finance and Appropriations,S,S0106,Jennifer B. Boysko
+2025,S05,Finance and Appropriations,S,S0111,Todd E. Pillion
+2025,S05,Finance and Appropriations,S,S0108,Ghazala F. Hashmi
+2025,S07,Local Government,S,S0098,Jeremy S. McPike
+2025,S07,Local Government,S,S0082,"William M. Stanley, Jr."
+2025,S07,Local Government,S,S0112,T. Travis Hackworth
+2025,S07,Local Government,S,S0101,David R. Suetterlein
+2025,S07,Local Government,S,S0114,Lamont Bagby
+2025,S07,Local Government,S,S0099,"Glen H. Sturtevant, Jr."
+2025,S07,Local Government,S,S0115,Lashrecse D. Aird
+2025,S07,Local Government,S,S0129,Schuyler T. VanValkenburg
+2025,S07,Local Government,S,S0126,Danica A. Roem
+2025,S07,Local Government,S,S0130,Angelia Williams Graves
+2025,S07,Local Government,S,S0120,Tara A. Durant
+2025,S07,Local Government,S,S0119,"J.D. ""Danny"" Diggs"
+2025,S07,Local Government,S,S0124,Stella G. Pekarsky
+2025,S07,Local Government,S,S0133,Kannan Srinivasan
+2025,S07,Local Government,S,S0132,"Luther Cifers, III"
+2025,S08,Privileges and Elections,S,S0113,Aaron R. Rouse
+2025,S08,Privileges and Elections,S,S0062,R. Creigh Deeds
+2025,S08,Privileges and Elections,S,S0085,Adam P. Ebbin
+2025,S08,Privileges and Elections,S,S0112,T. Travis Hackworth
+2025,S08,Privileges and Elections,S,S0096,Bill DeSteph
+2025,S08,Privileges and Elections,S,S0099,"Glen H. Sturtevant, Jr."
+2025,S08,Privileges and Elections,S,S0129,Schuyler T. VanValkenburg
+2025,S08,Privileges and Elections,S,S0126,Danica A. Roem
+2025,S08,Privileges and Elections,S,S0117,Jennifer D. Carroll Foy
+2025,S08,Privileges and Elections,S,S0120,Tara A. Durant
+2025,S08,Privileges and Elections,S,S0125,Russet Perry
+2025,S08,Privileges and Elections,S,S0119,"J.D. ""Danny"" Diggs"
+2025,S08,Privileges and Elections,S,S0127,Saddam Azlan Salim
+2025,S08,Privileges and Elections,S,S0131,Tammy Brankley Mulchi
+2025,S08,Privileges and Elections,S,S0133,Kannan Srinivasan
+2025,S08,Privileges and Elections,S,S0132,"Luther Cifers, III"
+2025,S09,Rehabilitation and Social Services,S,S0086,Barbara A. Favola
+2025,S09,Rehabilitation and Social Services,S,S0069,Ryan T. McDougle
+2025,S09,Rehabilitation and Social Services,S,S0088,Bryce E. Reeves
+2025,S09,Rehabilitation and Social Services,S,S0100,Scott A. Surovell
+2025,S09,Rehabilitation and Social Services,S,S0096,Bill DeSteph
+2025,S09,Rehabilitation and Social Services,S,S0113,Aaron R. Rouse
+2025,S09,Rehabilitation and Social Services,S,S0122,Christopher T. Head
+2025,S09,Rehabilitation and Social Services,S,S0116,Emily M. Jordan
+2025,S09,Rehabilitation and Social Services,S,S0129,Schuyler T. VanValkenburg
+2025,S09,Rehabilitation and Social Services,S,S0130,Angelia Williams Graves
+2025,S09,Rehabilitation and Social Services,S,S0117,Jennifer D. Carroll Foy
+2025,S09,Rehabilitation and Social Services,S,S0125,Russet Perry
+2025,S09,Rehabilitation and Social Services,S,S0121,Timmy French
+2025,S09,Rehabilitation and Social Services,S,S0127,Saddam Azlan Salim
+2025,S09,Rehabilitation and Social Services,S,S0118,Christie New Craig
+2025,S10,Rules,S,S0067,Mamie E. Locke
+2025,S10,Rules,S,S0019,L. Louise Lucas
+2025,S10,Rules,S,S0062,R. Creigh Deeds
+2025,S10,Rules,S,S0080,David W. Marsden
+2025,S10,Rules,S,S0086,Barbara A. Favola
+2025,S10,Rules,S,S0085,Adam P. Ebbin
+2025,S10,Rules,S,S0098,Jeremy S. McPike
+2025,S10,Rules,S,S0100,Scott A. Surovell
+2025,S10,Rules,S,S0106,Jennifer B. Boysko
+2025,S10,Rules,S,S0108,Ghazala F. Hashmi
+2025,S10,Rules,S,S0113,Aaron R. Rouse
+2025,S10,Rules,S,S0069,Ryan T. McDougle
+2025,S10,Rules,S,S0078,Richard H. Stuart
+2025,S10,Rules,S,S0105,Mark J. Peake
+2025,S10,Rules,S,S0111,Todd E. Pillion
+2025,S11,Transportation,S,S0106,Jennifer B. Boysko
+2025,S11,Transportation,S,S0080,David W. Marsden
+2025,S11,Transportation,S,S0096,Bill DeSteph
+2025,S11,Transportation,S,S0101,David R. Suetterlein
+2025,S11,Transportation,S,S0108,Ghazala F. Hashmi
+2025,S11,Transportation,S,S0112,T. Travis Hackworth
+2025,S11,Transportation,S,S0114,Lamont Bagby
+2025,S11,Transportation,S,S0099,"Glen H. Sturtevant, Jr."
+2025,S11,Transportation,S,S0115,Lashrecse D. Aird
+2025,S11,Transportation,S,S0126,Danica A. Roem
+2025,S11,Transportation,S,S0119,"J.D. ""Danny"" Diggs"
+2025,S11,Transportation,S,S0124,Stella G. Pekarsky
+2025,S11,Transportation,S,S0131,Tammy Brankley Mulchi
+2025,S11,Transportation,S,S0133,Kannan Srinivasan
+2025,S11,Transportation,S,S0132,"Luther Cifers, III"
+2025,S12,General Laws and Technology,S,S0085,Adam P. Ebbin
+2025,S12,General Laws and Technology,S,S0067,Mamie E. Locke
+2025,S12,General Laws and Technology,S,S0088,Bryce E. Reeves
+2025,S12,General Laws and Technology,S,S0098,Jeremy S. McPike
+2025,S12,General Laws and Technology,S,S0111,Todd E. Pillion
+2025,S12,General Laws and Technology,S,S0113,Aaron R. Rouse
+2025,S12,General Laws and Technology,S,S0122,Christopher T. Head
+2025,S12,General Laws and Technology,S,S0116,Emily M. Jordan
+2025,S12,General Laws and Technology,S,S0115,Lashrecse D. Aird
+2025,S12,General Laws and Technology,S,S0129,Schuyler T. VanValkenburg
+2025,S12,General Laws and Technology,S,S0126,Danica A. Roem
+2025,S12,General Laws and Technology,S,S0117,Jennifer D. Carroll Foy
+2025,S12,General Laws and Technology,S,S0121,Timmy French
+2025,S12,General Laws and Technology,S,S0118,Christie New Craig
+2025,S12,General Laws and Technology,S,S0130,Angelia Williams Graves
+2025,S13,Courts of Justice,S,S0100,Scott A. Surovell
+2025,S13,Courts of Justice,S,S0068,Mark D. Obenshain
+2025,S13,Courts of Justice,S,S0069,Ryan T. McDougle
+2025,S13,Courts of Justice,S,S0062,R. Creigh Deeds
+2025,S13,Courts of Justice,S,S0078,Richard H. Stuart
+2025,S13,Courts of Justice,S,S0082,"William M. Stanley, Jr."
+2025,S13,Courts of Justice,S,S0106,Jennifer B. Boysko
+2025,S13,Courts of Justice,S,S0105,Mark J. Peake
+2025,S13,Courts of Justice,S,S0114,Lamont Bagby
+2025,S13,Courts of Justice,S,S0116,Emily M. Jordan
+2025,S13,Courts of Justice,S,S0115,Lashrecse D. Aird
+2025,S13,Courts of Justice,S,S0117,Jennifer D. Carroll Foy
+2025,S13,Courts of Justice,S,S0125,Russet Perry
+2025,S13,Courts of Justice,S,S0127,Saddam Azlan Salim
+2025,S13,Courts of Justice,S,S0086,Barbara A. Favola

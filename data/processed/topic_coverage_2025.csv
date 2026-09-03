@@ -1,0 +1,5 @@
+year,classification,bill_count,total_bills,bill_percentage
+2025,Official LIS subject,405,3510,11.5385
+2025,Derived from LIS bill summary,1515,3510,43.1624
+2025,Derived from LIS bill description,270,3510,7.6923
+2025,Unclassified,1320,3510,37.6068

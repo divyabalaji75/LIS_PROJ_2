@@ -1,0 +1,452 @@
+lis_parent_subject_id,lis_parent_subject,lis_subject_id,lis_subject_name
+4,Administration of Government,505,"Administration, Secretary of"
+4,Administration of Government,506,Administrative Process Act
+4,Administration of Government,513,"Aging and Rehabilitative Services, Department for"
+4,Administration of Government,539,Auditor of Public Accounts
+4,Administration of Government,568,"Budget, State"
+4,Administration of Government,579,Capital Outlay
+4,Administration of Government,580,Capitol Police
+4,Administration of Government,618,"Commerce and Trade, Secretary of"
+4,Administration of Government,621,"Commonwealth, Secretary of the"
+4,Administration of Government,627,Compacts
+4,Administration of Government,630,Comprehensive Services Act
+4,Administration of Government,634,Conflict of Interests
+4,Administration of Government,687,Economic Development
+4,Administration of Government,688,"Education, Secretary of"
+4,Administration of Government,706,Ethics
+4,Administration of Government,718,"Finance, Secretary of"
+4,Administration of Government,729,Forensic Science
+4,Administration of Government,743,"General Services, Department of"
+4,Administration of Government,764,"Health and Human Resources, Secretary of"
+4,Administration of Government,785,Human Rights
+4,Administration of Government,795,Information Management and Technology
+4,Administration of Government,844,Liaison Office and Officers
+4,Administration of Government,898,"Natural Resources, Secretary of"
+4,Administration of Government,945,Planning and Budget
+4,Administration of Government,952,Population Growth and Development
+4,Administration of Government,977,Public Officials
+4,Administration of Government,979,"Public Safety and Homeland Security, Secretary of"
+4,Administration of Government,983,"Purchases and Supply, Division of"
+4,Administration of Government,1008,Revenue Stabilization Fund
+4,Administration of Government,1011,Risk Management
+4,Administration of Government,1059,State Agencies
+4,Administration of Government,1061,State Officials
+4,Administration of Government,1077,"Technology, Secretary of"
+4,Administration of Government,1099,"Transportation, Secretary of"
+4,Administration of Government,1102,"Treasury, Treasury Board, and Treasurer, State"
+4,Administration of Government,1115,"Uniform State Laws, National Conference of Commissioners on"
+6,"Agriculture, Animal Care and Food",523,Animals and Animal Shelters
+6,"Agriculture, Animal Care and Food",584,Cats
+6,"Agriculture, Animal Care and Food",678,Dogs and Dog Laws
+9,Alcoholic Beverage Control Act,548,Beer
+9,Alcoholic Beverage Control Act,567,Breweries and Brewery Licenses
+9,Alcoholic Beverage Control Act,888,"Mixed Beverages, Alcoholic"
+9,Alcoholic Beverage Control Act,1155,Wine
+34,Aviation,516,Aircraft and Airports
+34,Aviation,882,Metropolitan Washington Airports Authority
+40,Behavioral Health and Developmental Services,800,Insanity
+40,Behavioral Health and Developmental Services,813,Involuntary Detention
+93,Civil Remedies and Procedure,530,Arbitration
+93,Civil Remedies and Procedure,543,Bankruptcy
+93,Civil Remedies and Procedure,655,Criminal History Information
+93,Civil Remedies and Procedure,664,Death by Wrongful Act
+93,Civil Remedies and Procedure,707,Evidence
+93,Civil Remedies and Procedure,739,Garnishment
+93,Civil Remedies and Procedure,755,Habeas Corpus
+93,Civil Remedies and Procedure,797,Injury Due to Negligence
+93,Civil Remedies and Procedure,807,Interrogatories
+93,Civil Remedies and Procedure,822,Judgment
+93,Civil Remedies and Procedure,851,Litigation
+93,Civil Remedies and Procedure,899,Negligence
+93,Civil Remedies and Procedure,1037,Service of Process
+93,Civil Remedies and Procedure,1073,Summons and Process
+93,Civil Remedies and Procedure,1091,Tort Claims Act
+93,Civil Remedies and Procedure,1122,Venue
+116,Conservation,515,Air Pollution
+116,Conservation,606,Clean Air Act
+116,Conservation,685,Easements
+116,Conservation,701,Environment
+116,Conservation,730,Forests and Forestry
+116,Conservation,772,"Historic Areas, Landmarks and Monuments"
+116,Conservation,830,Land Conservation
+116,Conservation,852,Litter Control
+116,Conservation,901,Noise Pollution
+116,Conservation,951,Pollution and Pollution Control
+116,Conservation,1027,Scenic Rivers
+116,Conservation,1066,Stormwater Management
+116,Conservation,1103,Trees
+116,Conservation,1144,Waste Management
+116,Conservation,1148,Water Pollution
+119,Contracts,1133,Virginia Public Procurement Act
+120,Corporations,728,Foreign Corporations
+120,Corporations,903,Nonstock Corporations
+120,Corporations,1033,Securities
+120,Corporations,1064,Stock Corporations
+125,Courts Not of Record,604,Civil Courts
+125,Courts Not of Record,650,Court-Appointed Special Advocate (CASA) Programs
+125,Courts Not of Record,675,District Courts
+125,Courts Not of Record,753,Guardian Ad Litem
+125,Courts Not of Record,826,Juvenile and Domestic Relations District Courts
+126,Courts of Record,602,Circuit Courts
+126,Courts of Record,526,Court of Appeals of Virginia
+126,Courts of Record,823,Judicial Circuits
+132,Crimes and Offenses Generally,500,Abduction
+132,Crimes and Offenses Generally,517,Alcohol Safety Action Program
+132,Crimes and Offenses Generally,534,Assault and Battery
+132,Crimes and Offenses Generally,540,Bad Checks
+132,Crimes and Offenses Generally,570,Burglary
+132,Crimes and Offenses Generally,578,Capital Murder
+132,Crimes and Offenses Generally,683,Drunk Driving
+132,Crimes and Offenses Generally,714,Felons and Felonies
+132,Crimes and Offenses Generally,731,Forgery
+132,Crimes and Offenses Generally,733,Fraud
+132,Crimes and Offenses Generally,737,Gangs
+132,Crimes and Offenses Generally,761,Harassment
+132,Crimes and Offenses Generally,762,Hate Crimes
+132,Crimes and Offenses Generally,763,Hazing
+132,Crimes and Offenses Generally,777,Homicide
+132,Crimes and Offenses Generally,786,Identity Theft
+132,Crimes and Offenses Generally,814,Involuntary Manslaughter
+132,Crimes and Offenses Generally,836,Larceny
+132,Crimes and Offenses Generally,857,Loitering
+132,Crimes and Offenses Generally,865,Manslaughter
+132,Crimes and Offenses Generally,887,Misdemeanors
+132,Crimes and Offenses Generally,895,Murder
+132,Crimes and Offenses Generally,911,Obscenity
+132,Crimes and Offenses Generally,953,Pornography
+132,Crimes and Offenses Generally,970,Prostitution
+132,Crimes and Offenses Generally,975,Public Drunkenness
+132,Crimes and Offenses Generally,988,Rape
+132,Crimes and Offenses Generally,991,Reckless Driving
+132,Crimes and Offenses Generally,1040,Sexual Offenses
+132,Crimes and Offenses Generally,1043,Shoplifting
+132,Crimes and Offenses Generally,1056,Stalking
+132,Crimes and Offenses Generally,1082,Terrorism
+132,Crimes and Offenses Generally,1083,Texting
+132,Crimes and Offenses Generally,1084,Threats
+132,Crimes and Offenses Generally,1104,Trespass
+133,Criminal Procedure,532,Arrest
+133,Criminal Procedure,541,Bail and Recognizance
+133,Criminal Procedure,587,Central Criminal Records Exchange
+133,Criminal Procedure,637,Conservators of the Peace
+133,Criminal Procedure,656,Criminal Justice Services
+133,Criminal Procedure,665,Death Penalty
+133,Criminal Procedure,668,Defendants
+133,Criminal Procedure,696,Embezzlement
+133,Criminal Procedure,719,Fingerprinting
+133,Criminal Procedure,862,Magistrates
+133,Criminal Procedure,974,Public Defenders
+133,Criminal Procedure,992,Recognizance
+133,Criminal Procedure,1032,Search Warrants
+133,Criminal Procedure,1071,Subpoenas
+133,Criminal Procedure,1105,Trials
+133,Criminal Procedure,1125,Victims of Crime
+133,Criminal Procedure,1143,Warrants
+133,Criminal Procedure,1157,Wiretapping
+133,Criminal Procedure,1158,Witnesses
+133,Criminal Procedure,1161,Writs
+146,Domestic Relations,595,Child Custody
+146,Domestic Relations,596,Child Support
+146,Domestic Relations,676,Divorce
+146,Domestic Relations,871,Marriage
+146,Domestic Relations,904,Nonsupport
+146,Domestic Relations,929,Paternity Actions and Suits
+146,Domestic Relations,971,Protective Orders
+146,Domestic Relations,1054,Spousal Abuse
+146,Domestic Relations,1055,Spousal Support
+154,Education,520,Alternative Education Programs
+154,Education,583,Career and Technical Education
+154,Education,590,Charter Schools
+154,Education,645,Correctional Education
+154,Education,662,Day-Care Centers and Programs
+154,Education,694,Elementary Schools
+154,Education,711,Family Life Education
+154,Education,768,High Schools
+154,Education,774,Home School Education
+154,Education,828,Kindergartens and Preschools
+154,Education,963,Primary and Secondary Schools
+154,Education,980,Public Schools
+154,Education,1029,School Boards
+154,Education,1030,School Buses
+154,Education,1052,Special Education
+154,Education,1057,Standards of Learning
+154,Education,1058,Standards of Quality
+154,Education,1068,Students
+154,Education,1076,Teachers
+155,Educational Institutions,599,Christopher Newport University
+155,Educational Institutions,609,Clinch Valley College
+155,Educational Institutions,617,Colleges
+155,Educational Institutions,625,Community Colleges
+155,Educational Institutions,641,Continuing Education
+155,Educational Institutions,686,Eastern Virginia Medical School
+155,Educational Institutions,715,Ferrum College
+155,Educational Institutions,744,George Mason University
+155,Educational Institutions,757,Hampton Sydney College
+155,Educational Institutions,758,Hampton University
+155,Educational Institutions,771,Higher Education
+155,Educational Institutions,773,Hollins University
+155,Educational Institutions,815,J. Sargeant Reynolds Community College
+155,Educational Institutions,817,James Madison University
+155,Educational Institutions,859,Longwood University
+155,Educational Institutions,872,Mary Baldwin College
+155,Educational Institutions,873,Mary Washington University
+155,Educational Institutions,905,Norfolk State University
+155,Educational Institutions,917,Old Dominion University
+155,Educational Institutions,985,Radford University
+155,Educational Institutions,1009,Richard Bland College
+155,Educational Institutions,1028,Scholarships
+155,Educational Institutions,1108,Tuition
+155,Educational Institutions,1117,Universities
+155,Educational Institutions,1118,University of Richmond
+155,Educational Institutions,1119,University of Virginia
+155,Educational Institutions,1126,Virginia Commonwealth University
+155,Educational Institutions,1127,Virginia Commonwealth University/Medical College of Virginia
+155,Educational Institutions,1129,Virginia Military Institute
+155,Educational Institutions,1132,Virginia Polytechnic Institute and State University
+155,Educational Institutions,1136,Virginia State University
+155,Educational Institutions,1137,Virginia Union University
+155,Educational Institutions,1154,"William & Mary, The College of"
+156,Elections,502,Absentee Ballots
+156,Elections,542,Ballots and Balloting
+156,Elections,575,Campaign Practices
+156,Elections,577,Candidates in Elections
+156,Elections,636,Congressional Districts
+156,Elections,791,Inaugural Activities
+156,Elections,949,Political Contributions
+156,Elections,950,Polling Places
+156,Elections,962,Primaries
+156,Elections,997,Redistricting
+156,Elections,998,Referendums
+156,Elections,999,Registrars
+156,Elections,1140,Voter Registration
+156,Elections,1141,Voters and Voting
+160,Eminent Domain,632,Condemnation
+171,Financial Institutions and Services,591,Checks and Checking Accounts
+171,Financial Institutions and Services,640,Consumer Finance Act
+171,Financial Institutions and Services,653,"Credit Cards, Credit Services, and Credit Unions"
+171,Financial Institutions and Services,812,Investments and Loans
+171,Financial Institutions and Services,854,Loans and Loan Associations
+171,Financial Institutions and Services,890,Money Orders
+171,Financial Institutions and Services,892,Mortgages
+171,Financial Institutions and Services,931,Payday Loans
+171,Financial Institutions and Services,1065,Stocks and Bonds
+175,Fisheries and Habitat of the Tidal Waters,545,Baylor Grounds
+175,Fisheries and Habitat of the Tidal Waters,605,Clams
+175,Fisheries and Habitat of the Tidal Waters,652,Crabs
+175,Fisheries and Habitat of the Tidal Waters,724,Fishing Laws and Licenses
+175,Fisheries and Habitat of the Tidal Waters,870,"Marine Products, Science and Resources"
+175,Fisheries and Habitat of the Tidal Waters,880,Menhaden Fish
+175,Fisheries and Habitat of the Tidal Waters,923,Oysters and Oyster Planting Grounds
+175,Fisheries and Habitat of the Tidal Waters,1024,Saltwater Fishing
+175,Fisheries and Habitat of the Tidal Waters,1031,Seafood
+190,"Game, Inland Fisheries, and Boating",547,Bears
+190,"Game, Inland Fisheries, and Boating",562,Boats and Boating
+190,"Game, Inland Fisheries, and Boating",667,Deer
+192,General Assembly,607,Clerk of the Senate of Virginia
+192,General Assembly,608,Clerk of the Virginia House of Delegates
+192,General Assembly,821,Joint Assembly
+192,General Assembly,841,"Legislative Automated Systems, Division of"
+192,General Assembly,842,"Legislative Services, Division of"
+192,General Assembly,848,Lieutenant Governor
+192,General Assembly,855,Lobbyists and Lobbying
+192,General Assembly,990,Reapportionment
+192,General Assembly,1035,Senatorial Districts
+218,Health,501,Abortion
+218,Health,514,AIDS (Acquired Immunodeficiency Syndrome)
+218,Health,521,Alzheimer's Disease
+218,Health,533,Asbestos
+218,Health,537,Attention Deficit Disorders
+218,Health,557,Birth Control
+218,Health,560,Blood Banks and Testing
+218,Health,564,Bone Marrow Transplantation
+218,Health,566,Breast Cancer
+218,Health,576,Cancer
+218,Health,623,Communicable Diseases
+218,Health,663,Dead Human Bodies
+218,Health,671,Diabetics or Diabetes
+218,Health,677,DNA
+218,Health,767,Hepatitis
+218,Health,780,Hospices
+218,Health,781,Hospitals and Hospitalization
+218,Health,783,Human Immunodeficiency Virus (HIV)
+218,Health,784,Human Life
+218,Health,790,Immunizations
+218,Health,794,Infertility
+218,Health,861,Lyme Disease
+218,Health,864,Mammograms
+218,Health,876,Medicaid and Medicare Programs
+218,Health,878,"Medical Treatment, Care, and Assistance"
+218,Health,909,Nursing Homes
+218,Health,910,Obesity
+218,Health,920,Organ Donor Programs
+218,Health,958,Pregnancy
+218,Health,959,Prenatal Care
+218,Health,1063,Stem Cell Research
+218,Health,1072,Suicide
+218,Health,1087,Tissue Banks
+218,Health,1110,Unborn Humans
+231,Housing,511,Affordable Housing
+231,Housing,569,Building Code
+231,Housing,633,Condominiums
+231,Housing,710,Fair Housing Law
+231,Housing,833,Landlord and Tenant
+231,Housing,866,Manufactured Housing
+231,Housing,889,Mobile Homes
+231,Housing,1085,Time-Share Programs
+238,Insurance,503,Accident and Sickness Insurance
+238,Insurance,525,Annuities
+238,Insurance,558,Birth-Related Neurological Injury Compensation Act
+238,Insurance,673,Disability Insurance
+238,Insurance,720,Fire Insurance
+238,Insurance,765,Health Insurance
+238,Insurance,776,Homeowners Insurance
+238,Insurance,843,Liability Insurance
+238,Insurance,849,Life Insurance
+238,Insurance,863,Malpractice Insurance
+238,Insurance,877,Medical Malpractice
+238,Insurance,893,Motor Vehicle Insurance
+238,Insurance,1088,Title Insurance
+238,Insurance,1116,Uninsured Motorists
+249,Juvenile Justice,1162,Youth and Family Services of Virginia
+258,Labor and Employment,518,Aliens or Immigrants
+258,Labor and Employment,563,Boiler and Pressure Vessel Safety Act
+258,Labor and Employment,698,Employees and Employment Commission
+258,Labor and Employment,750,Grievance Procedures
+258,Labor and Employment,976,Public Employees
+258,Labor and Employment,1060,State Employees
+258,Labor and Employment,1131,Virginia Occupational Safety and Health
+258,Labor and Employment,1142,Wages
+258,Labor and Employment,1160,Workforce
+291,Military and Emergency Laws,674,Disaster
+291,Military and Emergency Laws,1128,Virginia Defense Force
+293,Mines and Mining,611,Coal Mining
+293,Mines and Mining,740,Gas and Oil Mining
+299,Motor Vehicles,499,Abandoned Motor Vehicles
+299,Motor Vehicles,519,All-Terrain Vehicles (ATVs)
+299,Motor Vehicles,550,Bicycles
+299,Motor Vehicles,679,Driver Education Program
+299,Motor Vehicles,680,Drivers' Licenses
+299,Motor Vehicles,697,Emissions Standards
+299,Motor Vehicles,747,Golf Carts
+299,Motor Vehicles,756,Habitual Offenders
+299,Motor Vehicles,787,Ignition Interlock Devices
+299,Motor Vehicles,802,"Inspections, Motor Vehicle"
+299,Motor Vehicles,846,License Plates and Registration
+299,Motor Vehicles,891,Mopeds
+299,Motor Vehicles,894,Motorcycles
+299,Motor Vehicles,926,Parking Areas and Regulations
+299,Motor Vehicles,933,Pedestrians
+299,Motor Vehicles,941,Photo-Monitoring
+299,Motor Vehicles,1023,"Safety Equipment, Motor Vehicle"
+299,Motor Vehicles,1025,"Salvage and Junkyards, Motor Vehicle"
+299,Motor Vehicles,1053,Speed Limits
+299,Motor Vehicles,1086,Tinted Windows on Automobiles
+299,Motor Vehicles,1093,Towing Services and Tow Trucks
+299,Motor Vehicles,1096,Traffic Regulations and Violations
+336,"Pensions, Benefits, and Retirement",825,Judicial Retirement System
+336,"Pensions, Benefits, and Retirement",1007,Retirement Systems
+336,"Pensions, Benefits, and Retirement",1048,Social Security
+338,Persons With Disabilities,559,Blind Persons
+338,Persons With Disabilities,760,Handicapped Persons
+338,Persons With Disabilities,766,Hearing-Impaired Persons
+338,Persons With Disabilities,943,Physically Handicapped Persons
+338,Persons With Disabilities,1000,Rehabilitative Services
+338,Persons With Disabilities,1138,Visually Handicapped Persons
+354,Prisons and Other Methods of Correction,646,Correctional Enterprises
+354,Prisons and Other Methods of Correction,647,"Corrections, Board of or Department of"
+354,Prisons and Other Methods of Correction,670,Detention Homes and Probation Houses
+354,Prisons and Other Methods of Correction,775,Home/Electronic Incarceration
+354,Prisons and Other Methods of Correction,798,Inmates
+354,Prisons and Other Methods of Correction,816,Jails and Prisons
+354,Prisons and Other Methods of Correction,924,Pardons
+354,Prisons and Other Methods of Correction,928,Parole and Probation
+354,Prisons and Other Methods of Correction,964,Prisoners
+354,Prisons and Other Methods of Correction,1159,Work Release Programs
+355,Professions and Occupations,504,Accountants and Accounting
+355,Professions and Occupations,531,Architects
+355,Professions and Occupations,538,Audiologists and Speech Pathologists
+355,Professions and Occupations,588,Certified Public Accountants
+355,Professions and Occupations,598,Chiropractors
+355,Professions and Occupations,643,Contractors and Subcontractors
+355,Professions and Occupations,648,Cosmetologists
+355,Professions and Occupations,654,Cremation and Crematoriums
+355,Professions and Occupations,669,Dentists and Dentistry
+355,Professions and Occupations,672,Dieticians
+355,Professions and Occupations,690,Electricians
+355,Professions and Occupations,699,"Engineers, Professional"
+355,Professions and Occupations,722,Firefighters and Fire Marshals
+355,Professions and Occupations,735,Funeral Home Directors and Services
+355,Professions and Occupations,806,Interpreters
+355,Professions and Occupations,835,Landscape Architects
+355,Professions and Occupations,838,Lawyers
+355,Professions and Occupations,845,Librarians
+355,Professions and Occupations,884,Ministers
+355,Professions and Occupations,908,Nurses
+355,Professions and Occupations,912,Obstetricians
+355,Professions and Occupations,914,Occupational Therapy
+355,Professions and Occupations,918,Opticians and Optometrists
+355,Professions and Occupations,921,Osteopathy
+355,Professions and Occupations,930,Pawnbrokers
+355,Professions and Occupations,934,Pediatricians
+355,Professions and Occupations,940,Pharmacists
+355,Professions and Occupations,942,Physical Therapists
+355,Professions and Occupations,944,Physicians and Surgeons
+355,Professions and Occupations,948,Podiatrists
+355,Professions and Occupations,957,Practitioners
+355,Professions and Occupations,967,Private Detectives and Private Security
+355,Professions and Occupations,968,Professional and Occupational Regulation
+355,Professions and Occupations,972,Psychologists
+355,Professions and Occupations,1075,Surveyors
+355,Professions and Occupations,1124,Veterinarians
+356,Property and Conveyances,666,Deeds and Deeds of Trust
+356,Property and Conveyances,704,Escheated Lands
+356,Property and Conveyances,834,Landowners
+356,Property and Conveyances,839,Leases
+356,Property and Conveyances,969,Property Owners
+356,Property and Conveyances,1002,Rental Property
+356,Property and Conveyances,1111,Unclaimed Property
+356,Property and Conveyances,1134,Virginia Residential Landlord and Tenant Act
+356,Property and Conveyances,1135,Virginia Residential Property Disclosure Act
+361,Public Service Companies,585,Cell Phones
+361,Public Service Companies,689,Electric Companies
+361,Public Service Companies,741,Gas Companies
+361,Public Service Companies,982,Public Utility Companies
+361,Public Service Companies,1078,Telecommunications
+361,Public Service Companies,1080,Telephone and Telegraph Companies
+361,Public Service Companies,1113,Underground Utility Damage Prevention Act
+361,Public Service Companies,1120,Utility Services
+361,Public Service Companies,1156,Wireless Communications
+372,Religious and Charitable Matters; Cemeteries,571,Burial Contracts
+372,Religious and Charitable Matters; Cemeteries,600,Churches and Church Property
+421,State Corporation Commission,803,"Insurance, Bureau of"
+437,Taxation,507,Admissions Tax
+437,Taxation,573,"Business, Professional, and Occupational License (BPOL) Tax"
+437,Taxation,620,Commissioners of the Revenue
+437,Taxation,708,Excise Tax
+437,Taxation,847,License Tax
+437,Taxation,993,Recordation Tax
+437,Taxation,1038,Severance Tax
+437,Taxation,1097,Transient Tax
+437,Taxation,1101,Treasurers
+437,Taxation,1121,Utility Tax
+445,Trade and Commerce,574,Businesses
+445,Trade and Commerce,751,Grocery Stores
+445,Trade and Commerce,867,Manufacturers
+445,Trade and Commerce,886,Minority Businesses
+445,Trade and Commerce,915,Oil Companies
+445,Trade and Commerce,935,Personal Information Privacy Act
+445,Trade and Commerce,937,Petroleum Products
+445,Trade and Commerce,1045,Small Businesses
+445,Trade and Commerce,1092,Tourists and Tourist Industry
+478,Welfare (Social Services),508,Adoption
+478,Welfare (Social Services),509,"Adults, Homes and Services for"
+478,Welfare (Social Services),536,Assisted Living Facilities
+478,Welfare (Social Services),593,Child Abuse or Neglect
+478,Welfare (Social Services),727,Food Stamps
+478,Welfare (Social Services),732,Foster Care
+478,Welfare (Social Services),792,Indigent Persons
+478,Welfare (Social Services),900,Neighborhood Assistance Act
+478,Welfare (Social Services),973,Public Aid and Assistance
+478,Welfare (Social Services),1049,"Social Services, Board of or Department of"
+486,Wills and Decedents' Estates,705,Estates
+487,"Wills, Trusts, and Fiduciaries",1107,Trusts

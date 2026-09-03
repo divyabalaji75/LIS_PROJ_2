@@ -1,0 +1,26 @@
+year,committee_id,committee_name,chamber
+2026,H01,"Agriculture, Chesapeake and Natural Resources",H
+2026,H02,Appropriations,H
+2026,H07,"Counties, Cities and Towns",H
+2026,H08,Courts of Justice,H
+2026,H09,Education,H
+2026,H10,Finance,H
+2026,H11,General Laws,H
+2026,H14,Labor and Commerce,H
+2026,H15,Public Safety,H
+2026,H18,Privileges and Elections,H
+2026,H19,Transportation,H
+2026,H20,Rules,H
+2026,H21,"Communications, Technology and Innovation",H
+2026,H24,Health and Human Services,H
+2026,S01,"Agriculture, Conservation and Natural Resources",S
+2026,S02,Commerce and Labor,S
+2026,S04,Education and Health,S
+2026,S05,Finance and Appropriations,S
+2026,S07,Local Government,S
+2026,S08,Privileges and Elections,S
+2026,S09,Rehabilitation and Social Services,S
+2026,S10,Rules,S
+2026,S11,Transportation,S
+2026,S12,General Laws and Technology,S
+2026,S13,Courts of Justice,S
