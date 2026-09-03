@@ -23,6 +23,7 @@ RANDOM_STATE = 42
 
 ALLOWED_CLASSIFICATIONS = {
     "Official LIS subject",
+    "Derived from LIS bill summary",
     "Derived from LIS bill description",
     "Unclassified",
 }
@@ -506,8 +507,8 @@ def test_official_subjects_backed_by_raw_lis(year):
         official["Bill_id"]
     )
 
-    official["topic_name"] = normalize_text(
-        official["topic_name"]
+    official["lis_subject_name"] = normalize_text(
+        official["lis_subject_name"]
     )
 
     raw_pairs = set(
@@ -520,7 +521,7 @@ def test_official_subjects_backed_by_raw_lis(year):
     official_pairs = set(
         zip(
             official["Bill_id"],
-            official["topic_name"],
+            official["lis_subject_name"],
         )
     )
 
@@ -578,7 +579,7 @@ def test_raw_official_subjects_preserved(year):
                 official["Bill_id"]
             ),
             normalize_text(
-                official["topic_name"]
+                official["lis_subject_name"]
             ),
         )
     )
@@ -594,6 +595,73 @@ def test_raw_official_subjects_preserved(year):
         f"from processed official subjects. "
         f"Examples: {list(lost)[:10]}"
     )
+
+
+@pytest.mark.parametrize("year", YEARS)
+def test_official_subject_parent_rollup_matches_lis_hierarchy(year):
+
+    raw_subjects = load_raw(
+        year,
+        "CIBillSubjects.csv"
+    ).copy()
+    hierarchy = load_raw(
+        year,
+        "CIParentChildSubjects.csv"
+    ).copy()
+    official = load_processed(
+        year,
+        "official_lis_subjects"
+    ).copy()
+
+    raw_subjects["Bill_Number"] = normalize_upper(
+        raw_subjects["Bill_Number"]
+    )
+    raw_subjects["Subject_Name"] = normalize_text(
+        raw_subjects["Subject_Name"]
+    )
+    raw_subjects["Subject_Id"] = normalize_text(
+        raw_subjects["Subject_Id"]
+    )
+    hierarchy["C_Subject_Id"] = normalize_text(
+        hierarchy["C_Subject_Id"]
+    )
+    hierarchy["Parent_Subject"] = normalize_text(
+        hierarchy["Parent_Subject"]
+    )
+
+    expected = raw_subjects.merge(
+        hierarchy[
+            ["C_Subject_Id", "Parent_Subject"]
+        ].drop_duplicates("C_Subject_Id"),
+        left_on="Subject_Id",
+        right_on="C_Subject_Id",
+        how="left",
+        validate="many_to_one"
+    )
+    expected["lis_parent_subject"] = normalize_text(
+        expected["Parent_Subject"]
+    )
+    expected["topic_name"] = expected[
+        "lis_parent_subject"
+    ].where(
+        expected["lis_parent_subject"].ne(""),
+        expected["Subject_Name"]
+    )
+
+    expected_rows = set(zip(
+        expected["Bill_Number"],
+        expected["Subject_Name"],
+        expected["lis_parent_subject"],
+        expected["topic_name"],
+    ))
+    actual_rows = set(zip(
+        normalize_upper(official["Bill_id"]),
+        normalize_text(official["lis_subject_name"]),
+        normalize_text(official["lis_parent_subject"]),
+        normalize_text(official["topic_name"]),
+    ))
+
+    assert actual_rows == expected_rows
 
 
 # =========================================================

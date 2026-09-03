@@ -28,6 +28,7 @@ NON_DIRECTIONAL_VOTES = {
 
 ALLOWED_CLASSIFICATIONS = {
     "Official LIS subject",
+    "Derived from LIS bill summary",
     "Derived from LIS bill description",
     "Unclassified",
 }
@@ -128,6 +129,13 @@ def load_derived_topics(year):
 
     return load_processed_file(
         f"derived_from_lis_bill_description_{year}.csv"
+    )
+
+
+def load_summary_derived_topics(year):
+
+    return load_processed_file(
+        f"derived_from_lis_bill_summary_{year}.csv"
     )
 
 
@@ -616,6 +624,7 @@ def test_bill_classification_partition_reconciles(year):
     bills = load_bill_lookup(year)
 
     official = load_official_subjects(year)
+    summary_derived = load_summary_derived_topics(year)
     derived = load_derived_topics(year)
     unclassified = load_unclassified(year)
 
@@ -646,6 +655,13 @@ def test_bill_classification_partition_reconciles(year):
         .unique()
     )
 
+    summary_derived_ids = set(
+        normalize_upper(
+            summary_derived["Bill_id"]
+        )
+        .unique()
+    )
+
     unclassified_ids = set(
         normalize_upper(
             unclassified[
@@ -657,6 +673,8 @@ def test_bill_classification_partition_reconciles(year):
 
     combined = (
         official_ids
+        |
+        summary_derived_ids
         |
         derived_ids
         |
@@ -681,6 +699,7 @@ def test_bill_classification_partition_reconciles(year):
 def test_bill_provenance_buckets_do_not_overlap(year):
 
     official = load_official_subjects(year)
+    summary_derived = load_summary_derived_topics(year)
     derived = load_derived_topics(year)
     unclassified = load_unclassified(year)
 
@@ -702,6 +721,13 @@ def test_bill_provenance_buckets_do_not_overlap(year):
         .unique()
     )
 
+    summary_derived_ids = set(
+        normalize_upper(
+            summary_derived["Bill_id"]
+        )
+        .unique()
+    )
+
     unclassified_ids = set(
         normalize_upper(
             unclassified[
@@ -714,11 +740,29 @@ def test_bill_provenance_buckets_do_not_overlap(year):
     assert not (
         official_ids
         &
+        summary_derived_ids
+    )
+
+    assert not (
+        official_ids
+        &
         derived_ids
     )
 
     assert not (
         official_ids
+        &
+        unclassified_ids
+    )
+
+    assert not (
+        summary_derived_ids
+        &
+        derived_ids
+    )
+
+    assert not (
+        summary_derived_ids
         &
         unclassified_ids
     )

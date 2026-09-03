@@ -3009,6 +3009,59 @@ def build_bill_topic_lookup(
         .unique()
     )
 
+    # official_lis_subjects preserves one row per exact LIS child-subject
+    # assignment. The combined lookup is an analytical table, so child
+    # assignments that roll up to the same parent topic are collapsed here
+    # without changing the evidentiary official-subject output.
+    analytical_official = (
+        official
+        .groupby(
+            [
+                "Bill_id",
+                "topic_name",
+                "classification",
+            ],
+            as_index=False,
+            sort=False
+        )
+        .agg(
+            lis_subject_name=(
+                "lis_subject_name",
+                lambda values: " | ".join(
+                    dict.fromkeys(
+                        value
+                        for value in values
+                        if value
+                    )
+                )
+            ),
+            lis_parent_subject=(
+                "lis_parent_subject",
+                lambda values: next(
+                    (
+                        value
+                        for value in values
+                        if value
+                    ),
+                    ""
+                )
+            ),
+            source_file=("source_file", "first"),
+            source_text_used=(
+                "lis_subject_name",
+                lambda values: " | ".join(
+                    dict.fromkeys(
+                        value
+                        for value in values
+                        if value
+                    )
+                )
+            ),
+            rule_derived=("rule_derived", "first"),
+            matched_rule=("matched_rule", "first"),
+        )
+    )[TOPIC_LOOKUP_COLUMNS]
+
     summary_derived_records = []
 
     description_derived_records = []
@@ -3144,7 +3197,7 @@ def build_bill_topic_lookup(
 
     combined = pd.concat(
         [
-            official,
+            analytical_official,
             summary_derived,
             description_derived,
             unclassified,

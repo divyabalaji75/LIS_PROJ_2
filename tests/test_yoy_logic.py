@@ -1,11 +1,11 @@
 import pandas as pd
 import pytest
 
-from Version_1.year_over_year_analysis import (
+from year_over_year_analysis import (
     build_delegate_yoy,
 )
 
-from Version_1.topic_stance_analysis import (
+from topic_stance_analysis import (
     build_voting_tendency_yoy,
 )
 

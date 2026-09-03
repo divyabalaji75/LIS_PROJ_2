@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from Version_1.topic_stance_analysis import (
+from topic_stance_analysis import (
     build_delegate_topic_voting_tendency,
 )
 

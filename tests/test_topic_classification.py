@@ -17,6 +17,7 @@ YEARS = [
 
 ALLOWED_CLASSIFICATIONS = {
     "Official LIS subject",
+    "Derived from LIS bill summary",
     "Derived from LIS bill description",
     "Unclassified",
 }
@@ -70,6 +71,20 @@ def load_derived_topics(year):
 
     return load_processed_file(
         f"derived_from_lis_bill_description_{year}.csv"
+    )
+
+
+def load_summary_derived_topics(year):
+
+    return load_processed_file(
+        f"derived_from_lis_bill_summary_{year}.csv"
+    )
+
+
+def load_topic_coverage(year):
+
+    return load_processed_file(
+        f"topic_coverage_{year}.csv"
     )
 
 
@@ -169,7 +184,7 @@ def test_topic_lookup_not_empty(year):
 
 # =========================================================
 # TEST 4
-# ONLY THREE PERMITTED CLASSIFICATIONS
+# ONLY FOUR PERMITTED CLASSIFICATIONS
 # =========================================================
 
 @pytest.mark.parametrize(
@@ -607,9 +622,8 @@ def test_derived_bills_not_unclassified(year):
 # Every bill must belong to exactly one provenance bucket
 # at the BILL level:
 #
-# Official
-# OR Derived
-# OR Unclassified
+# Official, summary-derived, description-derived,
+# or Unclassified.
 #
 # Official may have multiple subject rows,
 # but still represents one bill-level provenance bucket.
@@ -623,6 +637,7 @@ def test_bill_level_classification_partition(year):
 
     bills = load_bill_lookup(year)
     official = load_official_subjects(year)
+    summary_derived = load_summary_derived_topics(year)
     derived = load_derived_topics(year)
     unclassified = load_unclassified(year)
 
@@ -637,6 +652,14 @@ def test_bill_level_classification_partition(year):
     official_ids = set(
         normalize_text(
             official["Bill_id"]
+        )
+        .str.upper()
+        .unique()
+    )
+
+    summary_derived_ids = set(
+        normalize_text(
+            summary_derived["Bill_id"]
         )
         .str.upper()
         .unique()
@@ -661,6 +684,8 @@ def test_bill_level_classification_partition(year):
     combined = (
         official_ids
         |
+        summary_derived_ids
+        |
         derived_ids
         |
         unclassified_ids
@@ -674,6 +699,20 @@ def test_bill_level_classification_partition(year):
         f"Unexpected: "
         f"{sorted(combined - all_bills)[:20]}"
     )
+
+    provenance_sets = [
+        official_ids,
+        summary_derived_ids,
+        derived_ids,
+        unclassified_ids,
+    ]
+
+    for index, left in enumerate(provenance_sets):
+        for right in provenance_sets[index + 1:]:
+            assert not left & right, (
+                f"{year}: bill appears in multiple "
+                "provenance tiers"
+            )
 
 
 # =========================================================
@@ -796,23 +835,23 @@ def test_official_topics_not_blank(year):
 
 # =========================================================
 # TEST 22
-# CLASSIFICATION FILES RECONSTRUCT TOPIC LOOKUP
+# PROVENANCE KEY PROJECTIONS RECONCILE TO TOPIC LOOKUP
 #
-# Union of:
-# official + derived + unclassified
-#
-# should match bill_topic_lookup rows.
+# official_lis_subjects has child-subject evidence grain, while
+# bill_topic_lookup has analytical parent-topic grain. Compare their
+# Bill/topic/classification key projections rather than row identity.
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
     YEARS
 )
-def test_classification_files_reconstruct_topic_lookup(year):
+def test_provenance_key_projections_reconcile_to_topic_lookup(year):
 
     topic_lookup = load_topic_lookup(year)
 
     official = load_official_subjects(year)
+    summary_derived = load_summary_derived_topics(year)
     derived = load_derived_topics(year)
     unclassified = load_unclassified(year)
 
@@ -825,6 +864,7 @@ def test_classification_files_reconstruct_topic_lookup(year):
     expected = pd.concat(
         [
             official[key_columns],
+            summary_derived[key_columns],
             derived[key_columns],
             unclassified[key_columns],
         ],
@@ -1008,3 +1048,145 @@ def test_unclassified_is_exclusive(year):
         f"appear in classified outputs: "
         f"{sorted(overlap)[:20]}"
     )
+
+
+# =========================================================
+# V2 PROVENANCE AND GRAIN CONTRACTS
+# =========================================================
+
+@pytest.mark.parametrize("year", YEARS)
+def test_each_bill_has_exactly_one_provenance_tier(year):
+
+    topics = load_topic_lookup(year).copy()
+    topics["Bill_id"] = normalize_text(
+        topics["Bill_id"]
+    ).str.upper()
+    topics["classification"] = normalize_text(
+        topics["classification"]
+    )
+
+    tier_counts = topics.groupby(
+        "Bill_id"
+    )["classification"].nunique()
+
+    assert tier_counts.eq(1).all(), (
+        f"{year}: bills assigned to multiple provenance tiers: "
+        f"{tier_counts[tier_counts.ne(1)].to_dict()}"
+    )
+
+
+@pytest.mark.parametrize("year", YEARS)
+def test_official_subject_evidence_contract(year):
+
+    official = load_official_subjects(year)
+
+    assert not official.duplicated(
+        ["Bill_id", "lis_subject_name"]
+    ).any(), (
+        f"{year}: duplicate official child-subject evidence rows"
+    )
+    assert normalize_text(
+        official["lis_subject_name"]
+    ).ne("").all(), (
+        f"{year}: official rows have blank lis_subject_name"
+    )
+    assert normalize_text(
+        official["rule_derived"]
+    ).str.lower().eq("false").all(), (
+        f"{year}: official rows must have rule_derived=False"
+    )
+
+
+@pytest.mark.parametrize("year", YEARS)
+def test_summary_derived_provenance_contract(year):
+
+    summary = load_summary_derived_topics(year)
+
+    assert normalize_text(summary["classification"]).eq(
+        "Derived from LIS bill summary"
+    ).all()
+    assert normalize_text(summary["source_file"]).eq(
+        "Summaries.csv"
+    ).all()
+    assert normalize_text(
+        summary["rule_derived"]
+    ).str.lower().eq("true").all()
+
+
+@pytest.mark.parametrize("year", YEARS)
+def test_description_derived_provenance_contract(year):
+
+    derived = load_derived_topics(year)
+
+    assert normalize_text(derived["classification"]).eq(
+        "Derived from LIS bill description"
+    ).all()
+    assert normalize_text(derived["source_file"]).eq(
+        "BILLS.CSV"
+    ).all()
+    assert normalize_text(
+        derived["rule_derived"]
+    ).str.lower().eq("true").all()
+
+
+@pytest.mark.parametrize("year", YEARS)
+def test_provenance_priority_is_exclusive(year):
+
+    tier_sets = {
+        "official": set(normalize_text(
+            load_official_subjects(year)["Bill_id"]
+        ).str.upper()),
+        "summary": set(normalize_text(
+            load_summary_derived_topics(year)["Bill_id"]
+        ).str.upper()),
+        "description": set(normalize_text(
+            load_derived_topics(year)["Bill_id"]
+        ).str.upper()),
+        "unclassified": set(normalize_text(
+            load_unclassified(year)["Bill_id"]
+        ).str.upper()),
+    }
+
+    names = list(tier_sets)
+    for index, left_name in enumerate(names):
+        for right_name in names[index + 1:]:
+            overlap = tier_sets[left_name] & tier_sets[right_name]
+            assert not overlap, (
+                f"{year}: {left_name} and {right_name} tiers "
+                f"overlap: {sorted(overlap)[:20]}"
+            )
+
+
+@pytest.mark.parametrize("year", YEARS)
+def test_topic_coverage_reconciles_to_provenance_sets(year):
+
+    coverage = load_topic_coverage(year).copy()
+    coverage["classification"] = normalize_text(
+        coverage["classification"]
+    )
+    coverage["bill_count"] = pd.to_numeric(
+        coverage["bill_count"],
+        errors="raise"
+    )
+
+    expected = {
+        "Official LIS subject": load_official_subjects(year),
+        "Derived from LIS bill summary": (
+            load_summary_derived_topics(year)
+        ),
+        "Derived from LIS bill description": load_derived_topics(year),
+        "Unclassified": load_unclassified(year),
+    }
+    expected_counts = {
+        classification: frame["Bill_id"].fillna("").str.strip()
+        .str.upper().nunique()
+        for classification, frame in expected.items()
+    }
+    actual_counts = coverage.set_index(
+        "classification"
+    )["bill_count"].to_dict()
+
+    assert actual_counts == expected_counts
+    assert sum(actual_counts.values()) == load_bill_lookup(
+        year
+    )["Bill_id"].fillna("").str.strip().str.upper().nunique()
