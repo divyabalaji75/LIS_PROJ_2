@@ -1,6 +1,8 @@
 from pathlib import Path
 import pandas as pd
 
+from lis_common import configured_years, write_csv
+
 
 # =========================================================
 # CONFIG
@@ -8,8 +10,15 @@ import pandas as pd
 
 PROCESSED_ROOT = Path("data/processed")
 
-YEAR_1 = 2025
-YEAR_2 = 2026
+COMPARISON_YEARS = configured_years()
+
+if len(COMPARISON_YEARS) != 2:
+    raise ValueError(
+        "Year-over-year analysis requires exactly two years in "
+        "LIS_ANALYSIS_YEARS (for example: 2025,2026)."
+    )
+
+YEAR_1, YEAR_2 = COMPARISON_YEARS
 
 # Overall delegate comparison threshold
 MIN_ELIGIBLE_VOTES = 50
@@ -1196,7 +1205,7 @@ def print_delegate_results(
     )
 
     print(
-        "2025 → 2026 DELEGATE "
+        f"{YEAR_1} -> {YEAR_2} DELEGATE "
         "YEAR-OVER-YEAR ANALYSIS"
     )
 
@@ -1385,7 +1394,7 @@ def print_topic_results(
     )
 
     print(
-        "DELEGATE × TOPIC YEAR-OVER-YEAR ANALYSIS"
+        "DELEGATE x TOPIC YEAR-OVER-YEAR ANALYSIS"
     )
 
     print(
@@ -1574,35 +1583,31 @@ def save_outputs(
         exist_ok=True
     )
 
+    year_label = f"{YEAR_1}_{YEAR_2}"
     outputs = {
 
         "delegate_yoy":
             PROCESSED_ROOT
-            / "delegate_behavior_yoy_2025_2026.csv",
+            / f"delegate_behavior_yoy_{year_label}.csv",
 
         "topic_yoy":
             PROCESSED_ROOT
-            / "delegate_topic_behavior_yoy_2025_2026.csv",
+            / f"delegate_topic_behavior_yoy_{year_label}.csv",
 
         "party_summary":
             PROCESSED_ROOT
-            / "party_behavior_yoy_2025_2026.csv",
+            / f"party_behavior_yoy_{year_label}.csv",
 
         "topic_summary_robust":
             PROCESSED_ROOT
-            / "topic_behavior_yoy_robust_2025_2026.csv",
+            / f"topic_behavior_yoy_robust_{year_label}.csv",
 
         "topic_summary_exploratory":
             PROCESSED_ROOT
-            / "topic_behavior_yoy_exploratory_2025_2026.csv",
+            / f"topic_behavior_yoy_exploratory_{year_label}.csv",
     }
 
-    delegate_yoy.to_csv(
-        outputs[
-            "delegate_yoy"
-        ],
-        index=False
-    )
+    write_csv(delegate_yoy, outputs["delegate_yoy"])
 
     topic_yoy.to_csv(
         outputs[

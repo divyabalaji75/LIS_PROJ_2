@@ -5,11 +5,13 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
+from lis_common import configured_years, write_csv
+
 # =========================================================
 # CONFIG
 # =========================================================
 
-YEARS = [2025, 2026]
+YEARS = configured_years()
 
 RAW_ROOT = Path("data/raw")
 REFERENCE_ROOT = Path("data/reference")
@@ -683,7 +685,7 @@ def validate_year(
         )
 
     print(
-        f"\n✓ {year} validation passed."
+        f"\nOK {year} validation passed."
     )
 
 
@@ -727,10 +729,7 @@ def save_year(
         .copy()
     )
 
-    production.to_csv(
-        output_csv,
-        index=False
-    )
+    write_csv(production, output_csv)
 
     # -----------------------------------------------------
     # FULL AUDIT FILE
@@ -783,9 +782,10 @@ if __name__ == "__main__":
         ignore_index=True
     )
 
+    year_label = "_".join(str(year) for year in YEARS)
     combined_path = (
         REFERENCE_ROOT
-        / "party_reference_2025_2026.csv"
+        / f"party_reference_{year_label}.csv"
     )
 
     combined.to_csv(

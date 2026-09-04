@@ -8,6 +8,8 @@ from urllib.request import urlopen
 
 import pandas as pd
 
+from lis_common import configured_years, write_csv
+
 try:
     import requests
 except ModuleNotFoundError:
@@ -24,7 +26,7 @@ DOWNLOAD_REQUEST_ERROR = (
 # CONFIG
 # =========================================================
 
-YEARS = [2025, 2026]
+YEARS = configured_years()
 
 FILES = [
     "BILLS.CSV",
@@ -60,7 +62,7 @@ RUN_DOWNLOAD = False
 ANALYSIS_YEAR = int(
     os.environ.get(
         "LIS_ANALYSIS_YEAR",
-        "2025"
+        str(YEARS[0])
     )
 )
 
@@ -559,7 +561,7 @@ def download_year(year):
             )
 
             print(
-                f"  ✓ {filename} -> "
+                f"  OK {filename} -> "
                 f"{path}"
             )
 
@@ -1025,8 +1027,8 @@ def add_party_info(
 # 1. Members.csv
 # 2. H/S prefix of member_id
 #
-# Nothing is silently recovered.
-# Every fallback is logged.
+# Nothing is silently recovered. Fallbacks are reported in the run log and
+# retained as flags on vote_fact instead of creating diagnostic CSVs.
 # =========================================================
 
 def reconcile_member_metadata(
@@ -1249,21 +1251,6 @@ def reconcile_member_metadata(
         recovery
     ) > 0:
 
-        PROCESSED_ROOT.mkdir(
-            parents=True,
-            exist_ok=True
-        )
-
-        recovery_path = (
-            PROCESSED_ROOT
-            / f"member_roster_recovery_{year}.csv"
-        )
-
-        recovery.to_csv(
-            recovery_path,
-            index=False
-        )
-
         print(
             "\n" + "=" * 60
         )
@@ -1298,13 +1285,6 @@ def reconcile_member_metadata(
             )
         )
 
-        print(
-            "\nRecovery log saved:"
-        )
-
-        print(
-            recovery_path
-        )
 
     # -----------------------------------------------------
     # FINAL METADATA CHECK
@@ -1350,16 +1330,6 @@ def reconcile_member_metadata(
         unresolved
     ) > 0:
 
-        unresolved_path = (
-            PROCESSED_ROOT
-            / f"unresolved_member_metadata_{year}.csv"
-        )
-
-        unresolved.to_csv(
-            unresolved_path,
-            index=False
-        )
-
         print(
             "\nUnresolved member metadata:"
         )
@@ -1368,14 +1338,6 @@ def reconcile_member_metadata(
             unresolved.to_string(
                 index=False
             )
-        )
-
-        print(
-            "\nUnresolved metadata saved:"
-        )
-
-        print(
-            unresolved_path
         )
 
         raise ValueError(
@@ -1390,7 +1352,7 @@ def reconcile_member_metadata(
 # =========================================================
 # VALIDATE PARTY JOIN
 #
-# Missing parties are exported before stopping.
+# Missing parties are printed before stopping; no diagnostic CSV is needed.
 # =========================================================
 
 def validate_party_join(
@@ -1507,17 +1469,6 @@ def validate_party_join(
     if len(
         missing_party
     ) > 0:
-
-        PROCESSED_ROOT.mkdir(
-            parents=True,
-            exist_ok=True
-        )
-
-        missing_path = (
-            PROCESSED_ROOT
-            / f"missing_party_members_{year}.csv"
-        )
-
         missing_export = (
             missing_party.copy()
         )
@@ -1525,11 +1476,6 @@ def validate_party_join(
         missing_export[
             "party"
         ] = ""
-
-        missing_export.to_csv(
-            missing_path,
-            index=False
-        )
 
         print(
             "\nMissing party assignments:"
@@ -1539,14 +1485,6 @@ def validate_party_join(
             missing_export.to_string(
                 index=False
             )
-        )
-
-        print(
-            "\nMissing-party file saved:"
-        )
-
-        print(
-            missing_path
         )
 
         raise ValueError(
@@ -1625,7 +1563,7 @@ def validate_party_join(
         )
 
     print(
-        f"\n✓ {year} party join passed."
+        f"\nOK {year} party join passed."
     )
 
 
@@ -2116,7 +2054,7 @@ def validate_party_behavior(
         )
 
     print(
-        "\n✓ Party behavior checks passed."
+        "\nOK Party behavior checks passed."
     )
 
 
@@ -2417,6 +2355,41 @@ def build_vote_bill_bridge(
             drop=True
         )
     )
+
+
+def build_bill_history(year):
+    """Return the complete LIS bill-history event stream for a session."""
+
+    path = RAW_ROOT / str(year) / "HISTORY.CSV"
+    history = pd.read_csv(path, dtype=str)
+    required = {
+        "Bill_id",
+        "History_date",
+        "History_description",
+        "History_refid",
+    }
+    missing = required - set(history.columns)
+
+    if missing:
+        raise ValueError(f"{path} missing columns: {missing}")
+
+    history = history[
+        ["Bill_id", "History_date", "History_description", "History_refid"]
+    ].rename(
+        columns={
+            "History_date": "history_date",
+            "History_description": "history_description",
+            "History_refid": "history_refid",
+        }
+    )
+    for column in history.columns:
+        history[column] = history[column].fillna("").str.strip()
+    history["Bill_id"] = history["Bill_id"].str.upper()
+    history.insert(0, "year", year)
+
+    # History is evidence at its native event grain. Do not reduce it to the
+    # vote-to-bill grain used by downstream voting analysis.
+    return history.drop_duplicates().reset_index(drop=True)
 
 
 # =========================================================
@@ -3416,7 +3389,7 @@ def validate_topic_classifications(
     )
 
     print(
-        "\n✓ Every bill has one of "
+        "\nOK Every bill has one of "
         "the four permitted classifications, "
         "with one tier per bill."
     )
@@ -3954,7 +3927,7 @@ def print_topic_summary(
     )
 
     print(
-        f"{year} DELEGATE × "
+        f"{year} DELEGATE x "
         "LIS TOPIC SUMMARY"
     )
 
@@ -4082,6 +4055,37 @@ def build_sponsor_fact(year):
             "is_co_patron",
         ]
     ].drop_duplicates().reset_index(drop=True)
+
+
+def build_sponsor_vote_behavior(sponsor_fact, vote_fact, vote_bill_bridge):
+    """Connect sponsors to their own recorded votes on sponsored bills."""
+
+    bill_votes = vote_bill_bridge[["vote_id", "Bill_id"]].drop_duplicates()
+    sponsor_votes = sponsor_fact.merge(
+        bill_votes,
+        on="Bill_id",
+        how="inner",
+        validate="many_to_many",
+    )
+    vote_columns = [
+        "vote_id",
+        "member_id",
+        "vote",
+        "broke_with_party",
+        "cross_party",
+    ]
+    optional_columns = [
+        column
+        for column in ("vote_date", "chamber", "party")
+        if column in vote_fact.columns
+    ]
+    sponsor_votes = sponsor_votes.merge(
+        vote_fact[vote_columns + optional_columns],
+        on=["vote_id", "member_id"],
+        how="inner",
+        validate="many_to_one",
+    )
+    return sponsor_votes.drop_duplicates().reset_index(drop=True)
 
 
 def build_committees(year):
@@ -4291,6 +4295,8 @@ def save_outputs(
     committees,
     committee_members,
     vote_statement_fact,
+    bill_history,
+    sponsor_vote_behavior,
     delegate_summary,
     member_vote_topic,
     delegate_topic_summary,
@@ -4370,6 +4376,14 @@ def save_outputs(
             PROCESSED_ROOT
             / f"vote_statement_fact_{year}.csv",
 
+        "bill_history":
+            PROCESSED_ROOT
+            / f"bill_history_{year}.csv",
+
+        "sponsor_vote_behavior":
+            PROCESSED_ROOT
+            / f"sponsor_vote_behavior_{year}.csv",
+
         "delegate_behavior":
             PROCESSED_ROOT
             / f"delegate_behavior_{year}.csv",
@@ -4387,12 +4401,7 @@ def save_outputs(
             / f"topic_qa_sample_{year}.csv",
     }
 
-    vote_fact.to_csv(
-        outputs[
-            "vote_fact"
-        ],
-        index=False
-    )
+    write_csv(vote_fact, outputs["vote_fact"])
 
     vote_bill_bridge.to_csv(
         outputs[
@@ -4477,6 +4486,9 @@ def save_outputs(
         outputs["vote_statement_fact"],
         index=False
     )
+
+    write_csv(bill_history, outputs["bill_history"])
+    write_csv(sponsor_vote_behavior, outputs["sponsor_vote_behavior"])
 
     delegate_summary.to_csv(
         outputs[
@@ -4690,6 +4702,7 @@ if __name__ == "__main__":
             vote_fact
         )
     )
+    bill_history = build_bill_history(year)
 
     # -----------------------------------------------------
     # 9. BILL LOOKUP
@@ -4751,6 +4764,11 @@ if __name__ == "__main__":
     )
 
     sponsor_fact = build_sponsor_fact(year)
+    sponsor_vote_behavior = build_sponsor_vote_behavior(
+        sponsor_fact,
+        vote_fact,
+        vote_bill_bridge,
+    )
     committees = build_committees(year)
     committee_members = build_committee_members(
         year,
@@ -4848,6 +4866,8 @@ if __name__ == "__main__":
             committees,
             committee_members,
             vote_statement_fact,
+            bill_history,
+            sponsor_vote_behavior,
             delegate_summary,
             member_vote_topic,
             delegate_topic_summary,

@@ -1,6 +1,8 @@
 from pathlib import Path
 import pandas as pd
 
+from lis_common import configured_years, write_csv
+
 
 # =========================================================
 # CONFIG
@@ -8,7 +10,7 @@ import pandas as pd
 
 PROCESSED_ROOT = Path("data/processed")
 
-YEARS = [2025, 2026]
+YEARS = configured_years()
 
 # Minimum number of directional Y/N topic votes required
 # before assigning a voting tendency.
@@ -1074,7 +1076,7 @@ def print_delegate_topic_results(
     )
 
     print(
-        f"{year} DELEGATE × TOPIC "
+        f"{year} DELEGATE x TOPIC "
         "VOTING TENDENCY"
     )
 
@@ -1225,7 +1227,7 @@ def print_voting_tendency_yoy(
     )
 
     print(
-        "2025 → 2026 TOPIC VOTING TENDENCY CHANGES"
+        f"{YEARS[0]} -> {YEARS[-1]} TOPIC VOTING TENDENCY CHANGES"
     )
 
     print(
@@ -1411,12 +1413,7 @@ def save_year_outputs(
             ),
     }
 
-    tendency.to_csv(
-        outputs[
-            "delegate_topic_voting_tendency"
-        ],
-        index=False
-    )
+    write_csv(tendency, outputs["delegate_topic_voting_tendency"])
 
     roster.to_csv(
         outputs[
@@ -1450,18 +1447,17 @@ def save_yoy_output(
     tendency_yoy
 ):
 
+    year_label = "_".join(str(year) for year in YEARS)
+
     path = (
         PROCESSED_ROOT
         / (
             "delegate_topic_voting_tendency_"
-            "yoy_2025_2026.csv"
+            f"yoy_{year_label}.csv"
         )
     )
 
-    tendency_yoy.to_csv(
-        path,
-        index=False
-    )
+    write_csv(tendency_yoy, path)
 
     return path
 
