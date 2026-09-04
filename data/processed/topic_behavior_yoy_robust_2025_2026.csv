@@ -1,16 +1,9 @@
 topic_name,classification,delegates_compared,avg_cross_party_pct_2025,avg_cross_party_pct_2026,avg_cross_party_pct_change,median_cross_party_pct_change,total_cross_party_events_2025,total_cross_party_events_2026,total_eligible_topic_events_2025,total_eligible_topic_events_2026,headline_topic
-Housing,Derived from LIS bill description,17,3.5486617142335906,5.860026732308512,2.311365018074922,0.684931506849315,36.0,130.0,1031.0,2100.0,True
-Taxes and Revenue,Derived from LIS bill description,15,1.200580883619263,3.1522203022272435,1.9516394186079802,1.7354596622889298,17.0,40.0,1440.0,1251.0,True
-Labor and Employment,Derived from LIS bill description,77,0.5432950894505546,1.261672783450275,0.7183776939997205,0.0,40.0,129.0,6983.0,10412.0,True
-Health and Healthcare,Derived from LIS bill description,77,0.24894389752522267,0.9410723664934325,0.6921284689682098,0.0,18.0,60.0,6456.0,7128.0,True
-Elections and Voting,Derived from LIS bill description,52,1.685479824058981,2.2643050005389185,0.5788251764799375,0.0,66.0,133.0,3512.0,5483.0,True
-Family and Children,Derived from LIS bill description,40,0.7488597587240802,1.0593132880875327,0.3104535293634525,0.0,18.0,27.0,2429.0,2642.0,True
-Firearms,Derived from LIS bill description,74,0.17286692628267125,0.35592625215220003,0.18305932586952878,0.0,7.0,21.0,4335.0,5678.0,True
-Transportation,Derived from LIS bill description,46,1.2438396624649168,1.0006803122577328,-0.24315935020718418,0.0,38.0,58.0,3026.0,5446.0,True
-Criminal Justice,Derived from LIS bill description,78,1.557251153240396,1.2280626352402864,-0.3291885180001097,0.0,106.0,96.0,6652.0,7817.0,True
-Education,Derived from LIS bill description,78,1.4718376834185212,1.1205396207505267,-0.35129806266799446,-0.2703482551908517,186.0,166.0,12878.0,14260.0,True
-Energy and Utilities,Derived from LIS bill description,77,4.151622368102261,1.9120420877867803,-2.239580280315481,-0.48770144189991527,305.0,257.0,6816.0,13256.0,True
-Behavioral Health,Derived from LIS bill description,1,0.0,0.0,0.0,0.0,0.0,0.0,50.0,59.0,False
-Budget and Appropriations,Derived from LIS bill description,2,0.0,0.0,0.0,0.0,0.0,0.0,145.0,100.0,False
-Business and Commerce,Derived from LIS bill description,2,0.980392156862745,0.0,-0.980392156862745,-0.980392156862745,1.0,0.0,101.0,161.0,False
-Insurance,Derived from LIS bill description,6,1.737635352648522,0.5968180111106234,-1.1408173415378984,0.0,7.0,4.0,405.0,597.0,False
+Local Government,Derived from LIS bill summary,73,1.8746902553889138,2.89809667418664,1.0234064187977268,0.0,236.0,128.0,12305.0,4322.0,True
+Labor and Employment,Derived from LIS bill summary,77,0.5841943552463638,1.474567841905532,0.890373486659168,0.0,82.0,87.0,13946.0,6045.0,True
+Criminal Justice,Derived from LIS bill summary,76,1.4785603678243022,2.1119957912454654,0.6334354234211632,0.0,234.0,124.0,15476.0,5446.0,True
+Transportation,Derived from LIS bill summary,17,0.9098535578333724,1.1477438256354984,0.237890267802126,0.0,24.0,14.0,2589.0,1171.0,True
+Education,Derived from LIS bill summary,77,1.642941190402621,1.7317362286854463,0.0887950382828253,-0.3968253968253968,306.0,150.0,19404.0,8757.0,True
+Health and Healthcare,Derived from LIS bill summary,46,0.7354286140546504,0.04262574595055413,-0.6928028681040963,0.0,57.0,1.0,8179.0,3145.0,True
+Energy and Utilities,Derived from LIS bill summary,15,4.90527937633035,2.621780810400213,-2.2834985659301372,0.0,106.0,23.0,2118.0,866.0,True
+Business and Commerce,Derived from LIS bill summary,1,7.59493670886076,0.0,-7.59493670886076,-7.59493670886076,6.0,0.0,79.0,50.0,False
