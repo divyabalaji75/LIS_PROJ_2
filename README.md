@@ -126,11 +126,15 @@ refresh is required. Run validation with `python -m pytest -q` and the
 consolidated topic audit with, for example,
 `$env:LIS_ANALYSIS_YEAR="2025"; python topic_validation_audit.py`.
 
-Launch the leadership-facing dashboard with:
+Launch the leadership-facing dashboard with the project-local Python runtime:
 
 ```powershell
-streamlit run dashboard.py
+.\run_dashboard.ps1
 ```
+
+Equivalently, run `.venv\Scripts\python.exe -m streamlit run dashboard.py`.
+Using `python -m streamlit` avoids depending on a globally installed
+`streamlit` command.
 
 The dashboard reads processed CSVs without modifying them. It exposes overview
 coverage, legislator and topic views, bill-level provenance (including child and
