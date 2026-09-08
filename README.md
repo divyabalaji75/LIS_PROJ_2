@@ -146,9 +146,14 @@ Equivalently, run `.venv\Scripts\python.exe -m streamlit run dashboard.py`.
 Using `python -m streamlit` avoids depending on a globally installed
 `streamlit` command.
 
-The dashboard reads processed CSVs without modifying them. It exposes overview
-coverage, legislator and topic views, bill-level provenance (including child and
-parent subjects), subject-filtered bill lookup, and the separate official evidence layers.
+The dashboard reads processed CSVs without modifying them. Its leadership view
+answers four concise questions and supports both directions of review: choose a
+delegate to see voting by subject, or choose a subject to compare delegates. It
+also shows true cross-party leaders by count and rate, delegate-subject leaders,
+session comparisons, bill-level provenance (including child and parent LIS
+subjects), official histories and vote statements, and subject-filtered bill
+lookup. Sponsorship remains a separate processed analytical layer, but is
+intentionally omitted from the simplified leadership page.
 
 ## Limitations
 

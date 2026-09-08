@@ -18,7 +18,7 @@ It would still be inappropriate to promise “100% certainty.” Automated tests
 | Topic provenance | Allowed four-value classification and one tier per bill | Official and derived evidence remain distinct |
 | Vote/bill relationship | Distinct history evidence retained; downstream deduplication occurs only at the analytical join | Multi-bill votes are preserved |
 | Recorded versus intended vote | Separate fields and explicit-intention flag | Statements do not rewrite official votes |
-| Dashboard checks | Page loads without exceptions; legislator and subject filters recalculate; bill subject filter returns only matching bills | Presentation uses the intended processed data |
+| Dashboard checks | Page loads without exceptions; delegate-to-subject and subject-to-delegate filters recalculate; count/rate rankings render; bill subject filter returns only matching bills | Presentation uses the intended processed data |
 | Consolidated topic audit | `topic_validation_audit_2025.csv` and `_2026.csv` | Reproducible QA queue and samples |
 
 ## Current source and coverage facts
@@ -69,7 +69,7 @@ Recommended sign-off: before making claims such as “the percentage of bills ki
 
 ### 6. Record manual verification of headline figures
 
-Automated tests should be supplemented with a small, documented source trace for the most visible leadership claims: the overall Yes rate, party-break rate, true cross-party rate, leading legislator, leading subject, sponsor Yes rate, and became-law marker.
+Automated tests should be supplemented with a small, documented source trace for the most visible leadership claims: the overall Yes rate, party-break rate, true cross-party rate, leading delegate by count, leading delegate by rate, leading subject, leading delegate-subject combination, and became-law marker.
 
 Recommended sign-off: two reviewers independently trace a small set of displayed rows from dashboard to processed table to raw LIS source and initial a dated checklist. This validates both the calculation and the communication layer.
 

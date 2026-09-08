@@ -64,6 +64,8 @@ Party breaks divided by directional member votes with a clear own-party majority
 **Patron / sponsor**  
 A legislator officially associated with a bill in `Sponsors.csv`. Roles such as Chief Patron, Chief Co-Patron, and Co-Patron are preserved separately.
 
+Sponsorship is retained as a separate backend analytical layer and is intentionally not shown on the simplified leadership dashboard.
+
 **Recorded pathway marker**  
 A reproducible phrase-based indicator from official history text, such as became law, left in committee, or failed/stricken. Markers are not mutually exclusive final-disposition categories.
 

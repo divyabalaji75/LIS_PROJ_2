@@ -220,7 +220,7 @@ Business context: AI judgments are review evidence only. The script does not alt
 
 ## `dashboard.py`
 
-Purpose: reads processed CSVs and presents five leadership questions. It does not modify source or processed data.
+Purpose: reads processed CSVs and presents four concise leadership sections. It does not modify source or processed data.
 
 Key calculation helpers:
 
@@ -230,7 +230,7 @@ Key calculation helpers:
 - `legislator_evidence`: bill-level evidence behind a selected legislator/subject view.
 - `bill_outcomes`: reproducible pathway markers from official history text.
 
-Business context: the dashboard deliberately leads with concise answers, then allows drilldown to a legislator, subject, bill, official history, topic provenance, sponsorship, and vote statements. Member IDs remain internal join keys and are not displayed in leadership views.
+Business context: the dashboard deliberately leads with concise answers, then supports two-way review: delegate to subjects and subject to delegates. It includes cross-party rankings by both count and rate, delegate-subject comparisons, bill lookup, official history, topic provenance, and vote statements. Member IDs remain internal join keys and are not displayed in leadership views. Sponsorship data remains available in the processed analytical layer but is intentionally not displayed on the simplified leadership page.
 
 ## Test scripts
 

@@ -323,7 +323,7 @@ This script never changes the production topic table. AI review is evidence for 
 | `legislator_evidence` | Joins selected member/topic rows back to bills, provenance, and LIS vote records | Verification table |
 | `bill_outcomes` | Counts reproducible history-text pathway markers | Outcome dictionary |
 
-Major page blocks: session selector; four headline metrics; voting behavior; legislator/subject drilldown; subject comparisons; year-over-year results; sponsorship; pathways/statements; bill lookup with subject filter; definitions and limitations.
+Major page blocks: session selector; four headline metrics; cross-party delegate leaders by count and rate; delegate-to-subject drilldown; subject-to-delegate comparison; delegate-subject cross-party rankings; year-over-year results; pathways and vote statements; bill lookup with subject filter; definitions and limitations. Sponsorship remains available in the processed data but is intentionally omitted from this simplified leadership page.
 
 ## What every test protects
 
@@ -435,7 +435,7 @@ Pytest expands year-parameterized tests across 2025 and 2026, which is why 182 n
 - One-to-many vote/bill relationships are preserved without changing canonical vote grain.
 - Topic priority, allowed provenance, exact official subject, parent rollup, summary/description evidence, and full bill partition are tested.
 - Voting-tendency thresholds and year-over-year comparability are tested.
-- Dashboard name, legislator subject, and bill subject filters load and calculate without exceptions.
+- Dashboard delegate-to-subject, subject-to-delegate, ranking, and bill-subject filters load and calculate without exceptions.
 
 ## What remains to be verified or improved
 

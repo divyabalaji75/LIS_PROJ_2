@@ -211,6 +211,8 @@ The dashboard's “highest cross-party rate” comparison requires at least 1,00
 
 Sponsors come directly from `Sponsors.csv`. Sponsor roles and ordering remain separate. The vote/bill bridge connects a sponsored bill to vote events; `vote_fact` then identifies the sponsor's own recorded vote.
 
+This remains a supported backend analytical layer. It is intentionally omitted from the simplified leadership dashboard so the page stays focused on recorded voting, subjects, session change, and bill pathways.
+
 ```text
 Sponsor Yes rate = sponsor-linked Yes votes
                    ÷ sponsor-linked (Yes + No) votes × 100
@@ -258,8 +260,10 @@ The annual consolidated QA file contains rule populations, stratified samples, o
 
 ### Dashboard trace
 
-- Legislator → subject → supporting bill and vote record.
-- Bill → description, analytical subject, provenance, exact child, broader parent, sponsors, history, vote totals, and statements.
+- Delegate → subject → supporting bill and vote record.
+- Subject → delegates → Yes, No, abstained, not-voting, and true cross-party records.
+- Bill → description, analytical subject, provenance, exact child, broader parent, history, vote totals, and statements.
+- Sponsorship remains traceable through the separate processed sponsor tables, outside the leadership page.
 - Tables can be downloaded for independent review.
 
 ### Reproduction commands

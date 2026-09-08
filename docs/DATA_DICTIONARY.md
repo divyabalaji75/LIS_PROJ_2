@@ -175,6 +175,8 @@ Grain: one legislator-topic-provenance combination.
 
 ## Sponsorship outputs
 
+These tables remain part of the reproducible analytical backend. They are not displayed on the simplified leadership dashboard.
+
 ### `sponsor_fact_<year>.csv`
 
 Grain: one sponsor-bill record.

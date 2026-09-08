@@ -214,7 +214,7 @@ if not available_years:
 with st.sidebar:
     st.subheader("Briefing options")
     selected_year = st.selectbox("Session detail", available_years, index=len(available_years) - 1)
-    st.caption("The session selector changes questions 1, 2, 4, and 5. Question 3 always compares available sessions.")
+    st.caption("The session selector changes current-session findings. The comparison section uses all available sessions.")
 
 votes = load_output("vote_fact", selected_year)
 delegates = load_output("delegate_behavior", selected_year)
@@ -223,8 +223,6 @@ member_topics = load_output("member_vote_topic", selected_year)
 bills = load_output("bill_lookup", selected_year)
 bill_topics = load_output("bill_topic_lookup", selected_year)
 coverage = load_output("topic_coverage", selected_year)
-sponsors = load_output("sponsor_fact", selected_year)
-sponsor_votes = load_output("sponsor_vote_behavior", selected_year)
 history = load_output("bill_history", selected_year)
 vote_bridge = load_output("vote_bill_bridge", selected_year)
 statements = load_output("vote_statement_fact", selected_year)
@@ -281,26 +279,57 @@ answer(
     f"{party_comparison}"
 )
 
-q1_left, q1_right = st.columns([1, 1.35])
+q1_left, q1_right = st.columns(2)
 with q1_left:
-    compact_table(party_summary.style.format({"Party-break rate": "{:.2f}%", "Cross-party rate": "{:.2f}%"}), 115)
-with q1_right:
-    leaders = delegates.nlargest(8, "cross_party_votes")
-    leaders = leaders[["MBR_NAME", "party", "cross_party_votes"]].rename(
-        columns={"MBR_NAME": "Legislator", "party": "Party", "cross_party_votes": "Cross-party votes"}
+    count_leaders = delegates.nlargest(8, "cross_party_votes")
+    count_leaders = count_leaders[["MBR_NAME", "party", "cross_party_votes"]].rename(
+        columns={"MBR_NAME": "Delegate", "party": "Party", "cross_party_votes": "Cross-party votes"}
     )
-    bar_chart(leaders, "Legislator", "Cross-party votes", color="Party", horizontal=True)
+    st.markdown("**Most true cross-party votes**")
+    bar_chart(count_leaders, "Delegate", "Cross-party votes", color="Party", horizontal=True)
+with q1_right:
+    rate_eligible = delegates[delegates["eligible_cross_party_votes"].ge(500)]
+    rate_leaders = rate_eligible.nlargest(8, "cross_party_pct")
+    rate_leaders = rate_leaders[["MBR_NAME", "party", "cross_party_pct"]].rename(
+        columns={"MBR_NAME": "Delegate", "party": "Party", "cross_party_pct": "Cross-party rate"}
+    )
+    st.markdown("**Highest true cross-party rates**")
+    st.caption("Delegates with at least 500 eligible votes")
+    bar_chart(rate_leaders, "Delegate", "Cross-party rate", color="Party", horizontal=True, percent=True)
 
-with st.expander("Explore one legislator’s recorded votes by subject"):
+party_delegate_leaders = (
+    rate_eligible.sort_values(["party", "cross_party_pct"], ascending=[True, False])
+    .groupby("party", as_index=False)
+    .head(3)[["MBR_NAME", "party", "cross_party_votes", "eligible_cross_party_votes", "cross_party_pct"]]
+    .rename(
+        columns={
+            "MBR_NAME": "Delegate",
+            "party": "Party",
+            "cross_party_votes": "Cross-party votes",
+            "eligible_cross_party_votes": "Eligible votes",
+            "cross_party_pct": "Cross-party rate",
+        }
+    )
+)
+st.markdown("**Highest cross-party rates within each party**")
+compact_table(party_delegate_leaders.style.format({"Cross-party rate": "{:.2f}%"}), 245)
+st.caption(
+    "Leaderboards use House delegates. Rates use eligible Yes/No votes with clear "
+    "majorities for both parties and require at least 500 eligible votes; session "
+    "totals above include all legislators."
+)
+
+with st.expander("Choose a delegate and see every subject"):
     directory = (
         member_topics[["member_id", "MBR_NAME", "party"]]
         .dropna(subset=["member_id", "MBR_NAME"])
+        .loc[lambda frame: frame["member_id"].astype(str).str.startswith("H")]
         .drop_duplicates("member_id")
         .sort_values("MBR_NAME")
         .reset_index(drop=True)
     )
     delegate_search = st.text_input(
-        "Search by legislator name",
+        "Search by delegate name",
         placeholder="For example: Bloxom",
         key="delegate_search",
     ).strip()
@@ -311,14 +340,14 @@ with st.expander("Explore one legislator’s recorded votes by subject"):
         ]
 
     if matches.empty:
-        st.warning("No matching legislator was found. Try part of the legislator’s name.")
+        st.warning("No matching delegate was found. Try part of the delegate’s name.")
     else:
         labels = {
             row.member_id: f"{row.MBR_NAME} ({row.party})"
             for row in matches.itertuples(index=False)
         }
         person_id = st.selectbox(
-            "Matching legislators",
+            "Matching delegates",
             matches["member_id"].tolist(),
             format_func=lambda member_id: labels[member_id],
             key="person_subject_drilldown",
@@ -342,7 +371,12 @@ with st.expander("Explore one legislator’s recorded votes by subject"):
         person_columns[4].metric("Cross-party", f"{person_votes['cross_party'].sum():,}")
 
         person_subjects = subject_vote_counts(focused_topic_rows)
-        person_subjects = person_subjects.sort_values("Yes/No votes", ascending=False)
+        subject_rank = st.selectbox(
+            "Rank the delegate’s subjects by",
+            ["Cross-party votes", "Yes/No votes", "Yes", "No", "Abstained", "Not voting"],
+            key="person_subject_rank",
+        )
+        person_subjects = person_subjects.sort_values(subject_rank, ascending=False)
         person_chart = person_subjects.head(12).melt(
             id_vars="Subject",
             value_vars=["Yes", "No", "Abstained", "Not voting"],
@@ -444,15 +478,128 @@ if not subject_counts.empty:
     bar_chart(subject_measure_view, "Subject", measure, horizontal=True)
     st.caption("A = abstained; X = not voting. Counts are member-vote-subject records.")
 
-    st.markdown("**How did each party vote within a subject?**")
+    delegate_subject_rankings = (
+        delegate_topics[delegate_topics["topic_name"].ne("Unclassified")]
+        .groupby(["MBR_NAME", "party", "topic_name"], as_index=False)
+        .agg(
+            eligible_votes=("eligible_topic_events", "sum"),
+            cross_party_votes=("cross_party_events", "sum"),
+        )
+    )
+    delegate_subject_rankings["Cross-party rate"] = (
+        100
+        * delegate_subject_rankings["cross_party_votes"]
+        / delegate_subject_rankings["eligible_votes"]
+    )
+    combination_left, combination_right = st.columns(2)
+    with combination_left:
+        st.markdown("**Delegate–subject combinations with the most cross-party votes**")
+        combination_counts = delegate_subject_rankings.nlargest(10, "cross_party_votes").rename(
+            columns={
+                "MBR_NAME": "Delegate",
+                "party": "Party",
+                "topic_name": "Subject",
+                "cross_party_votes": "Cross-party votes",
+                "eligible_votes": "Eligible votes",
+            }
+        )
+        combination_counts["Delegate and subject"] = (
+            combination_counts["Delegate"] + " — " + combination_counts["Subject"]
+        )
+        bar_chart(
+            combination_counts,
+            "Delegate and subject",
+            "Cross-party votes",
+            color="Party",
+            horizontal=True,
+        )
+    with combination_right:
+        st.markdown("**Delegate–subject combinations with the highest cross-party rates**")
+        st.caption("Combinations with at least 50 eligible votes")
+        combination_rates = (
+            delegate_subject_rankings[delegate_subject_rankings["eligible_votes"].ge(50)]
+            .nlargest(10, "Cross-party rate")
+            .rename(
+                columns={
+                    "MBR_NAME": "Delegate",
+                    "party": "Party",
+                    "topic_name": "Subject",
+                    "cross_party_votes": "Cross-party votes",
+                    "eligible_votes": "Eligible votes",
+                }
+            )
+        )
+        combination_rates["Delegate and subject"] = (
+            combination_rates["Delegate"] + " — " + combination_rates["Subject"]
+        )
+        bar_chart(
+            combination_rates,
+            "Delegate and subject",
+            "Cross-party rate",
+            color="Party",
+            horizontal=True,
+            percent=True,
+        )
+
+    st.markdown("**Choose a subject and compare delegates**")
     selected_subject = st.selectbox(
-        "Subject",
+        "Subject to compare",
         sorted(subject_counts.loc[subject_counts["Subject"].ne("Unclassified"), "Subject"]),
         key="party_subject_drilldown",
     )
     party_subject_rows = member_topics[member_topics["topic_name"].eq(selected_subject)]
+    delegate_subject_rows = party_subject_rows[
+        party_subject_rows["member_id"].astype(str).str.startswith("H")
+    ]
+    delegate_subject = (
+        delegate_subject_rows.groupby(["MBR_NAME", "party"], as_index=False)
+        .agg(
+            Yes=("vote", lambda values: values.eq("Y").sum()),
+            No=("vote", lambda values: values.eq("N").sum()),
+            Abstained=("vote", lambda values: values.eq("A").sum()),
+            Not_voting=("vote", lambda values: values.eq("X").sum()),
+            Eligible_votes=("eligible_cross_party", "sum"),
+            Cross_party_votes=("cross_party", "sum"),
+        )
+        .rename(
+            columns={
+                "MBR_NAME": "Delegate",
+                "party": "Party",
+                "Not_voting": "Not voting",
+                "Eligible_votes": "Eligible votes",
+                "Cross_party_votes": "Cross-party votes",
+            }
+        )
+    )
+    delegate_subject["Cross-party rate"] = (
+        100 * delegate_subject["Cross-party votes"] / delegate_subject["Eligible votes"]
+    ).fillna(0)
+    delegate_rank = st.selectbox(
+        "Rank delegates by",
+        ["Cross-party votes", "Cross-party rate", "Yes", "No", "Abstained", "Not voting"],
+        key="subject_delegate_rank",
+    )
+    delegate_subject = delegate_subject.sort_values(delegate_rank, ascending=False)
+    compact_table(
+        delegate_subject[
+            [
+                "Delegate",
+                "Party",
+                "Yes",
+                "No",
+                "Abstained",
+                "Not voting",
+                "Cross-party votes",
+                "Eligible votes",
+                "Cross-party rate",
+            ]
+        ].style.format({"Cross-party rate": "{:.1f}%"}),
+        420,
+    )
+
+    st.markdown("**Party totals for the selected subject**")
     party_subject = (
-        party_subject_rows.groupby("party", as_index=False)
+        delegate_subject_rows.groupby("party", as_index=False)
         .agg(
             Yes=("vote", lambda values: values.eq("Y").sum()),
             No=("vote", lambda values: values.eq("N").sum()),
@@ -474,8 +621,8 @@ if not subject_counts.empty:
         150,
     )
     st.caption(
-        "The Yes rate summarizes recorded votes on bills assigned to this subject; it should not be interpreted as "
-        "support for a single policy position."
+        "Party totals use the same House-delegate rows shown above. The Yes rate summarizes recorded votes on bills "
+        "assigned to this subject; it should not be interpreted as support for a single policy position."
     )
 
 
@@ -549,39 +696,8 @@ else:
     answer("A second processed session is needed before a year-over-year comparison can be calculated.")
 
 
-# 4. SPONSORSHIP
-st.header("4. What did sponsorship tell us?")
-directional_sponsor_votes = sponsor_votes[sponsor_votes["vote"].isin(["Y", "N"])].copy()
-sponsored_bill_count = sponsor_votes["Bill_id"].nunique() if not sponsor_votes.empty else 0
-sponsor_yes_rate = pct(directional_sponsor_votes["vote"].eq("Y").sum(), len(directional_sponsor_votes))
-answer(
-    f"The data connected sponsors to {sponsored_bill_count:,} bills with recorded votes in {selected_year}. "
-    f"Sponsors voted Yes on {sponsor_yes_rate:.1f}% of their own recorded Yes/No votes. The official sponsor role "
-    "remains visible so chief patrons and co-patrons can be evaluated separately."
-)
-
-if not directional_sponsor_votes.empty:
-    sponsor_role_summary = (
-        directional_sponsor_votes.groupby("patron_role", as_index=False)
-        .agg(Recorded_votes=("vote", "size"), Yes_votes=("vote", lambda values: values.eq("Y").sum()))
-        .rename(columns={"patron_role": "Sponsor role"})
-    )
-    sponsor_role_summary["Yes rate"] = 100 * sponsor_role_summary["Yes_votes"] / sponsor_role_summary["Recorded_votes"]
-    sponsor_role_summary = sponsor_role_summary.nlargest(8, "Recorded_votes")
-    q4_left, q4_right = st.columns([1.25, 1])
-    with q4_left:
-        bar_chart(sponsor_role_summary, "Sponsor role", "Yes rate", horizontal=True, percent=True)
-    with q4_right:
-        compact_table(
-            sponsor_role_summary[["Sponsor role", "Recorded_votes", "Yes rate"]]
-            .rename(columns={"Recorded_votes": "Recorded votes"})
-            .style.format({"Yes rate": "{:.1f}%"}),
-            300,
-        )
-
-
-# 5. PATHWAY AND CONTEXT
-st.header("5. How did bills move, and what context is available?")
+# 4. PATHWAY AND CONTEXT
+st.header("4. How did bills move, and what context is available?")
 statement_count = len(statements)
 explicit_intentions = int(statements.get("intended_vote_explicit", pd.Series(dtype=bool)).fillna(False).sum())
 answer(
@@ -632,16 +748,6 @@ with st.expander("Look up the official record for one bill"):
             }
         )
         compact_table(topic_view, 150)
-
-    bill_sponsors = sponsors[sponsors["Bill_id"].eq(bill_choice)]
-    if not bill_sponsors.empty:
-        st.markdown("**Sponsors**")
-        compact_table(
-            bill_sponsors[["member_name", "patron_role"]].rename(
-                columns={"member_name": "Legislator", "patron_role": "Role"}
-            ),
-            150,
-        )
 
     bill_history = history[history["Bill_id"].eq(bill_choice)].copy()
     if not bill_history.empty:
