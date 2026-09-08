@@ -261,39 +261,65 @@ with q1_right:
     bar_chart(leaders, "Legislator", "Cross-party votes", color="Party", horizontal=True)
 
 with st.expander("Explore one legislator’s recorded votes by subject"):
-    person = st.selectbox(
-        "Legislator",
-        sorted(member_topics["MBR_NAME"].dropna().unique()),
-        key="person_subject_drilldown",
+    directory = (
+        member_topics[["member_id", "MBR_NAME", "party"]]
+        .dropna(subset=["member_id", "MBR_NAME"])
+        .drop_duplicates("member_id")
+        .sort_values("MBR_NAME")
+        .reset_index(drop=True)
     )
-    person_id = member_topics.loc[member_topics["MBR_NAME"].eq(person), "member_id"].iloc[0]
-    person_votes = votes[votes["member_id"].eq(person_id)]
-    person_columns = st.columns(5)
-    person_columns[0].metric("Yes", f"{person_votes['vote'].eq('Y').sum():,}")
-    person_columns[1].metric("No", f"{person_votes['vote'].eq('N').sum():,}")
-    person_columns[2].metric("Abstained (A)", f"{person_votes['vote'].eq('A').sum():,}")
-    person_columns[3].metric("Not voting (X)", f"{person_votes['vote'].eq('X').sum():,}")
-    person_columns[4].metric("Cross-party", f"{person_votes['cross_party'].sum():,}")
+    delegate_search = st.text_input(
+        "Search by legislator name or member ID",
+        placeholder="For example: Bloxom or H0267",
+        key="delegate_search",
+    ).strip()
+    matches = directory
+    if delegate_search:
+        matches = directory[
+            directory["MBR_NAME"].astype(str).str.contains(delegate_search, case=False, na=False, regex=False)
+            | directory["member_id"].astype(str).str.contains(delegate_search, case=False, na=False, regex=False)
+        ]
 
-    person_subjects = subject_vote_counts(member_topics[member_topics["member_id"].eq(person_id)])
-    person_subjects = person_subjects.sort_values("Yes/No votes", ascending=False)
-    person_chart = person_subjects.head(12).melt(
-        id_vars="Subject",
-        value_vars=["Yes", "No", "Abstained", "Not voting"],
-        var_name="Recorded vote",
-        value_name="Count",
-    )
-    bar_chart(person_chart, "Subject", "Count", color="Recorded vote", horizontal=True)
-    compact_table(
-        person_subjects[
-            ["Subject", "Yes", "No", "Abstained", "Not voting", "Cross-party votes"]
-        ],
-        330,
-    )
-    st.caption(
-        "These are observed vote counts, not a measure of personal belief. A subject can contain bills with different "
-        "policy directions, and some recorded votes concern procedure rather than final passage."
-    )
+    if matches.empty:
+        st.warning("No matching legislator was found. Try part of a last name or a member ID.")
+    else:
+        labels = {
+            row.member_id: f"{row.MBR_NAME} ({row.party} · {row.member_id})"
+            for row in matches.itertuples(index=False)
+        }
+        person_id = st.selectbox(
+            "Matching legislators",
+            matches["member_id"].tolist(),
+            format_func=lambda member_id: labels[member_id],
+            key="person_subject_drilldown",
+        )
+        person_votes = votes[votes["member_id"].eq(person_id)]
+        person_columns = st.columns(5)
+        person_columns[0].metric("Yes", f"{person_votes['vote'].eq('Y').sum():,}")
+        person_columns[1].metric("No", f"{person_votes['vote'].eq('N').sum():,}")
+        person_columns[2].metric("Abstained (A)", f"{person_votes['vote'].eq('A').sum():,}")
+        person_columns[3].metric("Not voting (X)", f"{person_votes['vote'].eq('X').sum():,}")
+        person_columns[4].metric("Cross-party", f"{person_votes['cross_party'].sum():,}")
+
+        person_subjects = subject_vote_counts(member_topics[member_topics["member_id"].eq(person_id)])
+        person_subjects = person_subjects.sort_values("Yes/No votes", ascending=False)
+        person_chart = person_subjects.head(12).melt(
+            id_vars="Subject",
+            value_vars=["Yes", "No", "Abstained", "Not voting"],
+            var_name="Recorded vote",
+            value_name="Count",
+        )
+        bar_chart(person_chart, "Subject", "Count", color="Recorded vote", horizontal=True)
+        compact_table(
+            person_subjects[
+                ["Subject", "Yes", "No", "Abstained", "Not voting", "Cross-party votes"]
+            ],
+            330,
+        )
+        st.caption(
+            "These are observed vote counts, not a measure of personal belief. A subject can contain bills with "
+            "different policy directions, and some recorded votes concern procedure rather than final passage."
+        )
 
 
 # 2. TOPICS
