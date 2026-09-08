@@ -14,6 +14,9 @@ motivation, or intent.
 - [`docs/BUSINESS_GLOSSARY.md`](docs/BUSINESS_GLOSSARY.md) provides leadership-friendly terms and interpretation guardrails.
 - [`docs/PIPELINE_CODE_GUIDE.md`](docs/PIPELINE_CODE_GUIDE.md) explains every Python script, representative logic, and business purpose.
 - [`docs/VALIDATION_AND_CONFIDENCE.md`](docs/VALIDATION_AND_CONFIDENCE.md) records completed validation, defensible claims, and remaining sign-off gaps.
+- [`docs/ELI15_COMPLETE_PROJECT_GUIDE.md`](docs/ELI15_COMPLETE_PROJECT_GUIDE.md) walks through every project file family, production function, code block, output, and test in plain language.
+- [`docs/APPENDIX_METHODS_AND_VERIFICATION.md`](docs/APPENDIX_METHODS_AND_VERIFICATION.md) is the separate methods appendix with topic derivation, source percentages, formulas, and verification evidence.
+- [`docs/TEST_CATALOG.md`](docs/TEST_CATALOG.md) explains the business control provided by every named automated test.
 
 ## Research questions
 
