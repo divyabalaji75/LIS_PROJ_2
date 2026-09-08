@@ -155,6 +155,37 @@ def subject_vote_counts(member_topics: pd.DataFrame) -> pd.DataFrame:
     return result
 
 
+def legislator_evidence(
+    member_topics: pd.DataFrame,
+    vote_bridge: pd.DataFrame,
+    bill_topics: pd.DataFrame,
+    bills: pd.DataFrame,
+    member_id: str,
+    subject: str,
+) -> pd.DataFrame:
+    """Return bill-level records supporting one legislator drilldown."""
+
+    event_columns = [
+        "vote_id",
+        "topic_name",
+        "vote",
+        "own_party_position",
+        "other_party_position",
+        "broke_with_party",
+        "cross_party",
+    ]
+    events = member_topics.loc[member_topics["member_id"].eq(member_id), event_columns].drop_duplicates()
+    if subject != "All subjects":
+        events = events[events["topic_name"].eq(subject)]
+    bridge = vote_bridge[["vote_id", "Bill_id"]].drop_duplicates()
+    topic_keys = bill_topics[["Bill_id", "topic_name", "classification"]].drop_duplicates()
+    descriptions = bills[["Bill_id", "Bill_description"]].drop_duplicates("Bill_id")
+    evidence = events.merge(bridge, on="vote_id", how="inner").merge(
+        topic_keys, on=["Bill_id", "topic_name"], how="inner"
+    ).merge(descriptions, on="Bill_id", how="left")
+    return evidence.drop_duplicates().sort_values(["Bill_id", "vote_id"])
+
+
 def bill_outcomes(history: pd.DataFrame) -> dict[str, int]:
     if history.empty:
         return {"Became law": 0, "Left in committee": 0, "Failed or stricken": 0}
@@ -269,22 +300,21 @@ with st.expander("Explore one legislator’s recorded votes by subject"):
         .reset_index(drop=True)
     )
     delegate_search = st.text_input(
-        "Search by legislator name or member ID",
-        placeholder="For example: Bloxom or H0267",
+        "Search by legislator name",
+        placeholder="For example: Bloxom",
         key="delegate_search",
     ).strip()
     matches = directory
     if delegate_search:
         matches = directory[
             directory["MBR_NAME"].astype(str).str.contains(delegate_search, case=False, na=False, regex=False)
-            | directory["member_id"].astype(str).str.contains(delegate_search, case=False, na=False, regex=False)
         ]
 
     if matches.empty:
-        st.warning("No matching legislator was found. Try part of a last name or a member ID.")
+        st.warning("No matching legislator was found. Try part of the legislator’s name.")
     else:
         labels = {
-            row.member_id: f"{row.MBR_NAME} ({row.party} · {row.member_id})"
+            row.member_id: f"{row.MBR_NAME} ({row.party})"
             for row in matches.itertuples(index=False)
         }
         person_id = st.selectbox(
@@ -293,7 +323,17 @@ with st.expander("Explore one legislator’s recorded votes by subject"):
             format_func=lambda member_id: labels[member_id],
             key="person_subject_drilldown",
         )
-        person_votes = votes[votes["member_id"].eq(person_id)]
+        person_topic_rows = member_topics[member_topics["member_id"].eq(person_id)]
+        subject_options = ["All subjects"] + sorted(person_topic_rows["topic_name"].dropna().unique())
+        subject_focus = st.selectbox("Subject", subject_options, key="person_subject_focus")
+        focused_topic_rows = person_topic_rows
+        if subject_focus != "All subjects":
+            focused_topic_rows = person_topic_rows[person_topic_rows["topic_name"].eq(subject_focus)]
+        person_votes = (
+            votes[votes["member_id"].eq(person_id)]
+            if subject_focus == "All subjects"
+            else focused_topic_rows
+        )
         person_columns = st.columns(5)
         person_columns[0].metric("Yes", f"{person_votes['vote'].eq('Y').sum():,}")
         person_columns[1].metric("No", f"{person_votes['vote'].eq('N').sum():,}")
@@ -301,7 +341,7 @@ with st.expander("Explore one legislator’s recorded votes by subject"):
         person_columns[3].metric("Not voting (X)", f"{person_votes['vote'].eq('X').sum():,}")
         person_columns[4].metric("Cross-party", f"{person_votes['cross_party'].sum():,}")
 
-        person_subjects = subject_vote_counts(member_topics[member_topics["member_id"].eq(person_id)])
+        person_subjects = subject_vote_counts(focused_topic_rows)
         person_subjects = person_subjects.sort_values("Yes/No votes", ascending=False)
         person_chart = person_subjects.head(12).melt(
             id_vars="Subject",
@@ -320,6 +360,42 @@ with st.expander("Explore one legislator’s recorded votes by subject"):
             "These are observed vote counts, not a measure of personal belief. A subject can contain bills with "
             "different policy directions, and some recorded votes concern procedure rather than final passage."
         )
+        with st.expander("Verify these results against the underlying records"):
+            evidence = legislator_evidence(
+                member_topics, vote_bridge, bill_topics, bills, person_id, subject_focus
+            )
+            st.caption(
+                "Each row connects the selected legislator’s recorded vote to an official bill and the subject used "
+                "in this briefing. Use the bill and LIS vote record to check the corresponding raw LIS files."
+            )
+            evidence_view = evidence[
+                [
+                    "Bill_id",
+                    "Bill_description",
+                    "topic_name",
+                    "classification",
+                    "vote",
+                    "own_party_position",
+                    "other_party_position",
+                    "broke_with_party",
+                    "cross_party",
+                    "vote_id",
+                ]
+            ].rename(
+                columns={
+                    "Bill_id": "Bill",
+                    "Bill_description": "Bill description",
+                    "topic_name": "Subject",
+                    "classification": "Subject source",
+                    "vote": "Recorded vote",
+                    "own_party_position": "Own party majority",
+                    "other_party_position": "Other party majority",
+                    "broke_with_party": "Party break",
+                    "cross_party": "True cross-party",
+                    "vote_id": "LIS vote record",
+                }
+            )
+            compact_table(evidence_view, 320)
 
 
 # 2. TOPICS
@@ -578,11 +654,12 @@ with st.expander("Look up the official record for one bill"):
     bill_statements = statements[statements["Bill_id"].eq(bill_choice)] if not statements.empty else pd.DataFrame()
     if not bill_statements.empty:
         st.markdown("**Vote statements**")
-        statement_view = bill_statements[
-            ["member_id", "recorded_vote", "intended_vote", "vote_statement"]
+        member_names = votes[["member_id", "MBR_NAME"]].drop_duplicates("member_id")
+        statement_view = bill_statements.merge(member_names, on="member_id", how="left")[
+            ["MBR_NAME", "recorded_vote", "intended_vote", "vote_statement"]
         ].rename(
             columns={
-                "member_id": "Member",
+                "MBR_NAME": "Legislator",
                 "recorded_vote": "Official vote",
                 "intended_vote": "Explicit intended vote",
                 "vote_statement": "Statement",
@@ -599,6 +676,14 @@ with st.expander("Definitions, coverage, and limitations"):
         "Bills without an official subject use documented rules applied first to the LIS summary and then to the bill description.\n"
         "- **Interpretation:** these measures describe recorded legislative behavior. They do not establish ideology, "
         "motivation, persuasion, or causation. Session differences can also reflect agenda and membership changes."
+    )
+    st.markdown(
+        "**How to verify a finding**\n\n"
+        "1. Open the relevant legislator or bill drilldown and identify the bill and LIS vote record.\n"
+        "2. Check the recorded vote in the raw LIS `VOTE.CSV` and its bill relationship in `HISTORY.CSV`.\n"
+        "3. Check subject provenance against `CIBillSubjects.csv` and `CIParentChildSubjects.csv`; for derived topics, "
+        "review the retained LIS summary or bill description and matched rule.\n"
+        "4. Re-run the test suite and pipeline to reproduce the briefing from the untouched raw LIS files."
     )
     if not coverage.empty:
         coverage_view = coverage[["classification", "bill_count", "bill_percentage"]].rename(
