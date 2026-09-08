@@ -8,6 +8,13 @@ and 2026 regular sessions; the code is session-agnostic.
 The project describes recorded behavior. It does not infer beliefs, ideology,
 motivation, or intent.
 
+## Project documentation
+
+- [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) defines source and processed datasets, grains, keys, and fields.
+- [`docs/BUSINESS_GLOSSARY.md`](docs/BUSINESS_GLOSSARY.md) provides leadership-friendly terms and interpretation guardrails.
+- [`docs/PIPELINE_CODE_GUIDE.md`](docs/PIPELINE_CODE_GUIDE.md) explains every Python script, representative logic, and business purpose.
+- [`docs/VALIDATION_AND_CONFIDENCE.md`](docs/VALIDATION_AND_CONFIDENCE.md) records completed validation, defensible claims, and remaining sign-off gaps.
+
 ## Research questions
 
 The canonical outputs support analysis of:
@@ -138,7 +145,7 @@ Using `python -m streamlit` avoids depending on a globally installed
 
 The dashboard reads processed CSVs without modifying them. It exposes overview
 coverage, legislator and topic views, bill-level provenance (including child and
-parent subjects), and the separate official evidence layers.
+parent subjects), subject-filtered bill lookup, and the separate official evidence layers.
 
 ## Limitations
 

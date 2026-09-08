@@ -602,7 +602,19 @@ with q5_right:
     st.metric("Vote statements", f"{statement_count:,}")
 
 with st.expander("Look up the official record for one bill"):
-    bill_choice = st.selectbox("Bill", sorted(bills["Bill_id"].dropna().unique()))
+    bill_subject_options = ["All subjects"] + sorted(bill_topics["topic_name"].dropna().unique())
+    bill_subject_filter = st.selectbox(
+        "Filter bills by subject",
+        bill_subject_options,
+        key="bill_subject_filter",
+    )
+    bill_options = sorted(bills["Bill_id"].dropna().unique())
+    if bill_subject_filter != "All subjects":
+        subject_bill_ids = set(
+            bill_topics.loc[bill_topics["topic_name"].eq(bill_subject_filter), "Bill_id"]
+        )
+        bill_options = [bill_id for bill_id in bill_options if bill_id in subject_bill_ids]
+    bill_choice = st.selectbox("Bill", bill_options)
     bill_row = bills[bills["Bill_id"].eq(bill_choice)]
     if not bill_row.empty:
         st.markdown(f"**{bill_choice} — {bill_row.iloc[0].get('Bill_description', '')}**")
