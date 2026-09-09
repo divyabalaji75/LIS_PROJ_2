@@ -21,9 +21,15 @@ The dashboard is read-only and runs after the processed outputs exist:
 .\run_dashboard.ps1
 ```
 
+For a new regular session, the preferred entry point is:
+
+```powershell
+.\.venv\Scripts\python.exe onboard_session.py 2027 --compare-with 2026
+```
+
 ## `lis_common.py`
 
-Purpose: provides one shared definition of directory locations, configured years, required-column checks, text cleaning, and CSV writing.
+Purpose: provides one shared definition of directory locations, configured analysis and test years, environment flags, required-column checks, text cleaning, and CSV writing.
 
 Representative logic:
 
@@ -33,7 +39,15 @@ def configured_years(default=(2025, 2026)):
     return parsed_years or list(default)
 ```
 
-Business context: year selection and file handling are centralized so adding a session does not require copying scripts or changing business logic in several places. `require_columns` fails early when LIS schema changes instead of silently producing misleading results.
+Business context: year selection and file handling are centralized so adding a session does not require copying scripts or changing business logic in several places. `configured_test_years` lets the same full-data tests validate a future year through `LIS_TEST_YEARS`. `environment_flag` makes downloads explicit through `LIS_DOWNLOAD`. `require_columns` fails early when LIS schema changes instead of silently producing misleading results.
+
+## `onboard_session.py`
+
+Purpose: provides one reproducible command for adding a regular-session year. It downloads the required LIS sources, prints a source inventory, flags sparse or stale official-subject data, builds the party reference, runs the deterministic pipeline and topic audit, and directs the existing full-data tests to the new year.
+
+Key functions: `validate_year`, `download_sources`, `remote_modified`, `inspect_sources`, `onboarding_environment`, and `run_python`.
+
+Business context: this is orchestration, not new analytical logic. It deliberately reuses the existing scripts and produces no additional permanent diagnostic CSV. A freshness warning is evidence requiring review; it never causes a bill to receive an invented official subject.
 
 ## `member_party.py`
 
@@ -57,7 +71,7 @@ Purpose: performs the main deterministic transformation from official raw LIS fi
 
 ### Download and session configuration
 
-`get_session_code`, `download_file`, and `download_year` map a four-digit year to the LIS bulk-data location and fetch the required files when `RUN_DOWNLOAD` is intentionally enabled.
+`get_session_code`, `download_file`, and `download_year` map a four-digit year to the LIS bulk-data location and fetch the required files when `LIS_DOWNLOAD` is intentionally set to a true value.
 
 Business context: raw files remain the source of truth. Downloads are not silently refreshed during ordinary analysis, which helps make a run reproducible.
 
@@ -247,6 +261,7 @@ The tests protect existing behavior; they should not be weakened merely to make 
 | `tests/test_topic_voting_tendency.py` | Neutral tendency thresholds and topic-level aggregation |
 | `tests/test_yoy_logic.py` | Comparable-sample and year-over-year calculations |
 | `tests/test_source_sample.py` | Targeted checks against source-derived records |
+| `tests/test_session_configuration.py` | Future-year configuration, independent test-year selection, download-flag parsing, and onboarding year validation |
 
 ## Reading the code with confidence
 

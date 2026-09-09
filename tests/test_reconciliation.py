@@ -3,6 +3,8 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
+from lis_common import configured_test_years
+
 
 # =========================================================
 # CONFIG
@@ -10,10 +12,7 @@ import pytest
 
 PROCESSED_ROOT = Path("data/processed")
 
-YEARS = [
-    2025,
-    2026,
-]
+YEARS = configured_test_years()
 
 DIRECTIONAL_VOTES = {
     "Y",

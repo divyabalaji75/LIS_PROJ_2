@@ -22,6 +22,28 @@ def configured_years(default: Iterable[int] = (2025, 2026)) -> list[int]:
     return years or list(default)
 
 
+def configured_test_years(default: Iterable[int] = (2025, 2026)) -> list[int]:
+    """Return full-data validation years independently of analysis settings."""
+    value = os.environ.get("LIS_TEST_YEARS", "").strip()
+    years = [int(part.strip()) for part in value.split(",") if part.strip()]
+    return years or list(default)
+
+
+def environment_flag(name: str, default: bool = False) -> bool:
+    """Read a conventional true/false environment flag."""
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    normalized = value.strip().lower()
+    if normalized in {"1", "true", "yes", "on"}:
+        return True
+    if normalized in {"0", "false", "no", "off", ""}:
+        return False
+    raise ValueError(
+        f"{name} must be one of 1/0, true/false, yes/no, or on/off; got {value!r}."
+    )
+
+
 def require_columns(frame: pd.DataFrame, columns: Iterable[str], source: Path) -> None:
     missing = set(columns) - set(frame.columns)
     if missing:

@@ -2,7 +2,7 @@
 
 ## Executive conclusion
 
-The voting calculations are reproducible, internally consistent, and traceable to official LIS records. On September 8, 2026, the unchanged automated suite completed with **310 tests passing**. That supports high confidence in the implemented vote parsing, member reconciliation, party joins, strict-majority logic, party-break logic, true cross-party logic, vote/bill bridge behavior, topic-provenance priority, and year-over-year calculation rules.
+The voting calculations are reproducible, internally consistent, and traceable to official LIS records. On September 9, 2026, the expanded automated suite completed with **330 tests passing**. That supports high confidence in the implemented vote parsing, member reconciliation, party joins, strict-majority logic, party-break logic, true cross-party logic, vote/bill bridge behavior, topic-provenance priority, year-over-year calculations, and future-session configuration.
 
 It would still be inappropriate to promise “100% certainty.” Automated tests demonstrate that the code behaves as specified; they cannot prove that every external source file is complete, every party fallback remains correct, or every deterministic text classification is substantively ideal. Leadership can instead be told that the results are **reproducible, source-traceable, tested, and accompanied by explicit limitations and open review items**.
 
@@ -10,7 +10,7 @@ It would still be inappropriate to promise “100% certainty.” Automated tests
 
 | Control | Current evidence | Confidence supported |
 |---|---|---|
-| Automated test suite | 310 tests passed | Structural and logical implementation |
+| Automated test suite | 330 tests passed | Structural and logical implementation |
 | Full-row programmatic checks | Production validation functions fail on invalid schemas, joins, labels, or logical implications | Dataset-wide consistency |
 | Canonical vote grain | `vote_id + member_id` checks | Member-vote counts are not inflated by topic joins |
 | Strict party positions | Positions require more Yes than No or more No than Yes | Ties are not silently assigned |
@@ -20,6 +20,7 @@ It would still be inappropriate to promise “100% certainty.” Automated tests
 | Recorded versus intended vote | Separate fields and explicit-intention flag | Statements do not rewrite official votes |
 | Dashboard checks | Page loads without exceptions; delegate-to-subject and subject-to-delegate filters recalculate; count/rate rankings render; bill subject filter returns only matching bills | Presentation uses the intended processed data |
 | Consolidated topic audit | `topic_validation_audit_2025.csv` and `_2026.csv` | Reproducible QA queue and samples |
+| Future-session onboarding | Required-file parsing, source inventory, subject sparsity/freshness warnings, party validation, pipeline, audit, and configurable full-data tests | A new year reuses the established controls without copied scripts |
 
 ## Current source and coverage facts
 
@@ -77,7 +78,7 @@ Recommended sign-off: two reviewers independently trace a small set of displayed
 
 - “The dashboard is built from official LIS bulk records and an auditable party reference.”
 - “The calculations are deterministic and reproducible from retained raw files.”
-- “All 310 automated tests pass.”
+- “All 330 automated tests pass.”
 - “True cross-party voting uses a documented, deliberately narrow definition.”
 - “Official topics, derived topics, and unclassified bills remain distinguishable.”
 - “Every leadership drilldown can be traced to bill and vote records.”

@@ -3,6 +3,8 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
+from lis_common import configured_test_years
+
 
 # =========================================================
 # CONFIG
@@ -11,10 +13,7 @@ import pytest
 PROCESSED_ROOT = Path("data/processed")
 REFERENCE_ROOT = Path("data/reference")
 
-YEARS = [
-    2025,
-    2026,
-]
+YEARS = configured_test_years()
 
 VALID_PARTIES = {
     "D",

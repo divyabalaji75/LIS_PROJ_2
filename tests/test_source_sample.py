@@ -4,6 +4,8 @@ import csv
 import pandas as pd
 import pytest
 
+from lis_common import configured_test_years
+
 
 # =========================================================
 # CONFIG
@@ -13,10 +15,7 @@ RAW_ROOT = Path("data/raw")
 PROCESSED_ROOT = Path("data/processed")
 REFERENCE_ROOT = Path("data/reference")
 
-YEARS = [
-    2025,
-    2026,
-]
+YEARS = configured_test_years()
 
 SAMPLE_SIZE = 25
 RANDOM_STATE = 42

@@ -1,6 +1,6 @@
 # Automated Test Catalog
 
-The repository currently contains 182 named test functions that expand to 310 test cases because many run once for 2025 and once for 2026. This catalog states the business protection supplied by every named test.
+The repository currently contains 192 named test functions that expand to 330 test cases under the default 2025/2026 validation configuration. Full-data modules use `LIS_TEST_YEARS`, so the same controls can run against a future processed session without editing test code. This catalog states the business protection supplied by every named test.
 
 ## `test_vote_fact.py`
 
@@ -211,10 +211,23 @@ The repository currently contains 182 named test functions that expand to 310 te
 - `test_different_members_not_merged`: year-over-year matching never combines different people.
 - `test_different_topics_not_merged`: year-over-year matching never combines different subjects.
 
+## `test_session_configuration.py`
+
+- `test_configured_years_uses_default`: ordinary runs still default to 2025 and 2026.
+- `test_configured_years_accepts_future_sessions`: configuration accepts 2027 and 2028 without copied scripts.
+- `test_future_regular_session_code`: future regular years map to the expected LIS `YYYY1` session code.
+- `test_test_years_are_independent_of_analysis_years`: validation years do not interfere with dashboard or comparison settings.
+- `test_environment_flag_accepts_true_values`: recognized true values enable intentional downloads.
+- `test_environment_flag_accepts_false_values`: recognized false values preserve retained sources.
+- `test_environment_flag_rejects_ambiguous_value`: unclear download settings fail instead of guessing.
+- `test_validate_year_accepts_future_regular_sessions`: 2027 and 2028 are accepted onboarding targets.
+- `test_validate_year_rejects_out_of_range_values`: implausible session years are rejected.
+- `test_onboarding_environment_targets_one_year_and_disables_redownload`: processing targets only the new year and cannot redownload sources a second time.
+
 ## Latest result
 
 ```text
-310 passed in 50.66 seconds
+330 passed
 ```
 
 Passing tests demonstrate that the code follows its specified rules. They do not by themselves prove external source completeness or the substantive correctness of every derived-topic judgment; those remaining reviews are documented in the methods appendix.

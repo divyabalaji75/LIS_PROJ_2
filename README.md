@@ -122,19 +122,15 @@ python topic_stance_analysis.py
 python year_over_year_analysis.py
 ```
 
-To add sessions without copying code, set a comma-separated year list and
-provide the corresponding raw directory and party source:
+To onboard a new regular session without copying code, use the dedicated command. It downloads all required LIS files, reports source row counts and freshness warnings, builds and validates the party reference, runs the pipeline and topic audit, and runs the full-data tests against the new year:
 
 ```powershell
-$env:LIS_ANALYSIS_YEARS = "2025,2026,2027"
-$env:LIS_ANALYSIS_YEAR = "2027"
-python lis_pipeline.py
+.\.venv\Scripts\python.exe onboard_session.py 2027 --compare-with 2026
 ```
 
-Set `RUN_DOWNLOAD = True` in `lis_pipeline.py` only when an intentional raw-data
-refresh is required. Run validation with `python -m pytest -q` and the
-consolidated topic audit with, for example,
-`$env:LIS_ANALYSIS_YEAR="2025"; python topic_validation_audit.py`.
+Use `--skip-download` or `--skip-party` only when the corresponding retained files already exist. The onboarding command warns when official-subject coverage is below 5% or `CIBillSubjects.csv` is more than 30 days older than `BILLS.CSV`; warnings require review but do not silently alter classification.
+
+For a manual raw-data refresh, set `$env:LIS_DOWNLOAD = "1"`. Ordinary runs default to retained raw files. Set `LIS_TEST_YEARS` to run the full-data tests against any processed sessions, for example `$env:LIS_TEST_YEARS="2027,2028"; python -m pytest -q`. The regular-session URL convention is `YYYY1`; special sessions need an explicit future session-code design because year alone is not a unique key.
 
 Launch the leadership-facing dashboard with the project-local Python runtime:
 

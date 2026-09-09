@@ -21,10 +21,11 @@ The project measures **what was recorded**, not why a legislator acted or what t
 | `.venv/` | Project-only Python installation and packages | Lets the project run consistently without a global Streamlit command |
 | `.pytest_cache/`, `__pycache__/` | Automatically generated speed-up files | Safe to recreate; not research data |
 | `README.md` | Starting instructions and methodology summary | Tells a new user what to run and where to look |
-| `requirements.txt` | Normal runtime and test packages | Installs pandas, Plotly, pytest, requests, and Streamlit |
+| `requirements.txt` | Normal runtime and test packages | Installs pandas, Beautiful Soup, Plotly, pytest, requests, and Streamlit |
 | `requirements-review.txt` | Optional semantic-review packages | Adds OpenAI and Pydantic without making AI part of production |
 | `run_dashboard.ps1` | Reliable Windows launcher | Starts Streamlit with `.venv` Python |
-| `data/raw/` | Untouched LIS source snapshots for 2025 and 2026 | Source of truth |
+| `onboard_session.py` | Future regular-session onboarding command | Downloads, inspects, processes, audits, and tests one new year |
+| `data/raw/` | Untouched LIS source snapshots organized by session year | Source of truth |
 | `data/reference/` | Auditable party assignments | Supplies party values for comparisons |
 | `data/processed/` | Reproducible canonical, supporting, and analytical CSVs | Feeds analysis and dashboard |
 | `data/qa/` | Consolidated topic-review outputs | Flags rows for review without changing production data |
@@ -75,7 +76,7 @@ No party is missing in the current references. The source label shows whether th
 
 ## The processed files
 
-`<year>` means that separate 2025 and 2026 files exist unless the name says otherwise.
+`<year>` means that a separate file is created for every onboarded session; the current retained years are 2025 and 2026.
 
 ### Canonical and supporting files
 
@@ -151,11 +152,28 @@ The two files in `data/qa/`—`topic_validation_audit_2025.csv` and `topic_valid
 | Function | What it does | Output |
 |---|---|---|
 | `configured_years` | Reads `LIS_ANALYSIS_YEARS`; otherwise uses 2025 and 2026 | List of integer years |
+| `configured_test_years` | Reads `LIS_TEST_YEARS` independently of dashboard/comparison settings | Full-data test years |
+| `environment_flag` | Converts conventional environment values such as `1`, `true`, or `off` into a Boolean and rejects ambiguous values | Boolean or clear failure |
 | `require_columns` | Stops when required columns are missing | No table; raises a clear error |
 | `read_csv` | Checks existence and reads all fields as text | DataFrame |
 | `clean_text` | Replaces missing text and trims whitespace | Clean Series |
 | `clean_upper` | Cleans text and makes it uppercase | Normalized Series |
 | `write_csv` | Creates the destination folder and writes without an index | Output path |
+
+### `onboard_session.py`
+
+| Function | What it does | Output |
+|---|---|---|
+| `parse_args` | Reads the year and optional skip/comparison switches | Parsed command options |
+| `validate_year` | Rejects an implausible session year | Pass or clear failure |
+| `run_python` | Runs an existing project script with a controlled environment and stops on failure | Completed subprocess step |
+| `download_sources` | Downloads all required files and reports every failed source | Retained raw-year folder |
+| `remote_modified` | Reads the official LIS `Last-Modified` header when available | Timestamp or unavailable |
+| `inspect_sources` | Parses every source, prints rows/bytes/timestamps, and warns about sparse or stale subject coverage | Terminal readiness report |
+| `onboarding_environment` | Sets the new analysis year and prevents an accidental second download | Environment dictionary |
+| `main` | Orchestrates party creation, pipeline, audit, new-year tests, and optional comparison | Completed session onboarding |
+
+The script does not create another QA CSV for source freshness. It reports readiness in the terminal and leaves the retained raw files as the evidence.
 
 ### `member_party.py`
 
@@ -327,7 +345,7 @@ Major page blocks: session selector; four headline metrics; cross-party delegate
 
 ## What every test protects
 
-Pytest expands year-parameterized tests across 2025 and 2026, which is why 182 named test functions currently produce 310 passing test cases.
+Pytest expands full-data tests across the years selected by `LIS_TEST_YEARS`. With the default 2025 and 2026 configuration, 192 named test functions currently produce 330 passing test cases.
 
 ### `test_vote_fact.py`
 
@@ -426,9 +444,18 @@ Pytest expands year-parameterized tests across 2025 and 2026, which is why 182 n
 - Topic Yes-percentage change is recomputed correctly.
 - Provenance, member, and topic join tests prevent unlike rows from merging; matching topic and provenance rows do merge.
 
+### `test_session_configuration.py`
+
+- Default and future-year tests verify analysis-year parsing.
+- Regular-session-code tests verify that 2027 and 2028 map to `20271` and `20281`.
+- Independent test-year selection proves a new year can be validated without changing dashboard or comparison configuration.
+- True, false, and invalid download-flag tests prevent an ambiguous refresh setting.
+- Onboarding-year tests accept 2027/2028 and reject implausible values.
+- The onboarding environment test proves the command targets one year and prevents an accidental second download during processing.
+
 ## What has been verified
 
-- All 310 current automated test cases pass.
+- All 330 current automated test cases pass.
 - Canonical vote parsing reconciles to raw LIS samples and totals.
 - Member, chamber, and party joins are complete under the documented reconciliation rules.
 - Party-majority, party-break, and true cross-party definitions are tested with positive, negative, tie, non-directional, and full-data cases.

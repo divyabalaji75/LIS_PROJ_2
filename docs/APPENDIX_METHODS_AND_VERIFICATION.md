@@ -245,7 +245,7 @@ Committee counts come from official committee reference and assignment files. A 
 On September 8, 2026:
 
 ```text
-310 tests passed in 50.66 seconds
+330 tests passed
 ```
 
 The suite covers raw-to-processed vote reconciliation, required columns, allowed values, canonical uniqueness, member and party joins, chamber identity, party-majority ties, non-directional votes, party-break and cross-party implications, vote/bill one-to-many behavior, subject provenance and priority, parent hierarchy, source samples, tendency thresholds, and year-over-year comparability.
@@ -278,6 +278,14 @@ $env:LIS_ANALYSIS_YEAR = "2026"
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
+### Adding a future regular session
+
+```powershell
+.\.venv\Scripts\python.exe onboard_session.py 2027 --compare-with 2026
+```
+
+This command reuses the existing pipeline and validations. Before processing, it prints every required file's row count, byte size, and official `Last-Modified` value when available. It warns when `CIBillSubjects.csv` covers less than 5% of bills or is more than 30 days older than `BILLS.CSV`. These are review thresholds, not claims that the source is wrong. Full-data tests can also be directed to retained years with `LIS_TEST_YEARS`.
+
 ## J. Verification still missing
 
 1. Independently confirm the completeness of the 2026 official-subject download.
@@ -292,6 +300,6 @@ $env:LIS_ANALYSIS_YEAR = "2026"
 
 The strongest accurate statement is:
 
-> The results are reproducible, source-traceable, and tested against 310 automated cases. The calculations implement the documented definitions. Remaining uncertainty is explicitly limited to external source completeness, human semantic review of derived topics, selected party fallbacks, and analytical questions that have not yet been modeled as mutually exclusive outcomes.
+> The results are reproducible, source-traceable, and tested against 330 automated cases. The calculations implement the documented definitions. Remaining uncertainty is explicitly limited to external source completeness, human semantic review of derived topics, selected party fallbacks, and analytical questions that have not yet been modeled as mutually exclusive outcomes.
 
 This is more credible than claiming literal 100% certainty, because it explains both the evidence and its boundaries.

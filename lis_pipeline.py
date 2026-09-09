@@ -8,7 +8,7 @@ from urllib.request import urlopen
 
 import pandas as pd
 
-from lis_common import configured_years, write_csv
+from lis_common import configured_years, environment_flag, write_csv
 
 try:
     import requests
@@ -48,7 +48,7 @@ RAW_ROOT = Path("data/raw")
 REFERENCE_ROOT = Path("data/reference")
 PROCESSED_ROOT = Path("data/processed")
 
-RUN_DOWNLOAD = False
+RUN_DOWNLOAD = environment_flag("LIS_DOWNLOAD", default=False)
 
 # ---------------------------------------------------------
 # CURRENT ANALYSIS YEAR
