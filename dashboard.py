@@ -62,12 +62,24 @@ def bar_chart(
     if horizontal:
         figure = px.bar(frame, x=y, y=x, color=color, orientation="h", text=y, labels=labels)
         figure.update_layout(yaxis={"categoryorder": "total ascending"})
+        maximum = pd.to_numeric(frame[y], errors="coerce").max()
+        if pd.notna(maximum) and maximum > 0:
+            figure.update_xaxes(range=[0, maximum * 1.22])
     else:
         figure = px.bar(frame, x=x, y=y, color=color, barmode="group", text=y, labels=labels)
-    figure.update_traces(texttemplate="%{text:.1f}%" if percent else "%{text:,.0f}", textposition="outside")
+        maximum = pd.to_numeric(frame[y], errors="coerce").max()
+        if pd.notna(maximum) and maximum > 0:
+            figure.update_yaxes(range=[0, maximum * 1.18])
+    figure.update_traces(
+        texttemplate="%{text:.1f}%" if percent else "%{text:,.0f}",
+        textposition="inside" if horizontal else "outside",
+        cliponaxis=False,
+    )
+    if horizontal:
+        figure.update_traces(insidetextanchor="end")
     figure.update_layout(
         height=390,
-        margin=dict(t=20, b=20, l=10, r=10),
+        margin=dict(t=20, b=20, l=10, r=30),
         legend_title_text="",
         hovermode="x unified" if not horizontal else "closest",
     )
@@ -213,8 +225,9 @@ if not available_years:
 
 with st.sidebar:
     st.subheader("Briefing navigation")
+    st.markdown("**Start here:** choose a leadership question below.")
     selected_page = st.radio(
-        "Analysis page",
+        "Leadership question",
         ["Voting overview", "Subjects and delegates", "Session comparison", "Bills and context"],
     )
     selected_year = st.selectbox("Session detail", available_years, index=len(available_years) - 1)
