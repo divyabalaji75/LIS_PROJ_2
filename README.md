@@ -132,6 +132,8 @@ Use `--skip-download` or `--skip-party` only when the corresponding retained fil
 
 For a manual raw-data refresh, set `$env:LIS_DOWNLOAD = "1"`. Ordinary runs default to retained raw files. Set `LIS_TEST_YEARS` to run the full-data tests against any processed sessions, for example `$env:LIS_TEST_YEARS="2027,2028"; python -m pytest -q`. The regular-session URL convention is `YYYY1`; special sessions need an explicit future session-code design because year alone is not a unique key.
 
+As checked against the official LIS bulk endpoint on September 9, 2026, `20271` is a partial future-session folder and is still missing votes, vote statements, and both subject files. `20262` (2026 Special Session I) has recorded votes but lacks both official-subject files. No `20252` or `20253` bulk folder exists. The sampled pre-2024 regular-session URLs return 404 under the current blob convention even though older sessions remain visible in the LIS website. Do not place special-session files in `data/raw/2026/`: the current storage and output keys use year alone, so that would overwrite or mix the regular session. Special sessions require a session-key migration before ingestion; historical sessions may additionally require a legacy source adapter and schema reconciliation.
+
 Launch the leadership-facing dashboard with the project-local Python runtime:
 
 ```powershell
@@ -142,14 +144,23 @@ Equivalently, run `.venv\Scripts\python.exe -m streamlit run dashboard.py`.
 Using `python -m streamlit` avoids depending on a globally installed
 `streamlit` command.
 
-The dashboard reads processed CSVs without modifying them. Its leadership view
-answers four concise questions and supports both directions of review: choose a
-delegate to see voting by subject, or choose a subject to compare delegates. It
-also shows true cross-party leaders by count and rate, delegate-subject leaders,
-session comparisons, bill-level provenance (including child and parent LIS
-subjects), official histories and vote statements, and subject-filtered bill
-lookup. Sponsorship remains a separate processed analytical layer, but is
-intentionally omitted from the simplified leadership page.
+The dashboard reads processed CSVs without modifying them. Sidebar navigation
+separates four leadership questions into independent, wider pages: voting,
+subjects and delegates, session comparison, and bills and context. The subject
+page supports both directions of review: choose a delegate to see voting by
+subject, or choose a subject to compare delegates. The pages also show true
+cross-party leaders by count and rate, delegate-subject leaders, bill-level
+provenance (including child and parent LIS subjects), official histories and
+vote statements, and subject-filtered bill lookup. Sponsorship remains a
+separate processed analytical layer, but is intentionally omitted from the
+simplified leadership interface.
+
+For a small internal pilot, Streamlit Community Cloud can deploy from a private
+GitHub repository and restrict a private app to invited viewers. Confirm the
+repository is private before deployment and use the Community Cloud viewer list
+rather than making the app public. For organization-managed identity,
+conditional access, and longer-term ownership, deploy the same Streamlit app to
+an approved internal platform such as Azure App Service with Microsoft Entra ID.
 
 ## Limitations
 

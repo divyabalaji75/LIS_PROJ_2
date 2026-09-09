@@ -340,12 +340,16 @@ This script never changes the production topic table. AI review is evidence for 
 | `subject_vote_counts` | Counts official vote codes and cross-party records by subject | Subject table |
 | `legislator_evidence` | Joins selected member/topic rows back to bills, provenance, and LIS vote records | Verification table |
 | `bill_outcomes` | Counts reproducible history-text pathway markers | Outcome dictionary |
+| `render_voting_page` | Shows overall voting, count/rate leaders, and delegate drilldown | Voting page |
+| `render_subjects_page` | Shows subject patterns, delegate-subject leaders, and subject-to-delegate comparison | Subjects page |
+| `render_comparison_page` | Shows changes across the configured processed sessions | Comparison page |
+| `render_bills_page` | Shows pathway markers, bill lookup, provenance, timelines, and statements | Bills page |
 
-Major page blocks: session selector; four headline metrics; cross-party delegate leaders by count and rate; delegate-to-subject drilldown; subject-to-delegate comparison; delegate-subject cross-party rankings; year-over-year results; pathways and vote statements; bill lookup with subject filter; definitions and limitations. Sponsorship remains available in the processed data but is intentionally omitted from this simplified leadership page.
+The sidebar separates the briefing into four pages: Voting overview, Subjects and delegates, Session comparison, and Bills and context. Only the selected page renders, and the content width is larger than the previous single-scroll layout. Sponsorship remains available in the processed data but is intentionally omitted from this simplified leadership interface.
 
 ## What every test protects
 
-Pytest expands full-data tests across the years selected by `LIS_TEST_YEARS`. With the default 2025 and 2026 configuration, 192 named test functions currently produce 330 passing test cases.
+Pytest expands full-data tests across the years selected by `LIS_TEST_YEARS`. With the default 2025 and 2026 configuration, 193 named test functions currently produce 334 passing test cases.
 
 ### `test_vote_fact.py`
 
@@ -455,7 +459,7 @@ Pytest expands full-data tests across the years selected by `LIS_TEST_YEARS`. Wi
 
 ## What has been verified
 
-- All 330 current automated test cases pass.
+- All 334 current automated test cases pass.
 - Canonical vote parsing reconciles to raw LIS samples and totals.
 - Member, chamber, and party joins are complete under the documented reconciliation rules.
 - Party-majority, party-break, and true cross-party definitions are tested with positive, negative, tie, non-directional, and full-data cases.

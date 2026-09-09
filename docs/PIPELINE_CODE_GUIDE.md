@@ -234,7 +234,7 @@ Business context: AI judgments are review evidence only. The script does not alt
 
 ## `dashboard.py`
 
-Purpose: reads processed CSVs and presents four concise leadership sections. It does not modify source or processed data.
+Purpose: reads processed CSVs and presents four concise leadership questions as separate sidebar pages. It does not modify source or processed data.
 
 Key calculation helpers:
 
@@ -243,8 +243,9 @@ Key calculation helpers:
 - `subject_vote_counts`: Yes, No, abstained, not-voting, and cross-party counts by subject.
 - `legislator_evidence`: bill-level evidence behind a selected legislator/subject view.
 - `bill_outcomes`: reproducible pathway markers from official history text.
+- `render_voting_page`, `render_subjects_page`, `render_comparison_page`, and `render_bills_page`: render only the selected working view so the briefing is not one long scroll.
 
-Business context: the dashboard deliberately leads with concise answers, then supports two-way review: delegate to subjects and subject to delegates. It includes cross-party rankings by both count and rate, delegate-subject comparisons, bill lookup, official history, topic provenance, and vote statements. Member IDs remain internal join keys and are not displayed in leadership views. Sponsorship data remains available in the processed analytical layer but is intentionally not displayed on the simplified leadership page.
+Business context: sidebar navigation gives each question the full page width and renders only the chosen page. The dashboard supports two-way review: delegate to subjects and subject to delegates. It includes cross-party rankings by both count and rate, delegate-subject comparisons, bill lookup, official history, topic provenance, and vote statements. Member IDs remain internal join keys and are not displayed in leadership views. Sponsorship data remains available in the processed analytical layer but is intentionally not displayed on the simplified leadership page.
 
 ## Test scripts
 
@@ -262,6 +263,7 @@ The tests protect existing behavior; they should not be weakened merely to make 
 | `tests/test_yoy_logic.py` | Comparable-sample and year-over-year calculations |
 | `tests/test_source_sample.py` | Targeted checks against source-derived records |
 | `tests/test_session_configuration.py` | Future-year configuration, independent test-year selection, download-flag parsing, and onboarding year validation |
+| `tests/test_dashboard_pages.py` | Each leadership page renders independently with its intended heading and at least one chart |
 
 ## Reading the code with confidence
 

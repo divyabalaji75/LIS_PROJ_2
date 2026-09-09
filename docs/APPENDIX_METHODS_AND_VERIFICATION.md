@@ -245,7 +245,7 @@ Committee counts come from official committee reference and assignment files. A 
 On September 8, 2026:
 
 ```text
-330 tests passed
+334 tests passed
 ```
 
 The suite covers raw-to-processed vote reconciliation, required columns, allowed values, canonical uniqueness, member and party joins, chamber identity, party-majority ties, non-directional votes, party-break and cross-party implications, vote/bill one-to-many behavior, subject provenance and priority, parent hierarchy, source samples, tendency thresholds, and year-over-year comparability.
@@ -300,6 +300,6 @@ This command reuses the existing pipeline and validations. Before processing, it
 
 The strongest accurate statement is:
 
-> The results are reproducible, source-traceable, and tested against 330 automated cases. The calculations implement the documented definitions. Remaining uncertainty is explicitly limited to external source completeness, human semantic review of derived topics, selected party fallbacks, and analytical questions that have not yet been modeled as mutually exclusive outcomes.
+> The results are reproducible, source-traceable, and tested against 334 automated cases. The calculations implement the documented definitions. Remaining uncertainty is explicitly limited to external source completeness, human semantic review of derived topics, selected party fallbacks, and analytical questions that have not yet been modeled as mutually exclusive outcomes.
 
 This is more credible than claiming literal 100% certainty, because it explains both the evidence and its boundaries.

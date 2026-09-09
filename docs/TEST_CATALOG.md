@@ -1,6 +1,6 @@
 # Automated Test Catalog
 
-The repository currently contains 192 named test functions that expand to 330 test cases under the default 2025/2026 validation configuration. Full-data modules use `LIS_TEST_YEARS`, so the same controls can run against a future processed session without editing test code. This catalog states the business protection supplied by every named test.
+The repository currently contains 193 named test functions that expand to 334 test cases under the default 2025/2026 validation configuration. Full-data modules use `LIS_TEST_YEARS`, so the same controls can run against a future processed session without editing test code. This catalog states the business protection supplied by every named test.
 
 ## `test_vote_fact.py`
 
@@ -224,10 +224,14 @@ The repository currently contains 192 named test functions that expand to 330 te
 - `test_validate_year_rejects_out_of_range_values`: implausible session years are rejected.
 - `test_onboarding_environment_targets_one_year_and_disables_redownload`: processing targets only the new year and cannot redownload sources a second time.
 
+## `test_dashboard_pages.py`
+
+- `test_dashboard_page_renders_independently`: each of the four sidebar pages renders only its intended leadership question, raises no Streamlit exception, and includes a chart.
+
 ## Latest result
 
 ```text
-330 passed
+334 passed
 ```
 
 Passing tests demonstrate that the code follows its specified rules. They do not by themselves prove external source completeness or the substantive correctness of every derived-topic judgment; those remaining reviews are documented in the methods appendix.

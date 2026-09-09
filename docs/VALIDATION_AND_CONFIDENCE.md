@@ -2,7 +2,7 @@
 
 ## Executive conclusion
 
-The voting calculations are reproducible, internally consistent, and traceable to official LIS records. On September 9, 2026, the expanded automated suite completed with **330 tests passing**. That supports high confidence in the implemented vote parsing, member reconciliation, party joins, strict-majority logic, party-break logic, true cross-party logic, vote/bill bridge behavior, topic-provenance priority, year-over-year calculations, and future-session configuration.
+The voting calculations are reproducible, internally consistent, and traceable to official LIS records. On September 9, 2026, the expanded automated suite completed with **334 tests passing**. That supports high confidence in the implemented vote parsing, member reconciliation, party joins, strict-majority logic, party-break logic, true cross-party logic, vote/bill bridge behavior, topic-provenance priority, year-over-year calculations, future-session configuration, and dashboard page isolation.
 
 It would still be inappropriate to promise “100% certainty.” Automated tests demonstrate that the code behaves as specified; they cannot prove that every external source file is complete, every party fallback remains correct, or every deterministic text classification is substantively ideal. Leadership can instead be told that the results are **reproducible, source-traceable, tested, and accompanied by explicit limitations and open review items**.
 
@@ -10,7 +10,7 @@ It would still be inappropriate to promise “100% certainty.” Automated tests
 
 | Control | Current evidence | Confidence supported |
 |---|---|---|
-| Automated test suite | 330 tests passed | Structural and logical implementation |
+| Automated test suite | 334 tests passed | Structural and logical implementation |
 | Full-row programmatic checks | Production validation functions fail on invalid schemas, joins, labels, or logical implications | Dataset-wide consistency |
 | Canonical vote grain | `vote_id + member_id` checks | Member-vote counts are not inflated by topic joins |
 | Strict party positions | Positions require more Yes than No or more No than Yes | Ties are not silently assigned |
@@ -18,7 +18,7 @@ It would still be inappropriate to promise “100% certainty.” Automated tests
 | Topic provenance | Allowed four-value classification and one tier per bill | Official and derived evidence remain distinct |
 | Vote/bill relationship | Distinct history evidence retained; downstream deduplication occurs only at the analytical join | Multi-bill votes are preserved |
 | Recorded versus intended vote | Separate fields and explicit-intention flag | Statements do not rewrite official votes |
-| Dashboard checks | Page loads without exceptions; delegate-to-subject and subject-to-delegate filters recalculate; count/rate rankings render; bill subject filter returns only matching bills | Presentation uses the intended processed data |
+| Dashboard checks | All four navigation pages load independently without exceptions; delegate-to-subject and subject-to-delegate filters recalculate; count/rate rankings render; bill subject filter returns only matching bills | Presentation uses the intended processed data without a single long-scroll page |
 | Consolidated topic audit | `topic_validation_audit_2025.csv` and `_2026.csv` | Reproducible QA queue and samples |
 | Future-session onboarding | Required-file parsing, source inventory, subject sparsity/freshness warnings, party validation, pipeline, audit, and configurable full-data tests | A new year reuses the established controls without copied scripts |
 
@@ -74,11 +74,17 @@ Automated tests should be supplemented with a small, documented source trace for
 
 Recommended sign-off: two reviewers independently trace a small set of displayed rows from dashboard to processed table to raw LIS source and initial a dated checklist. This validates both the calculation and the communication layer.
 
+### 7. Add a session key before special-session ingestion
+
+The current canonical paths and output names use year alone. Regular Session 2026 and Special Session I 2026 would therefore collide if both were written under `data/raw/2026/` or emitted as `vote_fact_2026.csv`. The 2026 special-session bulk folder also lacks both official-subject files. Historical sessions before 2024 are not available at the sampled current blob URLs and may use older schemas or delivery methods.
+
+Recommended sign-off: introduce a durable session key such as `20261`/`20262` throughout raw paths, canonical tables, outputs, tests, and dashboard labels before downloading a special session. Treat missing subject sources as an explicit provenance/coverage condition, not as permission to invent official classifications. Build a separately tested legacy adapter if pre-2024 data is obtained from the LIS archive or API.
+
 ## Claims that are currently defensible
 
 - “The dashboard is built from official LIS bulk records and an auditable party reference.”
 - “The calculations are deterministic and reproducible from retained raw files.”
-- “All 330 automated tests pass.”
+- “All 334 automated tests pass.”
 - “True cross-party voting uses a documented, deliberately narrow definition.”
 - “Official topics, derived topics, and unclassified bills remain distinguishable.”
 - “Every leadership drilldown can be traced to bill and vote records.”
