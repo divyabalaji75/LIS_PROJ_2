@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+import re
 from typing import Iterable
 
 import pandas as pd
@@ -27,6 +28,45 @@ def configured_test_years(default: Iterable[int] = (2025, 2026)) -> list[int]:
     value = os.environ.get("LIS_TEST_YEARS", "").strip()
     years = [int(part.strip()) for part in value.split(",") if part.strip()]
     return years or list(default)
+
+
+def available_processed_years(root: Path = PROCESSED_ROOT) -> list[int]:
+    """Return regular-session years that have a canonical vote fact."""
+    years = []
+    for path in root.glob("vote_fact_*.csv"):
+        match = re.fullmatch(r"vote_fact_(\d{4})\.csv", path.name)
+        if match:
+            years.append(int(match.group(1)))
+    return sorted(set(years))
+
+
+def relabel_comparison_years(
+    frame: pd.DataFrame,
+    left_year: int,
+    right_year: int,
+) -> pd.DataFrame:
+    """Relabel the original two-year comparison schema for any session pair."""
+    result = frame.copy()
+
+    def relabel(column: object) -> object:
+        if not isinstance(column, str):
+            return column
+        return (
+            column.replace("_2025", "__LEFT_SESSION__")
+            .replace("_2026", "__RIGHT_SESSION__")
+            .replace("__LEFT_SESSION__", f"_{left_year}")
+            .replace("__RIGHT_SESSION__", f"_{right_year}")
+        )
+
+    result = result.rename(columns=relabel)
+    status_values = {
+        "2025 only": f"{left_year} only",
+        "2026 only": f"{right_year} only",
+    }
+    for column in ("member_status", "topic_status"):
+        if column in result.columns:
+            result[column] = result[column].replace(status_values)
+    return result
 
 
 def environment_flag(name: str, default: bool = False) -> bool:

@@ -24,7 +24,7 @@ The dashboard is read-only and runs after the processed outputs exist:
 For a new regular session, the preferred entry point is:
 
 ```powershell
-.\.venv\Scripts\python.exe onboard_session.py 2027 --compare-with 2026
+.\.venv\Scripts\python.exe onboard_session.py 2027
 ```
 
 ## `lis_common.py`
@@ -43,7 +43,7 @@ Business context: year selection and file handling are centralized so adding a s
 
 ## `onboard_session.py`
 
-Purpose: provides one reproducible command for adding a regular-session year. It downloads the required LIS sources, prints a source inventory, flags sparse or stale official-subject data, builds the party reference, runs the deterministic pipeline and topic audit, and directs the existing full-data tests to the new year.
+Purpose: provides one reproducible command for adding a regular-session year. It downloads the required LIS sources, prints a source inventory, flags sparse or stale official-subject data, builds the party reference, runs the deterministic pipeline and topic audit, and directs the existing full-data tests to the new year. Earlier outputs remain in place; the latest earlier processed session becomes the default YoY comparison.
 
 Key functions: `validate_year`, `download_sources`, `remote_modified`, `inspect_sources`, `onboarding_environment`, and `run_python`.
 

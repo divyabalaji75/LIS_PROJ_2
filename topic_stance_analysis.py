@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
-from lis_common import configured_years, write_csv
+from lis_common import configured_years, relabel_comparison_years, write_csv
 
 
 # =========================================================
@@ -1444,10 +1444,12 @@ def save_year_outputs(
 # =========================================================
 
 def save_yoy_output(
-    tendency_yoy
+    tendency_yoy,
+    left_year,
+    right_year,
 ):
 
-    year_label = "_".join(str(year) for year in YEARS)
+    year_label = f"{left_year}_{right_year}"
 
     path = (
         PROCESSED_ROOT
@@ -1457,7 +1459,10 @@ def save_yoy_output(
         )
     )
 
-    write_csv(tendency_yoy, path)
+    write_csv(
+        relabel_comparison_years(tendency_yoy, left_year, right_year),
+        path,
+    )
 
     return path
 
@@ -1564,30 +1569,17 @@ if __name__ == "__main__":
     # YEAR-OVER-YEAR
     # -----------------------------------------------------
 
-    tendency_yoy = (
-        build_voting_tendency_yoy(
-            yearly_tendency[
-                2025
-            ],
-            yearly_tendency[
-                2026
-            ]
+    for left_year, right_year in zip(YEARS, YEARS[1:]):
+        tendency_yoy = build_voting_tendency_yoy(
+            yearly_tendency[left_year],
+            yearly_tendency[right_year],
         )
-    )
 
-    print_voting_tendency_yoy(
-        tendency_yoy
-    )
+        print_voting_tendency_yoy(tendency_yoy)
 
-    yoy_path = (
-        save_yoy_output(
-            tendency_yoy
+        all_output_paths.append(
+            save_yoy_output(tendency_yoy, left_year, right_year)
         )
-    )
-
-    all_output_paths.append(
-        yoy_path
-    )
 
     # -----------------------------------------------------
     # FINAL STATUS

@@ -1,6 +1,13 @@
+import pandas as pd
 import pytest
 
-from lis_common import configured_test_years, configured_years, environment_flag
+from lis_common import (
+    available_processed_years,
+    configured_test_years,
+    configured_years,
+    environment_flag,
+    relabel_comparison_years,
+)
 from lis_pipeline import get_session_code
 from onboard_session import onboarding_environment, validate_year
 
@@ -61,3 +68,30 @@ def test_onboarding_environment_targets_one_year_and_disables_redownload(monkeyp
     assert environment["LIS_ANALYSIS_YEARS"] == "2027"
     assert environment["LIS_ANALYSIS_YEAR"] == "2027"
     assert environment["LIS_DOWNLOAD"] == "0"
+
+
+def test_available_processed_years_discovers_future_sessions(tmp_path):
+    for year in (2025, 2027, 2028):
+        (tmp_path / f"vote_fact_{year}.csv").touch()
+    (tmp_path / "vote_fact_notes.csv").touch()
+
+    assert available_processed_years(tmp_path) == [2025, 2027, 2028]
+
+
+def test_comparison_columns_are_relabelled_for_future_pair():
+    frame = pd.DataFrame(
+        {
+            "cross_party_pct_2025": [1.0],
+            "cross_party_pct_2026": [2.0],
+            "member_status": ["2026 only"],
+        }
+    )
+
+    result = relabel_comparison_years(frame, 2027, 2028)
+
+    assert list(result.columns) == [
+        "cross_party_pct_2027",
+        "cross_party_pct_2028",
+        "member_status",
+    ]
+    assert result.loc[0, "member_status"] == "2028 only"

@@ -122,13 +122,13 @@ python topic_stance_analysis.py
 python year_over_year_analysis.py
 ```
 
-To onboard a new regular session without copying code, use the dedicated command. It downloads all required LIS files, reports source row counts and freshness warnings, builds and validates the party reference, runs the pipeline and topic audit, and runs the full-data tests against the new year:
+To onboard a new regular session without copying code, use the dedicated command. It downloads all required LIS files, reports source row counts and freshness warnings, builds and validates the party reference, runs the pipeline and topic audit, and runs the full-data tests against the new year. Existing processed sessions are retained, and the latest earlier processed year is used for YoY automatically:
 
 ```powershell
-.\.venv\Scripts\python.exe onboard_session.py 2027 --compare-with 2026
+.\.venv\Scripts\python.exe onboard_session.py 2027
 ```
 
-Use `--skip-download` or `--skip-party` only when the corresponding retained files already exist. The onboarding command warns when official-subject coverage is below 5% or `CIBillSubjects.csv` is more than 30 days older than `BILLS.CSV`; warnings require review but do not silently alter classification.
+Use `--compare-with 2025` to override the automatic comparison year. Use `--skip-download` or `--skip-party` only when the corresponding retained files already exist. The onboarding command warns when official-subject coverage is below 5% or `CIBillSubjects.csv` is more than 30 days older than `BILLS.CSV`; warnings require review but do not silently alter classification. The dashboard discovers every retained `vote_fact_<year>.csv`, so a successfully processed future regular session appears alongside 2025 and 2026 without replacing them.
 
 For a manual raw-data refresh, set `$env:LIS_DOWNLOAD = "1"`. Ordinary runs default to retained raw files. Set `LIS_TEST_YEARS` to run the full-data tests against any processed sessions, for example `$env:LIS_TEST_YEARS="2027,2028"; python -m pytest -q`. The regular-session URL convention is `YYYY1`; special sessions need an explicit future session-code design because year alone is not a unique key.
 

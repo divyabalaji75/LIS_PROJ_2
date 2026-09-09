@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from lis_common import PROCESSED_ROOT, configured_years
+from lis_common import PROCESSED_ROOT, available_processed_years
 
 
 st.set_page_config(
@@ -216,9 +216,7 @@ def bill_outcomes(history: pd.DataFrame) -> dict[str, int]:
     }
 
 
-available_years = [
-    year for year in configured_years() if (PROCESSED_ROOT / f"vote_fact_{year}.csv").exists()
-]
+available_years = available_processed_years()
 if not available_years:
     st.error("No processed sessions were found. Run the pipeline before opening the briefing.")
     st.stop()
@@ -702,24 +700,36 @@ def render_comparison_page() -> None:
             st.markdown("**Cross-party rate by party**")
             bar_chart(pd.DataFrame(party_change_rows), "Party", "Cross-party rate", color="Session", percent=True)
 
-        comparison_label = "_".join(str(year) for year in available_years[:2])
+        left_year, right_year = available_years[-2:]
+        comparison_label = f"{left_year}_{right_year}"
         member_change = load_output("delegate_behavior_yoy", comparison_label)
         if not member_change.empty and "comparable_sample" in member_change:
             comparable = member_change[member_change["comparable_sample"].eq(True)].copy()
             comparable = comparable.reindex(comparable["cross_party_pct_change"].abs().sort_values(ascending=False).index)
+            left_rate = f"cross_party_pct_{left_year}"
+            right_rate = f"cross_party_pct_{right_year}"
             member_view = comparable.head(8)[
-                ["MBR_NAME", "party", "cross_party_pct_2025", "cross_party_pct_2026", "cross_party_pct_change"]
+                ["MBR_NAME", "party", left_rate, right_rate, "cross_party_pct_change"]
             ].rename(
                 columns={
                     "MBR_NAME": "Legislator",
                     "party": "Party",
-                    "cross_party_pct_2025": "2025 rate",
-                    "cross_party_pct_2026": "2026 rate",
+                    left_rate: f"{left_year} rate",
+                    right_rate: f"{right_year} rate",
                     "cross_party_pct_change": "Change",
                 }
             )
             st.markdown("**Largest individual changes among comparable legislators**")
-            compact_table(member_view.style.format({"2025 rate": "{:.2f}%", "2026 rate": "{:.2f}%", "Change": "{:+.2f} points"}), 315)
+            compact_table(
+                member_view.style.format(
+                    {
+                        f"{left_year} rate": "{:.2f}%",
+                        f"{right_year} rate": "{:.2f}%",
+                        "Change": "{:+.2f} points",
+                    }
+                ),
+                315,
+            )
     else:
         answer("A second processed session is needed before a year-over-year comparison can be calculated.")
 

@@ -13,6 +13,7 @@ import sys
 import pandas as pd
 import requests
 
+from lis_common import available_processed_years
 from lis_pipeline import BASE_URL, FILES, RAW_ROOT, download_file, get_session_code
 
 
@@ -53,7 +54,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--compare-with",
         type=int,
-        help="After onboarding, build a two-session comparison against this year.",
+        help=(
+            "Build a comparison against this year. If omitted, the latest earlier "
+            "processed regular session is selected automatically."
+        ),
     )
     return parser.parse_args()
 
@@ -166,6 +170,12 @@ def onboarding_environment(year: int) -> dict[str, str]:
     return environment
 
 
+def previous_processed_year(year: int) -> int | None:
+    """Return the latest retained regular session before the onboarding year."""
+    earlier_years = [candidate for candidate in available_processed_years() if candidate < year]
+    return max(earlier_years) if earlier_years else None
+
+
 def main() -> None:
     args = parse_args()
     validate_year(args.year)
@@ -198,10 +208,13 @@ def main() -> None:
             test_environment,
         )
 
-    if args.compare_with is not None:
-        validate_year(args.compare_with)
+    comparison_year = (
+        args.compare_with if args.compare_with is not None else previous_processed_year(args.year)
+    )
+    if comparison_year is not None:
+        validate_year(comparison_year)
         comparison_environment = os.environ.copy()
-        comparison_environment["LIS_ANALYSIS_YEARS"] = f"{args.compare_with},{args.year}"
+        comparison_environment["LIS_ANALYSIS_YEARS"] = f"{comparison_year},{args.year}"
         comparison_environment["LIS_DOWNLOAD"] = "0"
         run_python(
             "Build topic behavior for the comparison pair",
@@ -216,6 +229,10 @@ def main() -> None:
 
     print(f"\n{'=' * 70}\nSESSION ONBOARDING COMPLETE\n{'=' * 70}")
     print(f"Processed year: {args.year}")
+    print(
+        "Year-over-year comparison: "
+        + (f"{comparison_year} -> {args.year}" if comparison_year else "not available")
+    )
     print(f"Source readiness warnings: {len(warnings)}")
     print(
         "Dashboard command:\n"

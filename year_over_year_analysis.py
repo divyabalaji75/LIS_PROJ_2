@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
-from lis_common import configured_years, write_csv
+from lis_common import configured_years, relabel_comparison_years, write_csv
 
 
 # =========================================================
@@ -1606,6 +1606,14 @@ def save_outputs(
             PROCESSED_ROOT
             / f"topic_behavior_yoy_exploratory_{year_label}.csv",
     }
+
+    delegate_yoy = relabel_comparison_years(delegate_yoy, YEAR_1, YEAR_2)
+    topic_yoy = relabel_comparison_years(topic_yoy, YEAR_1, YEAR_2)
+    party_summary = relabel_comparison_years(party_summary, YEAR_1, YEAR_2)
+    topic_summary = relabel_comparison_years(topic_summary, YEAR_1, YEAR_2)
+    exploratory_topic_summary = relabel_comparison_years(
+        exploratory_topic_summary, YEAR_1, YEAR_2
+    )
 
     write_csv(delegate_yoy, outputs["delegate_yoy"])
 
