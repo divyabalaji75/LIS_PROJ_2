@@ -48,11 +48,13 @@ def make_delegate_behavior(
 
 def make_topic_tendency(
     *,
+    year=2025,
     member_id="H9999",
     member_name="Test Delegate",
     party="D",
     topic_name="Education",
-    classification="Derived from LIS bill description",
+    topic_provenance="Derived from LIS bill description",
+    topic_vote_events=10,
     yes_votes=8,
     no_votes=2,
     directional_topic_votes=10,
@@ -64,11 +66,13 @@ def make_topic_tendency(
     return pd.DataFrame(
         [
             {
+                "year": year,
                 "member_id": member_id,
                 "MBR_NAME": member_name,
                 "party": party,
                 "topic_name": topic_name,
-                "classification": classification,
+                "topic_provenance": topic_provenance,
+                "topic_vote_events": topic_vote_events,
                 "yes_votes": yes_votes,
                 "no_votes": no_votes,
                 "directional_topic_votes": (
@@ -326,12 +330,14 @@ def test_delegate_not_comparable_if_one_year_too_small():
 def test_yes_to_no_is_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="YES",
         yes_pct=80.0,
         no_pct=20.0,
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="NO",
         yes_pct=20.0,
         no_pct=80.0,
@@ -371,12 +377,14 @@ def test_yes_to_no_is_behavior_change():
 def test_yes_to_mixed_is_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="YES",
         yes_pct=80.0,
         no_pct=20.0,
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="MIXED",
         yes_pct=50.0,
         no_pct=50.0,
@@ -404,12 +412,14 @@ def test_yes_to_mixed_is_behavior_change():
 def test_no_to_mixed_is_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="NO",
         yes_pct=20.0,
         no_pct=80.0,
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="MIXED",
         yes_pct=50.0,
         no_pct=50.0,
@@ -437,11 +447,13 @@ def test_no_to_mixed_is_behavior_change():
 def test_same_tendency_is_not_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="YES",
         yes_pct=80.0,
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="YES",
         yes_pct=90.0,
     )
@@ -478,6 +490,7 @@ def test_same_tendency_is_not_behavior_change():
 def test_insufficient_to_yes_not_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="INSUFFICIENT DATA",
         directional_topic_votes=5,
         yes_pct=80.0,
@@ -485,6 +498,7 @@ def test_insufficient_to_yes_not_behavior_change():
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="YES",
         directional_topic_votes=20,
         yes_pct=80.0,
@@ -527,6 +541,7 @@ def test_insufficient_to_yes_not_behavior_change():
 def test_insufficient_to_no_not_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="INSUFFICIENT DATA",
         directional_topic_votes=5,
         yes_pct=20.0,
@@ -534,6 +549,7 @@ def test_insufficient_to_no_not_behavior_change():
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="NO",
         directional_topic_votes=20,
         yes_pct=20.0,
@@ -570,6 +586,7 @@ def test_insufficient_to_no_not_behavior_change():
 def test_yes_to_insufficient_not_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="YES",
         directional_topic_votes=20,
         yes_pct=80.0,
@@ -577,6 +594,7 @@ def test_yes_to_insufficient_not_behavior_change():
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="INSUFFICIENT DATA",
         directional_topic_votes=5,
         yes_pct=80.0,
@@ -619,6 +637,7 @@ def test_yes_to_insufficient_not_behavior_change():
 def test_no_to_insufficient_not_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="NO",
         directional_topic_votes=20,
         yes_pct=20.0,
@@ -626,6 +645,7 @@ def test_no_to_insufficient_not_behavior_change():
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="INSUFFICIENT DATA",
         directional_topic_votes=5,
         yes_pct=20.0,
@@ -662,6 +682,7 @@ def test_no_to_insufficient_not_behavior_change():
 def test_mixed_to_insufficient_not_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="MIXED",
         directional_topic_votes=20,
         yes_pct=50.0,
@@ -669,6 +690,7 @@ def test_mixed_to_insufficient_not_behavior_change():
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="INSUFFICIENT DATA",
         directional_topic_votes=5,
         yes_pct=50.0,
@@ -705,6 +727,7 @@ def test_mixed_to_insufficient_not_behavior_change():
 def test_insufficient_to_mixed_not_behavior_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="INSUFFICIENT DATA",
         directional_topic_votes=5,
         yes_pct=50.0,
@@ -712,6 +735,7 @@ def test_insufficient_to_mixed_not_behavior_change():
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="MIXED",
         directional_topic_votes=20,
         yes_pct=50.0,
@@ -748,11 +772,13 @@ def test_insufficient_to_mixed_not_behavior_change():
 def test_insufficient_to_insufficient_not_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="INSUFFICIENT DATA",
         directional_topic_votes=5,
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="INSUFFICIENT DATA",
         directional_topic_votes=6,
     )
@@ -791,12 +817,14 @@ def test_insufficient_to_insufficient_not_change():
 def test_topic_yes_pct_change():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         voting_tendency="MIXED",
         yes_pct=50.0,
         no_pct=50.0,
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         voting_tendency="YES",
         yes_pct=75.0,
         no_pct=25.0,
@@ -822,21 +850,40 @@ def test_topic_yes_pct_change():
 
 # =========================================================
 # TEST 21
-# CLASSIFICATION PROVENANCE IS PART OF JOIN KEY
+# PROVENANCE CHANGE DOES NOT BREAK TOPIC COMPARISON
 #
-# Same member + same topic name,
-# but different provenance,
-# must NOT be merged.
+# This is the important change from the old test.
+#
+# The analytical identity of a topic is:
+#
+#     member_id + topic_name
+#
+# NOT:
+#
+#     member_id + topic_name + classification provenance
+#
+# Example:
+#
+# Education is still Education across years even if one
+# session got the topic from an official LIS subject and
+# another session got it from a derived LIS description.
+#
+# Provenance should remain visible as metadata for each
+# year, but it should NOT split the YoY record.
 # =========================================================
 
-def test_classification_provenance_not_merged():
+def test_provenance_change_does_not_break_topic_comparison():
 
     df_2025 = make_topic_tendency(
-        classification="Official LIS subject",
+        year=2025,
+        topic_name="Education",
+        topic_provenance="Official LIS subject",
     )
 
     df_2026 = make_topic_tendency(
-        classification=(
+        year=2026,
+        topic_name="Education",
+        topic_provenance=(
             "Derived from LIS bill description"
         ),
     )
@@ -846,37 +893,54 @@ def test_classification_provenance_not_merged():
         df_2026,
     )
 
-    assert len(result) == 2
+    assert len(result) == 1
 
-    statuses = set(
-        result[
+    row = result.iloc[0]
+
+    assert (
+        row[
             "topic_status"
         ]
+        ==
+        "Present both years"
     )
 
-    assert statuses == {
-        "2025 only",
-        "2026 only",
-    }
+    assert (
+        row[
+            "topic_provenance_2025"
+        ]
+        ==
+        "Official LIS subject"
+    )
+
+    assert (
+        row[
+            "topic_provenance_2026"
+        ]
+        ==
+        "Derived from LIS bill description"
+    )
 
 
 # =========================================================
 # TEST 22
-# SAME TOPIC + SAME CLASSIFICATION JOINS
+# SAME TOPIC JOINS EVEN WHEN PROVENANCE IS THE SAME
 # =========================================================
 
-def test_same_topic_and_classification_join():
+def test_same_topic_and_provenance_join():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         topic_name="Housing",
-        classification=(
+        topic_provenance=(
             "Derived from LIS bill description"
         ),
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         topic_name="Housing",
-        classification=(
+        topic_provenance=(
             "Derived from LIS bill description"
         ),
     )
@@ -905,11 +969,13 @@ def test_same_topic_and_classification_join():
 def test_different_members_not_merged():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         member_id="H9001",
         member_name="Member One",
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         member_id="H9002",
         member_name="Member Two",
     )
@@ -921,6 +987,17 @@ def test_different_members_not_merged():
 
     assert len(result) == 2
 
+    statuses = set(
+        result[
+            "topic_status"
+        ]
+    )
+
+    assert statuses == {
+        "2025 only",
+        "2026 only",
+    }
+
 
 # =========================================================
 # TEST 24
@@ -930,10 +1007,12 @@ def test_different_members_not_merged():
 def test_different_topics_not_merged():
 
     df_2025 = make_topic_tendency(
+        year=2025,
         topic_name="Education",
     )
 
     df_2026 = make_topic_tendency(
+        year=2026,
         topic_name="Housing",
     )
 
@@ -943,3 +1022,55 @@ def test_different_topics_not_merged():
     )
 
     assert len(result) == 2
+
+    statuses = set(
+        result[
+            "topic_status"
+        ]
+    )
+
+    assert statuses == {
+        "2025 only",
+        "2026 only",
+    }
+
+
+# =========================================================
+# TEST 25
+# SAME MEMBER + SAME TOPIC IS ONE YOY RECORD
+#
+# This protects the new canonical topic-comparison grain.
+# =========================================================
+
+def test_same_member_and_topic_join():
+
+    df_2025 = make_topic_tendency(
+        year=2025,
+        member_id="H9999",
+        topic_name="Housing",
+        topic_provenance="Official LIS subject",
+    )
+
+    df_2026 = make_topic_tendency(
+        year=2026,
+        member_id="H9999",
+        topic_name="Housing",
+        topic_provenance=(
+            "Derived from LIS bill summary"
+        ),
+    )
+
+    result = build_voting_tendency_yoy(
+        df_2025,
+        df_2026,
+    )
+
+    assert len(result) == 1
+
+    assert (
+        result.iloc[0][
+            "topic_status"
+        ]
+        ==
+        "Present both years"
+    )

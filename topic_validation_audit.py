@@ -1,26 +1,110 @@
+"""
+Topic-classification quality audit for the Virginia LIS project.
+
+WHY THIS FILE EXISTS
+====================
+
+The normal test suite answers questions such as:
+
+    "Did the program follow the rules we wrote?"
+
+This file asks a different question:
+
+    "What are those rules actually doing to our data?"
+
+That distinction matters.
+
+For example, suppose our rule says:
+
+    minor -> Family and Children
+
+The program can apply that rule perfectly.
+
+All programming tests can pass.
+
+But after reading a bill about an unlicensed minor driver,
+we may decide that "minor" only describes the affected
+person and that the bill is really about transportation
+and criminal penalties.
+
+That would not be a coding error.
+
+It would be a METHODOLOGY issue.
+
+This audit helps us find those situations without changing
+the real pipeline.
+
+WHAT THIS FILE DOES
+===================
+
+For every available session year, it checks:
+
+1. How many bills are:
+       - Official LIS subject
+       - Derived from LIS summary
+       - Derived from LIS bill description
+       - Unclassified
+
+2. Which keyword rules create the most classifications.
+
+3. Which broad keyword rules deserve closer review.
+
+4. How many topics each derived bill receives.
+
+5. Whether the summary and short bill description point
+   toward similar topics.
+
+6. Whether every saved regex really appears in the text
+   that supposedly caused the classification.
+
+7. Whether Unclassified bills are attached to recorded
+   House vote events.
+
+8. Why an Unclassified vote event can remain Unclassified
+   even after some bills are newly classified.
+
+IMPORTANT
+=========
+
+This script does NOT:
+
+- change bill topics;
+- change votes;
+- change Streamlit;
+- decide whether a classification is truly right or wrong;
+- create one CSV for every diagnostic.
+
+It writes ONE consolidated QA file per year:
+
+    data/qa/topic_validation_audit_<year>.csv
+
+The audit_section column tells you what each row represents.
+"""
+
+from __future__ import annotations
+
 from pathlib import Path
-import os
+import argparse
 import re
 
 import pandas as pd
 
-# Reuse the production classifier rather than duplicating its rules.
-from lis_pipeline import derive_topics_with_rules
-from lis_common import configured_years
-
-
-# =========================================================
-# CONFIG
-# =========================================================
-
-YEAR = int(
-    os.environ.get(
-        "LIS_ANALYSIS_YEAR",
-        str(configured_years()[0]),
-    )
+from lis_common import (
+    PROCESSED_ROOT,
+    available_processed_years,
 )
 
-PROCESSED_ROOT = Path("data/processed")
+from lis_pipeline import derive_topics_with_rules
+
+
+# =========================================================
+# OUTPUT LOCATION
+#
+# All QA results go into data/qa.
+#
+# We deliberately create only one audit CSV per year.
+# =========================================================
+
 QA_ROOT = Path("data/qa")
 
 QA_ROOT.mkdir(
@@ -28,68 +112,146 @@ QA_ROOT.mkdir(
     exist_ok=True,
 )
 
-RANDOM_STATE = 42
-
-SAMPLE_PER_TOPIC = 5
-SAMPLE_PER_RULE = 2
-UNCLASSIFIED_SAMPLE_SIZE = 50
-OFFICIAL_SAMPLE_SIZE = 25
-SUMMARY_SELECTION_SAMPLE_SIZE = 25
-
 
 # =========================================================
-# HIGH-RISK RULES
+# KEYWORD-RISK NOTES
 #
-# These rules are NOT automatically wrong.
-# They receive extra QA attention because they are broad
-# enough to match incidental language.
+# These are NOT automatic errors.
+#
+# A "higher-risk" keyword is simply one that can easily
+# appear in a bill even when that bill is mainly about
+# something else.
+#
+# Example:
+#
+#     "minor"
+#
+# can appear in transportation, firearms, criminal law,
+# internet regulation, employment law, and many other
+# subjects.
+#
+# Compare that with:
+#
+#     "campaign finance"
+#
+# which is much more specific.
+#
+# These labels help us decide what deserves human review.
+# They do NOT change classification.
 # =========================================================
 
-HIGH_RISK_RULES = {
-    r"\bminors?\b":
-        "Generic population descriptor",
+RULE_RISK = {
 
-    r"\bcommercial\b":
-        "Generic adjective",
+    r"\bminors?\b": {
+        "risk": "HIGH",
+        "reason": (
+            "Minor status can describe an affected person "
+            "without making the bill Family and Children policy."
+        ),
+    },
 
-    r"\belectronically\b":
-        "Delivery method may not represent technology policy",
+    r"\bcommercial\b": {
+        "risk": "HIGH",
+        "reason": (
+            "Commercial is a broad adjective used in many "
+            "different policy areas."
+        ),
+    },
 
-    r"\blocalit":
-        "Locality may be incidental rather than local-government policy",
+    r"\belectronically\b": {
+        "risk": "HIGH",
+        "reason": (
+            "Electronically often describes how something "
+            "is done rather than Technology and Data policy."
+        ),
+    },
 
-    r"\bstudents?\b":
-        "Student reference may be incidental",
+    r"\blocalit": {
+        "risk": "HIGH",
+        "reason": (
+            "Many state bills mention a locality even when "
+            "local-government authority is not the main issue."
+        ),
+    },
 
-    r"\beducation\b":
-        "Broad term may overlap Higher Education",
+    r"\bmedical\b": {
+        "risk": "HIGH",
+        "reason": (
+            "Medical language appears across health, insurance, "
+            "employment, licensing, education, and criminal law."
+        ),
+    },
 
-    r"\bchildren\b":
-        "Children may be affected population or organization name",
+    r"\brevenue\b": {
+        "risk": "HIGH",
+        "reason": (
+            "Revenue can describe a financial consequence "
+            "without making Taxes and Revenue the policy subject."
+        ),
+    },
 
-    r"\bworkforce\b":
-        "May occur in organization names or general context",
+    r"\bcoverage\b": {
+        "risk": "HIGH",
+        "reason": (
+            "Coverage is broad enough to appear outside "
+            "substantive insurance regulation."
+        ),
+    },
 
-    r"\bemployees?\b":
-        "Broad employment term",
+    r"\bstudents?\b": {
+        "risk": "MEDIUM",
+        "reason": (
+            "Students often signals education but can also "
+            "only identify the affected population."
+        ),
+    },
 
-    r"\bmedical\b":
-        "Broad health-related term",
+    r"\beducation\b": {
+        "risk": "MEDIUM",
+        "reason": (
+            "Education is broad and may duplicate the more "
+            "specific Higher Education topic."
+        ),
+    },
 
-    r"\bcoverage\b":
-        "Coverage can occur outside insurance substance",
+    r"\bchildren\b": {
+        "risk": "MEDIUM",
+        "reason": (
+            "Children may be the policy subject, an affected "
+            "population, or part of an organization name."
+        ),
+    },
 
-    r"\brevenue\b":
-        "Revenue may be incidental fiscal language",
+    r"\bworkforce\b": {
+        "risk": "MEDIUM",
+        "reason": (
+            "Workforce can indicate labor policy or merely "
+            "appear in an organization or economic context."
+        ),
+    },
+
+    r"\bemployees?\b": {
+        "risk": "MEDIUM",
+        "reason": (
+            "Employees can be the policy subject or simply "
+            "people affected by another policy."
+        ),
+    },
 }
 
 
 # =========================================================
-# CEREMONIAL / NON-SUBSTANTIVE CANDIDATES
+# TEXT PATTERNS FOR CEREMONIAL MEASURES
 #
-# QA ONLY.
+# Ceremonial resolutions frequently mention schools,
+# professions, children, farmers, health organizations,
+# and other policy-related words.
 #
-# We are not modifying production classification here.
+# That can create accidental topic matches.
+#
+# We flag them for review.
+#
+# We do NOT automatically delete their classifications.
 # =========================================================
 
 CEREMONIAL_PATTERNS = [
@@ -102,42 +264,25 @@ CEREMONIAL_PATTERNS = [
 
 
 # =========================================================
-# POTENTIALLY REDUNDANT TOPIC PAIRS
-#
-# These are review candidates, not automatic errors.
-# =========================================================
-
-REDUNDANT_TOPIC_PAIRS = [
-    (
-        "Education",
-        "Higher Education",
-    ),
-]
-
-
-# =========================================================
 # BASIC HELPERS
 # =========================================================
 
-def require_file(path):
+def clean_text(value) -> str:
 
-    if not path.exists():
-        raise FileNotFoundError(
-            f"Required file not found: {path}"
+    if pd.isna(value):
+        return ""
+
+    return (
+        re.sub(
+            r"\s+",
+            " ",
+            str(value),
         )
-
-
-def load_csv(path):
-
-    require_file(path)
-
-    return pd.read_csv(
-        path,
-        dtype=str,
+        .strip()
     )
 
 
-def clean_string_series(series):
+def clean_series(series: pd.Series) -> pd.Series:
 
     return (
         series
@@ -147,153 +292,235 @@ def clean_string_series(series):
     )
 
 
-def normalize_bill_id(series):
+def normalize_bill_id(value) -> str:
 
-    return (
-        clean_string_series(series)
-        .str.upper()
+    value = clean_text(value).upper()
+
+    if not value:
+        return ""
+
+    # HB0001 and HB1 should be treated as the same bill.
+    match = re.fullmatch(
+        r"([A-Z]+)0*([0-9]+)",
+        value,
+    )
+
+    if match:
+
+        return (
+            f"{match.group(1)}"
+            f"{int(match.group(2))}"
+        )
+
+    return value
+
+
+def normalize_bill_series(
+    series: pd.Series,
+) -> pd.Series:
+
+    return series.map(
+        normalize_bill_id
     )
 
 
-def safe_bool(value):
+def load_csv(path: Path) -> pd.DataFrame:
 
-    if isinstance(value, bool):
-        return value
+    if not path.exists():
 
-    return str(value).strip().lower() in {
-        "true",
-        "1",
-        "yes",
+        raise FileNotFoundError(
+            f"Required file not found: {path}"
+        )
+
+    return pd.read_csv(
+        path,
+        dtype=str,
+        low_memory=False,
+    )
+
+
+def join_values(values) -> str:
+
+    cleaned = {
+        clean_text(value)
+        for value in values
+        if clean_text(value)
     }
 
-
-def join_sorted(values):
-
     return " | ".join(
-        sorted(
-            {
-                str(value).strip()
-                for value in values
-                if str(value).strip()
-            }
+        sorted(cleaned)
+    )
+
+
+# =========================================================
+# WHICH YEARS SHOULD WE CHECK?
+#
+# Normal use:
+#
+#     python topic_validation_audit.py
+#
+# checks every processed year.
+#
+# You can also request particular years:
+#
+#     python topic_validation_audit.py --years 2025 2026
+# =========================================================
+
+def parse_arguments():
+
+    parser = argparse.ArgumentParser(
+        description=(
+            "Check LIS topic classification and "
+            "Unclassified vote behavior."
         )
     )
 
+    parser.add_argument(
+        "--years",
+        nargs="*",
+        type=int,
+        help=(
+            "Optional years to check. "
+            "Example: --years 2025 2026"
+        ),
+    )
+
+    return parser.parse_args()
+
+
+def determine_years() -> list[int]:
+
+    arguments = parse_arguments()
+
+    if arguments.years:
+
+        return sorted(
+            set(arguments.years)
+        )
+
+    years = available_processed_years(
+        PROCESSED_ROOT
+    )
+
+    if not years:
+
+        raise FileNotFoundError(
+            "No processed LIS years were found."
+        )
+
+    return years
+
 
 # =========================================================
-# LOAD CURRENT PIPELINE OUTPUTS
+# LOAD THE TABLES NEEDED FOR ONE YEAR
 # =========================================================
 
-def load_data(year):
+def load_year(
+    year: int,
+) -> dict[str, pd.DataFrame]:
 
-    paths = {
-        "summary":
-            PROCESSED_ROOT
-            / f"derived_from_lis_bill_summary_{year}.csv",
-
-        "description":
-            PROCESSED_ROOT
-            / f"derived_from_lis_bill_description_{year}.csv",
-
-        "unclassified":
-            PROCESSED_ROOT
-            / f"unclassified_bills_{year}.csv",
-
-        "topic_lookup":
-            PROCESSED_ROOT
-            / f"bill_topic_lookup_{year}.csv",
-
-        "bill_lookup":
-            PROCESSED_ROOT
-            / f"bill_lookup_{year}.csv",
-
-        "summary_lookup":
-            PROCESSED_ROOT
-            / f"bill_summary_lookup_{year}.csv",
-
-        "official":
-            PROCESSED_ROOT
-            / f"official_lis_subjects_{year}.csv",
-    }
+    names = [
+        "vote_fact",
+        "vote_bill_bridge",
+        "bill_lookup",
+        "bill_topic_lookup",
+        "derived_from_lis_bill_summary",
+        "derived_from_lis_bill_description",
+        "official_lis_subjects",
+        "unclassified_bills",
+        "member_vote_topic",
+    ]
 
     data = {}
 
-    for name, path in paths.items():
-        data[name] = load_csv(path)
+    for name in names:
 
-    # Normalize Bill_id everywhere.
-    for dataframe in data.values():
+        path = (
+            PROCESSED_ROOT
+            /
+            f"{name}_{year}.csv"
+        )
 
-        if "Bill_id" in dataframe.columns:
+        data[name] = load_csv(
+            path
+        )
 
-            dataframe["Bill_id"] = normalize_bill_id(
-                dataframe["Bill_id"]
+        if (
+            "Bill_id"
+            in
+            data[name].columns
+        ):
+
+            data[name][
+                "Bill_id"
+            ] = normalize_bill_series(
+                data[name][
+                    "Bill_id"
+                ]
             )
 
     return data
 
 
 # =========================================================
-# COMBINE DERIVED CLASSIFICATIONS
+# COMBINE THE TWO RULE-DERIVED CLASSIFICATION FILES
+#
+# Official LIS subjects are excluded here because their
+# topics came directly from LIS rather than our regex rules.
 # =========================================================
 
-def combine_derived(
-    summary,
-    description,
-):
+def build_derived_rows(
+    data,
+) -> pd.DataFrame:
 
-    derived = pd.concat(
+    result = pd.concat(
         [
-            summary,
-            description,
+            data[
+                "derived_from_lis_bill_summary"
+            ],
+            data[
+                "derived_from_lis_bill_description"
+            ],
         ],
         ignore_index=True,
     )
 
-    required = {
+    for column in [
         "Bill_id",
         "topic_name",
         "classification",
-        "source_file",
         "source_text_used",
         "matched_rule",
-    }
+    ]:
 
-    missing = (
-        required
-        -
-        set(derived.columns)
-    )
-
-    if missing:
-
-        raise ValueError(
-            "Derived classification files are "
-            f"missing required columns: {sorted(missing)}"
+        result[column] = clean_series(
+            result[column]
         )
 
-    for column in required:
-
-        derived[column] = clean_string_series(
-            derived[column]
-        )
-
-    derived["Bill_id"] = normalize_bill_id(
-        derived["Bill_id"]
+    result[
+        "Bill_id"
+    ] = normalize_bill_series(
+        result[
+            "Bill_id"
+        ]
     )
 
-    return derived
+    return result
 
 
 # =========================================================
-# RULE-LEVEL POPULATION AUDIT
+# HOW OFTEN DOES EACH RULE FIRE?
+#
+# This is population information, not an accuracy score.
+#
+# A rule being common does not mean it is bad.
 # =========================================================
 
-def build_rule_audit(
+def build_rule_summary(
     derived,
-):
+) -> pd.DataFrame:
 
-    audit = (
+    result = (
         derived
         .groupby(
             [
@@ -301,162 +528,278 @@ def build_rule_audit(
                 "topic_name",
                 "matched_rule",
             ],
-            dropna=False,
             as_index=False,
+            dropna=False,
         )
         .agg(
-            assignment_rows=(
+            assignments=(
                 "Bill_id",
                 "size",
             ),
 
-            unique_bills=(
+            bills=(
                 "Bill_id",
                 "nunique",
             ),
         )
     )
 
-    audit["high_risk_rule"] = (
-        audit["matched_rule"]
-        .isin(HIGH_RISK_RULES)
+    result[
+        "keyword_risk"
+    ] = (
+        result[
+            "matched_rule"
+        ]
+        .map(
+            lambda rule:
+                RULE_RISK
+                .get(
+                    clean_text(rule),
+                    {},
+                )
+                .get(
+                    "risk",
+                    "LOW",
+                )
+        )
     )
 
-    audit["risk_reason"] = (
-        audit["matched_rule"]
-        .map(HIGH_RISK_RULES)
-        .fillna("")
+    result[
+        "why_keyword_deserves_review"
+    ] = (
+        result[
+            "matched_rule"
+        ]
+        .map(
+            lambda rule:
+                RULE_RISK
+                .get(
+                    clean_text(rule),
+                    {},
+                )
+                .get(
+                    "reason",
+                    (
+                        "No special broad-keyword concern "
+                        "has currently been identified."
+                    ),
+                )
+        )
     )
 
-    # These are intentionally blank.
-    # They can later be populated from human/model QA.
-    audit["qa_true_positive"] = ""
-    audit["qa_borderline"] = ""
-    audit["qa_false_positive"] = ""
-    audit["qa_precision_pct"] = ""
-    audit["qa_recommendation"] = ""
-    audit["qa_notes"] = ""
+    risk_order = {
+        "HIGH": 3,
+        "MEDIUM": 2,
+        "LOW": 1,
+    }
+
+    result[
+        "_risk_order"
+    ] = (
+        result[
+            "keyword_risk"
+        ]
+        .map(risk_order)
+    )
 
     return (
-        audit
+        result
         .sort_values(
             [
-                "high_risk_rule",
-                "assignment_rows",
-                "topic_name",
-                "matched_rule",
+                "_risk_order",
+                "assignments",
             ],
             ascending=[
                 False,
                 False,
+            ],
+        )
+        .drop(
+            columns=[
+                "_risk_order"
+            ]
+        )
+        .reset_index(
+            drop=True
+        )
+    )
+
+
+# =========================================================
+# CHECK WHETHER THE SAVED REGEX REALLY MATCHES THE SAVED
+# SOURCE TEXT.
+#
+# This is an integrity check.
+#
+# It does NOT tell us whether the topic is sensible.
+# =========================================================
+
+def build_match_check(
+    derived,
+) -> pd.DataFrame:
+
+    rows = []
+
+    for _, row in derived.iterrows():
+
+        pattern = clean_text(
+            row[
+                "matched_rule"
+            ]
+        )
+
+        text = clean_text(
+            row[
+                "source_text_used"
+            ]
+        )
+
+        found = False
+        count = 0
+        first_position = -1
+
+        if (
+            pattern
+            and
+            text
+        ):
+
+            matches = list(
+                re.finditer(
+                    pattern,
+                    text,
+                    flags=re.IGNORECASE,
+                )
+            )
+
+            found = bool(
+                matches
+            )
+
+            count = len(
+                matches
+            )
+
+            if matches:
+
+                first_position = (
+                    matches[
+                        0
+                    ]
+                    .start()
+                )
+
+        risk = (
+            RULE_RISK
+            .get(
+                pattern,
+                {}
+            )
+        )
+
+        rows.append(
+            {
+                "Bill_id":
+                    row[
+                        "Bill_id"
+                    ],
+
+                "classification":
+                    row[
+                        "classification"
+                    ],
+
+                "topic_name":
+                    row[
+                        "topic_name"
+                    ],
+
+                "matched_rule":
+                    pattern,
+
+                "keyword_risk":
+                    risk.get(
+                        "risk",
+                        "LOW",
+                    ),
+
+                "source_text_used":
+                    text,
+
+                "regex_found_in_source_text":
+                    found,
+
+                "match_count":
+                    count,
+
+                "first_match_position":
+                    first_position,
+
+                "text_length":
+                    len(text),
+
+                "ceremonial_text":
+                    any(
+                        re.search(
+                            ceremonial_pattern,
+                            text,
+                            flags=re.IGNORECASE,
+                        )
+                        is not None
+                        for ceremonial_pattern
+                        in CEREMONIAL_PATTERNS
+                    ),
+
+                "why_review_this_row":
+                    (
+                        risk.get(
+                            "reason",
+                            "",
+                        )
+                    ),
+            }
+        )
+
+    result = pd.DataFrame(
+        rows
+    )
+
+    return (
+        result
+        .sort_values(
+            [
+                "regex_found_in_source_text",
+                "ceremonial_text",
+                "keyword_risk",
+                "Bill_id",
+            ],
+            ascending=[
+                True,
+                False,
                 True,
                 True,
             ],
         )
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# CEREMONIAL DETECTION
-# =========================================================
-
-def is_ceremonial_text(text):
-
-    if pd.isna(text):
-        return False
-
-    text = str(text)
-
-    return any(
-        re.search(
-            pattern,
-            text,
-            flags=re.IGNORECASE,
+        .reset_index(
+            drop=True
         )
-        is not None
-        for pattern in CEREMONIAL_PATTERNS
     )
 
 
-def build_ceremonial_candidates(
+# =========================================================
+# HOW MANY DERIVED TOPICS DOES EACH BILL RECEIVE?
+#
+# Multiple topics are allowed.
+#
+# This simply lets us see where keyword accumulation may
+# deserve closer review.
+# =========================================================
+
+def build_topic_count_check(
     derived,
-):
-
-    result = derived.copy()
-
-    result["ceremonial_candidate"] = (
-        result["source_text_used"]
-        .map(is_ceremonial_text)
-    )
-
-    result = result[
-        result["ceremonial_candidate"]
-    ].copy()
-
-    result["qa_judgment"] = ""
-    result["qa_confidence"] = ""
-    result["qa_reason"] = ""
-    result["qa_recommended_action"] = ""
+) -> pd.DataFrame:
 
     return (
-        result
-        .sort_values(
-            [
-                "Bill_id",
-                "topic_name",
-            ]
-        )
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# HIGH-RISK RULE ROWS
-# =========================================================
-
-def build_high_risk_rule_rows(
-    derived,
-):
-
-    result = derived[
-        derived["matched_rule"]
-        .isin(HIGH_RISK_RULES)
-    ].copy()
-
-    result["risk_reason"] = (
-        result["matched_rule"]
-        .map(HIGH_RISK_RULES)
-        .fillna("")
-    )
-
-    result["qa_judgment"] = ""
-    result["qa_confidence"] = ""
-    result["qa_reason"] = ""
-    result["qa_recommended_action"] = ""
-
-    return (
-        result
-        .sort_values(
-            [
-                "matched_rule",
-                "topic_name",
-                "Bill_id",
-            ]
-        )
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# TOPIC COUNT PER BILL
-# =========================================================
-
-def build_topic_count_by_bill(
-    derived,
-):
-
-    result = (
         derived
         .groupby(
             [
@@ -473,13 +816,9 @@ def build_topic_count_by_bill(
 
             topics=(
                 "topic_name",
-                join_sorted,
+                join_values,
             ),
         )
-    )
-
-    return (
-        result
         .sort_values(
             [
                 "topic_count",
@@ -490,581 +829,138 @@ def build_topic_count_by_bill(
                 True,
             ],
         )
-        .reset_index(drop=True)
+        .reset_index(
+            drop=True
+        )
     )
 
 
 # =========================================================
-# MULTI-TOPIC REVIEW CANDIDATES
-# =========================================================
-
-def build_multi_topic_candidates(
-    derived,
-    topic_counts,
-):
-
-    suspicious = topic_counts[
-        topic_counts["topic_count"] >= 3
-    ].copy()
-
-    result = derived.merge(
-        suspicious[
-            [
-                "Bill_id",
-                "classification",
-                "topic_count",
-                "topics",
-            ]
-        ],
-        on=[
-            "Bill_id",
-            "classification",
-        ],
-        how="inner",
-        validate="many_to_one",
-    )
-
-    result["qa_judgment"] = ""
-    result["qa_notes"] = ""
-
-    return (
-        result
-        .sort_values(
-            [
-                "topic_count",
-                "Bill_id",
-                "topic_name",
-            ],
-            ascending=[
-                False,
-                True,
-                True,
-            ],
-        )
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# REDUNDANT TOPIC PAIRS
-# =========================================================
-
-def build_redundant_topic_candidates(
-    derived,
-):
-
-    records = []
-
-    grouped = derived.groupby(
-        [
-            "Bill_id",
-            "classification",
-        ]
-    )
-
-    for (
-        bill_id,
-        classification
-    ), group in grouped:
-
-        topics = set(
-            group["topic_name"]
-        )
-
-        for (
-            broad_topic,
-            specific_topic
-        ) in REDUNDANT_TOPIC_PAIRS:
-
-            if (
-                broad_topic in topics
-                and
-                specific_topic in topics
-            ):
-
-                records.append(
-                    {
-                        "Bill_id":
-                            bill_id,
-
-                        "classification":
-                            classification,
-
-                        "broad_topic":
-                            broad_topic,
-
-                        "specific_topic":
-                            specific_topic,
-
-                        "issue":
-                            (
-                                f"{broad_topic} + "
-                                f"{specific_topic}"
-                            ),
-
-                        "qa_judgment":
-                            "",
-
-                        "qa_notes":
-                            "",
-                    }
-                )
-
-    return pd.DataFrame(
-        records,
-        columns=[
-            "Bill_id",
-            "classification",
-            "broad_topic",
-            "specific_topic",
-            "issue",
-            "qa_judgment",
-            "qa_notes",
-        ],
-    )
-
-
-# =========================================================
-# STRATIFIED TOPIC SAMPLE
-# =========================================================
-
-def build_topic_manual_sample(
-    derived,
-):
-
-    samples = []
-
-    grouped = derived.groupby(
-        [
-            "classification",
-            "topic_name",
-        ],
-        dropna=False,
-    )
-
-    for _, group in grouped:
-
-        n = min(
-            SAMPLE_PER_TOPIC,
-            len(group),
-        )
-
-        samples.append(
-            group.sample(
-                n=n,
-                random_state=RANDOM_STATE,
-            )
-        )
-
-    if not samples:
-        return pd.DataFrame()
-
-    result = pd.concat(
-        samples,
-        ignore_index=True,
-    )
-
-    result["qa_judgment"] = ""
-    result["qa_confidence"] = ""
-    result["qa_reason"] = ""
-    result["qa_recommended_action"] = ""
-
-    return (
-        result
-        .sort_values(
-            [
-                "classification",
-                "topic_name",
-                "Bill_id",
-            ]
-        )
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# STRATIFIED RULE SAMPLE
-# =========================================================
-
-def build_rule_manual_sample(
-    derived,
-):
-
-    samples = []
-
-    grouped = derived.groupby(
-        [
-            "classification",
-            "topic_name",
-            "matched_rule",
-        ],
-        dropna=False,
-    )
-
-    for _, group in grouped:
-
-        n = min(
-            SAMPLE_PER_RULE,
-            len(group),
-        )
-
-        samples.append(
-            group.sample(
-                n=n,
-                random_state=RANDOM_STATE,
-            )
-        )
-
-    if not samples:
-        return pd.DataFrame()
-
-    result = pd.concat(
-        samples,
-        ignore_index=True,
-    )
-
-    result["qa_judgment"] = ""
-    result["qa_confidence"] = ""
-    result["qa_reason"] = ""
-    result["qa_recommended_action"] = ""
-
-    return (
-        result
-        .sort_values(
-            [
-                "classification",
-                "topic_name",
-                "matched_rule",
-                "Bill_id",
-            ]
-        )
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# UNCLASSIFIED FALSE-NEGATIVE SAMPLE
-# =========================================================
-
-def build_unclassified_sample(
-    unclassified,
-    bill_lookup,
-    summary_lookup,
-):
-
-    if len(unclassified) == 0:
-        return pd.DataFrame()
-
-    n = min(
-        UNCLASSIFIED_SAMPLE_SIZE,
-        len(unclassified),
-    )
-
-    result = (
-        unclassified
-        .sample(
-            n=n,
-            random_state=RANDOM_STATE,
-        )
-        .copy()
-    )
-
-    bill_fields = (
-        bill_lookup[
-            [
-                "Bill_id",
-                "Bill_description",
-            ]
-        ]
-        .drop_duplicates(
-            subset=["Bill_id"]
-        )
-    )
-
-    summary_fields = (
-        summary_lookup[
-            [
-                "Bill_id",
-                "summary_type",
-                "summary_text",
-            ]
-        ]
-        .drop_duplicates(
-            subset=["Bill_id"]
-        )
-    )
-
-    # Avoid duplicate column names if the source file
-    # already contains one of these fields.
-    for column in [
-        "Bill_description",
-        "summary_type",
-        "summary_text",
-    ]:
-
-        if column in result.columns:
-            result = result.drop(
-                columns=[column]
-            )
-
-    result = (
-        result
-        .merge(
-            bill_fields,
-            on="Bill_id",
-            how="left",
-            validate="many_to_one",
-        )
-        .merge(
-            summary_fields,
-            on="Bill_id",
-            how="left",
-            validate="many_to_one",
-        )
-    )
-
-    result["qa_existing_topic_should_apply"] = ""
-    result["qa_suggested_topic"] = ""
-    result["qa_judgment"] = ""
-    result["qa_reason_missed"] = ""
-    result["qa_notes"] = ""
-
-    return (
-        result
-        .sort_values("Bill_id")
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# OFFICIAL LIS QA SAMPLE
-# =========================================================
-
-def build_official_sample(
-    official,
-):
-
-    if len(official) == 0:
-        return pd.DataFrame()
-
-    n = min(
-        OFFICIAL_SAMPLE_SIZE,
-        len(official),
-    )
-
-    result = (
-        official
-        .sample(
-            n=n,
-            random_state=RANDOM_STATE,
-        )
-        .copy()
-    )
-
-    result["qa_raw_subject_matches"] = ""
-    result["qa_parent_matches"] = ""
-    result["qa_topic_rollup_correct"] = ""
-    result["qa_judgment"] = ""
-    result["qa_notes"] = ""
-
-    sort_columns = [
-        column
-        for column in [
-            "Bill_id",
-            "topic_name",
-        ]
-        if column in result.columns
-    ]
-
-    if sort_columns:
-
-        result = result.sort_values(
-            sort_columns
-        )
-
-    return result.reset_index(
-        drop=True
-    )
-
-
-# =========================================================
-# SUMMARY-SELECTION SAMPLE
-# =========================================================
-
-def build_summary_selection_sample(
-    summary_lookup,
-):
-
-    if len(summary_lookup) == 0:
-        return pd.DataFrame()
-
-    n = min(
-        SUMMARY_SELECTION_SAMPLE_SIZE,
-        len(summary_lookup),
-    )
-
-    result = (
-        summary_lookup
-        .sample(
-            n=n,
-            random_state=RANDOM_STATE,
-        )
-        .copy()
-    )
-
-    result["qa_expected_summary_type"] = ""
-    result["qa_selection_correct"] = ""
-    result["qa_notes"] = ""
-
-    return (
-        result
-        .sort_values("Bill_id")
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# INDEPENDENT TEXT CLASSIFICATION
+# APPLY OUR EXISTING RULES TO ANY PIECE OF TEXT.
 #
-# QA ONLY.
+# This is used only for comparison.
 #
-# This deliberately runs the same production text rules
-# against BOTH summary and description regardless of the
-# production provenance tier.
+# It does not change the production classification.
 # =========================================================
 
-def classify_text_for_qa(text):
+def topics_from_text(
+    text,
+) -> set[str]:
 
-    if pd.isna(text):
-        return []
-
-    text = str(text).strip()
-
-    if not text:
-        return []
-
-    return derive_topics_with_rules(
+    text = clean_text(
         text
     )
 
+    if not text:
 
-def topics_from_matches(matches):
+        return set()
+
+    matches = (
+        derive_topics_with_rules(
+            text
+        )
+    )
 
     return {
-        match["topic_name"]
+        match[
+            "topic_name"
+        ]
         for match in matches
-        if match.get("topic_name")
+        if match.get(
+            "topic_name"
+        )
     }
 
 
 # =========================================================
-# CROSS-SOURCE COMPARISON
+# COMPARE SUMMARY-DERIVED TOPICS TO THE SHORT DESCRIPTION
 #
-# This is useful because the production pipeline normally
-# stops at summary classification if summary rules match.
+# Agreement provides useful additional evidence.
 #
-# Here we ask:
+# Disagreement is NOT automatically a problem.
 #
-# What would the summary say?
-# What would the short description say?
-# Do they independently agree?
+# A long LIS summary naturally contains more information
+# than the short description.
 # =========================================================
 
-def build_cross_source_comparison(
-    bill_lookup,
-    summary_lookup,
-    official,
-):
-
-    official_ids = set(
-        normalize_bill_id(
-            official["Bill_id"]
-        )
-    )
+def build_cross_source_check(
+    data,
+) -> pd.DataFrame:
 
     bills = (
-        bill_lookup[
+        data[
+            "bill_lookup"
+        ][
             [
                 "Bill_id",
                 "Bill_description",
             ]
         ]
         .drop_duplicates(
-            subset=["Bill_id"]
+            "Bill_id"
         )
-        .copy()
     )
 
-    summaries = (
-        summary_lookup[
-            [
-                "Bill_id",
-                "summary_type",
-                "summary_text",
-            ]
+    summary_rows = (
+        data[
+            "derived_from_lis_bill_summary"
         ]
-        .drop_duplicates(
-            subset=["Bill_id"]
+        .groupby(
+            "Bill_id",
+            as_index=False,
         )
-        .copy()
+        .agg(
+            summary_topics=(
+                "topic_name",
+                join_values,
+            ),
+
+            summary_text=(
+                "source_text_used",
+                "first",
+            ),
+        )
     )
 
-    combined = bills.merge(
-        summaries,
+    result = bills.merge(
+        summary_rows,
         on="Bill_id",
         how="left",
         validate="one_to_one",
     )
 
-    rows = []
+    records = []
 
-    for _, row in combined.iterrows():
+    for _, row in result.iterrows():
 
-        bill_id = row["Bill_id"]
-
-        description = (
-            ""
-            if pd.isna(
-                row["Bill_description"]
-            )
-            else
-            str(
-                row["Bill_description"]
+        summary_text = clean_text(
+            row.get(
+                "summary_text",
+                "",
             )
         )
 
-        summary_text = (
-            ""
-            if pd.isna(
-                row["summary_text"]
-            )
-            else
-            str(
-                row["summary_text"]
-            )
+        description = clean_text(
+            row[
+                "Bill_description"
+            ]
         )
 
-        description_matches = (
-            classify_text_for_qa(
-                description
-            )
-        )
-
-        summary_matches = (
-            classify_text_for_qa(
-                summary_text
-            )
+        summary_topics = set(
+            value.strip()
+            for value
+            in clean_text(
+                row.get(
+                    "summary_topics",
+                    "",
+                )
+            ).split("|")
+            if value.strip()
         )
 
         description_topics = (
-            topics_from_matches(
-                description_matches
-            )
-        )
-
-        summary_topics = (
-            topics_from_matches(
-                summary_matches
+            topics_from_text(
+                description
             )
         )
 
@@ -1074,97 +970,60 @@ def build_cross_source_comparison(
             description_topics
         )
 
-        summary_only = (
-            summary_topics
-            -
-            description_topics
-        )
-
-        description_only = (
-            description_topics
-            -
-            summary_topics
-        )
-
         union = (
             summary_topics
             |
             description_topics
         )
 
-        if union:
+        agreement = (
+            len(shared)
+            /
+            len(union)
+            if union
+            else
+            1.0
+        )
 
-            agreement_score = (
-                len(shared)
-                /
-                len(union)
-            )
-
-        else:
-
-            agreement_score = 1.0
-
-        rows.append(
+        records.append(
             {
                 "Bill_id":
-                    bill_id,
-
-                "has_official_lis_subject":
-                    bill_id
-                    in official_ids,
-
-                "summary_type":
-                    (
-                        ""
-                        if pd.isna(
-                            row["summary_type"]
-                        )
-                        else
-                        str(
-                            row["summary_type"]
-                        )
-                    ),
+                    row[
+                        "Bill_id"
+                    ],
 
                 "summary_topics":
-                    join_sorted(
+                    join_values(
                         summary_topics
                     ),
 
                 "description_topics":
-                    join_sorted(
+                    join_values(
                         description_topics
                     ),
 
                 "shared_topics":
-                    join_sorted(
+                    join_values(
                         shared
                     ),
 
                 "summary_only_topics":
-                    join_sorted(
-                        summary_only
+                    join_values(
+                        summary_topics
+                        -
+                        description_topics
                     ),
 
                 "description_only_topics":
-                    join_sorted(
-                        description_only
+                    join_values(
+                        description_topics
+                        -
+                        summary_topics
                     ),
-
-                "summary_topic_count":
-                    len(summary_topics),
-
-                "description_topic_count":
-                    len(description_topics),
-
-                "shared_topic_count":
-                    len(shared),
-
-                "union_topic_count":
-                    len(union),
 
                 "agreement_score":
                     round(
-                        agreement_score,
+                        agreement,
                         4,
                     ),
 
@@ -1173,6 +1032,309 @@ def build_cross_source_comparison(
 
                 "summary_text":
                     summary_text,
+
+                "how_to_read_this":
+                    (
+                        "Low agreement means the two LIS text "
+                        "sources produced different topic sets. "
+                        "It does not automatically mean the "
+                        "summary classification is wrong."
+                    ),
+            }
+        )
+
+    return (
+        pd.DataFrame(
+            records
+        )
+        .sort_values(
+            [
+                "agreement_score",
+                "Bill_id",
+            ]
+        )
+        .reset_index(
+            drop=True
+        )
+    )
+
+
+# =========================================================
+# THE UNCLASSIFIED VOTE CHECK
+#
+# This directly addresses the question that triggered this
+# audit.
+#
+#
+# IMPORTANT IDEA
+# ==============
+#
+# One LIS vote can cover several bills.
+#
+# Example:
+#
+# Vote V1
+#   -> HB1 = Education
+#   -> HB2 = Unclassified
+#
+# V1 still legitimately appears in the Unclassified bucket
+# because HB2 remains Unclassified.
+#
+#
+# Later:
+#
+# Vote V1
+#   -> HB1 = Education
+#   -> HB2 = Transportation
+#
+# Now no bill on V1 is Unclassified.
+#
+# V1 should therefore disappear from the Unclassified
+# subject bucket.
+#
+#
+# This table shows exactly how many vote events are being
+# kept Unclassified for that reason.
+# =========================================================
+
+def build_unclassified_vote_check(
+    data,
+) -> pd.DataFrame:
+
+    bridge = (
+        data[
+            "vote_bill_bridge"
+        ]
+        .copy()
+    )
+
+    topics = (
+        data[
+            "bill_topic_lookup"
+        ]
+        .copy()
+    )
+
+    votes = (
+        data[
+            "vote_fact"
+        ]
+        .copy()
+    )
+
+    member_topics = (
+        data[
+            "member_vote_topic"
+        ]
+        .copy()
+    )
+
+    bridge[
+        "Bill_id"
+    ] = normalize_bill_series(
+        bridge[
+            "Bill_id"
+        ]
+    )
+
+    topics[
+        "Bill_id"
+    ] = normalize_bill_series(
+        topics[
+            "Bill_id"
+        ]
+    )
+
+    topics[
+        "topic_name"
+    ] = clean_series(
+        topics[
+            "topic_name"
+        ]
+    )
+
+    unclassified_bills = set(
+        topics.loc[
+            topics[
+                "topic_name"
+            ]
+            ==
+            "Unclassified",
+            "Bill_id",
+        ]
+    )
+
+    bridge_simple = (
+        bridge[
+            [
+                "vote_id",
+                "Bill_id",
+            ]
+        ]
+        .drop_duplicates()
+    )
+
+    vote_groups = (
+        bridge_simple
+        .groupby(
+            "vote_id"
+        )
+    )
+
+    member_topics[
+        "topic_name"
+    ] = clean_series(
+        member_topics[
+            "topic_name"
+        ]
+    )
+
+    observed_unclassified_vote_ids = set(
+        member_topics.loc[
+            member_topics[
+                "topic_name"
+            ]
+            ==
+            "Unclassified",
+            "vote_id",
+        ]
+        .astype(str)
+        .str.strip()
+    )
+
+    house_vote_ids = set(
+        votes.loc[
+            clean_series(
+                votes[
+                    "MBR_HOU"
+                ]
+            )
+            .str.upper()
+            ==
+            "H",
+            "vote_id",
+        ]
+        .astype(str)
+        .str.strip()
+    )
+
+    rows = []
+
+    for (
+        vote_id,
+        group
+    ) in vote_groups:
+
+        vote_id = clean_text(
+            vote_id
+        )
+
+        bill_ids = set(
+            group[
+                "Bill_id"
+            ]
+        )
+
+        remaining_unclassified = (
+            bill_ids
+            &
+            unclassified_bills
+        )
+
+        classified = (
+            bill_ids
+            -
+            unclassified_bills
+        )
+
+        touches_house_vote = (
+            vote_id
+            in
+            house_vote_ids
+        )
+
+        expected_unclassified = (
+            touches_house_vote
+            and
+            bool(
+                remaining_unclassified
+            )
+        )
+
+        observed_unclassified = (
+            vote_id
+            in
+            observed_unclassified_vote_ids
+        )
+
+        rows.append(
+            {
+                "vote_id":
+                    vote_id,
+
+                "bills_on_vote":
+                    len(
+                        bill_ids
+                    ),
+
+                "bill_ids":
+                    join_values(
+                        bill_ids
+                    ),
+
+                "classified_bills_on_vote":
+                    len(
+                        classified
+                    ),
+
+                "classified_bill_ids":
+                    join_values(
+                        classified
+                    ),
+
+                "unclassified_bills_on_vote":
+                    len(
+                        remaining_unclassified
+                    ),
+
+                "unclassified_bill_ids":
+                    join_values(
+                        remaining_unclassified
+                    ),
+
+                "house_vote_event":
+                    touches_house_vote,
+
+                "should_appear_as_unclassified":
+                    expected_unclassified,
+
+                "does_appear_as_unclassified":
+                    observed_unclassified,
+
+                "unclassified_flow_correct":
+                    (
+                        expected_unclassified
+                        ==
+                        observed_unclassified
+                    ),
+
+                "plain_english_explanation":
+                    (
+                        "This vote remains Unclassified because "
+                        "at least one bill attached to the vote "
+                        "is still Unclassified."
+                        if expected_unclassified
+                        else
+                        (
+                            "No Unclassified bill remains attached "
+                            "to this House vote, so it should not "
+                            "appear in the Unclassified subject bucket."
+                            if touches_house_vote
+                            else
+                            "This vote is not a House vote used in "
+                            "member_vote_topic."
+                        )
+                    ),
             }
         )
 
@@ -1180,1074 +1342,561 @@ def build_cross_source_comparison(
         rows
     )
 
-    result["needs_review"] = (
-        (
-            result[
-                "summary_topic_count"
-            ]
-            >
-            0
-        )
-        &
-        (
-            result[
-                "agreement_score"
-            ]
-            <
-            0.50
-        )
-    )
-
     return (
         result
         .sort_values(
             [
-                "needs_review",
-                "agreement_score",
-                "Bill_id",
+                "unclassified_flow_correct",
+                "unclassified_bills_on_vote",
+                "bills_on_vote",
             ],
             ascending=[
+                True,
                 False,
-                True,
-                True,
+                False,
             ],
         )
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# MATCH-STRENGTH MEASUREMENT
-#
-# Objective text-position evidence.
-#
-# It does NOT determine whether the topic is substantively
-# correct.
-# =========================================================
-
-def measure_match_strength(
-    text,
-    pattern,
-):
-
-    if pd.isna(text):
-        text = ""
-
-    if pd.isna(pattern):
-        pattern = ""
-
-    text = str(text)
-    pattern = str(pattern).strip()
-
-    result = {
-        "match_count":
-            0,
-
-        "first_match_position":
-            -1,
-
-        "text_length":
-            len(text),
-
-        "relative_match_position":
-            None,
-
-        "match_in_first_100_chars":
-            False,
-
-        "match_in_first_200_chars":
-            False,
-    }
-
-    if (
-        not text
-        or
-        not pattern
-    ):
-        return result
-
-    try:
-
-        matches = list(
-            re.finditer(
-                pattern,
-                text,
-                flags=re.IGNORECASE,
-            )
+        .reset_index(
+            drop=True
         )
-
-    except re.error as exc:
-
-        raise ValueError(
-            "Invalid regex encountered "
-            f"during QA: {pattern!r}"
-        ) from exc
-
-    if not matches:
-        return result
-
-    first_position = (
-        matches[0].start()
     )
 
-    text_length = len(text)
 
-    result.update(
-        {
-            "match_count":
-                len(matches),
+# =========================================================
+# SESSION SUMMARY
+#
+# These are the main numbers to read in the terminal.
+# =========================================================
 
-            "first_match_position":
-                first_position,
-
-            "text_length":
-                text_length,
-
-            "relative_match_position":
-                round(
-                    (
-                        first_position
-                        /
-                        text_length
-                    )
-                    if text_length
-                    else
-                    0,
-                    4,
-                ),
-
-            "match_in_first_100_chars":
-                first_position < 100,
-
-            "match_in_first_200_chars":
-                first_position < 200,
-        }
-    )
-
-    return result
-
-
-def build_match_strength_table(
+def build_session_summary(
+    year,
+    data,
     derived,
-):
+    rule_summary,
+    match_check,
+    topic_counts,
+    cross_source,
+    unclassified_vote_check,
+) -> pd.DataFrame:
 
-    rows = []
+    topic_lookup = (
+        data[
+            "bill_topic_lookup"
+        ]
+    )
 
-    for _, row in derived.iterrows():
+    bill_lookup = (
+        data[
+            "bill_lookup"
+        ]
+    )
 
-        strength = measure_match_strength(
-            row["source_text_used"],
-            row["matched_rule"],
+    classification_by_bill = (
+        topic_lookup[
+            [
+                "Bill_id",
+                "classification",
+            ]
+        ]
+        .drop_duplicates()
+    )
+
+    metrics = []
+
+    def add_metric(
+        metric,
+        value,
+        explanation,
+    ):
+
+        metrics.append(
+            {
+                "year":
+                    year,
+
+                "metric":
+                    metric,
+
+                "value":
+                    value,
+
+                "what_this_number_means":
+                    explanation,
+            }
         )
 
-        record = row.to_dict()
+    add_metric(
+        "Bills in bill lookup",
+        bill_lookup[
+            "Bill_id"
+        ].nunique(),
+        (
+            "Total distinct bills available to the "
+            "classification process."
+        ),
+    )
 
-        record.update(
-            strength
+    for classification in [
+        "Official LIS subject",
+        "Derived from LIS bill summary",
+        "Derived from LIS bill description",
+        "Unclassified",
+    ]:
+
+        count = (
+            classification_by_bill.loc[
+                classification_by_bill[
+                    "classification"
+                ]
+                ==
+                classification,
+                "Bill_id",
+            ]
+            .nunique()
         )
 
-        matched_rule = (
-            str(
-                row["matched_rule"]
+        add_metric(
+            f"Bills: {classification}",
+            count,
+            (
+                "Distinct bills whose classification "
+                "provenance is this category."
+            ),
+        )
+
+    add_metric(
+        "Derived topic assignments",
+        len(
+            derived
+        ),
+        (
+            "Bill-topic rows created by our summary "
+            "or description rules. One bill may have "
+            "more than one topic."
+        ),
+    )
+
+    add_metric(
+        "Distinct derived rules used",
+        rule_summary[
+            "matched_rule"
+        ].nunique(),
+        (
+            "Number of different regex rules that "
+            "actually created at least one topic."
+        ),
+    )
+
+    add_metric(
+        "Derived rows whose saved regex cannot be reproduced",
+        int(
+            (
+                ~match_check[
+                    "regex_found_in_source_text"
+                ]
             )
-            .strip()
-        )
+            .sum()
+        ),
+        (
+            "Should normally be zero. A nonzero value "
+            "means the saved rule does not match the "
+            "saved source text."
+        ),
+    )
 
-        record["high_risk_rule"] = (
-            matched_rule
-            in HIGH_RISK_RULES
-        )
-
-        record["risk_reason"] = (
-            HIGH_RISK_RULES.get(
-                matched_rule,
-                "",
+    add_metric(
+        "Bills with 3 or more derived topics",
+        int(
+            (
+                topic_counts[
+                    "topic_count"
+                ]
+                >=
+                3
             )
-        )
+            .sum()
+        ),
+        (
+            "These are not automatically wrong. "
+            "They simply deserve more attention "
+            "because several rules fired."
+        ),
+    )
 
-        rows.append(
-            record
-        )
+    add_metric(
+        "Maximum derived topics on one bill",
+        (
+            int(
+                topic_counts[
+                    "topic_count"
+                ]
+                .max()
+            )
+            if len(
+                topic_counts
+            )
+            else
+            0
+        ),
+        (
+            "Largest number of rule-derived topics "
+            "assigned to one bill."
+        ),
+    )
+
+    add_metric(
+        "Summary-derived bills with low description agreement",
+        int(
+            (
+                cross_source[
+                    "agreement_score"
+                ]
+                <
+                0.50
+            )
+            .sum()
+        ),
+        (
+            "The summary and short description produce "
+            "substantially different topic sets. This "
+            "is a review signal, not an error."
+        ),
+    )
+
+    add_metric(
+        "House vote events that should remain Unclassified",
+        int(
+            unclassified_vote_check[
+                "should_appear_as_unclassified"
+            ]
+            .sum()
+        ),
+        (
+            "Distinct House vote events connected to at "
+            "least one bill that is still Unclassified."
+        ),
+    )
+
+    add_metric(
+        "House vote events observed as Unclassified",
+        int(
+            unclassified_vote_check[
+                "does_appear_as_unclassified"
+            ]
+            .sum()
+        ),
+        (
+            "Distinct vote IDs currently appearing in "
+            "member_vote_topic under Unclassified."
+        ),
+    )
+
+    add_metric(
+        "Unclassified vote-flow mismatches",
+        int(
+            (
+                ~unclassified_vote_check[
+                    "unclassified_flow_correct"
+                ]
+            )
+            .sum()
+        ),
+        (
+            "Should be zero. A mismatch means the downstream "
+            "Unclassified vote representation does not agree "
+            "with the current bill classifications."
+        ),
+    )
 
     return pd.DataFrame(
-        rows
+        metrics
     )
 
 
 # =========================================================
-# DESCRIPTION SUPPORT CACHE
+# SAVE ONE FILE PER YEAR
 #
-# Avoid rerunning the classifier repeatedly for every
-# topic row belonging to the same bill.
+# Different checks are stacked into one CSV.
+#
+# audit_section tells us which part each row belongs to.
 # =========================================================
 
-def build_description_topic_map(
-    bill_lookup,
+def save_consolidated_audit(
+    year,
+    sections,
 ):
 
-    topic_map = {}
+    combined_sections = []
 
-    for _, row in (
-        bill_lookup[
-            [
-                "Bill_id",
-                "Bill_description",
-            ]
-        ]
-        .drop_duplicates(
-            subset=["Bill_id"]
-        )
-        .iterrows()
-    ):
+    for (
+        section_name,
+        frame,
+    ) in sections.items():
 
-        bill_id = row["Bill_id"]
-
-        matches = classify_text_for_qa(
-            row["Bill_description"]
+        section = (
+            frame.copy()
         )
 
-        topic_map[bill_id] = (
-            topics_from_matches(
-                matches
-            )
+        section.insert(
+            0,
+            "audit_section",
+            section_name,
         )
 
-    return topic_map
-
-
-# =========================================================
-# DETERMINISTIC RISK SCORE
-#
-# Higher = review sooner.
-#
-# IMPORTANT:
-#
-# This is a TRIAGE score.
-# It is not a probability and not a truth label.
-# =========================================================
-
-def calculate_risk_score(row):
-
-    score = 0
-    reasons = []
-
-    if safe_bool(
-        row["ceremonial_candidate"]
-    ):
-
-        score += 4
-
-        reasons.append(
-            "ceremonial text"
+        combined_sections.append(
+            section
         )
 
-    if safe_bool(
-        row["high_risk_rule"]
-    ):
-
-        score += 3
-
-        reasons.append(
-            "high-risk regex"
+    output = (
+        pd.concat(
+            combined_sections,
+            ignore_index=True,
+            sort=False,
         )
-
-    topic_count = int(
-        row["topic_count_for_bill"]
-    )
-
-    if topic_count >= 5:
-
-        score += 3
-
-        reasons.append(
-            "5+ derived topics"
-        )
-
-    elif topic_count >= 3:
-
-        score += 1
-
-        reasons.append(
-            "3-4 derived topics"
-        )
-
-    match_count = int(
-        row["match_count"]
-    )
-
-    if match_count == 1:
-
-        score += 1
-
-        reasons.append(
-            "single textual hit"
-        )
-
-    relative_position = (
-        row[
-            "relative_match_position"
-        ]
-    )
-
-    if pd.notna(
-        relative_position
-    ):
-
-        relative_position = float(
-            relative_position
-        )
-
-        if relative_position >= 0.60:
-
-            score += 2
-
-            reasons.append(
-                "match late in text"
-            )
-
-        elif relative_position >= 0.35:
-
-            score += 1
-
-            reasons.append(
-                "match in latter text"
-            )
-
-    if safe_bool(
-        row[
-            "match_in_first_100_chars"
-        ]
-    ):
-
-        score -= 2
-
-        reasons.append(
-            "match near beginning"
-        )
-
-    if match_count >= 3:
-
-        score -= 1
-
-        reasons.append(
-            "repeated textual support"
-        )
-
-    if safe_bool(
-        row[
-            "description_supports_topic"
-        ]
-    ):
-
-        score -= 3
-
-        reasons.append(
-            "summary/description agree"
-        )
-
-    elif (
-        row["classification"]
-        ==
-        "Derived from LIS bill summary"
-    ):
-
-        score += 2
-
-        reasons.append(
-            "summary-only topic"
-        )
-
-    if safe_bool(
-        row[
-            "education_higher_ed_overlap"
-        ]
-    ):
-
-        score += 2
-
-        reasons.append(
-            "Education/Higher Education overlap"
-        )
-
-    return (
-        score,
-        " | ".join(reasons),
-    )
-
-
-# =========================================================
-# SEMANTIC REVIEW QUEUE
-#
-# This is the main human/model review table.
-# =========================================================
-
-def build_semantic_review_queue(
-    derived,
-    bill_lookup,
-    match_strength,
-):
-
-    bill_fields = (
-        bill_lookup[
-            [
-                "Bill_id",
-                "Bill_description",
-            ]
-        ]
-        .drop_duplicates(
-            subset=["Bill_id"]
-        )
-        .copy()
-    )
-
-    bill_description_map = (
-        bill_fields
-        .set_index("Bill_id")[
-            "Bill_description"
-        ]
         .fillna("")
-        .to_dict()
     )
 
-    description_topic_map = (
-        build_description_topic_map(
-            bill_lookup
+    path = (
+        QA_ROOT
+        /
+        f"topic_validation_audit_{year}.csv"
+    )
+
+    output.to_csv(
+        path,
+        index=False,
+    )
+
+    return path
+
+
+# =========================================================
+# RUN ONE SESSION
+# =========================================================
+
+def run_year(
+    year,
+):
+
+    print(
+        "\n" + "=" * 78
+    )
+
+    print(
+        f"LIS TOPIC METHODOLOGY AUDIT: {year}"
+    )
+
+    print(
+        "=" * 78
+    )
+
+    data = load_year(
+        year
+    )
+
+    derived = build_derived_rows(
+        data
+    )
+
+    rule_summary = (
+        build_rule_summary(
+            derived
+        )
+    )
+
+    match_check = (
+        build_match_check(
+            derived
         )
     )
 
     topic_counts = (
-        derived
-        .groupby("Bill_id")[
-            "topic_name"
-        ]
-        .nunique()
-        .to_dict()
-    )
-
-    topic_sets = (
-        derived
-        .groupby("Bill_id")[
-            "topic_name"
-        ]
-        .agg(set)
-        .to_dict()
-    )
-
-    result = match_strength.copy()
-
-    result["Bill_description"] = (
-        result["Bill_id"]
-        .map(bill_description_map)
-        .fillna("")
-    )
-
-    result["topic_count_for_bill"] = (
-        result["Bill_id"]
-        .map(topic_counts)
-        .fillna(0)
-        .astype(int)
-    )
-
-    result["ceremonial_candidate"] = (
-        result["source_text_used"]
-        .map(is_ceremonial_text)
-    )
-
-    result["description_supports_topic"] = (
-        result.apply(
-            lambda row:
-                row["topic_name"]
-                in
-                description_topic_map.get(
-                    row["Bill_id"],
-                    set(),
-                ),
-            axis=1,
+        build_topic_count_check(
+            derived
         )
     )
 
-    result[
-        "education_higher_ed_overlap"
-    ] = (
-        result["Bill_id"]
-        .map(
-            lambda bill_id:
-                {
-                    "Education",
-                    "Higher Education",
-                }
-                .issubset(
-                    topic_sets.get(
-                        bill_id,
-                        set(),
-                    )
-                )
+    cross_source = (
+        build_cross_source_check(
+            data
         )
     )
 
-    scored = result.apply(
-        calculate_risk_score,
-        axis=1,
-        result_type="expand",
-    )
-
-    result["risk_score"] = (
-        scored[0]
-        .astype(int)
-    )
-
-    result["risk_reasons"] = (
-        scored[1]
-    )
-
-    # Human/model adjudication fields.
-    result["qa_judgment"] = ""
-    result["qa_confidence"] = ""
-    result["qa_reason"] = ""
-    result["qa_recommended_action"] = ""
-    result["qa_reviewer"] = ""
-    result["qa_review_date"] = ""
-
-    return (
-        result
-        .sort_values(
-            [
-                "risk_score",
-                "topic_count_for_bill",
-                "Bill_id",
-                "topic_name",
-            ],
-            ascending=[
-                False,
-                False,
-                True,
-                True,
-            ],
+    unclassified_vote_check = (
+        build_unclassified_vote_check(
+            data
         )
-        .reset_index(drop=True)
     )
 
-
-# =========================================================
-# RISK-BAND SUMMARY
-# =========================================================
-
-def add_risk_band(
-    semantic_queue,
-):
-
-    result = semantic_queue.copy()
-
-    def assign_band(score):
-
-        score = int(score)
-
-        if score >= 8:
-            return "VERY HIGH"
-
-        if score >= 5:
-            return "HIGH"
-
-        if score >= 2:
-            return "MEDIUM"
-
-        return "LOW"
-
-    result["risk_band"] = (
-        result["risk_score"]
-        .map(assign_band)
+    session_summary = (
+        build_session_summary(
+            year,
+            data,
+            derived,
+            rule_summary,
+            match_check,
+            topic_counts,
+            cross_source,
+            unclassified_vote_check,
+        )
     )
 
-    return result
+    # -----------------------------------------------------
+    # Only save rows that are especially useful for review
+    # inside the one consolidated file.
+    #
+    # The checks themselves ran across the full population.
+    # -----------------------------------------------------
 
-
-def build_risk_summary(
-    semantic_queue,
-):
-
-    return (
-        semantic_queue
-        .groupby(
-            "risk_band",
-            as_index=False,
-        )
-        .agg(
-            assignment_rows=(
-                "Bill_id",
-                "size",
-            ),
-
-            unique_bills=(
-                "Bill_id",
-                "nunique",
-            ),
-
-            average_risk_score=(
-                "risk_score",
-                "mean",
-            ),
-
-            maximum_risk_score=(
-                "risk_score",
-                "max",
-            ),
-        )
-        .sort_values(
-            "maximum_risk_score",
-            ascending=False,
-        )
-        .reset_index(drop=True)
-    )
-
-
-# =========================================================
-# HIGH-PRIORITY REVIEW SUBSET
-#
-# A much smaller table for actual semantic/manual review.
-# =========================================================
-
-def build_priority_review_subset(
-    semantic_queue,
-):
-
-    result = semantic_queue[
-        semantic_queue[
-            "risk_band"
+    rule_review = rule_summary[
+        rule_summary[
+            "keyword_risk"
         ]
         .isin(
             [
-                "VERY HIGH",
                 "HIGH",
+                "MEDIUM",
             ]
         )
     ].copy()
 
-    return (
-        result
-        .sort_values(
-            [
-                "risk_score",
-                "Bill_id",
-                "topic_name",
-            ],
-            ascending=[
-                False,
-                True,
-                True,
-            ],
+    match_problems = match_check[
+        (
+            ~match_check[
+                "regex_found_in_source_text"
+            ]
         )
-        .reset_index(drop=True)
+        |
+        (
+            match_check[
+                "ceremonial_text"
+            ]
+        )
+        |
+        (
+            match_check[
+                "keyword_risk"
+            ]
+            .isin(
+                [
+                    "HIGH",
+                    "MEDIUM",
+                ]
+            )
+        )
+    ].copy()
+
+    high_topic_count = topic_counts[
+        topic_counts[
+            "topic_count"
+        ]
+        >=
+        3
+    ].copy()
+
+    low_agreement = cross_source[
+        cross_source[
+            "agreement_score"
+        ]
+        <
+        0.50
+    ].copy()
+
+    unclassified_vote_relevant = (
+        unclassified_vote_check[
+            (
+                unclassified_vote_check[
+                    "should_appear_as_unclassified"
+                ]
+            )
+            |
+            (
+                ~unclassified_vote_check[
+                    "unclassified_flow_correct"
+                ]
+            )
+        ]
+        .copy()
     )
 
-
-# =========================================================
-# AUDIT SUMMARY
-# =========================================================
-
-def build_audit_summary(
-    year,
-    data,
-    derived,
-    ceremonial,
-    high_risk,
-    topic_counts,
-    multi_topic,
-    redundant,
-    cross_source,
-    semantic_queue,
-):
-
-    rows = [
+    path = save_consolidated_audit(
+        year,
         {
-            "year":
-                year,
+            "SESSION SUMMARY":
+                session_summary,
 
-            "metric":
-                "Official LIS subject rows",
+            "BROAD KEYWORD RULES":
+                rule_review,
 
-            "value":
-                len(data["official"]),
+            "DERIVED ROWS TO REVIEW":
+                match_problems,
+
+            "BILLS WITH 3+ TOPICS":
+                high_topic_count,
+
+            "LOW SUMMARY/DESCRIPTION AGREEMENT":
+                low_agreement,
+
+            "UNCLASSIFIED VOTE FLOW":
+                unclassified_vote_relevant,
         },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Official LIS subject bills",
-
-            "value":
-                data["official"][
-                    "Bill_id"
-                ].nunique(),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Summary-derived rows",
-
-            "value":
-                len(data["summary"]),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Summary-derived bills",
-
-            "value":
-                data["summary"][
-                    "Bill_id"
-                ].nunique(),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Description-derived rows",
-
-            "value":
-                len(data["description"]),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Description-derived bills",
-
-            "value":
-                data["description"][
-                    "Bill_id"
-                ].nunique(),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Unclassified bills",
-
-            "value":
-                data["unclassified"][
-                    "Bill_id"
-                ].nunique(),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Derived topic assignments",
-
-            "value":
-                len(derived),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Ceremonial candidate assignments",
-
-            "value":
-                len(ceremonial),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "High-risk-rule assignments",
-
-            "value":
-                len(high_risk),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Bills with 3+ derived topics",
-
-            "value":
-                (
-                    multi_topic[
-                        "Bill_id"
-                    ].nunique()
-                    if len(multi_topic)
-                    else
-                    0
-                ),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Bills with Education/Higher Education overlap",
-
-            "value":
-                len(redundant),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Maximum derived topics on one bill",
-
-            "value":
-                (
-                    int(
-                        topic_counts[
-                            "topic_count"
-                        ].max()
-                    )
-                    if len(topic_counts)
-                    else
-                    0
-                ),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Cross-source low-agreement bills",
-
-            "value":
-                int(
-                    cross_source[
-                        "needs_review"
-                    ].sum()
-                ),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "Very-high-risk assignments",
-
-            "value":
-                int(
-                    (
-                        semantic_queue[
-                            "risk_band"
-                        ]
-                        ==
-                        "VERY HIGH"
-                    )
-                    .sum()
-                ),
-        },
-
-        {
-            "year":
-                year,
-
-            "metric":
-                "High-risk assignments",
-
-            "value":
-                int(
-                    (
-                        semantic_queue[
-                            "risk_band"
-                        ]
-                        ==
-                        "HIGH"
-                    )
-                    .sum()
-                ),
-        },
-    ]
-
-    return pd.DataFrame(
-        rows
-    )
-
-
-# =========================================================
-# SAVE OUTPUTS
-# =========================================================
-
-def save_outputs(
-    year,
-    outputs,
-):
-
-    sections = []
-
-    for name, dataframe in outputs.items():
-        section = dataframe.copy()
-        section.insert(0, "audit_section", name)
-        sections.append(section)
-
-    audit = pd.concat(
-        sections,
-        ignore_index=True,
-        sort=False,
-    ).fillna("")
-
-    path = QA_ROOT / f"topic_validation_audit_{year}.csv"
-    audit.to_csv(path, index=False)
-
-    return {"topic_validation_audit": path}
-
-
-# =========================================================
-# TERMINAL REPORT HELPERS
-# =========================================================
-
-def print_rule_summary(
-    rule_audit,
-):
-
-    print(
-        "\n" + "=" * 70
     )
 
     print(
-        "MOST COMMON DERIVED RULES"
+        "\nWhat the audit found:"
     )
-
-    print(
-        "=" * 70
-    )
-
-    columns = [
-        "classification",
-        "topic_name",
-        "matched_rule",
-        "assignment_rows",
-        "unique_bills",
-        "high_risk_rule",
-    ]
 
     print()
 
     print(
-        rule_audit[
-            columns
+        session_summary[
+            [
+                "metric",
+                "value",
+            ]
         ]
-        .head(40)
         .to_string(
             index=False
         )
     )
 
-
-def print_high_risk_summary(
-    high_risk,
-):
-
-    print(
-        "\n" + "=" * 70
+    mismatches = int(
+        (
+            ~unclassified_vote_check[
+                "unclassified_flow_correct"
+            ]
+        )
+        .sum()
     )
 
     print(
-        "HIGH-RISK RULE ASSIGNMENTS"
+        "\nUnclassified vote check:"
     )
 
-    print(
-        "=" * 70
-    )
-
-    if len(high_risk) == 0:
+    if mismatches == 0:
 
         print(
-            "\nNo high-risk rule "
-            "assignments found."
-        )
-
-        return
-
-    counts = (
-        high_risk
-        .groupby(
-            [
-                "topic_name",
-                "matched_rule",
-                "risk_reason",
-            ],
-            as_index=False,
-        )
-        .agg(
-            assignment_rows=(
-                "Bill_id",
-                "size",
-            ),
-
-            unique_bills=(
-                "Bill_id",
-                "nunique",
-            ),
-        )
-        .sort_values(
-            "assignment_rows",
-            ascending=False,
-        )
-    )
-
-    print()
-
-    print(
-        counts.to_string(
-            index=False
-        )
-    )
-
-
-def print_risk_summary(
-    risk_summary,
-):
-
-    print(
-        "\n" + "=" * 70
-    )
-
-    print(
-        "SEMANTIC REVIEW RISK BANDS"
-    )
-
-    print(
-        "=" * 70
-    )
-
-    print()
-
-    if len(risk_summary):
-
-        print(
-            risk_summary.to_string(
-                index=False
-            )
+            "PASS — every downstream Unclassified vote "
+            "event is consistent with the current bill "
+            "classifications."
         )
 
     else:
 
         print(
-            "No derived assignments."
+            f"FAIL — {mismatches:,} vote events do not "
+            "reconcile with the current Unclassified bills."
         )
+
+    print(
+        "\nSaved one QA file:"
+    )
+
+    print(
+        path
+    )
+
+    return session_summary
 
 
 # =========================================================
@@ -2256,369 +1905,70 @@ def print_risk_summary(
 
 def main():
 
-    print(
-        "\n" + "=" * 70
-    )
+    years = determine_years()
 
     print(
-        "LIS TOPIC VALIDATION AUDIT"
+        "\n" + "=" * 78
     )
 
     print(
-        "=" * 70
+        "VIRGINIA LIS TOPIC QUALITY CHECK"
     )
 
     print(
-        f"\nYear: {YEAR}"
-    )
-
-    # -----------------------------------------------------
-    # LOAD CURRENT PIPELINE OUTPUTS
-    # -----------------------------------------------------
-
-    data = load_data(
-        YEAR
-    )
-
-    derived = combine_derived(
-        data["summary"],
-        data["description"],
-    )
-
-    # -----------------------------------------------------
-    # ORIGINAL FULL-POPULATION QA
-    # -----------------------------------------------------
-
-    rule_audit = build_rule_audit(
-        derived
-    )
-
-    ceremonial = (
-        build_ceremonial_candidates(
-            derived
-        )
-    )
-
-    high_risk = (
-        build_high_risk_rule_rows(
-            derived
-        )
-    )
-
-    topic_counts = (
-        build_topic_count_by_bill(
-            derived
-        )
-    )
-
-    multi_topic = (
-        build_multi_topic_candidates(
-            derived,
-            topic_counts,
-        )
-    )
-
-    redundant = (
-        build_redundant_topic_candidates(
-            derived
-        )
-    )
-
-    # -----------------------------------------------------
-    # STRATIFIED HUMAN QA SAMPLES
-    # -----------------------------------------------------
-
-    topic_sample = (
-        build_topic_manual_sample(
-            derived
-        )
-    )
-
-    rule_sample = (
-        build_rule_manual_sample(
-            derived
-        )
-    )
-
-    unclassified_sample = (
-        build_unclassified_sample(
-            data["unclassified"],
-            data["bill_lookup"],
-            data["summary_lookup"],
-        )
-    )
-
-    official_sample = (
-        build_official_sample(
-            data["official"]
-        )
-    )
-
-    summary_selection_sample = (
-        build_summary_selection_sample(
-            data["summary_lookup"]
-        )
-    )
-
-    # -----------------------------------------------------
-    # NEW AUTOMATED QA
-    # -----------------------------------------------------
-
-    cross_source = (
-        build_cross_source_comparison(
-            data["bill_lookup"],
-            data["summary_lookup"],
-            data["official"],
-        )
-    )
-
-    match_strength = (
-        build_match_strength_table(
-            derived
-        )
-    )
-
-    semantic_queue = (
-        build_semantic_review_queue(
-            derived,
-            data["bill_lookup"],
-            match_strength,
-        )
-    )
-
-    semantic_queue = (
-        add_risk_band(
-            semantic_queue
-        )
-    )
-
-    risk_summary = (
-        build_risk_summary(
-            semantic_queue
-        )
-    )
-
-    priority_review = (
-        build_priority_review_subset(
-            semantic_queue
-        )
-    )
-
-    # -----------------------------------------------------
-    # MASTER SUMMARY
-    # -----------------------------------------------------
-
-    audit_summary = (
-        build_audit_summary(
-            YEAR,
-            data,
-            derived,
-            ceremonial,
-            high_risk,
-            topic_counts,
-            multi_topic,
-            redundant,
-            cross_source,
-            semantic_queue,
-        )
-    )
-
-    # -----------------------------------------------------
-    # SAVE ONE SECTIONED AUDIT ARTIFACT
-    # -----------------------------------------------------
-
-    # Full-population diagnostic tables above are validation machinery, not
-    # durable datasets. Persist only compact summaries and bounded samples.
-    outputs = {
-        "topic_validation_summary":
-            audit_summary,
-
-        "topic_rule_audit":
-            rule_audit,
-
-        "topic_manual_validation_sample":
-            topic_sample,
-
-        "topic_rule_validation_sample":
-            rule_sample,
-
-        "topic_unclassified_validation_sample":
-            unclassified_sample,
-
-        "topic_official_validation_sample":
-            official_sample,
-
-        "topic_summary_selection_sample":
-            summary_selection_sample,
-
-        "topic_risk_band_summary":
-            risk_summary,
-
-        "topic_priority_review_sample":
-            priority_review.head(100),
-
-        "topic_ceremonial_sample":
-            ceremonial.head(50),
-
-        "topic_multi_topic_sample":
-            multi_topic.head(50),
-
-        "topic_redundant_pair_sample":
-            redundant.head(50),
-    }
-
-    paths = save_outputs(
-        YEAR,
-        outputs,
-    )
-
-    # -----------------------------------------------------
-    # TERMINAL OUTPUT
-    # -----------------------------------------------------
-
-    print(
-        "\n" + "=" * 70
+        "=" * 78
     )
 
     print(
-        "AUDIT SUMMARY"
+        "\nWhy we are running this:"
     )
 
     print(
-        "=" * 70
-    )
-
-    print()
-
-    print(
-        audit_summary.to_string(
-            index=False
-        )
-    )
-
-    print_rule_summary(
-        rule_audit
-    )
-
-    print_high_risk_summary(
-        high_risk
-    )
-
-    print_risk_summary(
-        risk_summary
+        "The regular tests tell us whether the program "
+        "followed our rules."
     )
 
     print(
-        "\n" + "=" * 70
+        "This audit helps us understand whether those "
+        "rules are producing suspicious patterns."
     )
 
     print(
-        "CROSS-SOURCE QA"
+        "\nYears being checked:"
     )
 
     print(
-        "=" * 70
+        years
     )
 
-    print(
-        "\nBills compared: "
-        f"{len(cross_source):,}"
-    )
+    summaries = []
 
-    print(
-        "Bills flagged for low "
-        "summary/description agreement: "
-        f"{int(cross_source['needs_review'].sum()):,}"
-    )
+    for year in years:
 
-    print(
-        "\n" + "=" * 70
-    )
-
-    print(
-        "MANUAL / SEMANTIC REVIEW WORKLOAD"
-    )
-
-    print(
-        "=" * 70
-    )
-
-    print(
-        "\nTopic-stratified sample rows: "
-        f"{len(topic_sample):,}"
-    )
-
-    print(
-        "Rule-stratified sample rows: "
-        f"{len(rule_sample):,}"
-    )
-
-    print(
-        "Unclassified sample rows: "
-        f"{len(unclassified_sample):,}"
-    )
-
-    print(
-        "Official LIS sample rows: "
-        f"{len(official_sample):,}"
-    )
-
-    print(
-        "Summary-selection sample rows: "
-        f"{len(summary_selection_sample):,}"
-    )
-
-    print(
-        "HIGH + VERY HIGH priority "
-        "semantic-review rows: "
-        f"{len(priority_review):,}"
-    )
-
-    print(
-        "\n" + "=" * 70
-    )
-
-    print(
-        "FILES SAVED"
-    )
-
-    print(
-        "=" * 70
-    )
-
-    for name, path in paths.items():
-
-        print(
-            f"\n{name}:"
-        )
-
-        print(
-            path
+        summaries.append(
+            run_year(
+                year
+            )
         )
 
     print(
-        "\n" + "=" * 70
+        "\n" + "=" * 78
     )
 
     print(
-        "IMPORTANT"
+        "AUDIT COMPLETE"
     )
 
     print(
-        "=" * 70
+        "=" * 78
     )
 
     print(
-        "\nRisk scores are QA triage scores, "
-        "not probabilities and not truth labels."
+        "\nNo production files were changed."
     )
 
     print(
-        "No production classifications were changed."
-    )
-
-    print(
-        "\nAudit complete."
+        "The audit created one QA CSV for each session."
     )
 
 

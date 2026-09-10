@@ -1,50 +1,108 @@
-year,topic_name,classification,mixed_delegates,no_delegates,yes_delegates,classified_delegates,yes_delegate_pct,no_delegate_pct,mixed_delegate_pct
-2025,Agriculture and Food,Derived from LIS bill summary,31.0,0.0,69.0,100.0,69.0,0.0,31.0
-2025,Alcoholic Beverage and Cannabis Control,Derived from LIS bill summary,2.0,0.0,54.0,56.0,96.42857142857143,0.0,3.571428571428571
-2025,Armed Forces,Derived from LIS bill summary,4.0,0.0,94.0,98.0,95.91836734693877,0.0,4.081632653061225
-2025,Behavioral Health,Derived from LIS bill summary,36.0,0.0,64.0,100.0,64.0,0.0,36.0
-2025,Budget and Appropriations,Derived from LIS bill summary,45.0,2.0,53.0,100.0,53.0,2.0,45.0
-2025,Business and Commerce,Derived from LIS bill description,6.0,0.0,25.0,31.0,80.64516129032258,0.0,19.35483870967742
-2025,Business and Commerce,Derived from LIS bill summary,44.0,0.0,56.0,100.0,56.00000000000001,0.0,44.0
-2025,Courts and Civil Law,Derived from LIS bill description,0.0,0.0,97.0,97.0,100.0,0.0,0.0
-2025,Courts and Civil Law,Derived from LIS bill summary,43.0,1.0,56.0,100.0,56.00000000000001,1.0,43.0
-2025,Criminal Justice,Derived from LIS bill description,15.0,0.0,83.0,98.0,84.6938775510204,0.0,15.306122448979592
-2025,Criminal Justice,Derived from LIS bill summary,42.0,0.0,58.0,100.0,57.99999999999999,0.0,42.0
-2025,Data Centers,Derived from LIS bill summary,1.0,6.0,9.0,16.0,56.25,37.5,6.25
-2025,Economic Development,Derived from LIS bill summary,7.0,2.0,91.0,100.0,91.0,2.0,7.000000000000001
-2025,Education,Derived from LIS bill description,32.0,0.0,66.0,98.0,67.3469387755102,0.0,32.6530612244898
-2025,Education,Derived from LIS bill summary,37.0,0.0,63.0,100.0,63.0,0.0,37.0
-2025,Elections and Voting,Derived from LIS bill description,39.0,8.0,51.0,98.0,52.04081632653062,8.16326530612245,39.795918367346935
-2025,Elections and Voting,Derived from LIS bill summary,37.0,11.0,51.0,99.0,51.515151515151516,11.11111111111111,37.37373737373738
-2025,Energy and Utilities,Derived from LIS bill description,1.0,8.0,11.0,20.0,55.00000000000001,40.0,5.0
-2025,Energy and Utilities,Derived from LIS bill summary,35.0,14.0,51.0,100.0,51.0,14.000000000000002,35.0
-2025,Environment and Conservation,Derived from LIS bill summary,21.0,0.0,79.0,100.0,79.0,0.0,21.0
-2025,Family and Children,Derived from LIS bill description,0.0,0.0,73.0,73.0,100.0,0.0,0.0
-2025,Family and Children,Derived from LIS bill summary,17.0,0.0,83.0,100.0,83.0,0.0,17.0
-2025,Firearms,Derived from LIS bill description,0.0,10.0,12.0,22.0,54.54545454545454,45.45454545454545,0.0
-2025,Firearms,Derived from LIS bill summary,3.0,44.0,52.0,99.0,52.52525252525253,44.44444444444444,3.0303030303030303
-2025,"Gambling, Lotteries, Etc.",Derived from LIS bill summary,0.0,0.0,21.0,21.0,100.0,0.0,0.0
-2025,Health and Healthcare,Derived from LIS bill description,0.0,0.0,22.0,22.0,100.0,0.0,0.0
-2025,Health and Healthcare,Derived from LIS bill summary,29.0,0.0,71.0,100.0,71.0,0.0,28.999999999999996
-2025,Higher Education,Derived from LIS bill summary,28.0,0.0,72.0,100.0,72.0,0.0,28.000000000000004
-2025,Housing,Derived from LIS bill summary,35.0,13.0,51.0,99.0,51.515151515151516,13.131313131313133,35.35353535353536
-2025,Indian Tribes,Derived from LIS bill summary,0.0,0.0,23.0,23.0,100.0,0.0,0.0
-2025,Insurance,Derived from LIS bill summary,20.0,1.0,78.0,99.0,78.78787878787878,1.0101010101010102,20.2020202020202
-2025,Labor and Employment,Derived from LIS bill description,6.0,41.0,50.0,97.0,51.546391752577314,42.2680412371134,6.185567010309279
-2025,Labor and Employment,Derived from LIS bill summary,47.0,1.0,52.0,100.0,52.0,1.0,47.0
-2025,Local Government,Derived from LIS bill description,0.0,0.0,21.0,21.0,100.0,0.0,0.0
-2025,Local Government,Derived from LIS bill summary,42.0,4.0,54.0,100.0,54.0,4.0,42.0
-2025,Marriage and Domestic Relations,Derived from LIS bill summary,44.0,0.0,54.0,98.0,55.10204081632652,0.0,44.89795918367347
-2025,"Pensions, Benefits, and Retirement",Derived from LIS bill summary,5.0,0.0,15.0,20.0,75.0,0.0,25.0
-2025,Professions and Occupations,Derived from LIS bill summary,9.0,0.0,29.0,38.0,76.31578947368422,0.0,23.684210526315788
-2025,Property and Conveyances,Derived from LIS bill summary,0.0,0.0,21.0,21.0,100.0,0.0,0.0
-2025,Public Safety,Derived from LIS bill summary,34.0,0.0,66.0,100.0,66.0,0.0,34.0
-2025,Social Services,Derived from LIS bill summary,9.0,0.0,90.0,99.0,90.9090909090909,0.0,9.090909090909092
-2025,State Government,Derived from LIS bill description,0.0,0.0,20.0,20.0,100.0,0.0,0.0
-2025,State Government,Derived from LIS bill summary,42.0,0.0,58.0,100.0,57.99999999999999,0.0,42.0
-2025,"Study Commissions, Committees, and Reports",Derived from LIS bill summary,37.0,0.0,63.0,100.0,63.0,0.0,37.0
-2025,Taxes and Revenue,Derived from LIS bill summary,10.0,0.0,90.0,100.0,90.0,0.0,10.0
-2025,Technology and Data,Derived from LIS bill summary,45.0,1.0,52.0,98.0,53.06122448979592,1.0204081632653061,45.91836734693878
-2025,Transportation,Derived from LIS bill description,0.0,0.0,3.0,3.0,100.0,0.0,0.0
-2025,Transportation,Derived from LIS bill summary,25.0,0.0,75.0,100.0,75.0,0.0,25.0
-2025,"Wills, Trusts, and Fiduciaries",Derived from LIS bill summary,0.0,0.0,8.0,8.0,100.0,0.0,0.0
+year,topic_name,voting_tendency,delegates
+2025,Administration of Government,INSUFFICIENT DATA,101
+2025,Agriculture and Food,MIXED,31
+2025,Agriculture and Food,YES,69
+2025,Alcoholic Beverage and Cannabis Control,INSUFFICIENT DATA,4
+2025,Alcoholic Beverage and Cannabis Control,MIXED,8
+2025,Alcoholic Beverage and Cannabis Control,YES,88
+2025,Armed Forces,INSUFFICIENT DATA,2
+2025,Armed Forces,MIXED,4
+2025,Armed Forces,YES,94
+2025,Behavioral Health,MIXED,36
+2025,Behavioral Health,YES,64
+2025,Budget and Appropriations,MIXED,45
+2025,Budget and Appropriations,NO,2
+2025,Budget and Appropriations,YES,53
+2025,Business and Commerce,MIXED,45
+2025,Business and Commerce,YES,55
+2025,Commendations and Commemorations,INSUFFICIENT DATA,18
+2025,Constitutional Amendments,INSUFFICIENT DATA,78
+2025,Constitutional Amendments,MIXED,1
+2025,Constitutional Amendments,NO,9
+2025,Constitutional Amendments,YES,13
+2025,Courts and Civil Law,MIXED,38
+2025,Courts and Civil Law,NO,1
+2025,Courts and Civil Law,YES,61
+2025,Criminal Justice,MIXED,40
+2025,Criminal Justice,YES,60
+2025,Data Centers,INSUFFICIENT DATA,54
+2025,Data Centers,MIXED,2
+2025,Data Centers,NO,17
+2025,Data Centers,YES,27
+2025,Domestic Relations,INSUFFICIENT DATA,101
+2025,Economic Development,MIXED,6
+2025,Economic Development,NO,2
+2025,Economic Development,YES,92
+2025,Education,MIXED,37
+2025,Education,YES,63
+2025,Elections,INSUFFICIENT DATA,101
+2025,Elections and Voting,INSUFFICIENT DATA,1
+2025,Elections and Voting,MIXED,30
+2025,Elections and Voting,NO,18
+2025,Elections and Voting,YES,51
+2025,Energy and Utilities,MIXED,33
+2025,Energy and Utilities,NO,16
+2025,Energy and Utilities,YES,51
+2025,Environment and Conservation,MIXED,25
+2025,Environment and Conservation,YES,75
+2025,Family and Children,MIXED,11
+2025,Family and Children,YES,89
+2025,Financial Institutions and Services,INSUFFICIENT DATA,100
+2025,Firearms,INSUFFICIENT DATA,1
+2025,Firearms,MIXED,2
+2025,Firearms,NO,46
+2025,Firearms,YES,51
+2025,"Gambling, Lotteries, Etc.",INSUFFICIENT DATA,79
+2025,"Gambling, Lotteries, Etc.",YES,21
+2025,Health and Healthcare,MIXED,28
+2025,Health and Healthcare,YES,72
+2025,Higher Education,MIXED,28
+2025,Higher Education,YES,72
+2025,Housing,INSUFFICIENT DATA,1
+2025,Housing,MIXED,32
+2025,Housing,NO,16
+2025,Housing,YES,51
+2025,Indian Tribes,INSUFFICIENT DATA,69
+2025,Indian Tribes,YES,31
+2025,Insurance,INSUFFICIENT DATA,1
+2025,Insurance,MIXED,21
+2025,Insurance,NO,2
+2025,Insurance,YES,76
+2025,Labor and Employment,MIXED,48
+2025,Labor and Employment,NO,1
+2025,Labor and Employment,YES,51
+2025,Local Government,MIXED,42
+2025,Local Government,NO,3
+2025,Local Government,YES,55
+2025,Marriage and Domestic Relations,INSUFFICIENT DATA,2
+2025,Marriage and Domestic Relations,MIXED,45
+2025,Marriage and Domestic Relations,YES,53
+2025,"Pensions, Benefits, and Retirement",INSUFFICIENT DATA,75
+2025,"Pensions, Benefits, and Retirement",MIXED,5
+2025,"Pensions, Benefits, and Retirement",YES,20
+2025,Professions and Occupations,INSUFFICIENT DATA,62
+2025,Professions and Occupations,MIXED,9
+2025,Professions and Occupations,YES,29
+2025,Property and Conveyances,INSUFFICIENT DATA,74
+2025,Property and Conveyances,YES,26
+2025,Public Safety,MIXED,33
+2025,Public Safety,YES,67
+2025,Social Services,INSUFFICIENT DATA,1
+2025,Social Services,MIXED,10
+2025,Social Services,YES,89
+2025,State Government,MIXED,35
+2025,State Government,YES,65
+2025,"Study Commissions, Committees, and Reports",MIXED,40
+2025,"Study Commissions, Committees, and Reports",YES,60
+2025,Taxes and Revenue,MIXED,8
+2025,Taxes and Revenue,YES,92
+2025,Technology and Data,INSUFFICIENT DATA,2
+2025,Technology and Data,MIXED,39
+2025,Technology and Data,NO,3
+2025,Technology and Data,YES,56
+2025,Transportation,MIXED,26
+2025,Transportation,YES,74
+2025,Unclassified,MIXED,7
+2025,Unclassified,YES,93
+2025,"Wills, Trusts, and Fiduciaries",INSUFFICIENT DATA,92
+2025,"Wills, Trusts, and Fiduciaries",YES,8

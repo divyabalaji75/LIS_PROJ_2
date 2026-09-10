@@ -39,3 +39,15 @@ def test_subject_drilldown_exposes_bill_and_vote_evidence():
     assert int(metrics["Bills"].replace(",", "")) > 0
     assert int(metrics["LIS vote events"].replace(",", "")) > 0
     assert any("HB1208" in str(table.value) for table in app.dataframe)
+
+
+def test_unclassified_is_retained_and_labeled_as_vote_records():
+    app = AppTest.from_file(DASHBOARD_PATH)
+    app.run(timeout=40)
+
+    subject_selector = next(item for item in app.selectbox if item.label == "Subject")
+    visible_text = " ".join(item.value for item in app.caption)
+
+    assert not app.exception
+    assert "Unclassified" in subject_selector.options
+    assert "recorded member-vote-subject count—not a count of bills" in visible_text

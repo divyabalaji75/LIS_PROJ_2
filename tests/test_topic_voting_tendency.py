@@ -20,8 +20,16 @@ EXPECTED_NO_THRESHOLD = 0.35
 #
 # Creates fake member-vote-topic data.
 #
-# Each row represents one member's vote event associated
-# with one topic.
+# Each row represents:
+#
+#     one member
+#     + one recorded vote event
+#     + one analytical topic
+#
+# topic_provenance is descriptive metadata.
+#
+# It explains where the topic assignment came from, but it
+# does NOT create a separate analytical vote row.
 # =========================================================
 
 def make_topic_votes(
@@ -36,7 +44,8 @@ def make_topic_votes(
     member_name="Test Delegate",
     party="D",
     topic_name="Education",
-    classification="Derived from LIS bill description",
+    topic_provenance="Derived from LIS bill description",
+    vote_prefix="TEST",
 ):
 
     votes = (
@@ -51,18 +60,18 @@ def make_topic_votes(
 
     for i, vote in enumerate(
         votes,
-        start=1
+        start=1,
     ):
 
         rows.append(
             {
                 "year": year,
-                "vote_id": f"TEST{i:04d}",
+                "vote_id": f"{vote_prefix}{i:04d}",
                 "member_id": member_id,
                 "MBR_NAME": member_name,
                 "party": party,
                 "topic_name": topic_name,
-                "classification": classification,
+                "topic_provenance": topic_provenance,
                 "vote": vote,
             }
         )
@@ -471,24 +480,24 @@ def test_topic_events_include_nondirectional_events():
 
 # =========================================================
 # TEST 13
-# OFFICIAL LIS SUBJECT REMAINS OFFICIAL
+# OFFICIAL LIS PROVENANCE IS PRESERVED
 #
-# Provenance must survive aggregation.
+# Provenance survives aggregation as metadata.
 # =========================================================
 
-def test_official_classification_preserved():
+def test_official_provenance_preserved():
 
     df = make_topic_votes(
         yes_votes=8,
         no_votes=2,
         topic_name="Education",
-        classification="Official LIS subject",
+        topic_provenance="Official LIS subject",
     )
 
     row = run_tendency(df)
 
     assert (
-        row["classification"]
+        row["topic_provenance"]
         ==
         "Official LIS subject"
     )
@@ -496,15 +505,15 @@ def test_official_classification_preserved():
 
 # =========================================================
 # TEST 14
-# DERIVED CLASSIFICATION REMAINS DERIVED
+# DERIVED PROVENANCE IS PRESERVED
 # =========================================================
 
-def test_derived_classification_preserved():
+def test_derived_provenance_preserved():
 
     df = make_topic_votes(
         yes_votes=8,
         no_votes=2,
-        classification=(
+        topic_provenance=(
             "Derived from LIS bill description"
         ),
     )
@@ -512,7 +521,7 @@ def test_derived_classification_preserved():
     row = run_tendency(df)
 
     assert (
-        row["classification"]
+        row["topic_provenance"]
         ==
         "Derived from LIS bill description"
     )
@@ -520,39 +529,46 @@ def test_derived_classification_preserved():
 
 # =========================================================
 # TEST 15
-# DIFFERENT CLASSIFICATION PROVENANCE MUST NOT MERGE
+# OFFICIAL AND DERIVED PROVENANCE MERGE INTO ONE TOPIC ROW
 #
-# Same member + same topic name:
+# Same member + same topic:
 #
 # Official LIS subject
 # Derived from LIS bill description
 #
-# These must remain separate analytical rows.
+# These should NOT become separate analytical rows.
+#
+# Why:
+#
+# The analytical identity is:
+#
+#     year + member + topic
+#
+# Provenance is metadata describing where the topic came
+# from.
+#
+# The combined output should therefore contain one topic
+# row with both provenance labels retained.
 # =========================================================
 
-def test_official_and_derived_topics_do_not_merge():
+def test_official_and_derived_provenance_merge_into_one_topic():
 
     official = make_topic_votes(
         yes_votes=8,
         no_votes=2,
-        classification="Official LIS subject",
+        topic_name="Education",
+        topic_provenance="Official LIS subject",
+        vote_prefix="OFFICIAL_",
     )
 
     derived = make_topic_votes(
         yes_votes=2,
         no_votes=8,
-        classification=(
+        topic_name="Education",
+        topic_provenance=(
             "Derived from LIS bill description"
         ),
-    )
-
-    # Make vote IDs distinct.
-    derived = derived.copy()
-
-    derived["vote_id"] = (
-        "DERIVED_"
-        +
-        derived["vote_id"]
+        vote_prefix="DERIVED_",
     )
 
     combined = pd.concat(
@@ -560,7 +576,7 @@ def test_official_and_derived_topics_do_not_merge():
             official,
             derived,
         ],
-        ignore_index=True
+        ignore_index=True,
     )
 
     result = (
@@ -569,15 +585,56 @@ def test_official_and_derived_topics_do_not_merge():
         )
     )
 
-    assert len(result) == 2
+    assert len(result) == 1
 
-    classifications = set(
-        result[
-            "classification"
-        ]
+    row = result.iloc[0]
+
+    assert (
+        row["topic_vote_events"]
+        ==
+        20
     )
 
-    assert classifications == {
+    assert (
+        row["directional_topic_votes"]
+        ==
+        20
+    )
+
+    assert (
+        row["yes_votes"]
+        ==
+        10
+    )
+
+    assert (
+        row["no_votes"]
+        ==
+        10
+    )
+
+    assert (
+        row["yes_pct"]
+        ==
+        pytest.approx(
+            50.0
+        )
+    )
+
+    assert (
+        row["voting_tendency"]
+        ==
+        "MIXED"
+    )
+
+    provenance = set(
+        row[
+            "topic_provenance"
+        ]
+        .split(" | ")
+    )
+
+    assert provenance == {
         "Official LIS subject",
         "Derived from LIS bill description",
     }
@@ -585,6 +642,61 @@ def test_official_and_derived_topics_do_not_merge():
 
 # =========================================================
 # TEST 16
+# SAME MEMBER + SAME VOTE + SAME TOPIC COUNTS ONCE
+#
+# This protects the new canonical grain.
+#
+# Even if duplicate input reaches this function, one vote
+# event should not count twice for the same member/topic.
+# =========================================================
+
+def test_duplicate_member_vote_topic_counts_once():
+
+    df = make_topic_votes(
+        yes_votes=8,
+        no_votes=2,
+        topic_name="Education",
+        topic_provenance=(
+            "Derived from LIS bill description"
+        ),
+    )
+
+    duplicate = (
+        df.iloc[
+            [
+                0
+            ]
+        ]
+        .copy()
+    )
+
+    combined = pd.concat(
+        [
+            df,
+            duplicate,
+        ],
+        ignore_index=True,
+    )
+
+    row = run_tendency(
+        combined
+    )
+
+    assert (
+        row["topic_vote_events"]
+        ==
+        10
+    )
+
+    assert (
+        row["directional_topic_votes"]
+        ==
+        10
+    )
+
+
+# =========================================================
+# TEST 17
 # DIFFERENT TOPICS MUST NOT MERGE
 # =========================================================
 
@@ -594,20 +706,14 @@ def test_different_topics_do_not_merge():
         yes_votes=8,
         no_votes=2,
         topic_name="Education",
+        vote_prefix="EDUCATION_",
     )
 
     housing = make_topic_votes(
         yes_votes=2,
         no_votes=8,
         topic_name="Housing",
-    )
-
-    housing = housing.copy()
-
-    housing["vote_id"] = (
-        "HOUSING_"
-        +
-        housing["vote_id"]
+        vote_prefix="HOUSING_",
     )
 
     combined = pd.concat(
@@ -615,7 +721,7 @@ def test_different_topics_do_not_merge():
             education,
             housing,
         ],
-        ignore_index=True
+        ignore_index=True,
     )
 
     result = (
@@ -639,7 +745,7 @@ def test_different_topics_do_not_merge():
 
 
 # =========================================================
-# TEST 17
+# TEST 18
 # DIFFERENT MEMBERS MUST NOT MERGE
 # =========================================================
 
@@ -650,6 +756,7 @@ def test_different_members_do_not_merge():
         no_votes=2,
         member_id="H9001",
         member_name="Test Member One",
+        vote_prefix="MEMBER1_",
     )
 
     member_two = make_topic_votes(
@@ -657,14 +764,7 @@ def test_different_members_do_not_merge():
         no_votes=8,
         member_id="H9002",
         member_name="Test Member Two",
-    )
-
-    member_two = member_two.copy()
-
-    member_two["vote_id"] = (
-        "MEMBER2_"
-        +
-        member_two["vote_id"]
+        vote_prefix="MEMBER2_",
     )
 
     combined = pd.concat(
@@ -672,7 +772,7 @@ def test_different_members_do_not_merge():
             member_one,
             member_two,
         ],
-        ignore_index=True
+        ignore_index=True,
     )
 
     result = (
@@ -704,7 +804,7 @@ def test_different_members_do_not_merge():
 
 
 # =========================================================
-# TEST 18
+# TEST 19
 # YEAR MUST NOT MERGE
 # =========================================================
 
@@ -714,20 +814,14 @@ def test_different_years_do_not_merge():
         yes_votes=8,
         no_votes=2,
         year=2025,
+        vote_prefix="Y2025_",
     )
 
     year_2026 = make_topic_votes(
         yes_votes=2,
         no_votes=8,
         year=2026,
-    )
-
-    year_2026 = year_2026.copy()
-
-    year_2026["vote_id"] = (
-        "Y2026_"
-        +
-        year_2026["vote_id"]
+        vote_prefix="Y2026_",
     )
 
     combined = pd.concat(
@@ -735,7 +829,7 @@ def test_different_years_do_not_merge():
             year_2025,
             year_2026,
         ],
-        ignore_index=True
+        ignore_index=True,
     )
 
     result = (
@@ -753,12 +847,21 @@ def test_different_years_do_not_merge():
         )
     )
 
-    assert tendencies[2025] == "YES"
-    assert tendencies[2026] == "NO"
+    assert (
+        tendencies[2025]
+        ==
+        "YES"
+    )
+
+    assert (
+        tendencies[2026]
+        ==
+        "NO"
+    )
 
 
 # =========================================================
-# TEST 19
+# TEST 20
 # YES + NO MUST EQUAL DIRECTIONAL VOTES
 # =========================================================
 
@@ -784,7 +887,7 @@ def test_directional_vote_reconciliation():
 
 
 # =========================================================
-# TEST 20
+# TEST 21
 # YES PCT + NO PCT = 100 FOR DIRECTIONAL SAMPLE
 # =========================================================
 
@@ -807,7 +910,7 @@ def test_yes_no_percent_reconciliation():
 
 
 # =========================================================
-# TEST 21
+# TEST 22
 # LABELS MUST COME FROM APPROVED SET
 # =========================================================
 
@@ -818,11 +921,11 @@ def test_yes_no_percent_reconciliation():
         (5, 5),
         (2, 8),
         (9, 0),
-    ]
+    ],
 )
 def test_tendency_label_is_valid(
     yes_votes,
-    no_votes
+    no_votes,
 ):
 
     df = make_topic_votes(

@@ -59,7 +59,8 @@ def load_processed_file(filename):
 
     return pd.read_csv(
         path,
-        dtype=str
+        dtype=str,
+        low_memory=False,
     )
 
 
@@ -85,7 +86,7 @@ def to_numeric(series):
 
     return pd.to_numeric(
         series,
-        errors="coerce"
+        errors="coerce",
     )
 
 
@@ -173,7 +174,7 @@ def load_topic_voting_tendency(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_vote_code_counts_reconcile_to_vote_fact(year):
 
@@ -205,7 +206,7 @@ def test_vote_code_counts_reconcile_to_vote_fact(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_directional_vote_count_reconciles(year):
 
@@ -249,7 +250,7 @@ def test_directional_vote_count_reconciles(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_nondirectional_votes_not_party_breaks(year):
 
@@ -306,7 +307,7 @@ def test_nondirectional_votes_not_party_breaks(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_nondirectional_votes_not_cross_party(year):
 
@@ -363,7 +364,7 @@ def test_nondirectional_votes_not_cross_party(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_cross_party_implies_party_break(year):
 
@@ -411,7 +412,7 @@ def test_cross_party_implies_party_break(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_delegate_behavior_contains_house_members_only(year):
 
@@ -441,7 +442,7 @@ def test_delegate_behavior_contains_house_members_only(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_delegate_party_break_totals_reconcile(year):
 
@@ -499,7 +500,7 @@ def test_delegate_party_break_totals_reconcile(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_delegate_cross_party_totals_reconcile(year):
 
@@ -557,7 +558,7 @@ def test_delegate_cross_party_totals_reconcile(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_delegate_directional_totals_reconcile(year):
 
@@ -616,7 +617,7 @@ def test_delegate_directional_totals_reconcile(year):
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_bill_classification_partition_reconciles(year):
 
@@ -656,7 +657,9 @@ def test_bill_classification_partition_reconciles(year):
 
     summary_derived_ids = set(
         normalize_upper(
-            summary_derived["Bill_id"]
+            summary_derived[
+                "Bill_id"
+            ]
         )
         .unique()
     )
@@ -689,11 +692,20 @@ def test_bill_classification_partition_reconciles(year):
 # =========================================================
 # TEST 11
 # NO BILL BELONGS TO MULTIPLE PROVENANCE BUCKETS
+#
+# Provenance still matters at the BILL level.
+#
+# One bill should not simultaneously be:
+#
+#     Official LIS subject
+#     and Derived from LIS summary
+#
+# for example.
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_bill_provenance_buckets_do_not_overlap(year):
 
@@ -722,7 +734,9 @@ def test_bill_provenance_buckets_do_not_overlap(year):
 
     summary_derived_ids = set(
         normalize_upper(
-            summary_derived["Bill_id"]
+            summary_derived[
+                "Bill_id"
+            ]
         )
         .unique()
     )
@@ -776,11 +790,14 @@ def test_bill_provenance_buckets_do_not_overlap(year):
 # =========================================================
 # TEST 12
 # TOPIC LOOKUP ONLY USES ALLOWED CLASSIFICATIONS
+#
+# classification remains valid and important here because
+# bill_topic_lookup is a BILL-TOPIC provenance table.
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_topic_lookup_classification_values_reconcile(year):
 
@@ -810,17 +827,48 @@ def test_topic_lookup_classification_values_reconcile(year):
 # TEST 13
 # MEMBER-VOTE-TOPIC HAS UNIQUE ANALYTICAL GRAIN
 #
-# year + vote_id + member_id
-# + topic_name + classification
+# NEW CANONICAL GRAIN:
+#
+#     year
+#     + vote_id
+#     + member_id
+#     + topic_name
+#
+# classification is intentionally NOT part of the grain.
+#
+# Why:
+#
+# If one recorded vote covers two bills and both bills are
+# Education, that is still one Education vote event for the
+# member even if the two bills got their Education topic
+# from different provenance sources.
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_member_vote_topic_grain_unique(year):
 
     df = load_member_vote_topic(year)
+
+    required = {
+        "year",
+        "vote_id",
+        "member_id",
+        "topic_name",
+        "topic_provenance",
+    }
+
+    missing = (
+        required
+        - set(df.columns)
+    )
+
+    assert not missing, (
+        f"{year}: member_vote_topic missing "
+        f"required columns: {missing}"
+    )
 
     duplicates = df[
         df.duplicated(
@@ -829,27 +877,66 @@ def test_member_vote_topic_grain_unique(year):
                 "vote_id",
                 "member_id",
                 "topic_name",
-                "classification",
             ],
-            keep=False
+            keep=False,
         )
     ]
 
     assert len(duplicates) == 0, (
         f"{year}: found {len(duplicates)} "
-        f"duplicate member-vote-topic rows"
+        "duplicate rows at "
+        "year + vote_id + member_id + topic_name grain"
     )
 
 
 # =========================================================
 # TEST 14
+# MEMBER-VOTE-TOPIC DOES NOT USE CLASSIFICATION
+# AS A COUNTING DIMENSION
+#
+# Bill-level classification still exists in
+# bill_topic_lookup.
+#
+# member_vote_topic should instead carry the informational
+# field topic_provenance.
+# =========================================================
+
+@pytest.mark.parametrize(
+    "year",
+    YEARS,
+)
+def test_member_vote_topic_uses_topic_provenance_not_classification(year):
+
+    df = load_member_vote_topic(year)
+
+    assert (
+        "topic_provenance"
+        in
+        df.columns
+    ), (
+        f"{year}: member_vote_topic is missing "
+        "topic_provenance"
+    )
+
+    assert (
+        "classification"
+        not in
+        df.columns
+    ), (
+        f"{year}: member_vote_topic should not "
+        "contain classification as an analytical dimension"
+    )
+
+
+# =========================================================
+# TEST 15
 # MEMBER-VOTE-TOPIC MEMBER/VOTE PAIRS
 # MUST COME FROM VOTE FACT
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_member_vote_topic_rows_backed_by_vote_fact(year):
 
@@ -899,13 +986,13 @@ def test_member_vote_topic_rows_backed_by_vote_fact(year):
 
 
 # =========================================================
-# TEST 15
+# TEST 16
 # MEMBER-VOTE-TOPIC VOTE VALUE AGREES WITH VOTE FACT
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_member_vote_topic_vote_value_matches_vote_fact(year):
 
@@ -964,7 +1051,7 @@ def test_member_vote_topic_vote_value_matches_vote_fact(year):
                 "member_id",
             ],
             how="left",
-            validate="many_to_one"
+            validate="many_to_one",
         )
     )
 
@@ -986,13 +1073,46 @@ def test_member_vote_topic_vote_value_matches_vote_fact(year):
 
 
 # =========================================================
-# TEST 16
+# TEST 17
+# TOPIC PROVENANCE IS NEVER BLANK
+#
+# Every member-vote-topic row should explain where its
+# associated topic came from.
+#
+# This is metadata only.
+# =========================================================
+
+@pytest.mark.parametrize(
+    "year",
+    YEARS,
+)
+def test_member_vote_topic_provenance_not_blank(year):
+
+    df = load_member_vote_topic(year)
+
+    blank = (
+        normalize_text(
+            df[
+                "topic_provenance"
+            ]
+        )
+        .eq("")
+    )
+
+    assert not blank.any(), (
+        f"{year}: member_vote_topic contains "
+        f"{int(blank.sum())} blank topic_provenance rows"
+    )
+
+
+# =========================================================
+# TEST 18
 # DELEGATE TOPIC COUNTS ARE MATHEMATICALLY POSSIBLE
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_delegate_topic_counts_not_impossible(year):
 
@@ -1036,14 +1156,46 @@ def test_delegate_topic_counts_not_impossible(year):
 
 
 # =========================================================
-# TEST 17
+# TEST 19
+# DELEGATE-TOPIC SUMMARY HAS UNIQUE MEMBER + TOPIC GRAIN
+#
+# classification/provenance does not split the analytical
+# delegate-topic summary.
+# =========================================================
+
+@pytest.mark.parametrize(
+    "year",
+    YEARS,
+)
+def test_delegate_topic_behavior_grain_unique(year):
+
+    summary = load_delegate_topic_behavior(year)
+
+    duplicates = summary[
+        summary.duplicated(
+            subset=[
+                "member_id",
+                "topic_name",
+            ],
+            keep=False,
+        )
+    ]
+
+    assert len(duplicates) == 0, (
+        f"{year}: delegate_topic_behavior contains "
+        f"{len(duplicates)} duplicate member + topic rows"
+    )
+
+
+# =========================================================
+# TEST 20
 # TOPIC VOTING TENDENCY:
 # YES + NO = DIRECTIONAL TOPIC VOTES
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_topic_tendency_directional_reconciliation(year):
 
@@ -1080,14 +1232,14 @@ def test_topic_tendency_directional_reconciliation(year):
 
 
 # =========================================================
-# TEST 18
+# TEST 21
 # TOPIC VOTING TENDENCY:
 # YES% + NO% = 100 WHEN DIRECTIONAL > 0
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_topic_tendency_percentages_reconcile(year):
 
@@ -1140,13 +1292,13 @@ def test_topic_tendency_percentages_reconcile(year):
 
 
 # =========================================================
-# TEST 19
+# TEST 22
 # TOPIC VOTING TENDENCY LABELS ARE VALID
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_topic_tendency_labels_valid(year):
 
@@ -1173,13 +1325,13 @@ def test_topic_tendency_labels_valid(year):
 
 
 # =========================================================
-# TEST 20
+# TEST 23
 # INSUFFICIENT DATA REALLY HAS < 10 DIRECTIONAL VOTES
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_insufficient_data_threshold_consistent(year):
 
@@ -1221,13 +1373,13 @@ def test_insufficient_data_threshold_consistent(year):
 
 
 # =========================================================
-# TEST 21
+# TEST 24
 # CLASSIFIED TENDENCIES HAVE >= 10 DIRECTIONAL VOTES
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_classified_tendencies_meet_minimum(year):
 
@@ -1271,13 +1423,13 @@ def test_classified_tendencies_meet_minimum(year):
 
 
 # =========================================================
-# TEST 22
+# TEST 25
 # YES TENDENCY RESPECTS 65% THRESHOLD
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_yes_tendency_threshold_consistent(year):
 
@@ -1316,13 +1468,13 @@ def test_yes_tendency_threshold_consistent(year):
 
 
 # =========================================================
-# TEST 23
+# TEST 26
 # NO TENDENCY RESPECTS 35% THRESHOLD
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_no_tendency_threshold_consistent(year):
 
@@ -1361,13 +1513,13 @@ def test_no_tendency_threshold_consistent(year):
 
 
 # =========================================================
-# TEST 24
+# TEST 27
 # MIXED TENDENCY IS STRICTLY BETWEEN 35% AND 65%
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_mixed_tendency_threshold_consistent(year):
 
@@ -1406,13 +1558,13 @@ def test_mixed_tendency_threshold_consistent(year):
 
 
 # =========================================================
-# TEST 25
+# TEST 28
 # TOPIC LOOKUP BILL IDS ARE BACKED BY BILL LOOKUP
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_topic_lookup_bill_ids_backed_by_bill_lookup(year):
 
@@ -1450,13 +1602,13 @@ def test_topic_lookup_bill_ids_backed_by_bill_lookup(year):
 
 
 # =========================================================
-# TEST 26
+# TEST 29
 # NO BLANK MEMBER IDS IN MAJOR ANALYTICAL OUTPUTS
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_no_blank_member_ids_across_analysis_outputs(year):
 
@@ -1505,13 +1657,13 @@ def test_no_blank_member_ids_across_analysis_outputs(year):
 
 
 # =========================================================
-# TEST 27
+# TEST 30
 # NO BLANK PARTY VALUES IN MAJOR ANALYTICAL OUTPUTS
 # =========================================================
 
 @pytest.mark.parametrize(
     "year",
-    YEARS
+    YEARS,
 )
 def test_no_blank_party_across_analysis_outputs(year):
 
