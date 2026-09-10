@@ -431,6 +431,7 @@ DERIVED_TOPIC_RULES = {
         r"\btransportation\b",
         r"\bhighways?\b",
         r"\bmotor vehicles?\b",
+        r"\bvehicle operation\b",
         r"\bvehicle registration\b",
         r"\bdriver'?s licenses?\b",
         r"\bdriving\b",
@@ -776,6 +777,32 @@ TOPIC_EXCLUSION_RULES = {
         r"\bdriver'?s licenses?\b",
         r"\bconsumer-directed services\b",
         r"\bmedicaid waivers?\b",
+        r"\bcommercially available\b",
+    ],
+
+    "Health and Healthcare": [
+        r"\bmedical expenses?\b",
+    ],
+
+    "Labor and Employment": [
+        r"\bdesignated employees?\b",
+    ],
+
+    "Family and Children": [
+        r"\bunlicensed minors?\b",
+    ],
+
+    "Insurance": [
+        r"\b(?:broadband|news|media) coverage\b",
+    ],
+
+    "Taxes and Revenue": [
+        r"\bbudget bill\b.*\brevenue\b",
+    ],
+
+    "Technology and Data": [
+        r"\b(?:notice|filing|application|record)\b.{0,40}\belectronically\b",
+        r"\bdiscovery\b.{0,40}\belectronically stored\b",
     ],
 
     "State Government": [
@@ -788,6 +815,7 @@ TOPIC_EXCLUSION_RULES = {
     "Local Government": [
         r"\bcommending\b",
         r"\bcelebrating the life\b",
+        r"\baffected locality\b",
     ],
 }
 
@@ -3197,6 +3225,20 @@ def derive_topics_with_rules(
     if not text:
 
         return []
+
+    # A ceremonial resolution can mention schools, hospitals, businesses, or
+    # professions only to identify an honoree. Those words are not policy
+    # subjects, so the ceremonial classification is intentionally terminal.
+    ceremonial_rule = r"^\s*(?:commending|celebrating the life)\b"
+
+    if re.search(ceremonial_rule, text, flags=re.IGNORECASE):
+
+        return [
+            {
+                "topic_name": "Commendations and Commemorations",
+                "matched_rule": ceremonial_rule,
+            }
+        ]
 
     matched_topics = []
 

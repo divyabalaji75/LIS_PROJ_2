@@ -473,7 +473,6 @@ def load_topic_behavior(year):
         "MBR_NAME",
         "party",
         "topic_name",
-        "classification",
         "topic_vote_events",
         "eligible_topic_events",
         "party_break_events",
@@ -519,12 +518,6 @@ def load_topic_behavior(year):
         .str.strip()
     )
 
-    df["classification"] = (
-        df["classification"]
-        .fillna("")
-        .str.strip()
-    )
-
     numeric_columns = [
         "topic_vote_events",
         "eligible_topic_events",
@@ -560,33 +553,16 @@ def build_topic_yoy(
     # It is excluded from policy-topic YoY analysis.
     # -----------------------------------------------------
 
-    topic_2025 = topic_2025[
-        topic_2025[
-            "classification"
-        ]
-        !=
-        "Unclassified"
-    ].copy()
-
-    topic_2026 = topic_2026[
-        topic_2026[
-            "classification"
-        ]
-        !=
-        "Unclassified"
-    ].copy()
+    topic_2025 = topic_2025[topic_2025["topic_name"] != "Unclassified"].copy()
+    topic_2026 = topic_2026[topic_2026["topic_name"] != "Unclassified"].copy()
 
     # -----------------------------------------------------
-    # CLASSIFICATION REMAINS PART OF JOIN KEY
-    #
-    # Official LIS subject and description-derived
-    # labels are not silently treated as equivalent.
+    # Provenance is metadata and must not split one delegate-topic comparison.
     # -----------------------------------------------------
 
     join_keys = [
         "member_id",
         "topic_name",
-        "classification",
     ]
 
     left = (
@@ -858,7 +834,6 @@ def build_topic_yoy(
         "party",
 
         "topic_name",
-        "classification",
 
         "topic_status",
 
@@ -1016,7 +991,6 @@ def build_topic_change_summary(
         .groupby(
             [
                 "topic_name",
-                "classification",
             ],
             as_index=False
         )
@@ -1128,7 +1102,6 @@ def build_exploratory_topic_summary(
         .groupby(
             [
                 "topic_name",
-                "classification",
             ],
             as_index=False
         )
@@ -1451,7 +1424,6 @@ def print_topic_results(
                     "MBR_NAME",
                     "party",
                     "topic_name",
-                    "classification",
                     "cross_party_pct_2025",
                     "cross_party_pct_2026",
                     "cross_party_pct_change",
@@ -1485,7 +1457,6 @@ def print_topic_results(
                     "MBR_NAME",
                     "party",
                     "topic_name",
-                    "classification",
                     "cross_party_pct_2025",
                     "cross_party_pct_2026",
                     "cross_party_pct_change",
@@ -1545,7 +1516,6 @@ def print_topic_results(
         headline[
             [
                 "topic_name",
-                "classification",
                 "delegates_compared",
                 "avg_cross_party_pct_2025",
                 "avg_cross_party_pct_2026",
