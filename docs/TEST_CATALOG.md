@@ -1,6 +1,6 @@
 # Automated Test Catalog
 
-The repository currently contains 195 named test functions that expand to 336 test cases under the default 2025/2026 validation configuration. Full-data modules use `LIS_TEST_YEARS`, so the same controls can run against a future processed session without editing test code. This catalog states the business protection supplied by every named test.
+The repository currently contains 200 named test functions that expand to 354 test cases under the default 2025/2026 validation configuration. Full-data modules use `LIS_TEST_YEARS`, so the same controls can run against a future processed session without editing test code. This catalog states the business protection supplied by every named test.
 
 ## `test_vote_fact.py`
 
@@ -229,11 +229,19 @@ The repository currently contains 195 named test functions that expand to 336 te
 ## `test_dashboard_pages.py`
 
 - `test_dashboard_page_renders_independently`: each of the four sidebar pages renders only its intended leadership question, raises no Streamlit exception, and includes a chart.
+- `test_subject_drilldown_exposes_bill_and_vote_evidence`: selecting Education with the true cross-party filter produces bill counts, LIS vote-event counts, and an underlying bill table.
+
+## `test_topic_rule_behavior.py`
+
+- `test_commending_resolution_has_auditable_derived_subject`: a formal commending resolution receives the separate deterministic ceremonial category.
+- `test_memorial_resolution_has_auditable_derived_subject`: a “Celebrating the life” resolution receives the same auditable ceremonial category.
+- `test_precise_analytical_categories_from_official_text`: representative official LIS descriptions map to the intended added analytical categories using explicit deterministic rules.
+- `test_incidental_discovery_language_does_not_trigger_criminal_justice`: ordinary business wording does not create a criminal-justice topic merely because it contains “discovery.”
 
 ## Latest result
 
 ```text
-336 passed
+354 passed
 ```
 
 Passing tests demonstrate that the code follows its specified rules. They do not by themselves prove external source completeness or the substantive correctness of every derived-topic judgment; those remaining reviews are documented in the methods appendix.

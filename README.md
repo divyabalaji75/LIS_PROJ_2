@@ -62,6 +62,10 @@ one use the highest-maturity supported LIS summary (HTML removed), then fall
 back to `Bill_description`. The same deterministic topic and exclusion rules
 are applied to both text sources. `source_file`, `source_text_used`,
 `rule_derived`, and `matched_rule` make every classification traceable.
+Derived rows reuse established subject names when the official text supports
+them and add a documented analytical category only when needed. They remain
+visibly labeled as summary- or description-derived and are never presented as
+official LIS subjects.
 
 ## Vote definitions
 
@@ -148,8 +152,11 @@ The dashboard reads processed CSVs without modifying them. Sidebar navigation
 separates four leadership questions into independent, wider pages: voting,
 subjects and delegates, session comparison, and bills and context. The subject
 page supports both directions of review: choose a delegate to see voting by
-subject, or choose a subject to compare delegates. The pages also show true
-cross-party leaders by count and rate, delegate-subject leaders, bill-level
+subject, or choose a subject and vote type to see the exact bills, delegates,
+recorded votes, party-majority positions, and LIS vote records. The bill page
+also provides a searchable view of records that remain unclassified.
+The pages also show true cross-party leaders by count and rate,
+delegate-subject leaders, bill-level
 provenance (including child and parent LIS subjects), official histories and
 vote statements, and subject-filtered bill lookup. Sponsorship remains a
 separate processed analytical layer, but is intentionally omitted from the

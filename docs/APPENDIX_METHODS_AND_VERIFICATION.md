@@ -60,6 +60,7 @@ The frozen derived-topic families are:
 
 | Topic | Examples of text evidence |
 |---|---|
+| Commendations and Commemorations | descriptions beginning with “Commending” or “Celebrating the life” |
 | Education | public school, school board/division, student, teacher, education, tuition |
 | Higher Education | higher education, public university, community college, SCHEV |
 | Health and Healthcare | health care, hospital, medical, Medicaid, patient, physician, nurse, pharmacy |
@@ -85,8 +86,21 @@ The frozen derived-topic families are:
 | Family and Children | foster care, child abuse/neglect/custody/support/care, minor, parental, adoption |
 | Marriage and Domestic Relations | marriage, divorce, spouse, domestic relations, annulment |
 | Social Services | social services, public assistance, protective services, family assessments, care homes, hunger |
+| Study Commissions, Committees, and Reports | task force, work group, directed study, feasibility study |
+| Alcoholic Beverage and Cannabis Control | alcoholic beverage control, mixed-beverage license, cannabis control |
+| Pensions, Benefits, and Retirement | Virginia Retirement System, retirement allowance, pension benefits |
+| Financial Institutions and Services | banking, credit unions, mortgage lenders, financial services |
+| Gambling, Lotteries, Etc. | charitable gaming, casino gaming, lottery, sports betting |
+| Armed Forces | Virginia National Guard, military service, armed forces |
+| Data Centers | data center, high-energy-use facility |
+| Property and Conveyances | conveyances, common-interest communities, resale disclosures, unclaimed property, descriptions beginning with “Real property” |
+| Wills, Trusts, and Fiduciaries | wills, trusts, estates, fiduciaries |
+| Professions and Occupations | occupational licenses, professional regulation, boards of professions |
+| Indian Tribes | Virginia-recognized tribes, tribal land or government |
+| Constitutional Amendments | resolutions proposing an amendment to the Constitution of Virginia |
+| Economic Development | economic development authorities, enterprise zones, development incentives |
 
-These are analytical categories, not official LIS subjects.
+These are analytical categories, not official LIS subjects. They are assigned only by deterministic matches against official LIS summary or bill-description text, and the resulting row says `Derived from LIS bill summary` or `Derived from LIS bill description`. Existing LIS-style names are reused when the evidence fits; a new analytical name is introduced only when the existing list does not describe the text. No AI judgment is written into the production classification.
 
 ### Exclusions
 
@@ -95,7 +109,7 @@ Exclusions prevent known literal-word false positives; they never create a new t
 - Elections and Voting is suppressed for judicial-election language such as judges, courts, and nominations for election.
 - Business and Commerce is suppressed for driver's licenses, consumer-directed services, and Medicaid waivers.
 - State Government is suppressed when a department name merely mentions motor vehicles, environmental quality, taxation, or fire programs.
-- Local Government is suppressed for ceremonial resolutions using “commending” or “celebrating the life.”
+- Local Government is suppressed for ceremonial resolutions using “commending” or “celebrating the life.” Those records now enter the separate Commendations and Commemorations category instead of being mistaken for local-government policy.
 
 Every derived output retains `source_file`, `source_text_used`, `rule_derived`, and `matched_rule`, so a reviewer can see exactly why the rule fired.
 
@@ -108,9 +122,9 @@ This is the primary coverage measure because every bill appears in exactly one t
 | Classification | 2025 bills | 2025 share | 2026 bills | 2026 share |
 |---|---:|---:|---:|---:|
 | Official LIS subject | 405 | 11.54% | 45 | 1.23% |
-| Derived from LIS bill summary | 1,515 | 43.16% | 460 | 12.62% |
-| Derived from LIS bill description | 270 | 7.69% | 1,224 | 33.57% |
-| Unclassified | 1,320 | 37.61% | 1,917 | 52.58% |
+| Derived from LIS bill summary | 1,591 | 45.33% | 482 | 13.22% |
+| Derived from LIS bill description | 1,234 | 35.16% | 2,425 | 66.51% |
+| Unclassified | 280 | 7.98% | 694 | 19.03% |
 | **Total** | **3,510** | **100.00%** | **3,646** | **100.00%** |
 
 Formula:
@@ -125,11 +139,11 @@ This answers a different question. A classified bill can have multiple topics, s
 
 | Classification | 2025 topic rows | 2025 share | 2026 topic rows | 2026 share |
 |---|---:|---:|---:|---:|
-| Official LIS subject | 959 | 17.92% | 98 | 2.27% |
-| Derived from LIS bill summary | 2,770 | 51.76% | 871 | 20.17% |
-| Derived from LIS bill description | 303 | 5.66% | 1,433 | 33.18% |
-| Unclassified | 1,320 | 24.66% | 1,917 | 44.39% |
-| **Total** | **5,352** | **100.00%** | **4,319** | **100.00%** |
+| Official LIS subject | 959 | 17.63% | 98 | 2.20% |
+| Derived from LIS bill summary | 3,093 | 54.24% | 959 | 20.91% |
+| Derived from LIS bill description | 1,370 | 24.03% | 2,835 | 61.82% |
+| Unclassified | 280 | 4.91% | 694 | 15.13% |
+| **Total** | **5,702** | **100.00%** | **4,586** | **100.00%** |
 
 Raw official-subject rows are not the same as analytical topic rows. Parent rollup and same-parent consolidation can reduce the number of displayed analytical rows while preserving the exact child evidence.
 
@@ -242,10 +256,10 @@ Committee counts come from official committee reference and assignment files. A 
 
 ### Automated controls
 
-On September 8, 2026:
+On September 10, 2026:
 
 ```text
-336 tests passed
+354 tests passed
 ```
 
 The suite covers raw-to-processed vote reconciliation, required columns, allowed values, canonical uniqueness, member and party joins, chamber identity, party-majority ties, non-directional votes, party-break and cross-party implications, vote/bill one-to-many behavior, subject provenance and priority, parent hierarchy, source samples, tendency thresholds, and year-over-year comparability.
@@ -300,6 +314,6 @@ This command reuses the existing pipeline and validations. Before processing, it
 
 The strongest accurate statement is:
 
-> The results are reproducible, source-traceable, and tested against 336 automated cases. The calculations implement the documented definitions. Remaining uncertainty is explicitly limited to external source completeness, human semantic review of derived topics, selected party fallbacks, and analytical questions that have not yet been modeled as mutually exclusive outcomes.
+> The results are reproducible, source-traceable, and tested against 354 automated cases. The calculations implement the documented definitions. Remaining uncertainty is explicitly limited to external source completeness, human semantic review of derived topics, selected party fallbacks, and analytical questions that have not yet been modeled as mutually exclusive outcomes.
 
 This is more credible than claiming literal 100% certainty, because it explains both the evidence and its boundaries.

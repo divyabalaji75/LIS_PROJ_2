@@ -147,7 +147,7 @@ else:
     classify_as_unclassified()
 ```
 
-Business context: every bill is assigned to only one evidence tier, even when it has multiple topics within that tier. Official LIS information always outranks derived rules.
+Business context: every bill is assigned to only one evidence tier, even when it has multiple topics within that tier. Official LIS information always outranks derived rules. Added analytical categories reuse LIS-style subject names where possible and are explicitly labeled as summary- or description-derived; they never masquerade as official LIS subjects.
 
 `validate_topic_classifications` checks allowed labels, one-tier-per-bill behavior, provenance fields, bill coverage, and official-versus-derived separation. `build_topic_coverage` reports distinct bill counts and percentages by tier. `build_topic_qa_sample` creates a small reproducible semantic-review sample.
 
@@ -242,10 +242,11 @@ Key calculation helpers:
 - `party_vote_summary`: party-specific rates.
 - `subject_vote_counts`: Yes, No, abstained, not-voting, and cross-party counts by subject.
 - `legislator_evidence`: bill-level evidence behind a selected legislator/subject view.
+- `subject_evidence`: joins a selected subject to distinct bill numbers and supporting member-vote records without changing canonical vote grain.
 - `bill_outcomes`: reproducible pathway markers from official history text.
 - `render_voting_page`, `render_subjects_page`, `render_comparison_page`, and `render_bills_page`: render only the selected working view so the briefing is not one long scroll.
 
-Business context: sidebar navigation gives each question the full page width and renders only the chosen page. The dashboard supports two-way review: delegate to subjects and subject to delegates. It includes cross-party rankings by both count and rate, delegate-subject comparisons, bill lookup, official history, topic provenance, and vote statements. Member IDs remain internal join keys and are not displayed in leadership views. Sponsorship data remains available in the processed analytical layer but is intentionally not displayed on the simplified leadership page.
+Business context: sidebar navigation gives each question the full page width and renders only the chosen page. The dashboard supports two-way review: delegate to subjects and subject to delegates. A selected subject can be filtered to true cross-party, Yes, No, abstained, not-voting, delegate, or bill number, then traced to exact bill and LIS vote records. The bills page separately exposes searchable unclassified LIS text. Member IDs remain internal join keys and are not displayed in leadership views. Sponsorship data remains available in the processed analytical layer but is intentionally not displayed on the simplified leadership page.
 
 ## Test scripts
 

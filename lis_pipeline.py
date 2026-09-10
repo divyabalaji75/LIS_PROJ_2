@@ -120,6 +120,11 @@ SUMMARY_TYPE_PRIORITY = {
 
 DERIVED_TOPIC_RULES = {
 
+    "Commendations and Commemorations": [
+        r"^\s*commending\b",
+        r"^\s*celebrating the life\b",
+    ],
+
     "Education": [
         r"\bpublic schools?\b",
         r"\bschool boards?\b",
@@ -131,6 +136,8 @@ DERIVED_TOPIC_RULES = {
         r"\bteachers?\b",
         r"\beducation\b",
         r"\btuition\b",
+        r"\bwork-based learning\b",
+        r"\beducational institutions?\b",
     ],
 
     "Health and Healthcare": [
@@ -146,6 +153,9 @@ DERIVED_TOPIC_RULES = {
         r"\bpharmacy\b",
         r"\bpharmacists?\b",
         r"\bhealth carriers?\b",
+        r"\bassisted living facilities?\b",
+        r"\bstillbirth\b",
+        r"\bdeath reg(?:istration|istry)\b",
     ],
 
     "Behavioral Health": [
@@ -156,6 +166,8 @@ DERIVED_TOPIC_RULES = {
         r"\baddiction\b",
         r"\bpsychiatric\b",
         r"\bopioids?\b",
+        r"\bpeer recovery specialists?\b",
+        r"\bsuicide prevention\b",
     ],
 
     "Housing": [
@@ -232,6 +244,9 @@ DERIVED_TOPIC_RULES = {
         r"\brail\b",
         r"\broad user\b",
         r"\broad safety\b",
+        r"\blicense plates?\b",
+        r"\btoll facilities?\b",
+        r"\bmemorial (?:bridge|highway|road)\b",
     ],
 
     "Criminal Justice": [
@@ -246,6 +261,13 @@ DERIVED_TOPIC_RULES = {
         r"\bcorrectional\b",
         r"\binmates?\b",
         r"\bprisoners?\b",
+        r"\baccused\b",
+        r"\bsearch warrants?\b",
+        r"\bfines and costs\b",
+        r"\bdepartment of corrections\b",
+        r"\boffenders?\b",
+        r"\bhuman trafficking\b",
+        r"\bwrit of vacatur\b",
     ],
 
     "Courts and Civil Law": [
@@ -259,6 +281,12 @@ DERIVED_TOPIC_RULES = {
         r"\bcourt-assessed\b",
         r"\bcourt of appeals\b",
         r"\bcourt service unit\b",
+        r"\bcircuit courts?\b",
+        r"\bgeneral district courts?\b",
+        r"\bjudicial districts?\b",
+        r"\bjudgeships?\b",
+        r"\bjurors?\b",
+        r"\bprotective orders?\b",
     ],
 
     "Public Safety": [
@@ -270,6 +298,7 @@ DERIVED_TOPIC_RULES = {
         r"\bemergency medical services\b",
         r"\bemergency services\b",
         r"\bdisaster preparedness\b",
+        r"\bemergency management\b",
     ],
 
     "Firearms": [
@@ -305,6 +334,8 @@ DERIVED_TOPIC_RULES = {
         r"\btaxable\b",
         r"\btaxes\b",
         r"\brevenue\b",
+        r"\bplastic bag tax\b",
+        r"\breal property tax\b",
     ],
 
     "Budget and Appropriations": [
@@ -363,6 +394,9 @@ DERIVED_TOPIC_RULES = {
         r"\bmunicipal\b",
         r"\bzoning appeals\b",
         r"\blocal school funds\b",
+        r"\bamending (?:the )?charter\b",
+        r"\bnew charter\b",
+        r"\bprevious charter repealed\b",
     ],
 
     "State Government": [
@@ -372,6 +406,9 @@ DERIVED_TOPIC_RULES = {
         r"\bstate government\b",
         r"\bstate employees\b",
         r"\bvirginia personnel act\b",
+        r"\bgeneral assembly conflicts of interests act\b",
+        r"\boffice of regulatory management\b",
+        r"\bconfirming governor'?s appointments\b",
     ],
 
     "Technology and Data": [
@@ -427,6 +464,91 @@ DERIVED_TOPIC_RULES = {
         r"\bcommunity colleges?\b",
         r"\bstate council of higher education\b",
         r"\bbaccalaureate public institutions\b",
+    ],
+
+    "Study Commissions, Committees, and Reports": [
+        r"\btask force\b",
+        r"\bwork group\b",
+        r"\bstudy feasibility\b",
+    ],
+
+    "Alcoholic Beverage and Cannabis Control": [
+        r"\balcoholic beverage control\b",
+        r"\bboard of directors of the virginia alcohol",
+    ],
+
+    "Pensions, Benefits, and Retirement": [
+        r"\bvirginia retirement system\b",
+        r"\bva\. retirement system\b",
+        r"\blaw officers'? retirement system\b",
+        r"\bretirement benefits?\b",
+        r"\bservice retirement allowance\b",
+        r"\bpensions?\b",
+        r"\bira savings program\b",
+    ],
+
+    "Financial Institutions and Services": [
+        r"\bfinancial institutions?(?: and services)?\b",
+        r"\bconsumer finance companies\b",
+        r"\bcredit unions?\b",
+        r"\bcheck cashers?\b",
+    ],
+
+    "Gambling, Lotteries, Etc.": [
+        r"\bcharitable gaming\b",
+        r"\bhorse racing\b",
+        r"\bpari-mutuel wagering\b",
+        r"\bproblem gambling\b",
+    ],
+
+    "Armed Forces": [
+        r"\bvirginia national guard\b",
+        r"\bmembers? of (?:the )?armed forces\b",
+        r"\bdisabled veterans?\b",
+    ],
+
+    "Data Centers": [
+        r"\bdata centers?\b",
+        r"\bcloud computing cluster infrastructure\b",
+    ],
+
+    "Property and Conveyances": [
+        r"^\s*real property;",
+        r"\bunclaimed property\b",
+        r"\bconveyances? of interests?\b",
+        r"\bcommon interest communities\b",
+        r"\bresale disclosure act\b",
+    ],
+
+    "Wills, Trusts, and Fiduciaries": [
+        r"\buniform trust code\b",
+        r"\bqualified trustee\b",
+        r"\bdecedents?' estates\b",
+        r"\bfiduciar(?:y|ies)\b",
+    ],
+
+    "Professions and Occupations": [
+        r"\bprofessional licens",
+        r"\boccupational licens",
+        r"\bboard of medicine\b",
+        r"\binternational licensure and certification\b",
+    ],
+
+    "Indian Tribes": [
+        r"\bfederally recognized tribes?\b",
+        r"\bamerican indians?\b",
+        r"\btribal consultation\b",
+    ],
+
+    "Constitutional Amendments": [
+        r"\bconstitutional amendment\b",
+    ],
+
+    "Economic Development": [
+        r"\beconomic development\b",
+        r"\benterprise zone grant program\b",
+        r"\bsports tourism grant program\b",
+        r"\bmanufacturing (?:expansion )?grant fund\b",
     ],
 }
 

@@ -23,3 +23,19 @@ def test_dashboard_page_renders_independently(page, expected_header):
     assert not app.exception
     assert [header.value for header in app.header] == [expected_header]
     assert len(app.get("plotly_chart")) >= 1
+
+
+def test_subject_drilldown_exposes_bill_and_vote_evidence():
+    app = AppTest.from_file(DASHBOARD_PATH)
+    app.run(timeout=40)
+    app.radio[0].set_value("Subjects and delegates")
+    app.run(timeout=40)
+    subject_selector = next(item for item in app.selectbox if item.label == "Subject to compare")
+    subject_selector.set_value("Education")
+    app.run(timeout=40)
+
+    metrics = {item.label: item.value for item in app.metric}
+    assert not app.exception
+    assert int(metrics["Bills"].replace(",", "")) > 0
+    assert int(metrics["LIS vote events"].replace(",", "")) > 0
+    assert any("HB1208" in str(table.value) for table in app.dataframe)

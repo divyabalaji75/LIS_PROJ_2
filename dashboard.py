@@ -198,6 +198,48 @@ def legislator_evidence(
     return evidence.drop_duplicates().sort_values(["Bill_id", "vote_id"])
 
 
+def subject_evidence(
+    member_topics: pd.DataFrame,
+    vote_bridge: pd.DataFrame,
+    bill_topics: pd.DataFrame,
+    bills: pd.DataFrame,
+    subject: str,
+) -> pd.DataFrame:
+    """Connect one subject to its bill-level member-vote evidence."""
+
+    event_columns = [
+        "vote_id",
+        "member_id",
+        "MBR_NAME",
+        "party",
+        "vote",
+        "own_party_position",
+        "other_party_position",
+        "broke_with_party",
+        "cross_party",
+        "topic_name",
+        "classification",
+    ]
+    events = member_topics.loc[
+        member_topics["topic_name"].eq(subject)
+        & member_topics["member_id"].astype(str).str.startswith("H"),
+        event_columns,
+    ].drop_duplicates()
+    bridge = vote_bridge[["vote_id", "Bill_id"]].drop_duplicates()
+    subject_bills = bill_topics.loc[
+        bill_topics["topic_name"].eq(subject), ["Bill_id", "topic_name"]
+    ].drop_duplicates()
+    descriptions = bills[["Bill_id", "Bill_description"]].drop_duplicates("Bill_id")
+    evidence = (
+        events.merge(bridge, on="vote_id", how="inner")
+        .merge(subject_bills, on=["Bill_id", "topic_name"], how="inner")
+        .merge(descriptions, on="Bill_id", how="left")
+    )
+    return evidence.drop_duplicates(
+        ["vote_id", "member_id", "Bill_id", "topic_name"]
+    ).sort_values(["Bill_id", "vote_id", "MBR_NAME"])
+
+
 def bill_outcomes(history: pd.DataFrame) -> dict[str, int]:
     if history.empty:
         return {"Became law": 0, "Left in committee": 0, "Failed or stricken": 0}
@@ -237,6 +279,7 @@ delegate_topics = load_output("delegate_topic_behavior", selected_year)
 member_topics = load_output("member_vote_topic", selected_year)
 bills = load_output("bill_lookup", selected_year)
 bill_topics = load_output("bill_topic_lookup", selected_year)
+unclassified = load_output("unclassified_bills", selected_year)
 coverage = load_output("topic_coverage", selected_year)
 history = load_output("bill_history", selected_year)
 vote_bridge = load_output("vote_bill_bridge", selected_year)
@@ -300,6 +343,17 @@ def render_voting_page() -> None:
         f" {cross_party_leader['MBR_NAME']} recorded the most true cross-party votes ({int(cross_party_leader['cross_party_votes']):,})."
         f"{party_comparison}"
     )
+
+    with st.expander("Why is the true cross-party rate low?"):
+        st.markdown(
+            f"The rate is deliberately strict: **{metrics['cross_party']:,} qualifying votes ÷ "
+            f"{metrics['cross_eligible']:,} eligible Yes/No member-votes = "
+            f"{metrics['cross_party_pct']:.2f}%**. A vote counts only when the legislator votes against a clear "
+            "majority of their own party and with a clear majority of the other party. When both parties take the "
+            "same majority position, that is bipartisan agreement—not a cross-party vote under this measure. "
+            "Abstentions, non-votes, party ties, and unavailable party majorities are also not counted as true "
+            "cross-party votes."
+        )
 
     q1_left, q1_right = st.columns(2)
     with q1_left:
@@ -649,6 +703,134 @@ def render_subjects_page() -> None:
             "assigned to this subject; it should not be interpreted as support for a single policy position."
         )
 
+        st.markdown("**Explore the bills and votes behind this subject**")
+        st.caption(
+            "Choose a vote type or delegate to see the exact bill numbers and LIS vote records behind the totals."
+        )
+        subject_records = subject_evidence(
+            member_topics, vote_bridge, bill_topics, bills, selected_subject
+        )
+        filter_left, filter_right = st.columns(2)
+        with filter_left:
+            record_filter = st.selectbox(
+                "Recorded vote filter",
+                [
+                    "True cross-party",
+                    "All recorded votes",
+                    "Yes (Y)",
+                    "No (N)",
+                    "Abstained (A)",
+                    "Not voting (X)",
+                ],
+                key="subject_record_filter",
+            )
+        with filter_right:
+            delegates_for_subject = ["All delegates"] + sorted(
+                subject_records["MBR_NAME"].dropna().unique()
+            )
+            record_delegate = st.selectbox(
+                "Delegate filter",
+                delegates_for_subject,
+                key="subject_record_delegate",
+            )
+
+        filtered_records = subject_records.copy()
+        vote_codes = {
+            "Yes (Y)": "Y",
+            "No (N)": "N",
+            "Abstained (A)": "A",
+            "Not voting (X)": "X",
+        }
+        if record_filter == "True cross-party":
+            filtered_records = filtered_records[filtered_records["cross_party"].eq(True)]
+        elif record_filter in vote_codes:
+            filtered_records = filtered_records[
+                filtered_records["vote"].eq(vote_codes[record_filter])
+            ]
+        if record_delegate != "All delegates":
+            filtered_records = filtered_records[
+                filtered_records["MBR_NAME"].eq(record_delegate)
+            ]
+
+        bill_search = st.text_input(
+            "Optional bill-number search",
+            placeholder="For example: HB1",
+            key="subject_bill_search",
+        ).strip()
+        if bill_search:
+            filtered_records = filtered_records[
+                filtered_records["Bill_id"].astype(str).str.contains(
+                    bill_search, case=False, na=False, regex=False
+                )
+            ]
+
+        if filtered_records.empty:
+            st.info("No bill-linked records match these filters.")
+        else:
+            bill_summary = (
+                filtered_records.groupby(
+                    ["Bill_id", "Bill_description", "classification"],
+                    as_index=False,
+                    dropna=False,
+                )
+                .agg(
+                    Vote_events=("vote_id", "nunique"),
+                    Member_votes=("member_id", "count"),
+                    Yes=("vote", lambda values: values.eq("Y").sum()),
+                    No=("vote", lambda values: values.eq("N").sum()),
+                    Abstained=("vote", lambda values: values.eq("A").sum()),
+                    Not_voting=("vote", lambda values: values.eq("X").sum()),
+                    Cross_party=("cross_party", "sum"),
+                )
+                .sort_values(["Cross_party", "Member_votes", "Bill_id"], ascending=[False, False, True])
+                .rename(
+                    columns={
+                        "Bill_id": "Bill",
+                        "Bill_description": "Bill description",
+                        "classification": "Subject source",
+                        "Vote_events": "LIS vote events",
+                        "Member_votes": "Member-votes",
+                        "Not_voting": "Not voting",
+                        "Cross_party": "True cross-party",
+                    }
+                )
+            )
+            result_metrics = st.columns(3)
+            result_metrics[0].metric("Bills", f"{bill_summary['Bill'].nunique():,}")
+            result_metrics[1].metric(
+                "LIS vote events", f"{filtered_records['vote_id'].nunique():,}"
+            )
+            result_metrics[2].metric("Member-vote records", f"{len(filtered_records):,}")
+            compact_table(bill_summary, 340)
+
+            with st.expander("Show the supporting member-vote records"):
+                record_view = filtered_records[
+                    [
+                        "Bill_id",
+                        "Bill_description",
+                        "MBR_NAME",
+                        "party",
+                        "vote",
+                        "cross_party",
+                        "own_party_position",
+                        "other_party_position",
+                        "vote_id",
+                    ]
+                ].rename(
+                    columns={
+                        "Bill_id": "Bill",
+                        "Bill_description": "Bill description",
+                        "MBR_NAME": "Delegate",
+                        "party": "Party",
+                        "vote": "Recorded vote",
+                        "cross_party": "True cross-party",
+                        "own_party_position": "Own party majority",
+                        "other_party_position": "Other party majority",
+                        "vote_id": "LIS vote record",
+                    }
+                )
+                compact_table(record_view, 380)
+
 
 
 def render_comparison_page() -> None:
@@ -824,6 +1006,38 @@ def render_bills_page() -> None:
                 }
             )
             compact_table(statement_view, 240)
+
+    with st.expander("Review bills that are still unclassified"):
+        st.caption(
+            "These bills did not have an official LIS subject and did not match a documented summary or description rule. "
+            "Search the retained LIS text to identify candidates for a future reviewed rule."
+        )
+        unclassified_search = st.text_input(
+            "Search unclassified bill text",
+            placeholder="For example: court, property, or grant",
+            key="unclassified_search",
+        ).strip()
+        unclassified_view = unclassified.copy()
+        if unclassified_search:
+            unclassified_view = unclassified_view[
+                unclassified_view["source_text_used"].astype(str).str.contains(
+                    unclassified_search, case=False, na=False, regex=False
+                )
+            ]
+        st.metric("Unclassified bills matching this search", f"{len(unclassified_view):,}")
+        if unclassified_view.empty:
+            st.info("No unclassified bills match that search.")
+        else:
+            compact_table(
+                unclassified_view[["Bill_id", "source_text_used", "source_file"]].rename(
+                    columns={
+                        "Bill_id": "Bill",
+                        "source_text_used": "Official LIS text reviewed",
+                        "source_file": "Final classification source",
+                    }
+                ),
+                380,
+            )
 
 
     with st.expander("Definitions, coverage, and limitations"):
